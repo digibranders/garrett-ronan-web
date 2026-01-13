@@ -415,7 +415,7 @@ export default function About() {
             </div>
             <div className="flex gap-8 text-[10px] uppercase tracking-[0.2em] text-stone-600 font-bold">
                <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-               <span>© 2025 GKR Consulting</span>
+               <span>© 2026 GKR Consulting</span>
             </div>
           </div>
         </div>
