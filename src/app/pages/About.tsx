@@ -5,11 +5,11 @@ import { Button } from '@/app/components/ui/button';
 import { Link } from 'react-router-dom';
 
 // Logo Import
-import logoImage from 'figma:asset/54b647c778f17f42e409842f22c6c7a9bd32e88b.png';
+import logoImage from '@/assets/54b647c778f17f42e409842f22c6c7a9bd32e88b.png';
 // Garrett Ronan image
-import garrettImage from 'figma:asset/8b22683487875a05efdeee606ad84a804e5a1a39.png';
+import garrettImage from '@/assets/8b22683487875a05efdeee606ad84a804e5a1a39.png';
 // Garrett signature
-import signatureImage from 'figma:asset/20c675535d82a89752da6e76ff1752bde1939d77.png';
+import signatureImage from '@/assets/20c675535d82a89752da6e76ff1752bde1939d77.png';
 
 const ABOUT_IMAGES = {
   founder: "https://images.unsplash.com/photo-1601489865452-407a1b801dde?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBidXNpbmVzc21hbnxlbnwxfHx8fDE3NjgxODkwMzV8MA&ixlib=rb-4.1.0&q=80&w=1080",

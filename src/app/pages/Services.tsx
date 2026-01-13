@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 import { Menu, ArrowUpRight } from 'lucide-react';
 import { Button } from '@/app/components/ui/button';
 import { Link } from 'react-router-dom';
-import logoImage from 'figma:asset/54b647c778f17f42e409842f22c6c7a9bd32e88b.png';
+import logoImage from '@/assets/54b647c778f17f42e409842f22c6c7a9bd32e88b.png';
 
 const SERVICES_DATA = [
   {
