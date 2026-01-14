@@ -235,11 +235,19 @@ export default function Services() {
                 className="border-b border-white/10 last:border-0"
               >
                 <div 
-                  className="grid grid-cols-1 lg:grid-cols-12 gap-8 py-16 md:py-20 cursor-pointer group"
+                  className={`py-16 md:py-20 cursor-pointer group ${
+                    index === SERVICES_DATA.length - 1 
+                      ? 'flex flex-col items-center text-center max-w-4xl mx-auto' 
+                      : 'grid grid-cols-1 lg:grid-cols-12 gap-8'
+                  }`}
                   onClick={() => setExpandedService(expandedService === index ? null : index)}
                 >
                   {/* Image Column */}
-                  <div className="lg:col-span-5">
+                  <div className={`${
+                    index === SERVICES_DATA.length - 1 
+                      ? 'w-full max-w-2xl mb-12' 
+                      : 'lg:col-span-5'
+                  }`}>
                     <div className="aspect-[4/3] overflow-hidden rounded-sm relative">
                       <img 
                         src={service.image} 
@@ -254,8 +262,16 @@ export default function Services() {
                   </div>
 
                   {/* Content Column */}
-                  <div className="lg:col-span-7 flex flex-col justify-center">
-                    <div className="border-l-2 border-[#c5a059] pl-8">
+                  <div className={`${
+                    index === SERVICES_DATA.length - 1 
+                      ? 'w-full flex flex-col items-center' 
+                      : 'lg:col-span-7 flex flex-col justify-center'
+                  }`}>
+                    <div className={`${
+                      index === SERVICES_DATA.length - 1 
+                        ? 'border-t-2 border-[#c5a059] pt-8' 
+                        : 'border-l-2 border-[#c5a059] pl-8'
+                    }`}>
                       <h2 className="text-4xl md:text-5xl font-serif text-white mb-4 group-hover:text-[#c5a059] transition-colors duration-300">
                         {service.title}
                       </h2>
@@ -274,7 +290,9 @@ export default function Services() {
                           transition={{ duration: 0.4 }}
                           className="overflow-hidden"
                         >
-                          <ul className="space-y-3 mb-6">
+                          <ul className={`space-y-3 mb-6 ${
+                            index === SERVICES_DATA.length - 1 ? 'text-left inline-block' : ''
+                          }`}>
                             {service.description.map((item, i) => (
                               <li key={i} className="text-stone-500 text-sm flex items-start gap-3">
                                 <span className="text-[#c5a059] mt-1 flex-shrink-0">•</span>
@@ -285,7 +303,9 @@ export default function Services() {
                         </motion.div>
                       )}
 
-                      <button className="flex items-center gap-2 text-[#c5a059] text-xs uppercase tracking-[0.3em] font-bold group-hover:gap-4 transition-all duration-300">
+                      <button className={`flex items-center gap-2 text-[#c5a059] text-xs uppercase tracking-[0.3em] font-bold group-hover:gap-4 transition-all duration-300 ${
+                        index === SERVICES_DATA.length - 1 ? 'mx-auto' : ''
+                      }`}>
                         {expandedService === index ? 'Show Less' : 'Learn More'}
                         <ArrowUpRight className={`w-4 h-4 transition-transform duration-300 ${expandedService === index ? 'rotate-180' : ''}`} />
                       </button>
