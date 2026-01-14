@@ -35,6 +35,7 @@ import blaceLogo from '@/assets/d252ac5998701099104c56c3f44254efbde0820b.png';
 import residentLogo from '@/assets/b7505be62114bd74130d9a72831b3c5ce8fa464f.png';
 import affectLogo from '@/assets/f771fb5c6bb67581dbf98bc2f69218f9384f2182.png';
 import sageLogo from '@/assets/006460939252a7050e1760ef2baf7c43b6f16a1f.png';
+import buccamentLogo from '@/assets/buccament.png';
 
 // Employed By Companies - Logo or Text
 const EMPLOYED_BY_COMPANIES = [
@@ -70,7 +71,7 @@ const CONSULTED_WITH_COMPANIES = [
   { name: 'Support 305', logo: support305Logo },
   // { name: 'FBC', logo: null },
   // { name: 'Caribbean', logo: null }
-  { name: 'Caribbean', logo: null }
+  { name: 'Buccament', logo: buccamentLogo }
 ];
 
 // Hero Slideshow Images - NYC, LA, Caribbean
