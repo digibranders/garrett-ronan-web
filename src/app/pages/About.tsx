@@ -224,14 +224,16 @@ export default function About() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="group border-l-2 border-white/10 hover:border-[#c5a059] transition-all duration-300 pl-8 py-6"
               >
-                <div className="flex flex-col md:flex-row md:items-baseline md:justify-between gap-2 md:gap-8">
-                  <div className="flex-1">
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-baseline">
+                  <div className="md:col-span-5">
                     <h4 className="text-xl md:text-2xl font-serif text-white group-hover:text-[#c5a059] transition-colors">
                       {exp.role}
                     </h4>
                     <p className="text-[#c5a059] text-sm uppercase tracking-wider mt-1">{exp.company}</p>
                   </div>
-                  <p className="text-stone-400 text-sm md:text-base md:max-w-md">{exp.description}</p>
+                  <div className="md:col-span-7">
+                    <p className="text-stone-400 text-sm md:text-base">{exp.description}</p>
+                  </div>
                 </div>
               </motion.div>
             ))}
