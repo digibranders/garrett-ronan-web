@@ -24,4 +24,5 @@
 - Updated "Consulted With" section in `Home.tsx` to include "Buccament" logo.
 - Applied favicon assets by creating a `public` directory and updating `index.html` with correct links.
 - Renamed all logo assets in `src/assets/` from hashed filenames to meaningful names and updated imports in `Home.tsx`.
+- Refactored Experience Timeline in `About.tsx` to use a 12-column grid instead of flexbox for better alignment of roles and descriptions.
 - Verified build success with `npm run build`.
