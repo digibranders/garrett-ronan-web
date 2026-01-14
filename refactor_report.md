@@ -20,4 +20,6 @@
 - Applied grid alignment fix (`lg:col-start-2`) to center the "Additional Support" card below "Legal" on the Home page.
 - Reduced top padding of the "What We Do" section in `Home.tsx` to minimize whitespace.
 - Updated the "Schedule Your Complimentary Diagnostic Call" button text to force a 2-line layout for better visual balance.
+- Added `vercel.json` configuration to fix 404 errors on page refresh by rewriting all routes to `index.html`.
+- Updated "Consulted With" section in `Home.tsx` to include "Buccament" logo.
 - Verified build success with `npm run build`.
