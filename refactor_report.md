@@ -23,4 +23,5 @@
 - Added `vercel.json` configuration to fix 404 errors on page refresh by rewriting all routes to `index.html`.
 - Updated "Consulted With" section in `Home.tsx` to include "Buccament" logo.
 - Applied favicon assets by creating a `public` directory and updating `index.html` with correct links.
+- Renamed all logo assets in `src/assets/` from hashed filenames to meaningful names and updated imports in `Home.tsx`.
 - Verified build success with `npm run build`.
