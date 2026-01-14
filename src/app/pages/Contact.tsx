@@ -47,7 +47,9 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     company: '',
+    projectType: '',
     message: ''
   });
 
@@ -217,6 +219,22 @@ export default function Contact() {
                   />
                 </div>
 
+                {/* Phone */}
+                <div>
+                  <label htmlFor="phone" className="block text-stone-600 text-xs uppercase tracking-wider mb-3">
+                    Phone Number
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className="w-full bg-transparent border-b border-[#181818]/20 focus:border-[#c5a059] text-[#181818] py-3 transition-colors outline-none placeholder:text-stone-400"
+                    placeholder="+1 (555) 000-0000"
+                  />
+                </div>
+
                 {/* Company */}
                 <div>
                   <label htmlFor="company" className="block text-stone-600 text-xs uppercase tracking-wider mb-3">
@@ -230,6 +248,22 @@ export default function Contact() {
                     onChange={handleChange}
                     className="w-full bg-transparent border-b border-[#181818]/20 focus:border-[#c5a059] text-[#181818] py-3 transition-colors outline-none placeholder:text-stone-400"
                     placeholder="Your organization"
+                  />
+                </div>
+
+                {/* Project Type */}
+                <div>
+                  <label htmlFor="projectType" className="block text-stone-600 text-xs uppercase tracking-wider mb-3">
+                    Project Type
+                  </label>
+                  <input
+                    type="text"
+                    id="projectType"
+                    name="projectType"
+                    value={formData.projectType}
+                    onChange={handleChange}
+                    className="w-full bg-transparent border-b border-[#181818]/20 focus:border-[#c5a059] text-[#181818] py-3 transition-colors outline-none placeholder:text-stone-400"
+                    placeholder="e.g. Hotel, Restaurant, Development"
                   />
                 </div>
 
