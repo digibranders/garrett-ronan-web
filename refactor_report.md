@@ -13,4 +13,11 @@
 - Adjusted mission statement vertical line to be thinner (`w-[1px]`) and taller (`h-32 md:h-36`).
 - Reduced bottom padding of the "Our Work" section to minimize space below the mission statement.
 - Added "Phone Number" and "Project Type" fields to the contact form in `Contact.tsx`.
+- Implemented `ScrollToTop` component to fix scroll position on route changes and hash links.
+- Standardized navigation links in `Home.tsx` to handle cross-page hash navigation (`/#section`).
+- Centered the "Additional Support" card in `Services.tsx` list.
+- Fixed layout overlap issue for the "Schedule Call" button in `Home.tsx` by allowing text wrapping.
+- Applied grid alignment fix (`lg:col-start-2`) to center the "Additional Support" card below "Legal" on the Home page.
+- Reduced top padding of the "What We Do" section in `Home.tsx` to minimize whitespace.
+- Updated the "Schedule Your Complimentary Diagnostic Call" button text to force a 2-line layout for better visual balance.
 - Verified build success with `npm run build`.

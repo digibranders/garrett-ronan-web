@@ -68,7 +68,8 @@ const CONSULTED_WITH_COMPANIES = [
   { name: 'Meet Resident', logo: residentLogo },
   { name: 'Bakan', logo: bakanLogo },
   { name: 'Support 305', logo: support305Logo },
-  { name: 'FBC', logo: null },
+  // { name: 'FBC', logo: null },
+  // { name: 'Caribbean', logo: null }
   { name: 'Caribbean', logo: null }
 ];
 
@@ -273,12 +274,12 @@ export default function Home() {
           
           <div className="hidden md:flex items-center gap-16">
             {[
-              { label: 'Philosophy', href: '#philosophy' },
-              { label: 'Expertise', href: '#expertise' },
+              { label: 'Philosophy', href: '/#philosophy' },
+              { label: 'Expertise', href: '/#expertise' },
               { label: 'About', href: '/about' },
               { label: 'Services', href: '/services' }
             ].map((item, i) => (
-              item.href.startsWith('#') ? (
+              item.href.startsWith('/#') ? (
                 <a key={item.label} href={item.href} className="text-[10px] uppercase tracking-[0.3em] font-medium hover:text-[#c5a059] transition-colors relative group">
                   <span className="text-[#c5a059] mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">0{i+1}</span>
                   {item.label}
@@ -388,7 +389,7 @@ export default function Home() {
       </section>
 
       {/* What We Do Section - Enhanced with Background Images - NOW LIGHT */}
-      <section id="philosophy" className="py-32 md:py-48 bg-[#FFF7F2]">
+      <section id="philosophy" className="py-20 md:py-32 bg-[#FFF7F2]">
         <div className="container mx-auto px-6 md:px-12">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -413,7 +414,9 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group relative overflow-hidden bg-white border border-[#181818]/10 hover:border-[#c5a059] transition-all duration-500 hover:shadow-xl"
+                className={`group relative overflow-hidden bg-white border border-[#181818]/10 hover:border-[#c5a059] transition-all duration-500 hover:shadow-xl ${
+                  index === SERVICES_DATA.length - 1 ? 'lg:col-start-2' : ''
+                }`}
               >
                 {/* Image at the top */}
                 <div className="aspect-[4/3] overflow-hidden relative">
@@ -980,8 +983,8 @@ export default function Home() {
               className="flex justify-center lg:justify-end"
             >
               <Link to="/contact">
-                <Button className="bg-[#181818] text-white hover:bg-white hover:text-[#181818] px-8 py-6 text-sm uppercase tracking-[0.3em] font-bold transition-all duration-500 rounded-full">
-                  <span className="hidden md:inline">Schedule Your Complimentary Diagnostic Call</span>
+                <Button className="bg-[#181818] text-white hover:bg-white hover:text-[#181818] px-8 py-6 text-sm uppercase tracking-[0.3em] font-bold transition-all duration-500 rounded-full whitespace-normal h-auto text-center leading-normal">
+                  <span className="hidden md:inline">Schedule Your Complimentary<br />Diagnostic Call</span>
                   <span className="md:hidden">Schedule Free Call</span>
                 </Button>
               </Link>
