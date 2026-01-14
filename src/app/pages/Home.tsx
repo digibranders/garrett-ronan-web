@@ -5,36 +5,36 @@ import { Button } from '@/app/components/ui/button';
 import { Link } from 'react-router-dom';
 
 // Logo Import
-import logoImage from '@/assets/54b647c778f17f42e409842f22c6c7a9bd32e88b.png';
+import logoImage from '@/assets/gkr-logo.png';
 
 // Employed By Logos
-import beverlyHiltonLogo from '@/assets/294a79a166a37946a6ea3f65fcb6154e4ea18028.png';
-import starrRestaurantsLogo from '@/assets/641ac9708c4149143d1ee9d0c05779519bdf6790.png';
-import equinoxHotelsLogo from '@/assets/d272f3b95abfb46e75ba80c0f0ae9f82589f172a.png';
-import rokaLogo from '@/assets/e270abfd1450180af1f3b9da34ef8066405ec080.png';
-import zumaLogo from '@/assets/3dab84e89b131499b255416898a1793fadab22a3.png';
-import etaruLogo from '@/assets/5065532a65a814bece1ca2162d1c6a3c26b3fdb2.png';
-import inkoNitoLogo from '@/assets/41bb6a1ec14b924aad438e60a52022ad1d4b9ccd.png';
-import oblixLogo from '@/assets/a79162e968bb077fe25dd9d7fb06474776067b9f.png';
-import movenpickLogo from '@/assets/3a7fe7dc9a162df2f1f26108da6b0f2a390fe7ca.png';
-import adareManorLogo from '@/assets/3c7504f73c05b1f65141e7fc376d8459b35b2aab.png';
-import swallowHotelsLogo from '@/assets/78b43e0bdb85efac10447a6fe6fbe5e2cf887c4d.png';
-import principalHotelsLogo from '@/assets/253eeafdb1386b070cd8541ff7c6d251e71de5a0.png';
-import waldorfAstoriaLogo from '@/assets/d482d5881b5afd3ac085f4f901390579289bc95f.png';
-import bostonHarborHotelLogo from '@/assets/e454a4a492e3906480f22abc560f9b44864fc108.png';
-import etcVenuesLogo from '@/assets/72dbee8b56ba19274398d03ca9cab8c4db3886d0.png';
-import conveneLogo from '@/assets/9330e58e67562e618270ede081f18fdbf6c444f7.png';
+import beverlyHiltonLogo from '@/assets/beverly-hilton.png';
+import starrRestaurantsLogo from '@/assets/starr-restaurants.png';
+import equinoxHotelsLogo from '@/assets/equinox-hotels.png';
+import rokaLogo from '@/assets/roka.png';
+import zumaLogo from '@/assets/zuma.png';
+import etaruLogo from '@/assets/etaru.png';
+import inkoNitoLogo from '@/assets/inko-nito.png';
+import oblixLogo from '@/assets/oblix.png';
+import movenpickLogo from '@/assets/movenpick.png';
+import adareManorLogo from '@/assets/adare-manor.png';
+import swallowHotelsLogo from '@/assets/swallow-hotels.png';
+import principalHotelsLogo from '@/assets/principal-hotels.png';
+import waldorfAstoriaLogo from '@/assets/waldorf-astoria.png';
+import bostonHarborHotelLogo from '@/assets/boston-harbor-hotel.png';
+import etcVenuesLogo from '@/assets/etc-venues.png';
+import conveneLogo from '@/assets/convene.png';
 
 // Consulted With Logos
-import bakanLogo from '@/assets/92b31a05b60c6e62f400ff10221441334ec3f327.png';
-import support305Logo from '@/assets/a6ef1ce4dcb93298217bf771c5272414be3ead3a.png';
-import zumaConsultedLogo from '@/assets/f544f1126084e0a08e5049d5d2910a9329d5d702.png';
-import bxpLogo from '@/assets/114297a31d60e23d001ec1f92711d71c6023a6de.png';
-import rudinLogo from '@/assets/f4a7cb4ec85330f2ce228b47a00cdc0f130d3cc7.png';
-import blaceLogo from '@/assets/d252ac5998701099104c56c3f44254efbde0820b.png';
-import residentLogo from '@/assets/b7505be62114bd74130d9a72831b3c5ce8fa464f.png';
-import affectLogo from '@/assets/f771fb5c6bb67581dbf98bc2f69218f9384f2182.png';
-import sageLogo from '@/assets/006460939252a7050e1760ef2baf7c43b6f16a1f.png';
+import bakanLogo from '@/assets/bakan.png';
+import support305Logo from '@/assets/support-305.png';
+import zumaConsultedLogo from '@/assets/zuma-consulted.png';
+import bxpLogo from '@/assets/bxp.png';
+import rudinLogo from '@/assets/rudin.png';
+import blaceLogo from '@/assets/blace.png';
+import residentLogo from '@/assets/meet-resident.png';
+import affectLogo from '@/assets/affect-group.png';
+import sageLogo from '@/assets/sage-hospitality.png';
 import buccamentLogo from '@/assets/buccament.png';
 
 // Employed By Companies - Logo or Text
