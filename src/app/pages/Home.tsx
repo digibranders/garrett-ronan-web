@@ -64,7 +64,6 @@ const CONSULTED_WITH_COMPANIES = [
   { name: 'MDC', logo: null },
   { name: 'Affect Group', logo: affectLogo },
   { name: 'Sage Hospitality', logo: sageLogo },
-  { name: 'SSI Group', logo: null },
   { name: 'BLACE', logo: blaceLogo },
   { name: 'Meet Resident', logo: residentLogo },
   { name: 'Bakan', logo: bakanLogo },
@@ -84,37 +83,37 @@ const HERO_IMAGES = [
 const SERVICES_DATA = [
   {
     title: "Concept Creation",
-    description: "We turn early ideas into clear, market-ready hospitality concepts that actually work.",
+    description: "We help guide your hospitality concepts from ideation through to delivering market ready, creative results.",
     bgImage: "https://images.unsplash.com/photo-1759472659432-3232e42d04d2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBob3RlbCUyMGRlc2lnbiUyMGNvbmNlcHR8ZW58MXx8fHwxNzY4Mjk2NjEwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
   },
   {
     title: "Capital & Growth Investment",
-    description: "We support smart growth through capital sourcing, M&A, and investor-ready business planning.",
+    description: "We provide strategic advice  and guidance on growth and investment, capital sourcing, M&A’s and investor-ready business plans.",
     bgImage: "https://images.unsplash.com/photo-1758519289559-f4d0ead39634?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMGludmVzdG1lbnQlMjBtZWV0aW5nfGVufDF8fHx8MTc2ODI4Mjc4MHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
   },
   {
     title: "Design, Development & Construction",
-    description: "We align design, budgets, and build execution so projects look right and function properly.",
+    description: "We provide skilled “Owners Rep” oversight through each phase of design and construction to deliver successful Projects.",
     bgImage: "https://images.unsplash.com/photo-1685382807533-9bd52421457c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcmNoaXRlY3R1cmUlMjBjb25zdHJ1Y3Rpb24lMjBsdXh1cnl8ZW58MXx8fHwxNzY4Mjk2NjExfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
   },
   {
     title: "Operations",
-    description: "We build and fix hospitality operations that perform consistently, before and after opening.",
+    description: "We help deliver end-to-end operations excellence and efficiency from pre and post opening to ongoing operational management.",
     bgImage: "https://images.unsplash.com/photo-1762113246607-4299ec3f3214?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZXN0YXVyYW50JTIwa2l0Y2hlbiUyMG9wZXJhdGlvbnMlMjBjaGVmfGVufDF8fHx8MTc2ODI4NDk0MHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
   },
   {
     title: "Legal",
-    description: "We manage the legal foundations that protect deals, teams, and long-term operations.",
+    description: "We help you manage the legal foundations that protect your deals, teams, and long-term operations.",
     bgImage: "https://images.unsplash.com/photo-1564846824194-346b7871b855?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsZWdhbCUyMGNvbnRyYWN0JTIwZG9jdW1lbnRzJTIwYnVzaW5lc3N8ZW58MXx8fHwxNzY4Mjk2NjEwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
   },
   {
     title: "Financial",
-    description: "We bring clarity to budgets, costs, profitability, and exit decisions.",
+    description: "We provide end-to-end insightful financial guidance, including budgeting, forecasting, audits, cost control, efficiency and profitability.",
     bgImage: "https://images.unsplash.com/photo-1762427354051-a9bdb181ae3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaW5hbmNpYWwlMjBhY2NvdW50aW5nJTIwYW5hbHlzaXN8ZW58MXx8fHwxNzY4MTk1NTkxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
   },
   {
     title: "Additional Support",
-    description: "We provide targeted support wherever the business needs experienced operator oversight.",
+    description: "We provide targeted support wherever your business needs experienced hospitality operator oversight.",
     bgImage: "https://images.unsplash.com/photo-1766808985890-e564439e39a7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxob3RlbCUyMHN0YWZmJTIwdHJhaW5pbmclMjB0ZWFtfGVufDF8fHx8MTc2ODI4NDk0MXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
   }
 ];
@@ -375,12 +374,12 @@ export default function Home() {
             transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
           >
             <h1 className="text-6xl md:text-8xl font-serif font-light text-white leading-[1.1] tracking-tight mb-12 max-w-6xl">
-              Creative Thought, Clarity, Structure, and Hands-On <span className="text-[#c5a059] italic">Execution</span>
+              Simply Practical Yet Creative  <span className="text-[#c5a059] italic">Solutions</span>
             </h1>
 
             <Link to="/contact">
               <Button className="bg-[#c5a059] text-[#181818] hover:opacity-90 px-10 py-6 text-xs uppercase tracking-[0.3em] font-bold transition-all duration-500 rounded-full">
-                <span className="hidden md:inline">Schedule Your Free Diagnostic Call</span>
+                <span className="hidden md:inline">Schedule Your Complimentary Diagnostic Call</span>
                 <span className="md:hidden">Schedule Free Call</span>
               </Button>
             </Link>
@@ -399,8 +398,11 @@ export default function Home() {
           >
             <span className="block text-[#c5a059] text-[10px] tracking-[0.4em] uppercase mb-6 font-bold">What We Do</span>
             <h2 className="text-5xl md:text-7xl font-serif leading-tight text-[#181818] mb-8 max-w-4xl">
-              We provide direct, hands-on practical consulting expertise across key project and business core areas to ensure your properties don't just run, they <span className="italic text-[#c5a059]">thrive</span>.
+              We take a creative, yet simply practical, hands-on consultative approach to ensure your properties and projects don't just run, they <span className="italic text-[#c5a059]">thrive</span>.
             </h2>
+            <p className="text-[#181818] text-lg leading-relaxed mb-8">
+                We will support you at every stage of your project and life cycle of your asset development including but not limited to….
+              </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -491,7 +493,7 @@ export default function Home() {
               <div className="text-5xl md:text-7xl font-serif text-[#c5a059] mb-4">
                 100<span className="text-3xl">%</span>
               </div>
-              <p className="text-stone-400 text-sm uppercase tracking-wider">Practical</p>
+              <p className="text-stone-400 text-sm uppercase tracking-wider">Delivery</p>
             </motion.div>
 
             <motion.div
@@ -516,20 +518,28 @@ export default function Home() {
             transition={{ delay: 0.4 }}
             className="text-center mt-16 pt-16 border-t border-white/10"
           >
-            <p className="text-stone-400 text-sm uppercase tracking-wider mb-4">Key Markets</p>
+            <p className="text-stone-400 text-sm uppercase tracking-wider mb-4">Key Markets & Experience</p>
             <div className="flex flex-wrap justify-center gap-6 md:gap-12">
               <span className="text-2xl md:text-3xl font-serif text-white">New York</span>
               <span className="text-[#c5a059]">•</span>
               <span className="text-2xl md:text-3xl font-serif text-white">Los Angeles</span>
               <span className="text-[#c5a059]">•</span>
-              <span className="text-2xl md:text-3xl font-serif text-white">Caribbean</span>
+              <span className="text-2xl md:text-3xl font-serif text-white">Miami</span>
+              <span className="text-[#c5a059]">•</span>
+              <span className="text-2xl md:text-3xl font-serif text-white">Las Vegas</span>
+              <span className="text-[#c5a059]">•</span>
+              <span className="text-2xl md:text-3xl font-serif text-white">Charleston</span>
+              <span className="text-[#c5a059]">•</span>
+              <span className="text-2xl md:text-3xl font-serif text-white">Dublin</span>
+              <span className="text-[#c5a059]">•</span>
+              <span className="text-2xl md:text-3xl font-serif text-white">London</span>
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* Portfolio Projects Section */}
-      <section className="py-32 md:py-48 bg-[#080a0f]">
+      <section className="pt-32 pb-16 md:pt-48 md:pb-24 bg-[#080a0f]">
         <div className="container mx-auto px-6 md:px-12">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -568,6 +578,21 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="mt-20 max-w-4xl mx-auto"
+          >
+            <div className="flex gap-6 md:gap-8 items-start md:items-center">
+              <div className="w-[1px] h-32 md:h-36 bg-[#c5a059] flex-shrink-0"></div>
+              <p className="text-2xl md:text-3xl font-serif text-stone-300 italic leading-relaxed">
+                GKR Hospitality is here to support. We offer the depth and breadth of experience in consulting and advisory services needed for every phase of your project and Asset ownership
+              </p>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -955,8 +980,8 @@ export default function Home() {
               className="flex justify-center lg:justify-end"
             >
               <Link to="/contact">
-                <Button className="bg-[#181818] text-white hover:bg-white hover:text-[#181818] px-12 py-8 text-sm uppercase tracking-[0.3em] font-bold transition-all duration-500 rounded-full">
-                  <span className="hidden md:inline">Schedule Your Free Diagnostic Call</span>
+                <Button className="bg-[#181818] text-white hover:bg-white hover:text-[#181818] px-8 py-6 text-sm uppercase tracking-[0.3em] font-bold transition-all duration-500 rounded-full">
+                  <span className="hidden md:inline">Schedule Your Complimentary Diagnostic Call</span>
                   <span className="md:hidden">Schedule Free Call</span>
                 </Button>
               </Link>
