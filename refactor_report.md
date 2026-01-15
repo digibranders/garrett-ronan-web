@@ -81,4 +81,5 @@
   - Generated custom SVG icons for contact details in the correct Gold color.
 - **Content Update**: Updated "How We Work" section in `src/app/page.tsx` with refined copy for all 5 steps.
 - **Bug Fix**: Fixed syntax error in `src/app/gallery/page.tsx` (unexpected `{9`).
-- **Outlook Compatibility**: Updated `public/email-signature/generate_signature.py` to use GitHub Raw URLs (pointing to `dev` branch) and regenerated `garrett.html` with VML support for Outlook compatibility.
+- **Outlook Compatibility**: Updated `public/email-signature/generate_signature.py` to use GitHub Raw URLs (pointing to `dev` branch) and transitioned to a single Full Image Signature (Light/Dark variants) for pixel-perfect rendering and copying in Outlook.
+- **Assets**: Added `Sign_Light.png` and `Sign_Dark.png` to `public/email-signature/new/` and linked them in the generated HTML.
