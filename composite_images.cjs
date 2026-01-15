@@ -33,6 +33,19 @@ async function createComposite(castlePath, outPath) {
             .toBuffer();
 
         // 3. Composite
+        // We will stick to simple absolute positioning to be safe.
+        // Canvas is 300x300.
+        
+        // Castle: 260x260 (approx). Position at bottom right (40, 40) to (300, 300)? 
+        // Actually let's just use gravity 'southeast' which is reliable.
+        // Canvas 300x300
+        // Castle width 260.
+        // Monogram width 75.
+        
+        // We want them bottom-right aligned.
+        // Castle max dimensions: 260x approx 220?
+        // Let's get metadata to be sure, or just rely on 'southeast' gravity with the clean array below.
+        
         await sharp({
             create: {
                 width: WIDTH,
@@ -44,20 +57,14 @@ async function createComposite(castlePath, outPath) {
         .composite([
             {
                 input: castle,
-                gravity: 'southeast', // Bottom-Right
-                left: 40, // Offset from left (300 - 260 = 40) aligned right effectively
-                top: 100 // Push it down a bit? Or just use gravity 'southeast'
-            },
-            // Actually, let's use explicit positioning for control
-            {
-                input: castle,
-                gravity: 'southeast',
-                // Adjust these if needed. gravity southeast puts it in bottom right corner.
+                gravity: 'southeast', 
+                // No extra offsets, just jam it in the corner.
             },
             {
                 input: monogram,
                 gravity: 'southeast',
-                top: -10, // Slight padding from bottom?
+                // Move it slightly up and left from the corner so it's not touching the edge
+                top: -10, 
                 left: -10
             }
         ])

@@ -55,12 +55,12 @@
     </style>
 </head>
 <body>
-    <table cellpadding="0" cellspacing="0" border="0" width="600" style="width: 600px; border-collapse: collapse; font-family: 'Montserrat', sans-serif;">
+    <table cellpadding="0" cellspacing="0" border="0" width="600" height="300" style="width: 600px; height: 300px; border-collapse: collapse; font-family: 'Montserrat', sans-serif;">
         <tr>
-            <td class="signature-container" valign="top" style="padding: 35px 40px; box-sizing: border-box;">
+            <td class="signature-container" valign="top" style="padding: 35px 40px; box-sizing: border-box; height: 300px;">
                 
                 <!-- Inner Layout -->
-                <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                <table cellpadding="0" cellspacing="0" border="0" width="100%" height="100%">
                     <!-- Line 1: Logo -->
                     <tr>
                         <td align="left" style="padding-bottom: 20px;" colspan="2"> 
@@ -76,8 +76,8 @@
 
                     <!-- Line 3: Content Row -->
                     <tr>
-                        <!-- Left Col: Contact Info -->
-                        <td valign="bottom" width="260">
+                        <!-- Left Col: Contact Info (Aligned Bottom) -->
+                        <td valign="bottom" width="280" style="padding-bottom: 4px;"> <!-- slight padding to align with image baseline -->
                             <table cellpadding="0" cellspacing="0" border="0">
                                 <!-- Address -->
                                 <tr>
@@ -118,22 +118,10 @@
                             </table>
                         </td>
                         
-                        <!-- Right Col: Castle + Monogram -->
-                        <!-- Using side-by-side nested table to ensure alignment and fit -->
-                        <td align="right" valign="bottom" width="260">
-                            <table cellpadding="0" cellspacing="0" border="0">
-                                <tr>
-                                    <!-- Castle -->
-                                    <td valign="bottom" align="right" style="padding-right: 15px;">
-                                        <img src="https://raw.githubusercontent.com/digibranders/garrett-ronan-web/dev/public/email-signature/Castle%20Light.png" class="castle-light" alt="" width="160" style="display: block; border: 0;">
-                                        <img src="https://raw.githubusercontent.com/digibranders/garrett-ronan-web/dev/public/email-signature/Castle%20Dark.png" class="castle-dark" alt="" width="160" style="display: none; border: 0;">
-                                    </td>
-                                    <!-- Monogram -->
-                                    <td valign="bottom" align="right">
-                                        <img src="https://raw.githubusercontent.com/digibranders/garrett-ronan-web/dev/public/email-signature/Favicon%20Gold.png" alt="GR" width="60" style="display: block; border: 0;">
-                                    </td>
-                                </tr>
-                            </table>
+                        <!-- Right Col: Composite Image (Aligned Bottom-Right) -->
+                        <td align="right" valign="bottom" width="240">
+                             <img src="https://raw.githubusercontent.com/digibranders/garrett-ronan-web/dev/public/email-signature/Right_Composite_Light.png" class="castle-light" alt="" width="240" height="240" style="display: block; border: 0; max-width: 100%;">
+                             <img src="https://raw.githubusercontent.com/digibranders/garrett-ronan-web/dev/public/email-signature/Right_Composite_Dark.png" class="castle-dark" alt="" width="240" height="240" style="display: none; border: 0; max-width: 100%;">
                         </td>
                     </tr>
                 </table>

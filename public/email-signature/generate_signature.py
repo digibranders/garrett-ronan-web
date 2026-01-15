@@ -4,9 +4,8 @@ REPO_BASE = "https://raw.githubusercontent.com/digibranders/garrett-ronan-web/de
 
 URL_LOGO_BLUE = f"{REPO_BASE}/GR_Blue.png"
 URL_LOGO_WHITE = f"{REPO_BASE}/GR_White.png"
-URL_CASTLE_LIGHT = f"{REPO_BASE}/Castle%20Light.png"
-URL_CASTLE_DARK = f"{REPO_BASE}/Castle%20Dark.png"
-URL_FAVICON = f"{REPO_BASE}/Favicon%20Gold.png"
+URL_RIGHT_LIGHT = f"{REPO_BASE}/Right_Composite_Light.png"
+URL_RIGHT_DARK = f"{REPO_BASE}/Right_Composite_Dark.png"
 
 OUTPUT_FILE = '/Users/apple/Desktop/AI/garrett-ronan-web/public/email-signature/garrett.html'
 
@@ -86,12 +85,12 @@ html_content = f'''<!DOCTYPE html>
     </style>
 </head>
 <body>
-    <table cellpadding="0" cellspacing="0" border="0" width="600" style="width: 600px; border-collapse: collapse; font-family: 'Montserrat', sans-serif;">
+    <table cellpadding="0" cellspacing="0" border="0" width="600" height="300" style="width: 600px; height: 300px; border-collapse: collapse; font-family: 'Montserrat', sans-serif;">
         <tr>
-            <td class="signature-container" valign="top" style="padding: 35px 40px; box-sizing: border-box;">
+            <td class="signature-container" valign="top" style="padding: 35px 40px; box-sizing: border-box; height: 300px;">
                 
                 <!-- Inner Layout -->
-                <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                <table cellpadding="0" cellspacing="0" border="0" width="100%" height="100%">
                     <!-- Line 1: Logo -->
                     <tr>
                         <td align="left" style="padding-bottom: 20px;" colspan="2"> 
@@ -107,8 +106,8 @@ html_content = f'''<!DOCTYPE html>
 
                     <!-- Line 3: Content Row -->
                     <tr>
-                        <!-- Left Col: Contact Info -->
-                        <td valign="bottom" width="260">
+                        <!-- Left Col: Contact Info (Aligned Bottom) -->
+                        <td valign="bottom" width="280" style="padding-bottom: 4px;"> <!-- slight padding to align with image baseline -->
                             <table cellpadding="0" cellspacing="0" border="0">
                                 <!-- Address -->
                                 <tr>
@@ -149,22 +148,10 @@ html_content = f'''<!DOCTYPE html>
                             </table>
                         </td>
                         
-                        <!-- Right Col: Castle + Monogram -->
-                        <!-- Using side-by-side nested table to ensure alignment and fit -->
-                        <td align="right" valign="bottom" width="260">
-                            <table cellpadding="0" cellspacing="0" border="0">
-                                <tr>
-                                    <!-- Castle -->
-                                    <td valign="bottom" align="right" style="padding-right: 15px;">
-                                        <img src="{URL_CASTLE_LIGHT}" class="castle-light" alt="" width="160" style="display: block; border: 0;">
-                                        <img src="{URL_CASTLE_DARK}" class="castle-dark" alt="" width="160" style="display: none; border: 0;">
-                                    </td>
-                                    <!-- Monogram -->
-                                    <td valign="bottom" align="right">
-                                        <img src="{URL_FAVICON}" alt="GR" width="60" style="display: block; border: 0;">
-                                    </td>
-                                </tr>
-                            </table>
+                        <!-- Right Col: Composite Image (Aligned Bottom-Right) -->
+                        <td align="right" valign="bottom" width="240">
+                             <img src="{URL_RIGHT_LIGHT}" class="castle-light" alt="" width="240" height="240" style="display: block; border: 0; max-width: 100%;">
+                             <img src="{URL_RIGHT_DARK}" class="castle-dark" alt="" width="240" height="240" style="display: none; border: 0; max-width: 100%;">
                         </td>
                     </tr>
                 </table>
