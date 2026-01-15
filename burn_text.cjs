@@ -22,23 +22,20 @@ const TXT_MAIL = "garrett@GKRHospitality.com";
 const TXT_TEL = "+1-917-460-5793";
 const TXT_WEB = "www.GKRHospitality.com";
 
-// Coordinates (Scaled for 600px width from 750px source)
-// Scale factor = 600 / 750 = 0.8
-// Original Ys: ~156, 189, 222, 255
-// New Ys: 125, 151, 178, 204
-// Icon X: 32 * 0.8 = 26
-// Text X: 56 * 0.8 = 45
+// Coordinates (Original 750x300)
+// Icons X: ~32px (5.2%)
+// Text X: ~56px
+// Row Ys: 156, 189, 222, 255
 
-const ICON_X = 26;
-const TEXT_X = 45;
-const ROWS_Y = [125, 151, 178, 204];
+const ICON_X = 32;
+const TEXT_X = 56;
+const ROWS_Y = [156, 189, 222, 255];
 
 function createTextSVG(text, color, y) {
-    // Basic sans-serif font, using SVG text
-    // Scaled font size slightly to 13 to match proportion better
+    // Basic sans-serif font
     return `
-    <svg width="500" height="30">
-        <text x="0" y="20" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="500" fill="${color}">${text}</text>
+    <svg width="600" height="30">
+        <text x="0" y="20" font-family="sans-serif" font-size="14" font-weight="500" fill="${color}">${text}</text>
     </svg>
     `;
 }
@@ -49,9 +46,10 @@ async function processImage(inputPath, outputPath, textColor) {
         return;
     }
 
-    // Load background
-    // Resize to width 600, maintain aspect ratio (height ~240)
-    let pipeline = sharp(inputPath).resize({ width: 600 });
+    // Load background - NO RESIZE
+    let pipeline = sharp(inputPath);
+    
+    // Ensure we are working with correct density? Default is usually fine.
 
     const composites = [];
 
