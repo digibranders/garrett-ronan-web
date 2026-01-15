@@ -114,9 +114,15 @@
     - Consolidated contact info into a single table with rigid column widths (20px icon, auto text) and spacer rows (`height="8"`) for consistent cross-client rendering.
   - **Alignment Improvements**:
     - Consolidated contact info into a single table with rigid column widths (20px icon, auto text) and spacer rows (`height="8"`) for consistent cross-client rendering.
-    - Set Left Column vertical alignment to `middle` to center content relative to the Castle, improving visual balance.
-    - Removed `padding-top` from Left Column to eliminate extra top spacing.
+  - **Alignment Improvements**:
+    - Consolidated contact info into a single table with rigid column widths (20px icon, auto text) and spacer rows (`height="8"`) for consistent cross-client rendering.
+    - Set Left Column vertical alignment to `top` to remove extra separation from the top edge.
+    - Removed `height: 300px` from main table to eliminate extra "outside" space at the bottom (shrink-wrap behavior).
+    - Removed `padding-top` from Left Column.
     - Adjusted vertical separation between Signature and Contact Info to `padding-bottom: 10px`.
+    - **Castle Alignment**: Applied `padding-bottom: 65px` to align the castle's bottom edge with the Website address line.
+    - Adjusted Castle position: moved further Left (70px).
+    - Revised Column Widths: Left (300px) / Right (300px).
     - **Castle Alignment**: Applied `padding-bottom: 65px` to align the castle's bottom edge with the Website address line.
     - Adjusted Castle position: moved further Left (70px).
     - Revised Column Widths: Left (300px) / Right (300px).
