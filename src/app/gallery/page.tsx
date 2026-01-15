@@ -11,13 +11,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 const GALLERY_ITEMS = [
   {
     id: 1,
-    title: 'Modern Hotel Lobby',
+    title: 'Adare Manor',
     description: 'A luxurious and welcoming lobby design that sets the tone for the guest experience. Featuring warm lighting and contemporary furniture.',
     link: 'https://examples.com/project-1',
     images: [
-      'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1200&auto=format&fit=crop'
+      '/assests/images/gallery/adare_01.png',
+      '/assests/images/gallery/adare_02.png',
     ]
   },
   {
