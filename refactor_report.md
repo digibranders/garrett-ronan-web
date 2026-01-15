@@ -46,3 +46,31 @@
 - **UI Polish**: Reduced Navbar padding and adjusted logo size for better visual alignment.
 - **Assets**: Explicitly configured favicon icons in `layout.tsx` metadata.
 - **Status**: Stable build.
+
+## 2026-01-15
+
+- **Navbar Alignment**: Updated `Navbar.tsx` to match the reference design:
+  - Added "Philosophy" and "Expertise" links.
+  - Implemented numbered hover effect.
+  - Updated font sizes and spacing.
+  - Styled "Inquire" button as rounded "CONTACT US".
+- **Footer Alignment**: Completely replaced `Footer.tsx` with 3-column reference layout ("Inquiries", "Office", "Connect").
+- **Logo Correction**:
+  - Replaced `gkr-logo.png` with the exact asset from the reference repository.
+  - Switched `Navbar` and `Footer` logo rendering from `next/image` to standard `<img>` tags to ensure identical sizing behavior to the reference site.
+- **Visual Validation**: Confirmed correct background colors (`#181818`) and logo positioning.
+- **Gallery Page Implementation**:
+  - Created `src/app/gallery/page.tsx` with masonry grid layout using `react-responsive-masonry`.
+  - Implemented full-screen details modal using `@radix-ui/react-dialog`.
+  - Added "Gallery" link to `Navbar.tsx`.
+  - Populated with mock data and placeholder images.
+  - Verified build success.
+- **Refinement**: Updated Gallery modal to be true full-screen (`w-screen h-screen`) removing all borders and rounding.
+- **Gallery Enhancements**:
+  - Added Next/Previous keyboard and on-screen navigation to the details modal (Desktop arrows **always visible**).
+  - Removed grayscale filter from grid images (full color by default).
+  - Updated Hero typography to match the Services page style (Label + Serif Heading + Italic Accent).
+  - Aligned Gallery page title to the **left** (previously centered).
+  - **Case Study Logic**: Refactored gallery items to contain multiple images. Modal navigation now cycles through images within the selected case study.
+  - **Refined Mobile UI**: Hidden the overlay image counter on mobile. Implemented **sticky image header** on mobile so the image stays at the top while content scrolls below it.
+- **Footer Updates**: Removed "Instagram" and "Behance" links; added "X" link. Updated all social links with correct URLs.

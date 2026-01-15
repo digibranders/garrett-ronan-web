@@ -21,36 +21,41 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const NAV_ITEMS = [
+    { label: 'Philosophy', href: '/#philosophy' },
+    { label: 'Expertise', href: '/#expertise' },
+    { label: 'Gallery', href: '/gallery' },
+    { label: 'About', href: '/about' },
+    { label: 'Services', href: '/services' }
+  ];
+
   return (
     <>
-      <nav className={`fixed top-0 w-full z-50 transition-all duration-700 ${scrolled ? 'bg-[#181818]/95 backdrop-blur-xl py-4 border-b border-white/10 shadow-lg' : 'bg-[#181818]/60 backdrop-blur-md py-6'}`}>
+      <nav className={`fixed top-0 w-full z-50 transition-all duration-700 ${scrolled ? 'bg-[#181818]/95 backdrop-blur-xl py-4 border-b border-white/10 shadow-lg' : 'bg-[#181818]/60 backdrop-blur-md py-8'}`}>
         <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
           <div className="flex items-center gap-4">
-             <Link href="/"><Image src={logoImage} alt="GKR" className={`object-contain transition-all duration-500 ${scrolled ? 'h-10' : 'h-16'} brightness-0 invert`} /></Link>
+             <Link href="/"><img src={logoImage.src} alt="GKR" className={`object-contain transition-all duration-500 ${scrolled ? 'h-10' : 'h-14'} brightness-0 invert`} /></Link>
           </div>
           
           <div className="hidden md:flex items-center gap-16">
-            <div className="flex gap-12 text-xs uppercase tracking-[0.2em] font-medium text-stone-300">
-              <Link href="/about" className="hover:text-[#c5a059] transition-colors relative group">
-                About
-                <span className="absolute -bottom-2 left-0 w-0 h-[1px] bg-[#c5a059] transition-all duration-300 group-hover:w-full"></span>
-              </Link>
-              <Link href="/services" className="hover:text-[#c5a059] transition-colors relative group">
-                Services
-                <span className="absolute -bottom-2 left-0 w-0 h-[1px] bg-[#c5a059] transition-all duration-300 group-hover:w-full"></span>
-              </Link>
-              <Link href="/contact" className="hover:text-[#c5a059] transition-colors relative group">
-                Contact
-                <span className="absolute -bottom-2 left-0 w-0 h-[1px] bg-[#c5a059] transition-all duration-300 group-hover:w-full"></span>
-              </Link>
+            <div className="flex gap-16">
+              {NAV_ITEMS.map((item, i) => (
+                <Link 
+                  key={item.label} 
+                  href={item.href} 
+                  className="text-[10px] uppercase tracking-[0.3em] font-medium text-stone-300 hover:text-[#c5a059] transition-colors relative group"
+                >
+                  <span className="text-[#c5a059] mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute -left-6">0{i+1}</span>
+                  {item.label}
+                </Link>
+              ))}
             </div>
             
             <Link href="/contact">
               <Button 
-                variant="outline" 
-                className="border-[#c5a059] text-[#c5a059] hover:bg-[#c5a059] hover:text-white rounded-none px-8 py-6 text-xs uppercase tracking-[0.2em] transition-all duration-300"
+                className="bg-transparent border border-[#c5a059] text-[#c5a059] hover:bg-[#c5a059] hover:text-[#181818] rounded-full px-8 py-6 tracking-[0.2em] text-[10px] font-bold transition-all duration-500"
               >
-                Inquire
+                CONTACT US
               </Button>
             </Link>
           </div>
@@ -91,31 +96,27 @@ export default function Navbar() {
             >
               <Link 
                 href="/" 
-                className="text-2xl font-light tracking-[0.2em] hover:text-[#c5a059] transition-colors"
+                className="text-xl font-light tracking-[0.2em] hover:text-[#c5a059] transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Home
+                <span className="text-[#c5a059] mr-3">00</span> Home
               </Link>
-              <Link 
-                href="/about" 
-                className="text-2xl font-light tracking-[0.2em] hover:text-[#c5a059] transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                About
-              </Link>
-              <Link 
-                href="/services" 
-                className="text-2xl font-light tracking-[0.2em] hover:text-[#c5a059] transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Services
-              </Link>
+              {NAV_ITEMS.map((item, i) => (
+                <Link 
+                  key={item.label}
+                  href={item.href} 
+                  className="text-xl font-light tracking-[0.2em] hover:text-[#c5a059] transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <span className="text-[#c5a059] mr-3">0{i+1}</span> {item.label}
+                </Link>
+              ))}
               <Link 
                 href="/contact" 
-                className="text-2xl font-light tracking-[0.2em] hover:text-[#c5a059] transition-colors"
+                className="text-xl font-light tracking-[0.2em] hover:text-[#c5a059] transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Contact
+                <span className="text-[#c5a059] mr-3">0{NAV_ITEMS.length + 1}</span> Contact
               </Link>
             </motion.div>
           </motion.div>
