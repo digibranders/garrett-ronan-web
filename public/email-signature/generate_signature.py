@@ -2,11 +2,11 @@
 # IMPORTANT: These point to the 'dev' branch.
 REPO_BASE = "https://raw.githubusercontent.com/digibranders/garrett-ronan-web/dev/public/email-signature"
 
-URL_LOGO_BLUE = f"{REPO_BASE}/GR_Blue.svg"
-URL_LOGO_WHITE = f"{REPO_BASE}/GR_White.svg"
-URL_CASTLE_LIGHT = f"{REPO_BASE}/Castle%20Light.svg"
-URL_CASTLE_DARK = f"{REPO_BASE}/Castle%20Dark.svg"
-URL_FAVICON = f"{REPO_BASE}/Favicon%20Gold.svg"
+URL_LOGO_BLUE = f"{REPO_BASE}/GR_Blue.png"
+URL_LOGO_WHITE = f"{REPO_BASE}/GR_White.png"
+URL_CASTLE_LIGHT = f"{REPO_BASE}/Castle%20Light.png"
+URL_CASTLE_DARK = f"{REPO_BASE}/Castle%20Dark.png"
+URL_FAVICON = f"{REPO_BASE}/Favicon%20Gold.png"
 
 OUTPUT_FILE = '/Users/apple/Desktop/AI/garrett-ronan-web/public/email-signature/garrett.html'
 
