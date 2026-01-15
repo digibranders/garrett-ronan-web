@@ -6,7 +6,7 @@ import { ArrowUpRight } from 'lucide-react';
 import { Button } from '@/app/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
-import logoImage from '@/assets/gkr-logo.png';
+import logoImage from '@/assets/images/gkr-logo.png';
 
 const SERVICES_DATA = [
   {

@@ -8,11 +8,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 // Logo Import
-import logoImage from '@/assets/gkr-logo.png';
+import logoImage from '@/assets/images/gkr-logo.png';
 // Garrett Ronan image
-import garrettImage from '@/assets/garrett-ronan.png';
+import garrettImage from '@/assets/images/garrett-ronan.png';
 // Garrett signature
-import signatureImage from '@/assets/signature.png';
+import signatureImage from '@/assets/images/signature.png';
 
 const ABOUT_IMAGES = {
   founder: "https://images.unsplash.com/photo-1601489865452-407a1b801dde?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBidXNpbmVzc21hbnxlbnwxfHx8fDE3NjgxODkwMzV8MA&ixlib=rb-4.1.0&q=80&w=1080",

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import logoImage from '@/assets/gkr-logo.png';
+import logoImage from '@/assets/images/gkr-logo.png';
 
 export default function Footer() {
   return (

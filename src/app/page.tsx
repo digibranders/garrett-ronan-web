@@ -8,37 +8,37 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 // Logo Import
-import logoImage from '@/assets/gkr-logo.png';
+import logoImage from '@/assets/images/gkr-logo.png';
 
 // Employed By Logos
-import beverlyHiltonLogo from '@/assets/beverly-hilton.png';
-import starrRestaurantsLogo from '@/assets/starr-restaurants.png';
-import equinoxHotelsLogo from '@/assets/equinox-hotels.png';
-import rokaLogo from '@/assets/roka.png';
-import zumaLogo from '@/assets/zuma.png';
-import etaruLogo from '@/assets/etaru.png';
-import inkoNitoLogo from '@/assets/inko-nito.png';
-import oblixLogo from '@/assets/oblix.png';
-import movenpickLogo from '@/assets/movenpick.png';
-import adareManorLogo from '@/assets/adare-manor.png';
-import swallowHotelsLogo from '@/assets/swallow-hotels.png';
-import principalHotelsLogo from '@/assets/principal-hotels.png';
-import waldorfAstoriaLogo from '@/assets/waldorf-astoria.png';
-import bostonHarborHotelLogo from '@/assets/boston-harbor-hotel.png';
-import etcVenuesLogo from '@/assets/etc-venues.png';
-import conveneLogo from '@/assets/convene.png';
+import beverlyHiltonLogo from '@/assets/images/beverly-hilton.png';
+import starrRestaurantsLogo from '@/assets/images/starr-restaurants.png';
+import equinoxHotelsLogo from '@/assets/images/equinox-hotels.png';
+import rokaLogo from '@/assets/images/roka.png';
+import zumaLogo from '@/assets/images/zuma.png';
+import etaruLogo from '@/assets/images/etaru.png';
+import inkoNitoLogo from '@/assets/images/inko-nito.png';
+import oblixLogo from '@/assets/images/oblix.png';
+import movenpickLogo from '@/assets/images/movenpick.png';
+import adareManorLogo from '@/assets/images/adare-manor.png';
+import swallowHotelsLogo from '@/assets/images/swallow-hotels.png';
+import principalHotelsLogo from '@/assets/images/principal-hotels.png';
+import waldorfAstoriaLogo from '@/assets/images/waldorf-astoria.png';
+import bostonHarborHotelLogo from '@/assets/images/boston-harbor-hotel.png';
+import etcVenuesLogo from '@/assets/images/etc-venues.png';
+import conveneLogo from '@/assets/images/convene.png';
 
 // Consulted With Logos
-import bakanLogo from '@/assets/bakan.png';
-import support305Logo from '@/assets/support-305.png';
-import zumaConsultedLogo from '@/assets/zuma-consulted.png';
-import bxpLogo from '@/assets/bxp.png';
-import rudinLogo from '@/assets/rudin.png';
-import blaceLogo from '@/assets/blace.png';
-import residentLogo from '@/assets/meet-resident.png';
-import affectLogo from '@/assets/affect-group.png';
-import sageLogo from '@/assets/sage-hospitality.png';
-import buccamentLogo from '@/assets/buccament.png';
+import bakanLogo from '@/assets/images/bakan.png';
+import support305Logo from '@/assets/images/support-305.png';
+import zumaConsultedLogo from '@/assets/images/zuma-consulted.png';
+import bxpLogo from '@/assets/images/bxp.png';
+import rudinLogo from '@/assets/images/rudin.png';
+import blaceLogo from '@/assets/images/blace.png';
+import residentLogo from '@/assets/images/meet-resident.png';
+import affectLogo from '@/assets/images/affect-group.png';
+import sageLogo from '@/assets/images/sage-hospitality.png';
+import buccamentLogo from '@/assets/images/buccament.png';
 
 // Employed By Companies - Logo or Text
 const EMPLOYED_BY_COMPANIES = [
