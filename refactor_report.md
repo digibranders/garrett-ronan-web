@@ -41,3 +41,4 @@
 - Validated build success with `npm run build`.
 - Asset Organization: Localized 25+ external images and organized into granular subfolders (logos, hero, services, work, about, testimonials) for better maintainability.
 - Status: Stable build.
+- Dependencies: Moved react/react-dom to valid dependencies and removed unused @tailwindcss/vite plugin.
