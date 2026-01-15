@@ -43,4 +43,6 @@
 - Status: Stable build.
 - Dependencies: Moved react/react-dom to valid dependencies and removed unused @tailwindcss/vite plugin.
 - **Vercel Config**: Reverted `distDir` to standard Next.js defaults as Vercel Project Settings are correctly configured for Next.js.
-- Status: Stable build.
+- **UI Polish**: Reduced Navbar padding and adjusted logo size for better visual alignment.
+- **Assets**: Explicitly configured favicon icons in `layout.tsx` metadata.
+- **Status**: Stable build.
