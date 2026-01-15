@@ -9,7 +9,7 @@
 # next.js
 /.next/
 /out/
-/dist
+/build
 
 # misc
 .DS_Store

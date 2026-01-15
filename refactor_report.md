@@ -42,5 +42,5 @@
 - Asset Organization: Localized 25+ external images and organized into granular subfolders (logos, hero, services, work, about, testimonials) for better maintainability.
 - Status: Stable build.
 - Dependencies: Moved react/react-dom to valid dependencies and removed unused @tailwindcss/vite plugin.
-- Vercel Config: Configured `next.config.ts` with `distDir: 'dist'` to match Vercel's legacy output directory setting for this project.
+- **Vercel Config**: Reverted `distDir` to standard Next.js defaults as Vercel Project Settings are correctly configured for Next.js.
 - Status: Stable build.
