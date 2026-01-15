@@ -121,3 +121,7 @@
   - **Refinement**: Adjusted Castle image width to `220px` to match the exact visual proportions requested. Forced address to single line (`white-space: nowrap`).
   - **Assets**: Switched to hosted PNGs for signatures (`GR_Blue.png` / `GR_White.png`) via GitHub Raw URLs. Updated Castle images to use hosted `Castle_Dark%20BG.png` and `Castle_Light%20BG.png` from the dev branch.
   - **Transparency**: Removed explicit background colors (`#ffffff` and `#000000`) from the main signature tables to allow for transparency and better integration with Outlook's native theming.
+  - **Dimensions (Space Fix)**:
+    - Removed `height: 300px` constraint to eliminate extra whitespace below the signature.
+    - Set Left Column to `valign="top"` and removed `padding-top` to eliminate extra whitespace above the content.
+    - Corrected column widths to strictly `300px` (Left) and `300px` (Right) to properly sum to the 600px total width.
