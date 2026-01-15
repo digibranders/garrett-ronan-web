@@ -155,14 +155,14 @@ const SERVICES_DATA = [
 const HOW_WE_WORK = [
   {
     number: "01",
-    title: "Diagnostic",
-    description: "We spend days on-site, observing everything. Operations, financials, team dynamics, guest experience. We talk to your staff, review your numbers, and watch service in real-time.",
+    title: "Initial Briefing",
+    description: "We take the necessary time understanding our client’s needs, starting with core objectives, opportunities and challenges. Then, working through to agree best approach and actionable next steps.",
     image: workStrategy
   },
   {
     number: "02",
-    title: "Clear Diagnosis",
-    description: "We identify the root problems (not symptoms), quantify the impact, and show you exactly what's broken and why. No consultant-speak. No 50-page reports. Just clarity.",
+    title: "Audit and Clear Diagnosis",
+    description: "We spend time on site and with your key team players to observe and audit your project or business appropriately.  We get under the hood to advise on potential risks and opportunities with the best direction forward.  Where there are challenges, we identify root causes, quantify the impact. We provide clear recommendations and real solutions.",
     image: workPlanning
   },
   {
@@ -173,14 +173,14 @@ const HOW_WE_WORK = [
   },
   {
     number: "04",
-    title: "Hands-On Implementation",
-    description: "We work on-site with your team, building systems, training staff, and fixing problems as they surface. We stay until the operation runs without us.",
+    title: "Project Management ~ Hands-On Implementation",
+    description: "Where appropriate we work on-site with your team, helping build systems, managing, supporting and solving for the unexpected. We will help ensure proper implementation and successful completion for every project.",
     image: serviceTraining
   },
   {
     number: "05",
-    title: "Sustainable Results",
-    description: "When we leave, your team knows how to maintain what we've built. The systems stick. The performance lasts.",
+    title: "Real Results",
+    description: "When we leave, you and your team knows how to maintain what we collectively build. The solutions stick. The performance lasts. The project is set for success",
     image: testimonialReception
   }
 ];

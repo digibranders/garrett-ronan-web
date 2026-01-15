@@ -74,3 +74,11 @@
   - **Case Study Logic**: Refactored gallery items to contain multiple images. Modal navigation now cycles through images within the selected case study.
   - **Refined Mobile UI**: Hidden the overlay image counter on mobile. Implemented **sticky image header** on mobile so the image stays at the top while content scrolls below it.
 - **Footer Updates**: Removed "Instagram" and "Behance" links; added "X" link. Updated all social links with correct URLs.
+- **Email Signature**:
+  - Created `public/email-signature/garrett.html` as a self-contained HTML file (600x300) for easy copy-pasting into email clients.
+  - Implemented automatic dark mode support using `@media (prefers-color-scheme: dark)`.
+  - Embedded all assets (Logos, Castle background) as Base64 strings to ensure portability without external hosting dependencies.
+  - Generated custom SVG icons for contact details in the correct Gold color.
+- **Content Update**: Updated "How We Work" section in `src/app/page.tsx` with refined copy for all 5 steps.
+- **Bug Fix**: Fixed syntax error in `src/app/gallery/page.tsx` (unexpected `{9`).
+- **Outlook Compatibility**: Updated `public/email-signature/generate_signature.py` to use GitHub Raw URLs (pointing to `dev` branch) and regenerated `garrett.html` with VML support for Outlook compatibility.
