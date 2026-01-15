@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Garrett Ronan Signature</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            display: block;
+            border: 0;
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Dark Mode Toggling */
+        @media (prefers-color-scheme: dark) {
+            .light-mode-image {
+                display: none !important;
+            }
+
+            .dark-mode-image {
+                display: block !important;
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .light-mode-image {
+                display: block !important;
+            }
+
+            .dark-mode-image {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Light Mode Container (Default) -->
+    <!-- Uses Final_Sign_LightMode.png (Dark Text) -->
+    <div class="light-mode-image">
+        <img src="https://raw.githubusercontent.com/digibranders/garrett-ronan-web/dev/public/email-signature/Final_Sign_LightMode.png"
+            alt="Garrett Ronan" width="600" height="300" usemap="#signature_map_light">
+
+        <map name="signature_map_light">
+            <!-- Address: ~Top 156, Height ~20 -->
+            <area shape="rect" coords="30,150,580,175"
+                href="https://www.google.com/maps/search/?api=1&query=42%20Brighton%20View%20Rd%20Fairfield%2C%20CT%2006824%20USA"
+                target="_blank" alt="Address">
+
+            <!-- Email: ~Top 189 -->
+            <area shape="rect" coords="30,184,350,208" href="mailto:garrett@GKRHospitality.com" alt="Email">
+
+            <!-- Phone: ~Top 222 -->
+            <area shape="rect" coords="30,218,250,242" href="tel:+19174605793" alt="Phone">
+
+            <!-- Website: ~Top 255 -->
+            <area shape="rect" coords="30,250,350,275" href="https://www.GKRHospitality.com" target="_blank"
+                alt="Website">
+
+            <!-- Main Logo Click (Top area) -->
+            <area shape="rect" coords="30,30,400,120" href="https://www.GKRHospitality.com" target="_blank"
+                alt="Garrett Ronan">
+        </map>
+    </div>
+
+    <!-- Dark Mode Container -->
+    <!-- Uses Final_Sign_DarkMode.png (White Text) -->
+    <div class="dark-mode-image" style="display: none;">
+        <img src="https://raw.githubusercontent.com/digibranders/garrett-ronan-web/dev/public/email-signature/Final_Sign_DarkMode.png"
+            alt="Garrett Ronan" width="600" height="300" usemap="#signature_map_dark">
+
+        <map name="signature_map_dark">
+            <area shape="rect" coords="30,150,580,175"
+                href="https://www.google.com/maps/search/?api=1&query=42%20Brighton%20View%20Rd%20Fairfield%2C%20CT%2006824%20USA"
+                target="_blank" alt="Address">
+            <area shape="rect" coords="30,184,350,208" href="mailto:garrett@GKRHospitality.com" alt="Email">
+            <area shape="rect" coords="30,218,250,242" href="tel:+19174605793" alt="Phone">
+            <area shape="rect" coords="30,250,350,275" href="https://www.GKRHospitality.com" target="_blank"
+                alt="Website">
+            <area shape="rect" coords="30,30,400,120" href="https://www.GKRHospitality.com" target="_blank"
+                alt="Garrett Ronan">
+        </map>
+    </div>
+
+</body>
+
+</html>
