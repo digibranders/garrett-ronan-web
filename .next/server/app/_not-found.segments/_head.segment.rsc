@@ -1,0 +1,5 @@
+1:"$Sreact.fragment"
+2:I[97367,["/_next/static/chunks/c3f6ecd470eec4a9.js","/_next/static/chunks/7340adf74ff47ec0.js","/_next/static/chunks/9e0b407583b110a2.js","/_next/static/chunks/3b4b92eff65841a4.js"],"ViewportBoundary"]
+3:I[97367,["/_next/static/chunks/c3f6ecd470eec4a9.js","/_next/static/chunks/7340adf74ff47ec0.js","/_next/static/chunks/9e0b407583b110a2.js","/_next/static/chunks/3b4b92eff65841a4.js"],"MetadataBoundary"]
+4:"$Sreact.suspense"
+0:{"buildId":"SI7KJV40jyeGPfFkmtKe0","rsc":["$","$1","h",{"children":[["$","meta",null,{"name":"robots","content":"noindex"}],["$","$L2",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","div",null,{"hidden":true,"children":["$","$L3",null,{"children":["$","$4",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"GKR Hospitality"}],["$","meta","1",{"name":"description","content":"Simply Practical Yet Creative Solutions for Hospitality"}]]}]}]}],null]}],"loading":null,"isPartial":false}
