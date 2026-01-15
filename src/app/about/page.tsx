@@ -8,16 +8,21 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 // Logo Import
-import logoImage from '@/assets/images/gkr-logo.png';
+import logoImage from '@/assets/images/logos/gkr-logo.png';
 // Garrett Ronan image
-import garrettImage from '@/assets/images/garrett-ronan.png';
+import garrettImage from '@/assets/images/about/garrett-ronan.png';
 // Garrett signature
-import signatureImage from '@/assets/images/signature.png';
+import signatureImage from '@/assets/images/about/signature.png';
+
+// About Images
+import aboutFounder from '@/assets/images/about/about-founder.jpg';
+import aboutHotel from '@/assets/images/about/about-hotel.jpg';
+import aboutRestaurant from '@/assets/images/about/about-restaurant.jpg';
 
 const ABOUT_IMAGES = {
-  founder: "https://images.unsplash.com/photo-1601489865452-407a1b801dde?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBidXNpbmVzc21hbnxlbnwxfHx8fDE3NjgxODkwMzV8MA&ixlib=rb-4.1.0&q=80&w=1080",
-  hotel: "https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBob3RlbCUyMGxvYmJ5fGVufDF8fHx8MTc2ODI0NTIzNXww&ixlib=rb-4.1.0&q=80&w=1080",
-  restaurant: "https://images.unsplash.com/photo-1685040235380-a42a129ade4e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjByZXN0YXVyYW50JTIwaW50ZXJpb3J8ZW58MXx8fHwxNzY4MjE0MTM5fDA&ixlib=rb-4.1.0&q=80&w=1080"
+  founder: aboutFounder,
+  hotel: aboutHotel,
+  restaurant: aboutRestaurant
 };
 
 const EXPERIENCE_TIMELINE = [

@@ -39,3 +39,5 @@
 - Added `'use client'` directive to client-side components.
 - Refactored `ScrollToTop` to use `usePathname`.
 - Validated build success with `npm run build`.
+- Asset Organization: Localized 25+ external images and organized into granular subfolders (logos, hero, services, work, about, testimonials) for better maintainability.
+- Status: Stable build.

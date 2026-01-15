@@ -8,37 +8,64 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 // Logo Import
-import logoImage from '@/assets/images/gkr-logo.png';
+import logoImage from '@/assets/images/logos/gkr-logo.png';
 
 // Employed By Logos
-import beverlyHiltonLogo from '@/assets/images/beverly-hilton.png';
-import starrRestaurantsLogo from '@/assets/images/starr-restaurants.png';
-import equinoxHotelsLogo from '@/assets/images/equinox-hotels.png';
-import rokaLogo from '@/assets/images/roka.png';
-import zumaLogo from '@/assets/images/zuma.png';
-import etaruLogo from '@/assets/images/etaru.png';
-import inkoNitoLogo from '@/assets/images/inko-nito.png';
-import oblixLogo from '@/assets/images/oblix.png';
-import movenpickLogo from '@/assets/images/movenpick.png';
-import adareManorLogo from '@/assets/images/adare-manor.png';
-import swallowHotelsLogo from '@/assets/images/swallow-hotels.png';
-import principalHotelsLogo from '@/assets/images/principal-hotels.png';
-import waldorfAstoriaLogo from '@/assets/images/waldorf-astoria.png';
-import bostonHarborHotelLogo from '@/assets/images/boston-harbor-hotel.png';
-import etcVenuesLogo from '@/assets/images/etc-venues.png';
-import conveneLogo from '@/assets/images/convene.png';
+import beverlyHiltonLogo from '@/assets/images/logos/beverly-hilton.png';
+import starrRestaurantsLogo from '@/assets/images/logos/starr-restaurants.png';
+import equinoxHotelsLogo from '@/assets/images/logos/equinox-hotels.png';
+import rokaLogo from '@/assets/images/logos/roka.png';
+import zumaLogo from '@/assets/images/logos/zuma.png';
+import etaruLogo from '@/assets/images/logos/etaru.png';
+import inkoNitoLogo from '@/assets/images/logos/inko-nito.png';
+import oblixLogo from '@/assets/images/logos/oblix.png';
+import movenpickLogo from '@/assets/images/logos/movenpick.png';
+import adareManorLogo from '@/assets/images/logos/adare-manor.png';
+import swallowHotelsLogo from '@/assets/images/logos/swallow-hotels.png';
+import principalHotelsLogo from '@/assets/images/logos/principal-hotels.png';
+import waldorfAstoriaLogo from '@/assets/images/logos/waldorf-astoria.png';
+import bostonHarborHotelLogo from '@/assets/images/logos/boston-harbor-hotel.png';
+import etcVenuesLogo from '@/assets/images/logos/etc-venues.png';
+import conveneLogo from '@/assets/images/logos/convene.png';
 
 // Consulted With Logos
-import bakanLogo from '@/assets/images/bakan.png';
-import support305Logo from '@/assets/images/support-305.png';
-import zumaConsultedLogo from '@/assets/images/zuma-consulted.png';
-import bxpLogo from '@/assets/images/bxp.png';
-import rudinLogo from '@/assets/images/rudin.png';
-import blaceLogo from '@/assets/images/blace.png';
-import residentLogo from '@/assets/images/meet-resident.png';
-import affectLogo from '@/assets/images/affect-group.png';
-import sageLogo from '@/assets/images/sage-hospitality.png';
-import buccamentLogo from '@/assets/images/buccament.png';
+import bakanLogo from '@/assets/images/logos/bakan.png';
+import support305Logo from '@/assets/images/logos/support-305.png';
+import zumaConsultedLogo from '@/assets/images/logos/zuma-consulted.png';
+import bxpLogo from '@/assets/images/logos/bxp.png';
+import rudinLogo from '@/assets/images/logos/rudin.png';
+import blaceLogo from '@/assets/images/logos/blace.png';
+import residentLogo from '@/assets/images/logos/meet-resident.png';
+import affectLogo from '@/assets/images/logos/affect-group.png';
+import sageLogo from '@/assets/images/logos/sage-hospitality.png';
+import buccamentLogo from '@/assets/images/logos/buccament.png';
+
+// Hero Images
+import heroNyc from '@/assets/images/hero/hero-nyc.jpg';
+import heroLa from '@/assets/images/hero/hero-la.jpg';
+import heroCaribbean from '@/assets/images/hero/hero-caribbean.jpg';
+
+// Service Images
+import serviceConcept from '@/assets/images/services/service-concept.jpg';
+import serviceInvestment from '@/assets/images/services/service-investment.jpg';
+import serviceConstruction from '@/assets/images/services/service-construction.jpg';
+import serviceOperations from '@/assets/images/services/service-operations.jpg';
+import serviceLegal from '@/assets/images/services/service-legal.jpg';
+import serviceAccounting from '@/assets/images/services/service-accounting.jpg';
+import serviceTraining from '@/assets/images/services/service-training.jpg';
+
+// Work Images
+import workStrategy from '@/assets/images/work/work-strategy.jpg';
+import workPlanning from '@/assets/images/work/work-planning.jpg';
+import workExecution from '@/assets/images/work/work-execution.jpg'; // used twice
+import workDining from '@/assets/images/work/work-dining.jpg';
+import workBar from '@/assets/images/work/work-bar.jpg';
+import workRooftop from '@/assets/images/work/work-rooftop.jpg';
+import testimonialGroup from '@/assets/images/testimonials/testimonial-group.jpg';
+
+// Testimonial Images
+import testimonialLobby from '@/assets/images/testimonials/testimonial-lobby.jpg';
+import testimonialReception from '@/assets/images/testimonials/testimonial-reception.jpg';
 
 // Employed By Companies - Logo or Text
 const EMPLOYED_BY_COMPANIES = [
@@ -79,9 +106,9 @@ const CONSULTED_WITH_COMPANIES = [
 
 // Hero Slideshow Images - NYC, LA, Caribbean
 const HERO_IMAGES = [
-  "https://images.unsplash.com/photo-1762732793012-8bdab3af00b4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxOZXclMjBZb3JrJTIwQ2l0eSUyMGx1eHVyeSUyMGhvdGVsJTIwc2t5bGluZXxlbnwxfHx8fDE3NjgyODQ5Mzl8MA&ixlib=rb-4.1.0&q=80&w=1080",
-  "https://images.unsplash.com/photo-1767376476050-744ec779252d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxMb3MlMjBBbmdlbGVzJTIwbHV4dXJ5JTIwaG90ZWwlMjBzdW5zZXR8ZW58MXx8fHwxNzY4Mjg0OTM5fDA&ixlib=rb-4.1.0&q=80&w=1080",
-  "https://images.unsplash.com/photo-1629906645393-3678ed4f4040?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxDYXJpYmJlYW4lMjBsdXh1cnklMjByZXNvcnQlMjBiZWFjaHxlbnwxfHx8fDE3NjgyODQ5Mzl8MA&ixlib=rb-4.1.0&q=80&w=1080"
+  heroNyc,
+  heroLa,
+  heroCaribbean
 ];
 
 // Services with background images
@@ -89,127 +116,130 @@ const SERVICES_DATA = [
   {
     title: "Concept Creation",
     description: "We help guide your hospitality concepts from ideation through to delivering market ready, creative results.",
-    bgImage: "https://images.unsplash.com/photo-1759472659432-3232e42d04d2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBob3RlbCUyMGRlc2lnbiUyMGNvbmNlcHR8ZW58MXx8fHwxNzY4Mjk2NjEwfDA&ixlib=rb-4.1.0&q=80&w=1080"
+    bgImage: serviceConcept
   },
   {
     title: "Capital & Growth Investment",
     description: "We provide strategic advice  and guidance on growth and investment, capital sourcing, M&A’s and investor-ready business plans.",
-    bgImage: "https://images.unsplash.com/photo-1758519289559-f4d0ead39634?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMGludmVzdG1lbnQlMjBtZWV0aW5nfGVufDF8fHx8MTc2ODI4Mjc4MHww&ixlib=rb-4.1.0&q=80&w=1080"
+    bgImage: serviceInvestment
   },
   {
     title: "Design, Development & Construction",
     description: "We provide skilled “Owners Rep” oversight through each phase of design and construction to deliver successful Projects.",
-    bgImage: "https://images.unsplash.com/photo-1685382807533-9bd52421457c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcmNoaXRlY3R1cmUlMjBjb25zdHJ1Y3Rpb24lMjBsdXh1cnl8ZW58MXx8fHwxNzY4Mjk2NjExfDA&ixlib=rb-4.1.0&q=80&w=1080"
+    bgImage: serviceConstruction
   },
   {
     title: "Operations",
     description: "We help deliver end-to-end operations excellence and efficiency from pre and post opening to ongoing operational management.",
-    bgImage: "https://images.unsplash.com/photo-1762113246607-4299ec3f3214?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZXN0YXVyYW50JTIwa2l0Y2hlbiUyMG9wZXJhdGlvbnMlMjBjaGVmfGVufDF8fHx8MTc2ODI4NDk0MHww&ixlib=rb-4.1.0&q=80&w=1080"
+    bgImage: serviceOperations
   },
   {
     title: "Legal",
     description: "We help you manage the legal foundations that protect your deals, teams, and long-term operations.",
-    bgImage: "https://images.unsplash.com/photo-1564846824194-346b7871b855?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsZWdhbCUyMGNvbnRyYWN0JTIwZG9jdW1lbnRzJTIwYnVzaW5lc3N8ZW58MXx8fHwxNzY4Mjk2NjEwfDA&ixlib=rb-4.1.0&q=80&w=1080"
+    bgImage: serviceLegal
   },
   {
     title: "Financial",
     description: "We provide end-to-end insightful financial guidance, including budgeting, forecasting, audits, cost control, efficiency and profitability.",
-    bgImage: "https://images.unsplash.com/photo-1762427354051-a9bdb181ae3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaW5hbmNpYWwlMjBhY2NvdW50aW5nJTIwYW5hbHlzaXN8ZW58MXx8fHwxNzY4MTk1NTkxfDA&ixlib=rb-4.1.0&q=80&w=1080"
+    bgImage: serviceAccounting
   },
   {
     title: "Additional Support",
     description: "We provide targeted support wherever your business needs experienced hospitality operator oversight.",
-    bgImage: "https://images.unsplash.com/photo-1766808985890-e564439e39a7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxob3RlbCUyMHN0YWZmJTIwdHJhaW5pbmclMjB0ZWFtfGVufDF8fHx8MTc2ODI4NDk0MXww&ixlib=rb-4.1.0&q=80&w=1080"
+    bgImage: serviceTraining
   }
 ];
 
+// How We Work with images
 // How We Work with images
 const HOW_WE_WORK = [
   {
     number: "01",
     title: "Diagnostic",
     description: "We spend days on-site, observing everything. Operations, financials, team dynamics, guest experience. We talk to your staff, review your numbers, and watch service in real-time.",
-    image: "https://images.unsplash.com/photo-1764173039056-3cc602fef942?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb25zdWx0YW50JTIwbWVldGluZyUyMGJ1c2luZXNzJTIwc3RyYXRlZ3l8ZW58MXx8fHwxNzY4Mjg0OTQzfDA&ixlib=rb-4.1.0&q=80&w=1080"
+    image: workStrategy
   },
   {
     number: "02",
     title: "Clear Diagnosis",
     description: "We identify the root problems (not symptoms), quantify the impact, and show you exactly what's broken and why. No consultant-speak. No 50-page reports. Just clarity.",
-    image: "https://images.unsplash.com/photo-1758519289022-5f9dea0d8cdc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMGZpbmFuY2lhbCUyMHBsYW5uaW5nfGVufDF8fHx8MTc2ODI4NDk0MXww&ixlib=rb-4.1.0&q=80&w=1080"
+    image: workPlanning
   },
   {
     number: "03",
     title: "Practical Plan",
     description: "We build a focused roadmap with specific actions, clear timelines, and realistic outcomes. You'll know what we're doing, when, and what results to expect.",
-    image: "https://images.unsplash.com/photo-1758519289022-5f9dea0d8cdc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMGZpbmFuY2lhbCUyMHBsYW5uaW5nfGVufDF8fHx8MTc2ODI4NDk0MXww&ixlib=rb-4.1.0&q=80&w=1080"
+    image: workPlanning // Using same image as was done in original code (duplicate URL)
   },
   {
     number: "04",
     title: "Hands-On Implementation",
     description: "We work on-site with your team, building systems, training staff, and fixing problems as they surface. We stay until the operation runs without us.",
-    image: "https://images.unsplash.com/photo-1766808985890-e564439e39a7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxob3RlbCUyMHN0YWZmJTIwdHJhaW5pbmclMjB0ZWFtfGVufDF8fHx8MTc2ODI4NDk0MXww&ixlib=rb-4.1.0&q=80&w=1080"
+    image: serviceTraining
   },
   {
     number: "05",
     title: "Sustainable Results",
     description: "When we leave, your team knows how to maintain what we've built. The systems stick. The performance lasts.",
-    image: "https://images.unsplash.com/photo-1759038085950-1234ca8f5fed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxob3RlbCUyMHJlY2VwdGlvbiUyMGRlc2slMjBzZXJ2aWNlfGVufDF8fHx8MTc2ODI4NDk0NHww&ixlib=rb-4.1.0&q=80&w=1080"
+    image: testimonialReception
   }
 ];
 
+// Portfolio projects
 // Portfolio projects
 const PORTFOLIO_PROJECTS = [
   {
     title: "Boutique Hotel",
     location: "Manhattan, NY",
-    image: "https://images.unsplash.com/photo-1765122670586-b5f22d95c17f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxib3V0aXF1ZSUyMGhvdGVsJTIwZW50cmFuY2V8ZW58MXx8fHwxNzY4Mjg0OTQyfDA&ixlib=rb-4.1.0&q=80&w=1080"
+    image: workExecution
   },
   {
     title: "Fine Dining Restaurant",
     location: "Los Angeles, CA",
-    image: "https://images.unsplash.com/photo-1765021098429-0f556e068d8b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaW5lJTIwZGluaW5nJTIwcmVzdGF1cmFudCUyMGludGVyaW9yfGVufDF8fHx8MTc2ODIwMDk2Mnww&ixlib=rb-4.1.0&q=80&w=1080"
+    image: workDining
   },
   {
     title: "Luxury Lounge",
     location: "New York, NY",
-    image: "https://images.unsplash.com/photo-1666455231536-e5cf8b48db7d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBiYXIlMjBjb2NrdGFpbCUyMGxvdW5nZXxlbnwxfHx8fDE3NjgyODQ5NDJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+    image: workBar
   },
   {
     title: "Rooftop Dining",
     location: "Los Angeles, CA",
-    image: "https://images.unsplash.com/photo-1597943991719-b9997edbde84?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxob3RlbCUyMHJvb2Z0b3AlMjBkaW5pbmclMjBvdXRkb29yfGVufDF8fHx8MTc2ODI4NDk0M3ww&ixlib=rb-4.1.0&q=80&w=1080"
+    image: workRooftop
   },
   {
     title: "Caribbean Resort",
     location: "Caribbean Islands",
-    image: "https://images.unsplash.com/photo-1629906645393-3678ed4f4040?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxDYXJpYmJlYW4lMjBsdXh1cnklMjByZXNvcnQlMjBiZWFjaHxlbnwxfHx8fDE3NjgyODQ5Mzl8MA&ixlib=rb-4.1.0&q=80&w=1080"
+    image: heroCaribbean
   },
   {
     title: "Restaurant Group",
     location: "New York, NY",
-    image: "https://images.unsplash.com/photo-1766812782166-e243111f703d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZXN0YXVyYW50JTIwZ3JvdXAlMjBkaW5pbmd8ZW58MXx8fHwxNzY4Mjg0OTQ0fDA&ixlib=rb-4.1.0&q=80&w=1080"
+    image: testimonialGroup
   }
 ];
 
+// Testimonials with property images
 // Testimonials with property images
 const TESTIMONIALS = [
   {
     quote: "We were three months from opening and nowhere near ready. Garrett came in and built the entire operational framework—hiring, training, systems, everything. We opened on time with a team that actually knew what they were doing.",
     author: "Managing Partner",
     company: "Boutique Hotel Group",
-    image: "https://images.unsplash.com/photo-1744782996368-dc5b7e697f4c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBob3RlbCUyMGxvYmJ5JTIwaW50ZXJpb3J8ZW58MXx8fHwxNzY4MjQyNzI1fDA&ixlib=rb-4.1.0&q=80&w=1080"
+    image: testimonialLobby
   },
   {
     quote: "Our margins were disappearing and we couldn't figure out why. Within 30 days, they identified $200K in annual leakage and gave us a plan to fix it. Six months later, we're profitable again.",
     author: "Owner",
     company: "Restaurant Group",
-    image: "https://images.unsplash.com/photo-1765021098429-0f556e068d8b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaW5lJTIwZGluaW5nJTIwcmVzdGF1cmFudCUyMGludGVyaW9yfGVufDF8fHx8MTc2ODIwMDk2Mnww&ixlib=rb-4.1.0&q=80&w=1080"
+    image: workDining
   },
   {
     quote: "Most consultants tell you what's wrong and leave. These guys stayed until it was fixed. That made all the difference.",
     author: "Hotel GM",
     company: "Northeast Market",
-    image: "https://images.unsplash.com/photo-1759038085950-1234ca8f5fed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxob3RlbCUyMHJlY2VwdGlvbiUyMGRlc2slMjBzZXJ2aWNlfGVufDF8fHx8MTc2ODI4NDk0NHww&ixlib=rb-4.1.0&q=80&w=1080"
+    image: testimonialReception
   }
 ];
 
@@ -269,19 +299,23 @@ export default function Home() {
           <motion.div style={{ scale }} className="w-full h-full">
             <div className="absolute inset-0 bg-gradient-to-b from-[#181818]/40 via-[#181818]/30 to-[#181818] z-10"></div>
             {HERO_IMAGES.map((image, index) => (
-              <motion.img
+              <motion.div
                 key={index}
-                src={image}
-                alt={`Hero ${index + 1}`}
-                className="absolute w-full h-full object-cover"
+                className="absolute inset-0 w-full h-full"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: currentHeroImage === index ? 1 : 0 }}
                 transition={{ duration: 1.5 }}
-                // Optimize loading: First image gets priority
-                loading={index === 0 ? "eager" : "lazy"}
-                // Add sizes for responsive loading
-                sizes="100vw"
-              />
+              >
+                <Image
+                  src={image}
+                  alt={`Hero ${index + 1}`}
+                  fill
+                  className="object-cover"
+                  // Optimize loading: First image gets priority
+                  priority={index === 0}
+                  sizes="100vw"
+                />
+              </motion.div>
             ))}
           </motion.div>
         </div>
@@ -372,7 +406,7 @@ export default function Home() {
           <div 
             className="w-full h-full"
             style={{ 
-              backgroundImage: `url(https://images.unsplash.com/photo-1744782996368-dc5b7e697f4c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBob3RlbCUyMGxvYmJ5JTIwaW50ZXJpb3J8ZW58MXx8fHwxNzY4MjQyNzI1fDA&ixlib=rb-4.1.0&q=80&w=1080)`,
+              backgroundImage: `url(${testimonialLobby.src})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center'
             }}

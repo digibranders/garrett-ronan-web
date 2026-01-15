@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { Menu } from 'lucide-react';
 import { Button } from '@/app/components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
-import logoImage from '@/assets/images/gkr-logo.png';
+import logoImage from '@/assets/images/logos/gkr-logo.png';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);

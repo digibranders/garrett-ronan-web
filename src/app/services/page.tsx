@@ -6,7 +6,16 @@ import { ArrowUpRight } from 'lucide-react';
 import { Button } from '@/app/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
-import logoImage from '@/assets/images/gkr-logo.png';
+import logoImage from '@/assets/images/logos/gkr-logo.png';
+
+// Service Images
+import serviceConcept from '@/assets/images/services/service-concept.jpg';
+import serviceInvestment from '@/assets/images/services/service-investment.jpg';
+import serviceConstruction from '@/assets/images/services/service-construction.jpg';
+import serviceOperations from '@/assets/images/services/service-operations.jpg';
+import serviceLegal from '@/assets/images/services/service-legal.jpg';
+import serviceAccounting from '@/assets/images/services/service-accounting.jpg';
+import serviceHospitality from '@/assets/images/services/service-hospitality.jpg';
 
 const SERVICES_DATA = [
   {
@@ -20,7 +29,7 @@ const SERVICES_DATA = [
       "Market research and competitive analysis",
       "Market and site identification and sourcing"
     ],
-    image: "https://images.unsplash.com/photo-1759472659432-3232e42d04d2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBob3RlbCUyMGNvbmNlcHQlMjBkZXNpZ258ZW58MXx8fHwxNzY4MjgyNzgwfDA&ixlib=rb-4.1.0&q=80&w=1080"
+    image: serviceConcept
   },
   {
     number: "02",
@@ -31,7 +40,7 @@ const SERVICES_DATA = [
       "Mergers and acquisitions support",
       "Business planning and investor-ready models"
     ],
-    image: "https://images.unsplash.com/photo-1758519289559-f4d0ead39634?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMGludmVzdG1lbnQlMjBtZWV0aW5nfGVufDF8fHx8MTc2ODI4Mjc4MHww&ixlib=rb-4.1.0&q=80&w=1080"
+    image: serviceInvestment
   },
   {
     number: "03",
@@ -49,7 +58,7 @@ const SERVICES_DATA = [
       "Change order review and cost control",
       "Coordination of lighting, AV, FF&E, and specialty elements"
     ],
-    image: "https://images.unsplash.com/photo-1632189436851-891de082e5d6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcmNoaXRlY3R1cmUlMjBjb25zdHJ1Y3Rpb24lMjBkZXNpZ258ZW58MXx8fHwxNzY4MjgyNzgxfDA&ixlib=rb-4.1.0&q=80&w=1080"
+    image: serviceConstruction
   },
   {
     number: "04",
@@ -69,7 +78,7 @@ const SERVICES_DATA = [
       "Logistics and procurement",
       "F&B menu planning, design, costing, and performance analysis"
     ],
-    image: "https://images.unsplash.com/photo-1762113246607-4299ec3f3214?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZXN0YXVyYW50JTIwa2l0Y2hlbiUyMG9wZXJhdGlvbnN8ZW58MXx8fHwxNzY4MjgyNzgyfDA&ixlib=rb-4.1.0&q=80&w=1080"
+    image: serviceOperations
   },
   {
     number: "05",
@@ -81,7 +90,7 @@ const SERVICES_DATA = [
       "Contract review and negotiations",
       "Employment and labor support"
     ],
-    image: "https://images.unsplash.com/photo-1759429255330-51145b170dad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsZWdhbCUyMGNvbnRyYWN0JTIwZG9jdW1lbnRzfGVufDF8fHx8MTc2ODI4Mjc4Mnww&ixlib=rb-4.1.0&q=80&w=1080"
+    image: serviceLegal
   },
   {
     number: "06",
@@ -96,14 +105,14 @@ const SERVICES_DATA = [
       "Sale and exit preparation",
       "Business dissolution support"
     ],
-    image: "https://images.unsplash.com/photo-1744473119469-905016183836?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaW5hbmNpYWwlMjBhbmFseXNpcyUyMGNoYXJ0c3xlbnwxfHx8fDE3NjgyNzI1NDB8MA&ixlib=rb-4.1.0&q=80&w=1080"
+    image: serviceAccounting
   },
   {
     number: "07",
     title: "Additional Support",
     tagline: "Specialized support tailored to unique project or operational needs.",
     description: [],
-    image: "https://images.unsplash.com/photo-1583231686115-9460ba8e0562?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBob3NwaXRhbGl0eSUyMHNlcnZpY2V8ZW58MXx8fHwxNzY4MjgyNzgyfDA&ixlib=rb-4.1.0&q=80&w=1080"
+    image: serviceHospitality
   }
 ];
 
