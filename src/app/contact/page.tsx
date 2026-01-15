@@ -1,8 +1,11 @@
+'use client';
+
 import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Menu, Mail, MapPin, Phone, ChevronDown } from 'lucide-react';
+import { Mail, MapPin, Phone, ChevronDown } from 'lucide-react';
 import { Button } from '@/app/components/ui/button';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
+import Image from 'next/image';
 import logoImage from '@/assets/gkr-logo.png';
 
 const FAQ_DATA = [
@@ -41,9 +44,7 @@ const FAQ_DATA = [
 ];
 
 export default function Contact() {
-  const [scrolled, setScrolled] = useState(false);
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -52,12 +53,6 @@ export default function Contact() {
     projectType: '',
     message: ''
   });
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -75,88 +70,7 @@ export default function Contact() {
   return (
     <div className="bg-[#181818] text-[#FFF7F2] font-sans selection:bg-[#c5a059] selection:text-white overflow-x-hidden">
       
-      {/* Navigation */}
-      <nav className={`fixed top-0 w-full z-50 transition-all duration-700 ${scrolled ? 'bg-[#181818]/95 backdrop-blur-xl py-4 border-b border-white/10 shadow-lg' : 'bg-[#181818]/60 backdrop-blur-md py-8'}`}>
-        <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
-          <div className="flex items-center gap-4">
-             <Link to="/"><img src={logoImage} alt="GKR" className={`object-contain transition-all duration-500 ${scrolled ? 'h-10' : 'h-14'} brightness-0 invert`} /></Link>
-          </div>
-          
-          <div className="hidden md:flex items-center gap-16">
-            {[
-              { label: 'Philosophy', href: '/#philosophy' },
-              { label: 'Expertise', href: '/#expertise' },
-              { label: 'About', href: '/about' },
-              { label: 'Services', href: '/services' }
-            ].map((item, i) => (
-              item.href.startsWith('/#') ? (
-                <a key={item.label} href={item.href} className="text-[10px] uppercase tracking-[0.3em] font-medium hover:text-[#c5a059] transition-colors relative group">
-                  <span className="text-[#c5a059] mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">0{i+1}</span>
-                  {item.label}
-                </a>
-              ) : (
-                <Link key={item.label} to={item.href} className="text-[10px] uppercase tracking-[0.3em] font-medium hover:text-[#c5a059] transition-colors relative group">
-                  <span className="text-[#c5a059] mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">0{i+1}</span>
-                  {item.label}
-                </Link>
-              )
-            ))}
-          </div>
 
-          <Link to="/contact">
-            <Button className="hidden md:flex bg-transparent border border-[#c5a059] text-[#c5a059] hover:bg-[#c5a059] hover:text-[#181818] rounded-full px-8 py-6 tracking-[0.2em] text-[10px] font-bold transition-all duration-500">
-              CONTACT US
-            </Button>
-          </Link>
-          
-          <button className="md:hidden text-white" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-            <Menu className="w-6 h-6" />
-          </button>
-        </div>
-
-        {/* Mobile Menu */}
-        <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ 
-            opacity: mobileMenuOpen ? 1 : 0,
-            height: mobileMenuOpen ? 'auto' : 0
-          }}
-          transition={{ duration: 0.3 }}
-          className="md:hidden overflow-hidden border-t border-white/10"
-        >
-          <div className="container mx-auto px-6 py-8 space-y-6">
-            {[
-              { label: 'Philosophy', href: '/#philosophy' },
-              { label: 'Expertise', href: '/#expertise' },
-              { label: 'About', href: '/about' },
-              { label: 'Services', href: '/services' },
-              { label: 'Contact', href: '/contact' }
-            ].map((item, i) => (
-              item.href.startsWith('/#') ? (
-                <a 
-                  key={item.label} 
-                  href={item.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block text-sm uppercase tracking-[0.3em] font-medium text-white hover:text-[#c5a059] transition-colors py-2"
-                >
-                  <span className="text-[#c5a059] mr-3">0{i+1}</span>
-                  {item.label}
-                </a>
-              ) : (
-                <Link 
-                  key={item.label} 
-                  to={item.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block text-sm uppercase tracking-[0.3em] font-medium text-white hover:text-[#c5a059] transition-colors py-2"
-                >
-                  <span className="text-[#c5a059] mr-3">0{i+1}</span>
-                  {item.label}
-                </Link>
-              )
-            ))}
-          </div>
-        </motion.div>
-      </nav>
 
       {/* Hero Section with Minimal Contact Form */}
       <section className="relative pt-32 md:pt-48 pb-32 md:pb-48 bg-[#181818]">
@@ -360,53 +274,6 @@ export default function Contact() {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-[#181818] pt-32 pb-12 px-6 md:px-12 border-t border-white/5">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-32">
-            <div className="md:col-span-5">
-              <span className="text-[#c5a059] text-[10px] tracking-[0.4em] uppercase font-bold block mb-8">Inquiries</span>
-              <a href="mailto:garrett@GKRHospitality.com" className="text-4xl md:text-6xl font-serif text-white hover:text-[#c5a059] transition-colors leading-none block mb-2">
-                Start a<br/>Conversation
-              </a>
-            </div>
-            
-            <div className="md:col-span-3 md:col-start-7">
-               <h4 className="text-white font-serif text-xl mb-6">Office</h4>
-               <address className="text-stone-500 text-sm leading-relaxed not-italic">
-                 42 Brighton View Rd<br/>
-                 Fairfield, CT, 06824<br/>
-                 USA
-               </address>
-               <div className="mt-8">
-                 <a href="mailto:garrett@GKRHospitality.com" className="text-stone-500 hover:text-[#c5a059] text-sm transition-colors">
-                   garrett@GKRHospitality.com
-                 </a>
-               </div>
-            </div>
-
-            <div className="md:col-span-3">
-               <h4 className="text-white font-serif text-xl mb-6">Connect</h4>
-               <div className="flex flex-col gap-4">
-                 <a href="https://www.linkedin.com/in/garrettronan/" className="text-stone-500 hover:text-[#c5a059] text-sm uppercase tracking-widest transition-colors">LinkedIn</a>
-                 <a href="https://x.com/gkronan" className="text-stone-500 hover:text-[#c5a059] text-sm uppercase tracking-widest transition-colors">X</a>
-                 {/* <a href="#" className="text-stone-500 hover:text-[#c5a059] text-sm uppercase tracking-widest transition-colors">Behance</a> */}
-               </div>
-            </div>
-          </div>
-
-          <div className="flex flex-col md:flex-row justify-between items-end pt-8 border-t border-white/5">
-            <div className="flex items-center gap-4 mb-4 md:mb-0">
-               <img src={logoImage} alt="GKR" className="h-8 brightness-0 invert opacity-30" />
-            </div>
-            <div className="flex gap-8 text-[10px] uppercase tracking-[0.2em] text-stone-600 font-bold">
-               <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-               <span>© 2026 GKR Consulting</span>
-            </div>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

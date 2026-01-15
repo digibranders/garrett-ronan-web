@@ -26,3 +26,21 @@
 - Renamed all logo assets in `src/assets/` from hashed filenames to meaningful names and updated imports in `Home.tsx`.
 - Refactored Experience Timeline in `About.tsx` to use a 12-column grid instead of flexbox for better alignment of roles and descriptions.
 - Verified build success with `npm run build`.
+
+## 2026-01-14 (Migration to Next.js)
+
+- Replaced `vite` and `react-router-dom` with `next` (Next.js 16 App Router).
+- Refactored folder structure to follow Next.js conventions (`src/app/page.tsx`, `src/app/about/page.tsx`, etc.).
+- Created `src/app/layout.tsx` for Root Layout.
+- Created `tsconfig.json` with correct alias configuration (`@/*`).
+- Configured Tailwind CSS v4 with `@tailwindcss/postcss` in `postcss.config.mjs`.
+- Replaced all `<img>` tags with optimized `next/image` components.
+- Replaced all `Link` (react-router-dom) with `Link` (next/link).
+- Added `'use client'` directive to client-side components.
+- Refactored `ScrollToTop` to use `usePathname`.
+- Validated build success with `npm run build`.
+- Asset Organization: Localized 25+ external images and organized into granular subfolders (logos, hero, services, work, about, testimonials) for better maintainability.
+- Status: Stable build.
+- Dependencies: Moved react/react-dom to valid dependencies and removed unused @tailwindcss/vite plugin.
+- Vercel Config: Configured `next.config.ts` with `distDir: 'dist'` to match Vercel's legacy output directory setting for this project.
+- Status: Stable build.

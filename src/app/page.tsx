@@ -1,41 +1,71 @@
+'use client';
+
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform, useInView } from 'motion/react';
-import { Menu, ArrowRight, ChevronDown, Check } from 'lucide-react';
+import { ArrowRight, ChevronDown, Check } from 'lucide-react';
 import { Button } from '@/app/components/ui/button';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
+import Image from 'next/image';
 
 // Logo Import
-import logoImage from '@/assets/gkr-logo.png';
+import logoImage from '@/assets/images/logos/gkr-logo.png';
 
 // Employed By Logos
-import beverlyHiltonLogo from '@/assets/beverly-hilton.png';
-import starrRestaurantsLogo from '@/assets/starr-restaurants.png';
-import equinoxHotelsLogo from '@/assets/equinox-hotels.png';
-import rokaLogo from '@/assets/roka.png';
-import zumaLogo from '@/assets/zuma.png';
-import etaruLogo from '@/assets/etaru.png';
-import inkoNitoLogo from '@/assets/inko-nito.png';
-import oblixLogo from '@/assets/oblix.png';
-import movenpickLogo from '@/assets/movenpick.png';
-import adareManorLogo from '@/assets/adare-manor.png';
-import swallowHotelsLogo from '@/assets/swallow-hotels.png';
-import principalHotelsLogo from '@/assets/principal-hotels.png';
-import waldorfAstoriaLogo from '@/assets/waldorf-astoria.png';
-import bostonHarborHotelLogo from '@/assets/boston-harbor-hotel.png';
-import etcVenuesLogo from '@/assets/etc-venues.png';
-import conveneLogo from '@/assets/convene.png';
+import beverlyHiltonLogo from '@/assets/images/logos/beverly-hilton.png';
+import starrRestaurantsLogo from '@/assets/images/logos/starr-restaurants.png';
+import equinoxHotelsLogo from '@/assets/images/logos/equinox-hotels.png';
+import rokaLogo from '@/assets/images/logos/roka.png';
+import zumaLogo from '@/assets/images/logos/zuma.png';
+import etaruLogo from '@/assets/images/logos/etaru.png';
+import inkoNitoLogo from '@/assets/images/logos/inko-nito.png';
+import oblixLogo from '@/assets/images/logos/oblix.png';
+import movenpickLogo from '@/assets/images/logos/movenpick.png';
+import adareManorLogo from '@/assets/images/logos/adare-manor.png';
+import swallowHotelsLogo from '@/assets/images/logos/swallow-hotels.png';
+import principalHotelsLogo from '@/assets/images/logos/principal-hotels.png';
+import waldorfAstoriaLogo from '@/assets/images/logos/waldorf-astoria.png';
+import bostonHarborHotelLogo from '@/assets/images/logos/boston-harbor-hotel.png';
+import etcVenuesLogo from '@/assets/images/logos/etc-venues.png';
+import conveneLogo from '@/assets/images/logos/convene.png';
 
 // Consulted With Logos
-import bakanLogo from '@/assets/bakan.png';
-import support305Logo from '@/assets/support-305.png';
-import zumaConsultedLogo from '@/assets/zuma-consulted.png';
-import bxpLogo from '@/assets/bxp.png';
-import rudinLogo from '@/assets/rudin.png';
-import blaceLogo from '@/assets/blace.png';
-import residentLogo from '@/assets/meet-resident.png';
-import affectLogo from '@/assets/affect-group.png';
-import sageLogo from '@/assets/sage-hospitality.png';
-import buccamentLogo from '@/assets/buccament.png';
+import bakanLogo from '@/assets/images/logos/bakan.png';
+import support305Logo from '@/assets/images/logos/support-305.png';
+import zumaConsultedLogo from '@/assets/images/logos/zuma-consulted.png';
+import bxpLogo from '@/assets/images/logos/bxp.png';
+import rudinLogo from '@/assets/images/logos/rudin.png';
+import blaceLogo from '@/assets/images/logos/blace.png';
+import residentLogo from '@/assets/images/logos/meet-resident.png';
+import affectLogo from '@/assets/images/logos/affect-group.png';
+import sageLogo from '@/assets/images/logos/sage-hospitality.png';
+import buccamentLogo from '@/assets/images/logos/buccament.png';
+
+// Hero Images
+import heroNyc from '@/assets/images/hero/hero-nyc.jpg';
+import heroLa from '@/assets/images/hero/hero-la.jpg';
+import heroCaribbean from '@/assets/images/hero/hero-caribbean.jpg';
+
+// Service Images
+import serviceConcept from '@/assets/images/services/service-concept.jpg';
+import serviceInvestment from '@/assets/images/services/service-investment.jpg';
+import serviceConstruction from '@/assets/images/services/service-construction.jpg';
+import serviceOperations from '@/assets/images/services/service-operations.jpg';
+import serviceLegal from '@/assets/images/services/service-legal.jpg';
+import serviceAccounting from '@/assets/images/services/service-accounting.jpg';
+import serviceTraining from '@/assets/images/services/service-training.jpg';
+
+// Work Images
+import workStrategy from '@/assets/images/work/work-strategy.jpg';
+import workPlanning from '@/assets/images/work/work-planning.jpg';
+import workExecution from '@/assets/images/work/work-execution.jpg'; // used twice
+import workDining from '@/assets/images/work/work-dining.jpg';
+import workBar from '@/assets/images/work/work-bar.jpg';
+import workRooftop from '@/assets/images/work/work-rooftop.jpg';
+import testimonialGroup from '@/assets/images/testimonials/testimonial-group.jpg';
+
+// Testimonial Images
+import testimonialLobby from '@/assets/images/testimonials/testimonial-lobby.jpg';
+import testimonialReception from '@/assets/images/testimonials/testimonial-reception.jpg';
 
 // Employed By Companies - Logo or Text
 const EMPLOYED_BY_COMPANIES = [
@@ -76,9 +106,9 @@ const CONSULTED_WITH_COMPANIES = [
 
 // Hero Slideshow Images - NYC, LA, Caribbean
 const HERO_IMAGES = [
-  "https://images.unsplash.com/photo-1762732793012-8bdab3af00b4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxOZXclMjBZb3JrJTIwQ2l0eSUyMGx1eHVyeSUyMGhvdGVsJTIwc2t5bGluZXxlbnwxfHx8fDE3NjgyODQ5Mzl8MA&ixlib=rb-4.1.0&q=80&w=1080",
-  "https://images.unsplash.com/photo-1767376476050-744ec779252d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxMb3MlMjBBbmdlbGVzJTIwbHV4dXJ5JTIwaG90ZWwlMjBzdW5zZXR8ZW58MXx8fHwxNzY4Mjg0OTM5fDA&ixlib=rb-4.1.0&q=80&w=1080",
-  "https://images.unsplash.com/photo-1629906645393-3678ed4f4040?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxDYXJpYmJlYW4lMjBsdXh1cnklMjByZXNvcnQlMjBiZWFjaHxlbnwxfHx8fDE3NjgyODQ5Mzl8MA&ixlib=rb-4.1.0&q=80&w=1080"
+  heroNyc,
+  heroLa,
+  heroCaribbean
 ];
 
 // Services with background images
@@ -86,127 +116,130 @@ const SERVICES_DATA = [
   {
     title: "Concept Creation",
     description: "We help guide your hospitality concepts from ideation through to delivering market ready, creative results.",
-    bgImage: "https://images.unsplash.com/photo-1759472659432-3232e42d04d2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBob3RlbCUyMGRlc2lnbiUyMGNvbmNlcHR8ZW58MXx8fHwxNzY4Mjk2NjEwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+    bgImage: serviceConcept
   },
   {
     title: "Capital & Growth Investment",
     description: "We provide strategic advice  and guidance on growth and investment, capital sourcing, M&A’s and investor-ready business plans.",
-    bgImage: "https://images.unsplash.com/photo-1758519289559-f4d0ead39634?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMGludmVzdG1lbnQlMjBtZWV0aW5nfGVufDF8fHx8MTc2ODI4Mjc4MHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+    bgImage: serviceInvestment
   },
   {
     title: "Design, Development & Construction",
     description: "We provide skilled “Owners Rep” oversight through each phase of design and construction to deliver successful Projects.",
-    bgImage: "https://images.unsplash.com/photo-1685382807533-9bd52421457c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcmNoaXRlY3R1cmUlMjBjb25zdHJ1Y3Rpb24lMjBsdXh1cnl8ZW58MXx8fHwxNzY4Mjk2NjExfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+    bgImage: serviceConstruction
   },
   {
     title: "Operations",
     description: "We help deliver end-to-end operations excellence and efficiency from pre and post opening to ongoing operational management.",
-    bgImage: "https://images.unsplash.com/photo-1762113246607-4299ec3f3214?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZXN0YXVyYW50JTIwa2l0Y2hlbiUyMG9wZXJhdGlvbnMlMjBjaGVmfGVufDF8fHx8MTc2ODI4NDk0MHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+    bgImage: serviceOperations
   },
   {
     title: "Legal",
     description: "We help you manage the legal foundations that protect your deals, teams, and long-term operations.",
-    bgImage: "https://images.unsplash.com/photo-1564846824194-346b7871b855?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsZWdhbCUyMGNvbnRyYWN0JTIwZG9jdW1lbnRzJTIwYnVzaW5lc3N8ZW58MXx8fHwxNzY4Mjk2NjEwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+    bgImage: serviceLegal
   },
   {
     title: "Financial",
     description: "We provide end-to-end insightful financial guidance, including budgeting, forecasting, audits, cost control, efficiency and profitability.",
-    bgImage: "https://images.unsplash.com/photo-1762427354051-a9bdb181ae3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaW5hbmNpYWwlMjBhY2NvdW50aW5nJTIwYW5hbHlzaXN8ZW58MXx8fHwxNzY4MTk1NTkxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+    bgImage: serviceAccounting
   },
   {
     title: "Additional Support",
     description: "We provide targeted support wherever your business needs experienced hospitality operator oversight.",
-    bgImage: "https://images.unsplash.com/photo-1766808985890-e564439e39a7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxob3RlbCUyMHN0YWZmJTIwdHJhaW5pbmclMjB0ZWFtfGVufDF8fHx8MTc2ODI4NDk0MXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+    bgImage: serviceTraining
   }
 ];
 
+// How We Work with images
 // How We Work with images
 const HOW_WE_WORK = [
   {
     number: "01",
     title: "Diagnostic",
     description: "We spend days on-site, observing everything. Operations, financials, team dynamics, guest experience. We talk to your staff, review your numbers, and watch service in real-time.",
-    image: "https://images.unsplash.com/photo-1764173039056-3cc602fef942?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb25zdWx0YW50JTIwbWVldGluZyUyMGJ1c2luZXNzJTIwc3RyYXRlZ3l8ZW58MXx8fHwxNzY4Mjg0OTQzfDA&ixlib=rb-4.1.0&q=80&w=1080"
+    image: workStrategy
   },
   {
     number: "02",
     title: "Clear Diagnosis",
     description: "We identify the root problems (not symptoms), quantify the impact, and show you exactly what's broken and why. No consultant-speak. No 50-page reports. Just clarity.",
-    image: "https://images.unsplash.com/photo-1758519289022-5f9dea0d8cdc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMGZpbmFuY2lhbCUyMHBsYW5uaW5nfGVufDF8fHx8MTc2ODI4NDk0MXww&ixlib=rb-4.1.0&q=80&w=1080"
+    image: workPlanning
   },
   {
     number: "03",
     title: "Practical Plan",
     description: "We build a focused roadmap with specific actions, clear timelines, and realistic outcomes. You'll know what we're doing, when, and what results to expect.",
-    image: "https://images.unsplash.com/photo-1758519289022-5f9dea0d8cdc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMGZpbmFuY2lhbCUyMHBsYW5uaW5nfGVufDF8fHx8MTc2ODI4NDk0MXww&ixlib=rb-4.1.0&q=80&w=1080"
+    image: workPlanning // Using same image as was done in original code (duplicate URL)
   },
   {
     number: "04",
     title: "Hands-On Implementation",
     description: "We work on-site with your team, building systems, training staff, and fixing problems as they surface. We stay until the operation runs without us.",
-    image: "https://images.unsplash.com/photo-1766808985890-e564439e39a7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxob3RlbCUyMHN0YWZmJTIwdHJhaW5pbmclMjB0ZWFtfGVufDF8fHx8MTc2ODI4NDk0MXww&ixlib=rb-4.1.0&q=80&w=1080"
+    image: serviceTraining
   },
   {
     number: "05",
     title: "Sustainable Results",
     description: "When we leave, your team knows how to maintain what we've built. The systems stick. The performance lasts.",
-    image: "https://images.unsplash.com/photo-1759038085950-1234ca8f5fed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxob3RlbCUyMHJlY2VwdGlvbiUyMGRlc2slMjBzZXJ2aWNlfGVufDF8fHx8MTc2ODI4NDk0NHww&ixlib=rb-4.1.0&q=80&w=1080"
+    image: testimonialReception
   }
 ];
 
+// Portfolio projects
 // Portfolio projects
 const PORTFOLIO_PROJECTS = [
   {
     title: "Boutique Hotel",
     location: "Manhattan, NY",
-    image: "https://images.unsplash.com/photo-1765122670586-b5f22d95c17f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxib3V0aXF1ZSUyMGhvdGVsJTIwZW50cmFuY2V8ZW58MXx8fHwxNzY4Mjg0OTQyfDA&ixlib=rb-4.1.0&q=80&w=1080"
+    image: workExecution
   },
   {
     title: "Fine Dining Restaurant",
     location: "Los Angeles, CA",
-    image: "https://images.unsplash.com/photo-1765021098429-0f556e068d8b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaW5lJTIwZGluaW5nJTIwcmVzdGF1cmFudCUyMGludGVyaW9yfGVufDF8fHx8MTc2ODIwMDk2Mnww&ixlib=rb-4.1.0&q=80&w=1080"
+    image: workDining
   },
   {
     title: "Luxury Lounge",
     location: "New York, NY",
-    image: "https://images.unsplash.com/photo-1666455231536-e5cf8b48db7d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBiYXIlMjBjb2NrdGFpbCUyMGxvdW5nZXxlbnwxfHx8fDE3NjgyODQ5NDJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+    image: workBar
   },
   {
     title: "Rooftop Dining",
     location: "Los Angeles, CA",
-    image: "https://images.unsplash.com/photo-1597943991719-b9997edbde84?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxob3RlbCUyMHJvb2Z0b3AlMjBkaW5pbmclMjBvdXRkb29yfGVufDF8fHx8MTc2ODI4NDk0M3ww&ixlib=rb-4.1.0&q=80&w=1080"
+    image: workRooftop
   },
   {
     title: "Caribbean Resort",
     location: "Caribbean Islands",
-    image: "https://images.unsplash.com/photo-1629906645393-3678ed4f4040?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxDYXJpYmJlYW4lMjBsdXh1cnklMjByZXNvcnQlMjBiZWFjaHxlbnwxfHx8fDE3NjgyODQ5Mzl8MA&ixlib=rb-4.1.0&q=80&w=1080"
+    image: heroCaribbean
   },
   {
     title: "Restaurant Group",
     location: "New York, NY",
-    image: "https://images.unsplash.com/photo-1766812782166-e243111f703d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZXN0YXVyYW50JTIwZ3JvdXAlMjBkaW5pbmd8ZW58MXx8fHwxNzY4Mjg0OTQ0fDA&ixlib=rb-4.1.0&q=80&w=1080"
+    image: testimonialGroup
   }
 ];
 
+// Testimonials with property images
 // Testimonials with property images
 const TESTIMONIALS = [
   {
     quote: "We were three months from opening and nowhere near ready. Garrett came in and built the entire operational framework—hiring, training, systems, everything. We opened on time with a team that actually knew what they were doing.",
     author: "Managing Partner",
     company: "Boutique Hotel Group",
-    image: "https://images.unsplash.com/photo-1744782996368-dc5b7e697f4c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBob3RlbCUyMGxvYmJ5JTIwaW50ZXJpb3J8ZW58MXx8fHwxNzY4MjQyNzI1fDA&ixlib=rb-4.1.0&q=80&w=1080"
+    image: testimonialLobby
   },
   {
     quote: "Our margins were disappearing and we couldn't figure out why. Within 30 days, they identified $200K in annual leakage and gave us a plan to fix it. Six months later, we're profitable again.",
     author: "Owner",
     company: "Restaurant Group",
-    image: "https://images.unsplash.com/photo-1765021098429-0f556e068d8b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaW5lJTIwZGluaW5nJTIwcmVzdGF1cmFudCUyMGludGVyaW9yfGVufDF8fHx8MTc2ODIwMDk2Mnww&ixlib=rb-4.1.0&q=80&w=1080"
+    image: workDining
   },
   {
     quote: "Most consultants tell you what's wrong and leave. These guys stayed until it was fixed. That made all the difference.",
     author: "Hotel GM",
     company: "Northeast Market",
-    image: "https://images.unsplash.com/photo-1759038085950-1234ca8f5fed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxob3RlbCUyMHJlY2VwdGlvbiUyMGRlc2slMjBzZXJ2aWNlfGVufDF8fHx8MTc2ODI4NDk0NHww&ixlib=rb-4.1.0&q=80&w=1080"
+    image: testimonialReception
   }
 ];
 
@@ -241,10 +274,8 @@ function AnimatedCounter({ end, duration = 2, suffix = "" }: { end: number; dura
 }
 
 export default function Home() {
-  const [scrolled, setScrolled] = useState(false);
   const [currentHeroImage, setCurrentHeroImage] = useState(0);
   const [currentWorkStep, setCurrentWorkStep] = useState(0);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { scrollYProgress } = useScroll();
   const scale = useTransform(scrollYProgress, [0, 0.2], [1, 1.1]);
 
@@ -256,98 +287,10 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
-  // Handle scroll for navbar
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
     <div className="bg-[#181818] text-[#FFF7F2] font-sans selection:bg-[#c5a059] selection:text-white overflow-x-hidden">
       
-      {/* Navigation */}
-      <nav className={`fixed top-0 w-full z-50 transition-all duration-700 ${scrolled ? 'bg-[#181818]/95 backdrop-blur-xl py-4 border-b border-white/10 shadow-lg' : 'bg-[#181818]/60 backdrop-blur-md py-8'}`}>
-        <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
-          <div className="flex items-center gap-4">
-             <Link to="/"><img src={logoImage} alt="GKR" className={`object-contain transition-all duration-500 ${scrolled ? 'h-10' : 'h-14'} brightness-0 invert`} /></Link>
-          </div>
-          
-          <div className="hidden md:flex items-center gap-16">
-            {[
-              { label: 'Philosophy', href: '/#philosophy' },
-              { label: 'Expertise', href: '/#expertise' },
-              { label: 'About', href: '/about' },
-              { label: 'Services', href: '/services' }
-            ].map((item, i) => (
-              item.href.startsWith('/#') ? (
-                <a key={item.label} href={item.href} className="text-[10px] uppercase tracking-[0.3em] font-medium hover:text-[#c5a059] transition-colors relative group">
-                  <span className="text-[#c5a059] mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">0{i+1}</span>
-                  {item.label}
-                </a>
-              ) : (
-                <Link key={item.label} to={item.href} className="text-[10px] uppercase tracking-[0.3em] font-medium hover:text-[#c5a059] transition-colors relative group">
-                  <span className="text-[#c5a059] mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">0{i+1}</span>
-                  {item.label}
-                </Link>
-              )
-            ))}
-          </div>
 
-          <Link to="/contact">
-            <Button className="hidden md:flex bg-transparent border border-[#c5a059] text-[#c5a059] hover:bg-[#c5a059] hover:text-[#181818] rounded-full px-8 py-6 tracking-[0.2em] text-[10px] font-bold transition-all duration-500">
-              CONTACT US
-            </Button>
-          </Link>
-          
-          <button className="md:hidden text-white" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-            <Menu className="w-6 h-6" />
-          </button>
-        </div>
-
-        {/* Mobile Menu */}
-        <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ 
-            opacity: mobileMenuOpen ? 1 : 0,
-            height: mobileMenuOpen ? 'auto' : 0
-          }}
-          transition={{ duration: 0.3 }}
-          className="md:hidden overflow-hidden border-t border-white/10"
-        >
-          <div className="container mx-auto px-6 py-8 space-y-6">
-            {[
-              { label: 'Philosophy', href: '#philosophy' },
-              { label: 'Expertise', href: '#expertise' },
-              { label: 'About', href: '/about' },
-              { label: 'Services', href: '/services' },
-              { label: 'Contact', href: '/contact' }
-            ].map((item, i) => (
-              item.href.startsWith('#') ? (
-                <a 
-                  key={item.label} 
-                  href={item.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block text-sm uppercase tracking-[0.3em] font-medium text-white hover:text-[#c5a059] transition-colors py-2"
-                >
-                  <span className="text-[#c5a059] mr-3">0{i+1}</span>
-                  {item.label}
-                </a>
-              ) : (
-                <Link 
-                  key={item.label} 
-                  to={item.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block text-sm uppercase tracking-[0.3em] font-medium text-white hover:text-[#c5a059] transition-colors py-2"
-                >
-                  <span className="text-[#c5a059] mr-3">0{i+1}</span>
-                  {item.label}
-                </Link>
-              )
-            ))}
-          </div>
-        </motion.div>
-      </nav>
 
       {/* Hero Section with Slideshow */}
       <section className="relative h-screen w-full overflow-hidden flex flex-col justify-center">
@@ -356,15 +299,23 @@ export default function Home() {
           <motion.div style={{ scale }} className="w-full h-full">
             <div className="absolute inset-0 bg-gradient-to-b from-[#181818]/40 via-[#181818]/30 to-[#181818] z-10"></div>
             {HERO_IMAGES.map((image, index) => (
-              <motion.img
+              <motion.div
                 key={index}
-                src={image}
-                alt={`Hero ${index + 1}`}
-                className="absolute w-full h-full object-cover"
+                className="absolute inset-0 w-full h-full"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: currentHeroImage === index ? 1 : 0 }}
                 transition={{ duration: 1.5 }}
-              />
+              >
+                <Image
+                  src={image}
+                  alt={`Hero ${index + 1}`}
+                  fill
+                  className="object-cover"
+                  // Optimize loading: First image gets priority
+                  priority={index === 0}
+                  sizes="100vw"
+                />
+              </motion.div>
             ))}
           </motion.div>
         </div>
@@ -379,7 +330,7 @@ export default function Home() {
               Simply Practical Yet Creative  <span className="text-[#c5a059] italic">Solutions</span>
             </h1>
 
-            <Link to="/contact">
+            <Link href="/contact">
               <Button className="bg-[#c5a059] text-[#181818] hover:opacity-90 px-10 py-6 text-xs uppercase tracking-[0.3em] font-bold transition-all duration-500 rounded-full">
                 <span className="hidden md:inline">Schedule Your Complimentary Diagnostic Call</span>
                 <span className="md:hidden">Schedule Free Call</span>
@@ -421,10 +372,11 @@ export default function Home() {
               >
                 {/* Image at the top */}
                 <div className="aspect-[4/3] overflow-hidden relative">
-                  <img 
+                  <Image 
                     src={service.bgImage}
                     alt={service.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#181818] via-[#181818]/40 to-transparent opacity-60"></div>
                   
@@ -454,7 +406,7 @@ export default function Home() {
           <div 
             className="w-full h-full"
             style={{ 
-              backgroundImage: `url(https://images.unsplash.com/photo-1744782996368-dc5b7e697f4c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBob3RlbCUyMGxvYmJ5JTIwaW50ZXJpb3J8ZW58MXx8fHwxNzY4MjQyNzI1fDA&ixlib=rb-4.1.0&q=80&w=1080)`,
+              backgroundImage: `url(${testimonialLobby.src})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center'
             }}
@@ -568,7 +520,7 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="group relative overflow-hidden rounded-sm aspect-[4/5] cursor-pointer"
               >
-                <img 
+                <Image 
                   src={project.image} 
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
@@ -634,7 +586,7 @@ export default function Home() {
               <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#FFF7F2] to-transparent z-10"></div>
               
               <motion.div
-                className="flex gap-24 items-center"
+                className="flex gap-24 items-center will-change-transform"
                 animate={{
                   x: [-2400, 0],
                 }}
@@ -654,7 +606,7 @@ export default function Home() {
                     className="flex-shrink-0 flex items-center justify-center group"
                   >
                     {company.logo ? (
-                      <img 
+                      <Image 
                         src={company.logo} 
                         alt={company.name} 
                         className={`object-contain grayscale brightness-[0.3] group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-300 ${
@@ -679,7 +631,7 @@ export default function Home() {
                     className="flex-shrink-0 flex items-center justify-center group"
                   >
                     {company.logo ? (
-                      <img 
+                      <Image 
                         src={company.logo} 
                         alt={company.name} 
                         className={`object-contain grayscale brightness-[0.3] group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-300 ${
@@ -719,7 +671,7 @@ export default function Home() {
               <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#FFF7F2] to-transparent z-10"></div>
               
               <motion.div
-                className="flex gap-24 items-center"
+                className="flex gap-24 items-center will-change-transform"
                 animate={{
                   x: [-2400, 0],
                 }}
@@ -739,7 +691,7 @@ export default function Home() {
                     className="flex-shrink-0 flex items-center justify-center group"
                   >
                     {company.logo ? (
-                      <img 
+                      <Image 
                         src={company.logo} 
                         alt={company.name} 
                         className={`object-contain grayscale brightness-[0.3] group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-300 ${
@@ -776,7 +728,7 @@ export default function Home() {
                     className="flex-shrink-0 flex items-center justify-center group"
                   >
                     {company.logo ? (
-                      <img 
+                      <Image 
                         src={company.logo} 
                         alt={company.name} 
                         className={`object-contain grayscale brightness-[0.3] group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-300 ${
@@ -877,7 +829,7 @@ export default function Home() {
                     transition={{ duration: 0.6 }}
                     className="absolute inset-0"
                   >
-                    <img src={step.image} alt={step.title} className="w-full h-full object-cover" />
+                    <Image src={step.image} alt={step.title} className="w-full h-full object-cover" />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#181818] via-transparent to-transparent opacity-60"></div>
                   </motion.div>
                 ))}
@@ -915,10 +867,11 @@ export default function Home() {
               >
                 {/* Property Image */}
                 <div className="relative h-48 overflow-hidden">
-                  <img 
+                  <Image 
                     src={testimonial.image} 
                     alt={testimonial.company}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#181818] to-transparent"></div>
                 </div>
@@ -983,7 +936,7 @@ export default function Home() {
               transition={{ delay: 0.2 }}
               className="flex justify-center lg:justify-end"
             >
-              <Link to="/contact">
+              <Link href="/contact">
                 <Button className="bg-[#181818] text-white hover:bg-white hover:text-[#181818] px-8 py-6 text-sm uppercase tracking-[0.3em] font-bold transition-all duration-500 rounded-full whitespace-normal h-auto text-center leading-normal">
                   <span className="hidden md:inline">Schedule Your Complimentary<br />Diagnostic Call</span>
                   <span className="md:hidden">Schedule Free Call</span>
@@ -994,52 +947,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer id="contact" className="bg-[#181818] pt-32 pb-12 px-6 md:px-12 border-t border-white/5">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-32">
-            <div className="md:col-span-5">
-              <span className="text-[#c5a059] text-[10px] tracking-[0.4em] uppercase font-bold block mb-8">Inquiries</span>
-              <a href="mailto:garrett@GKRHospitality.com" className="text-4xl md:text-6xl font-serif text-white hover:text-[#c5a059] transition-colors leading-none block mb-2">
-                Start a<br/>Conversation
-              </a>
-            </div>
-            
-            <div className="md:col-span-3 md:col-start-7">
-               <h4 className="text-white font-serif text-xl mb-6">Office</h4>
-               <address className="text-stone-500 text-sm leading-relaxed not-italic">
-                 42 Brighton View Rd<br/>
-                 Fairfield, CT, 06824<br/>
-                 USA
-               </address>
-               <div className="mt-8">
-                 <a href="mailto:garrett@GKRHospitality.com" className="text-stone-500 hover:text-[#c5a059] text-sm transition-colors">
-                   garrett@GKRHospitality.com
-                 </a>
-               </div>
-            </div>
 
-            <div className="md:col-span-3">
-               <h4 className="text-white font-serif text-xl mb-6">Connect</h4>
-               <div className="flex flex-col gap-4">
-                 <a href="https://www.linkedin.com/in/garrettronan/" className="text-stone-500 hover:text-[#c5a059] text-sm uppercase tracking-widest transition-colors">LinkedIn</a>
-                 <a href="https://x.com/gkronan" className="text-stone-500 hover:text-[#c5a059] text-sm uppercase tracking-widest transition-colors">X</a>
-                 {/* <a href="#" className="text-stone-500 hover:text-[#c5a059] text-sm uppercase tracking-widest transition-colors">Behance</a> */}
-               </div>
-            </div>
-          </div>
-
-          <div className="flex flex-col md:flex-row justify-between items-end pt-8 border-t border-white/5">
-            <div className="flex items-center gap-4 mb-4 md:mb-0">
-               <img src={logoImage} alt="GKR" className="h-8 brightness-0 invert opacity-30" />
-            </div>
-            <div className="flex gap-8 text-[10px] uppercase tracking-[0.2em] text-stone-600 font-bold">
-               <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-               <span>© 2026 GKR Consulting</span>
-            </div>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

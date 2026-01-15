@@ -1,20 +1,28 @@
+'use client';
+
 import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Menu, Check } from 'lucide-react';
+import {  Check } from 'lucide-react';
 import { Button } from '@/app/components/ui/button';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
+import Image from 'next/image';
 
 // Logo Import
-import logoImage from '@/assets/gkr-logo.png';
+import logoImage from '@/assets/images/logos/gkr-logo.png';
 // Garrett Ronan image
-import garrettImage from '@/assets/garrett-ronan.png';
+import garrettImage from '@/assets/images/about/garrett-ronan.png';
 // Garrett signature
-import signatureImage from '@/assets/signature.png';
+import signatureImage from '@/assets/images/about/signature.png';
+
+// About Images
+import aboutFounder from '@/assets/images/about/about-founder.jpg';
+import aboutHotel from '@/assets/images/about/about-hotel.jpg';
+import aboutRestaurant from '@/assets/images/about/about-restaurant.jpg';
 
 const ABOUT_IMAGES = {
-  founder: "https://images.unsplash.com/photo-1601489865452-407a1b801dde?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBidXNpbmVzc21hbnxlbnwxfHx8fDE3NjgxODkwMzV8MA&ixlib=rb-4.1.0&q=80&w=1080",
-  hotel: "https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBob3RlbCUyMGxvYmJ5fGVufDF8fHx8MTc2ODI0NTIzNXww&ixlib=rb-4.1.0&q=80&w=1080",
-  restaurant: "https://images.unsplash.com/photo-1685040235380-a42a129ade4e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjByZXN0YXVyYW50JTIwaW50ZXJpb3J8ZW58MXx8fHwxNzY4MjE0MTM5fDA&ixlib=rb-4.1.0&q=80&w=1080"
+  founder: aboutFounder,
+  hotel: aboutHotel,
+  restaurant: aboutRestaurant
 };
 
 const EXPERIENCE_TIMELINE = [
@@ -41,101 +49,10 @@ const SERVICES_LIST = [
 ];
 
 export default function About() {
-  const [scrolled, setScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   return (
     <div className="bg-[#181818] text-[#FFF7F2] font-sans selection:bg-[#c5a059] selection:text-white overflow-x-hidden">
       
-      {/* Navigation */}
-      <nav className={`fixed top-0 w-full z-50 transition-all duration-700 ${scrolled ? 'bg-[#181818]/95 backdrop-blur-xl py-4 border-b border-white/10 shadow-lg' : 'bg-[#181818]/60 backdrop-blur-md py-8'}`}>
-        <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
-          <div className="flex items-center gap-4">
-             <Link to="/"><img src={logoImage} alt="GKR" className={`object-contain transition-all duration-500 ${scrolled ? 'h-10' : 'h-14'} brightness-0 invert`} /></Link>
-          </div>
-          
-          <div className="hidden md:flex items-center gap-16">
-            {[
-              { label: 'Philosophy', href: '/#philosophy' },
-              { label: 'Expertise', href: '/#expertise' },
-              { label: 'About', href: '/about' },
-              { label: 'Services', href: '/services' }
-            ].map((item, i) => (
-              item.href.startsWith('/#') ? (
-                <a key={item.label} href={item.href} className="text-[10px] uppercase tracking-[0.3em] font-medium hover:text-[#c5a059] transition-colors relative group">
-                  <span className="text-[#c5a059] mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">0{i+1}</span>
-                  {item.label}
-                </a>
-              ) : (
-                <Link key={item.label} to={item.href} className="text-[10px] uppercase tracking-[0.3em] font-medium hover:text-[#c5a059] transition-colors relative group">
-                  <span className="text-[#c5a059] mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">0{i+1}</span>
-                  {item.label}
-                </Link>
-              )
-            ))}
-          </div>
-
-          <Link to="/contact">
-            <Button className="hidden md:flex bg-transparent border border-[#c5a059] text-[#c5a059] hover:bg-[#c5a059] hover:text-[#181818] rounded-full px-8 py-6 tracking-[0.2em] text-[10px] font-bold transition-all duration-500">
-              CONTACT US
-            </Button>
-          </Link>
-          
-          <button className="md:hidden text-white" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-            <Menu className="w-6 h-6" />
-          </button>
-        </div>
-
-        {/* Mobile Menu */}
-        <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ 
-            opacity: mobileMenuOpen ? 1 : 0,
-            height: mobileMenuOpen ? 'auto' : 0
-          }}
-          transition={{ duration: 0.3 }}
-          className="md:hidden overflow-hidden border-t border-white/10"
-        >
-          <div className="container mx-auto px-6 py-8 space-y-6">
-            {[
-              { label: 'Philosophy', href: '/#philosophy' },
-              { label: 'Expertise', href: '/#expertise' },
-              { label: 'About', href: '/about' },
-              { label: 'Services', href: '/services' },
-              { label: 'Contact', href: '/contact' }
-            ].map((item, i) => (
-              item.href.startsWith('/#') ? (
-                <a 
-                  key={item.label} 
-                  href={item.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block text-sm uppercase tracking-[0.3em] font-medium text-white hover:text-[#c5a059] transition-colors py-2"
-                >
-                  <span className="text-[#c5a059] mr-3">0{i+1}</span>
-                  {item.label}
-                </a>
-              ) : (
-                <Link 
-                  key={item.label} 
-                  to={item.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block text-sm uppercase tracking-[0.3em] font-medium text-white hover:text-[#c5a059] transition-colors py-2"
-                >
-                  <span className="text-[#c5a059] mr-3">0{i+1}</span>
-                  {item.label}
-                </Link>
-              )
-            ))}
-          </div>
-        </motion.div>
-      </nav>
-
       {/* Hero Section */}
       <section className="relative pt-32 md:pt-48 pb-8 md:pb-32">
         <div className="container mx-auto px-6 md:px-12">
@@ -166,11 +83,11 @@ export default function About() {
             >
               <div className="sticky top-32">
                 <div className="aspect-[3/4] overflow-hidden rounded-sm mb-8">
-                  <img src={garrettImage} alt="Garrett Ronan" className="w-full h-full object-cover" />
+                  <Image src={garrettImage} alt="Garrett Ronan" className="w-full h-full object-cover" />
                 </div>
                 <div className="border-l-2 border-[#c5a059] pl-6">
                   <p className="text-[#c5a059] text-xs uppercase tracking-[0.3em] mb-2">Founder</p>
-                  <img src={signatureImage} alt="Garrett Ronan signature" className="h-16 mb-4" />
+                  <Image src={signatureImage} alt="Garrett Ronan signature" className="h-16 mb-4" />
                   <p className="text-stone-400 text-sm">30+ years of operational leadership in premium hospitality</p>
                 </div>
               </div>
@@ -366,7 +283,7 @@ export default function About() {
             <p className="text-[#181818] text-lg mb-12 max-w-2xl mx-auto">
               Let's discuss how we can support your hospitality vision
             </p>
-            <Link to="/contact">
+            <Link href="/contact">
               <Button className="bg-[#181818] text-white hover:bg-white hover:text-[#181818] px-12 py-7 text-sm uppercase tracking-[0.3em] font-bold transition-all duration-500">
                 <span className="hidden md:inline">Schedule Your Free Diagnostic Call</span>
                 <span className="md:hidden">Schedule Free Call</span>
@@ -375,53 +292,6 @@ export default function About() {
           </motion.div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-[#181818] pt-32 pb-12 px-6 md:px-12 border-t border-white/5">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-32">
-            <div className="md:col-span-5">
-              <span className="text-[#c5a059] text-[10px] tracking-[0.4em] uppercase font-bold block mb-8">Inquiries</span>
-              <a href="mailto:garrett@GKRHospitality.com" className="text-4xl md:text-6xl font-serif text-white hover:text-[#c5a059] transition-colors leading-none block mb-2">
-                Start a<br/>Conversation
-              </a>
-            </div>
-            
-            <div className="md:col-span-3 md:col-start-7">
-               <h4 className="text-white font-serif text-xl mb-6">Office</h4>
-               <address className="text-stone-500 text-sm leading-relaxed not-italic">
-                 42 Brighton View Rd<br/>
-                 Fairfield, CT, 06824<br/>
-                 USA
-               </address>
-               <div className="mt-8">
-                 <a href="mailto:garrett@GKRHospitality.com" className="text-stone-500 hover:text-[#c5a059] text-sm transition-colors">
-                   garrett@GKRHospitality.com
-                 </a>
-               </div>
-            </div>
-
-            <div className="md:col-span-3">
-               <h4 className="text-white font-serif text-xl mb-6">Connect</h4>
-               <div className="flex flex-col gap-4">
-                 <a href="https://www.linkedin.com/in/garrettronan/" className="text-stone-500 hover:text-[#c5a059] text-sm uppercase tracking-widest transition-colors">LinkedIn</a>
-                 <a href="https://x.com/gkronan" className="text-stone-500 hover:text-[#c5a059] text-sm uppercase tracking-widest transition-colors">X</a>
-                 {/* <a href="#" className="text-stone-500 hover:text-[#c5a059] text-sm uppercase tracking-widest transition-colors">Behance</a> */}
-               </div>
-            </div>
-          </div>
-
-          <div className="flex flex-col md:flex-row justify-between items-end pt-8 border-t border-white/5">
-            <div className="flex items-center gap-4 mb-4 md:mb-0">
-               <img src={logoImage} alt="GKR" className="h-8 brightness-0 invert opacity-30" />
-            </div>
-            <div className="flex gap-8 text-[10px] uppercase tracking-[0.2em] text-stone-600 font-bold">
-               <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-               <span>© 2026 GKR Consulting</span>
-            </div>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }
