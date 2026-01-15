@@ -55,86 +55,60 @@ html_content = f'''<!DOCTYPE html>
             color: inherit;
         }}
 
-        /* Dark Mode Media Query - Supported by Apple Mail, iOS Mail, etc. */
-        /* Outlook Desktop (Windows) ignores this and renders the default inline styles (Light Mode) */
+        /* Dark Mode Media Query */
         @media (prefers-color-scheme: dark) {{
-            .signature-container {{
-                background-image: url('{URL_CASTLE_DARK}') !important;
-                color: {COLOR_WHITE} !important;
-            }}
+            /* We will handle image swapping via display:none on the img tags themselves for castle too */
             .text-main {{
                 color: {COLOR_WHITE} !important;
             }}
-            .logo-light {{
+            .logo-light, .castle-light {{
                 display: none !important;
             }}
-            .logo-dark {{
+            .logo-dark, .castle-dark {{
                 display: block !important;
             }}
             .icon-fill {{
                 fill: {COLOR_GOLD} !important;
             }}
-            /* Force VML Dark mode if possible (usually not possible via CSS) */
         }}
 
         @media (prefers-color-scheme: light) {{
-            .signature-container {{
-                background-image: url('{URL_CASTLE_LIGHT}') !important;
-                color: {COLOR_NAVY} !important;
-            }}
             .text-main {{
                 color: {COLOR_NAVY} !important;
             }}
-            .logo-light {{
+            .logo-light, .castle-light {{
                 display: block !important;
             }}
-            .logo-dark {{
+            .logo-dark, .castle-dark {{
                 display: none !important;
             }}
         }}
     </style>
 </head>
 <body>
-    <!-- VML Background Wrapper for Outlook -->
-    <!--[if gte mso 9]>
-    <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:600px;height:300px;">
-    <v:fill type="frame" src="{URL_CASTLE_LIGHT}" color="#ffffff" />
-    <v:textbox inset="0,0,0,0">
-    <![endif]-->
-    
-    <table cellpadding="0" cellspacing="0" border="0" width="600" style="width: 600px; height: 300px; border-collapse: collapse; font-family: 'Montserrat', sans-serif;">
+    <table cellpadding="0" cellspacing="0" border="0" width="600" style="width: 600px; border-collapse: collapse; font-family: 'Montserrat', sans-serif;">
         <tr>
-            <!-- Main Content Cell -->
-            <!-- Note: 'background' legacy attribute helps some older webmail clients -->
-            <td class="signature-container" valign="top" background="{URL_CASTLE_LIGHT}" style="
-                width: 600px; 
-                height: 300px; 
-                background-image: url('{URL_CASTLE_LIGHT}'); 
-                background-repeat: no-repeat; 
-                background-position: right bottom; 
-                background-size: auto 85%;
-                padding: 35px 40px;
-                box-sizing: border-box;
-                position: relative;">
+            <td class="signature-container" valign="top" style="padding: 35px 40px; box-sizing: border-box;">
                 
                 <!-- Inner Layout -->
                 <table cellpadding="0" cellspacing="0" border="0" width="100%">
                     <!-- Line 1: Logo -->
                     <tr>
-                        <td align="left" style="padding-bottom: 20px;"> 
-                            <!-- Light Mode Logo (Default) -->
+                        <td align="left" style="padding-bottom: 20px;" colspan="2"> 
+                            <!-- Light Mode Logo -->
                             <img src="{URL_LOGO_BLUE}" class="logo-light" alt="Garrett Ronan" width="280" style="display: block; border: 0;">
-                            <!-- Dark Mode Logo (Hidden by default, shown via media query) -->
+                            <!-- Dark Mode Logo -->
                             <img src="{URL_LOGO_WHITE}" class="logo-dark" alt="Garrett Ronan" width="280" style="display: none; border: 0;">
                         </td>
                     </tr>
                     
                     <!-- Line 2: Spacer -->
-                    <tr><td height="30"></td></tr>
+                    <tr><td height="20" colspan="2"></td></tr>
 
-                    <!-- Line 3: Contact Info -->
+                    <!-- Line 3: Content Row -->
                     <tr>
-                        <td valign="bottom">
+                        <!-- Left Col: Contact Info -->
+                        <td valign="bottom" width="260">
                             <table cellpadding="0" cellspacing="0" border="0">
                                 <!-- Address -->
                                 <tr>
@@ -175,21 +149,28 @@ html_content = f'''<!DOCTYPE html>
                             </table>
                         </td>
                         
-                        <!-- Right Bottom: GR Monogram -->
-                        <td align="right" valign="bottom">
-                            <img src="{URL_FAVICON}" alt="GR" width="75" style="display: block; border: 0;">
+                        <!-- Right Col: Castle + Monogram -->
+                        <!-- Using side-by-side nested table to ensure alignment and fit -->
+                        <td align="right" valign="bottom" width="260">
+                            <table cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <!-- Castle -->
+                                    <td valign="bottom" align="right" style="padding-right: 15px;">
+                                        <img src="{URL_CASTLE_LIGHT}" class="castle-light" alt="" width="160" style="display: block; border: 0;">
+                                        <img src="{URL_CASTLE_DARK}" class="castle-dark" alt="" width="160" style="display: none; border: 0;">
+                                    </td>
+                                    <!-- Monogram -->
+                                    <td valign="bottom" align="right">
+                                        <img src="{URL_FAVICON}" alt="GR" width="60" style="display: block; border: 0;">
+                                    </td>
+                                </tr>
+                            </table>
                         </td>
                     </tr>
                 </table>
             </td>
         </tr>
     </table>
-    
-    <!-- End VML Wrapper -->
-    <!--[if gte mso 9]>
-    </v:textbox>
-    </v:rect>
-    <![endif]-->
 </body>
 </html>
 '''
