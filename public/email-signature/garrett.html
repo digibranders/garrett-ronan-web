@@ -4,127 +4,54 @@
     <meta charset="utf-8">
     <title>Garrett Ronan Signature</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
-        
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Montserrat', sans-serif;
-            background-color: transparent !important;
-        }
-        
-        /* Universal Resets */
-        td, p, div, a {
-            font-family: 'Montserrat', sans-serif;
-            mso-line-height-rule: exactly;
+            /* background-color: transparent !important; Removed to prevent confusion */
         }
         
         a {
             text-decoration: none;
-            color: inherit;
+            border: 0;
+            outline: none;
+        }
+        
+        img {
+            border: 0;
+            display: block;
         }
 
         /* Dark Mode Media Query */
         @media (prefers-color-scheme: dark) {
-            /* We will handle image swapping via display:none on the img tags themselves for castle too */
-            .text-main {
-                color: #ffffff !important;
-            }
-            .logo-light, .castle-light {
+            .sign-light-mode {
                 display: none !important;
             }
-            .logo-dark, .castle-dark {
+            .sign-dark-mode {
                 display: block !important;
-            }
-            .icon-fill {
-                fill: #ba8662 !important;
             }
         }
 
         @media (prefers-color-scheme: light) {
-            .text-main {
-                color: #1e2a3a !important;
-            }
-            .logo-light, .castle-light {
+            .sign-light-mode {
                 display: block !important;
             }
-            .logo-dark, .castle-dark {
+            .sign-dark-mode {
                 display: none !important;
             }
         }
     </style>
 </head>
 <body>
-    <table cellpadding="0" cellspacing="0" border="0" width="600" height="300" style="width: 600px; height: 300px; border-collapse: collapse; font-family: 'Montserrat', sans-serif;">
+    <table cellpadding="0" cellspacing="0" border="0" width="600" style="width: 600px; border-collapse: collapse;">
         <tr>
-            <td class="signature-container" valign="top" style="padding: 35px 40px; box-sizing: border-box; height: 300px;">
-                
-                <!-- Inner Layout -->
-                <table cellpadding="0" cellspacing="0" border="0" width="100%" height="100%">
-                    <!-- Line 1: Logo -->
-                    <tr>
-                        <td align="left" style="padding-bottom: 20px;" colspan="2"> 
-                            <!-- Light Mode Logo -->
-                            <img src="https://raw.githubusercontent.com/digibranders/garrett-ronan-web/dev/public/email-signature/GR_Blue.png" class="logo-light" alt="Garrett Ronan" width="280" style="display: block; border: 0;">
-                            <!-- Dark Mode Logo -->
-                            <img src="https://raw.githubusercontent.com/digibranders/garrett-ronan-web/dev/public/email-signature/GR_White.png" class="logo-dark" alt="Garrett Ronan" width="280" style="display: none; border: 0;">
-                        </td>
-                    </tr>
+            <td valign="top" style="padding: 0; margin: 0;">
+                <a href="http://www.GKRHospitality.com" target="_blank" style="display: block;">
+                    <!-- Light Mode: Show Dark Text (Sign_Dark.png) -->
+                    <img src="https://raw.githubusercontent.com/digibranders/garrett-ronan-web/dev/public/email-signature/new/Sign_Dark.png" class="sign-light-mode" alt="Garrett Ronan - GKR Hospitality" width="600" style="display: block; width: 600px; height: auto; border: 0;">
                     
-                    <!-- Line 2: Spacer -->
-                    <tr><td height="20" colspan="2"></td></tr>
-
-                    <!-- Line 3: Content Row -->
-                    <tr>
-                        <!-- Left Col: Contact Info (Aligned Bottom) -->
-                        <td valign="bottom" width="280" style="padding-bottom: 4px;"> <!-- slight padding to align with image baseline -->
-                            <table cellpadding="0" cellspacing="0" border="0">
-                                <!-- Address -->
-                                <tr>
-                                    <td width="32" valign="middle" style="padding-bottom: 12px;">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="#ba8662"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                                    </td>
-                                    <td class="text-main" valign="middle" style="padding-bottom: 12px; font-size: 14px; font-weight: 500; color: #1e2a3a; font-family: 'Montserrat', sans-serif;">
-                                        42 Brighton View Rd Fairfield, CT, 06824 USA
-                                    </td>
-                                </tr>
-                                <!-- Email -->
-                                <tr>
-                                    <td width="32" valign="middle" style="padding-bottom: 12px;">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="#ba8662"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                                    </td>
-                                    <td class="text-main" valign="middle" style="padding-bottom: 12px; font-size: 14px; font-weight: 500; color: #1e2a3a; font-family: 'Montserrat', sans-serif;">
-                                        <a href="mailto:garrett@GKRHospitality.com" class="text-main" style="text-decoration: none; color: inherit;">garrett@GKRHospitality.com</a>
-                                    </td>
-                                </tr>
-                                <!-- Phone -->
-                                <tr>
-                                    <td width="32" valign="middle" style="padding-bottom: 12px;">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="#ba8662"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-                                    </td>
-                                    <td class="text-main" valign="middle" style="padding-bottom: 12px; font-size: 14px; font-weight: 500; color: #1e2a3a; font-family: 'Montserrat', sans-serif;">
-                                        <a href="tel:+19174605793" class="text-main" style="text-decoration: none; color: inherit;">+1-917-460-5793</a>
-                                    </td>
-                                </tr>
-                                <!-- Website -->
-                                <tr>
-                                    <td width="32" valign="middle" style="padding-bottom: 12px;">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="#ba8662"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-                                    </td>
-                                    <td class="text-main" valign="middle" style="padding-bottom: 12px; font-size: 14px; font-weight: 500; color: #1e2a3a; font-family: 'Montserrat', sans-serif;">
-                                        <a href="http://www.GKRHospitality.com" class="text-main" style="text-decoration: none; color: inherit;">www.GKRHospitality.com</a>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                        
-                        <!-- Right Col: Composite Image (Aligned Bottom-Right) -->
-                        <td align="right" valign="bottom" width="240">
-                             <img src="https://raw.githubusercontent.com/digibranders/garrett-ronan-web/dev/public/email-signature/Right_Composite_Light.png" class="castle-light" alt="" width="240" height="240" style="display: block; border: 0; max-width: 100%;">
-                             <img src="https://raw.githubusercontent.com/digibranders/garrett-ronan-web/dev/public/email-signature/Right_Composite_Dark.png" class="castle-dark" alt="" width="240" height="240" style="display: none; border: 0; max-width: 100%;">
-                        </td>
-                    </tr>
-                </table>
+                    <!-- Dark Mode: Show Light Text (Sign_Light.png) -->
+                    <img src="https://raw.githubusercontent.com/digibranders/garrett-ronan-web/dev/public/email-signature/new/Sign_Light.png" class="sign-dark-mode" alt="Garrett Ronan - GKR Hospitality" width="600" style="display: none; width: 600px; height: auto; border: 0;">
+                </a>
             </td>
         </tr>
     </table>
