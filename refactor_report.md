@@ -112,24 +112,11 @@
     - Adjusted vertical separation between Signature and Contact Info to `padding-bottom: 10px`.
   - **Alignment Improvements**:
     - Consolidated contact info into a single table with rigid column widths (20px icon, auto text) and spacer rows (`height="8"`) for consistent cross-client rendering.
-  - **Alignment Improvements**:
-    - Consolidated contact info into a single table with rigid column widths (20px icon, auto text) and spacer rows (`height="8"`) for consistent cross-client rendering.
-  - **Alignment Improvements**:
-    - Consolidated contact info into a single table with rigid column widths (20px icon, auto text) and spacer rows (`height="8"`) for consistent cross-client rendering.
-    - Set Left Column vertical alignment to `top` to remove extra separation from the top edge.
-    - Removed `height: 300px` from main table to eliminate extra "outside" space at the bottom (shrink-wrap behavior).
-    - Removed `padding-top` from Left Column.
+    - Set Left Column vertical alignment to `middle` to center content relative to the Castle, improving visual balance.
     - Adjusted vertical separation between Signature and Contact Info to `padding-bottom: 10px`.
     - **Castle Alignment**: Applied `padding-bottom: 65px` to align the castle's bottom edge with the Website address line.
     - Adjusted Castle position: moved further Left (70px).
     - Revised Column Widths: Left (300px) / Right (300px).
-    - **Castle Alignment**: Applied `padding-bottom: 65px` to align the castle's bottom edge with the Website address line.
-    - Adjusted Castle position: moved further Left (70px).
-    - Revised Column Widths: Left (300px) / Right (300px).
-    - Adjusted Castle position: moved further Left (70px).
-    - Revised Column Widths: Left (300px) / Right (300px).
-    - Adjusted Castle position: moved further Left (70px).
-    - Revised Column Widths: Left (300px) / Right (300px).
     - Defined explicit Left Column (380px) and Right Column (220px) widths.
   - **Refinement**: Adjusted Castle image width to `220px` to match the exact visual proportions requested. Forced address to single line (`white-space: nowrap`).
-  - **Assets**: Switched to hosted PNGs for signatures (`GR_Blue.png` / `GR_White.png`) via GitHub Raw URLs to ensure they display correctly when shared. Castle images (`Castle_Dark BG.png`/`Castle_Light BG.png`) are currently linked as local files (user should host or attach).
+  - **Assets**: Switched to hosted PNGs for signatures (`GR_Blue.png` / `GR_White.png`) via GitHub Raw URLs. Updated Castle images to use hosted `Castle_Dark%20BG.png` and `Castle_Light%20BG.png` from the dev branch.
