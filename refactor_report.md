@@ -120,3 +120,4 @@
     - Defined explicit Left Column (380px) and Right Column (220px) widths.
   - **Refinement**: Adjusted Castle image width to `220px` to match the exact visual proportions requested. Forced address to single line (`white-space: nowrap`).
   - **Assets**: Switched to hosted PNGs for signatures (`GR_Blue.png` / `GR_White.png`) via GitHub Raw URLs. Updated Castle images to use hosted `Castle_Dark%20BG.png` and `Castle_Light%20BG.png` from the dev branch.
+  - **Transparency**: Removed explicit background colors (`#ffffff` and `#000000`) from the main signature tables to allow for transparency and better integration with Outlook's native theming.
