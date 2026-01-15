@@ -84,3 +84,46 @@
 - **Outlook Compatibility**: Updated `public/email-signature/generate_signature.py` to use GitHub Raw URLs (pointing to `dev` branch) and transitioned to a single Full Image Signature (Light/Dark variants) for pixel-perfect rendering and copying in Outlook.
 - **Assets**: Added `Sign_Light.png` and `Sign_Dark.png` to `public/email-signature/new/` and linked them in the generated HTML.
 - **Final Deliverable**: Created `public/email-signature/garrett_v3.html` which uses the user-provided full-signature images with an HTML Image Map for clickable links, ensuring 100% visual fidelity and no cropping.
+- **Refurbished Email Signature**:
+  - Created `email-sign.html` from scratch using a robust 2-column table layout (Left: Info, Right: Castle Image).
+  - Implemented dual-mode (Light/Dark) support using `prefers-color-scheme`.
+  - Switched to inline SVGs for icons (Gold `#ba8662`) for zero-dependency rendering.
+  - Used explicit `<img>` tags for all visual elements to ensure correct scaling in Outlook.
+  - **Alignment Improvements**:
+    - Consolidated contact info into a single table with rigid column widths (20px icon, auto text) and spacer rows (`height="8"`) for consistent cross-client rendering.
+    - Set Left Column vertical alignment to `middle` to center content relative to the Castle, improving visual balance.
+    - Increased vertical separation between Signature and Contact Info (`padding-bottom: 40px`).
+  - **Alignment Improvements**:
+    - Consolidated contact info into a single table with rigid column widths (20px icon, auto text) and spacer rows (`height="8"`) for consistent cross-client rendering.
+    - Set Left Column vertical alignment to `middle` to center content relative to the Castle, improving visual balance.
+    - Increased vertical separation between Signature and Contact Info (`padding-bottom: 40px`).
+  - **Alignment Improvements**:
+    - Consolidated contact info into a single table with rigid column widths (20px icon, auto text) and spacer rows (`height="8"`) for consistent cross-client rendering.
+    - Set Left Column vertical alignment to `middle` to center content relative to the Castle, improving visual balance.
+  - **Alignment Improvements**:
+    - Consolidated contact info into a single table with rigid column widths (20px icon, auto text) and spacer rows (`height="8"`) for consistent cross-client rendering.
+    - Set Left Column vertical alignment to `middle` to center content relative to the Castle, improving visual balance.
+  - **Alignment Improvements**:
+    - Consolidated contact info into a single table with rigid column widths (20px icon, auto text) and spacer rows (`height="8"`) for consistent cross-client rendering.
+    - Set Left Column vertical alignment to `middle` to center content relative to the Castle, improving visual balance.
+  - **Alignment Improvements**:
+    - Consolidated contact info into a single table with rigid column widths (20px icon, auto text) and spacer rows (`height="8"`) for consistent cross-client rendering.
+    - Set Left Column vertical alignment to `middle` to center content relative to the Castle, improving visual balance.
+    - Adjusted vertical separation between Signature and Contact Info to `padding-bottom: 10px`.
+  - **Alignment Improvements**:
+    - Consolidated contact info into a single table with rigid column widths (20px icon, auto text) and spacer rows (`height="8"`) for consistent cross-client rendering.
+  - **Alignment Improvements**:
+    - Consolidated contact info into a single table with rigid column widths (20px icon, auto text) and spacer rows (`height="8"`) for consistent cross-client rendering.
+    - Set Left Column vertical alignment to `middle` to center content relative to the Castle, improving visual balance.
+    - Removed `padding-top` from Left Column to eliminate extra top spacing.
+    - Adjusted vertical separation between Signature and Contact Info to `padding-bottom: 10px`.
+    - **Castle Alignment**: Applied `padding-bottom: 65px` to align the castle's bottom edge with the Website address line.
+    - Adjusted Castle position: moved further Left (70px).
+    - Revised Column Widths: Left (300px) / Right (300px).
+    - Adjusted Castle position: moved further Left (70px).
+    - Revised Column Widths: Left (300px) / Right (300px).
+    - Adjusted Castle position: moved further Left (70px).
+    - Revised Column Widths: Left (300px) / Right (300px).
+    - Defined explicit Left Column (380px) and Right Column (220px) widths.
+  - **Refinement**: Adjusted Castle image width to `220px` to match the exact visual proportions requested. Forced address to single line (`white-space: nowrap`).
+  - **Assets**: Switched to hosted PNGs for signatures (`GR_Blue.png` / `GR_White.png`) via GitHub Raw URLs to ensure they display correctly when shared. Castle images (`Castle_Dark BG.png`/`Castle_Light BG.png`) are currently linked as local files (user should host or attach).
