@@ -43,16 +43,14 @@
 <body>
 
     <!-- Light Mode Container (Default) -->
-    <!-- Uses Final_Sign_LightMode.png (Dark Text) -->
+    <!-- Image: Sign_Dark.png (Dark Text for Light Mode) -->
     <div class="light-mode-image">
-        <img src="https://raw.githubusercontent.com/digibranders/garrett-ronan-web/dev/public/email-signature/Final_Sign_LightMode.png"
+        <img src="https://raw.githubusercontent.com/digibranders/garrett-ronan-web/dev/public/email-signature/new/Sign_Dark.png"
             alt="Garrett Ronan" width="600" height="240" usemap="#signature_map_light">
 
         <map name="signature_map_light">
-            <!-- Coordinates must be scaled to the DISPLAY size (600x240) -->
-            <!-- Original coords: 30,150 -> Scale: 0.8 -->
-            <!-- Wait, usemap coords are pixels on the Rendered Image? -->
-            <!-- If image is displayed at 600x240, coords MUST match 600x240. -->
+            <!-- Coordinates Scaled for 600px Display Width (Original 750px) -->
+            <!-- Scale Factor: 0.8 -->
 
             <!-- Address: ~156 * 0.8 = 125 -->
             <area shape="rect" coords="24,120,580,145"
@@ -76,9 +74,9 @@
     </div>
 
     <!-- Dark Mode Container -->
-    <!-- Uses Final_Sign_DarkMode.png (White Text) -->
+    <!-- Image: Sign_Light.png (White Text for Dark Mode) -->
     <div class="dark-mode-image" style="display: none;">
-        <img src="https://raw.githubusercontent.com/digibranders/garrett-ronan-web/dev/public/email-signature/Final_Sign_DarkMode.png"
+        <img src="https://raw.githubusercontent.com/digibranders/garrett-ronan-web/dev/public/email-signature/new/Sign_Light.png"
             alt="Garrett Ronan" width="600" height="240" usemap="#signature_map_dark">
 
         <map name="signature_map_dark">
