@@ -132,3 +132,13 @@ _Status: Ready for user verification._
   - Applied to Email, Phone, and Website links in both Light and Dark mode sections.
 - **Files Modified**: `email-sign.html`
 - **Result**: Links are now "bulletproof" against Outlook style overrides.
+
+### Update: 2026-01-16 12:30 PM
+
+- **Action**: Exposed Email Signature via URL
+- **Details**:
+  - Moved `sign_2.html` to `public/email-sign.html` to allow direct browser access.
+  - Verified image paths are absolute URLs (Github Raw), ensuring they work from any location.
+  - Fixed a typo in the HTML (`</ta ble>`).
+- **Files Modified**: `public/email-sign.html`
+- **Result**: Signature is now accessible at `/email-sign.html` (e.g., `localhost:3000/email-sign.html`).
