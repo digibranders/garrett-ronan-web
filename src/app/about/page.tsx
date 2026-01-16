@@ -285,7 +285,7 @@ export default function About() {
             </p>
             <Link href="/contact">
               <Button className="bg-[#181818] text-white hover:bg-white hover:text-[#181818] px-12 py-7 text-sm uppercase tracking-[0.3em] font-bold transition-all duration-500">
-                <span className="hidden md:inline">Schedule Your Free Diagnostic Call</span>
+                <span className="hidden md:inline">Schedule Your Free Discovery Call</span>
                 <span className="md:hidden">Schedule Free Call</span>
               </Button>
             </Link>

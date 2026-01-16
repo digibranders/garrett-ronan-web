@@ -24,7 +24,7 @@ export default function Navbar() {
   const NAV_ITEMS = [
     { label: 'Philosophy', href: '/#philosophy' },
     { label: 'Expertise', href: '/#expertise' },
-    { label: 'Gallery', href: '/gallery' },
+    // { label: 'Gallery', href: '/gallery' },
     { label: 'About', href: '/about' },
     { label: 'Services', href: '/services' }
   ];
@@ -92,7 +92,7 @@ export default function Navbar() {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.1 }}
-              className="flex flex-col gap-8 text-center"
+              className="flex flex-col gap-8 items-start"
             >
               <Link 
                 href="/" 

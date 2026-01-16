@@ -332,7 +332,7 @@ export default function Home() {
 
             <Link href="/contact">
               <Button className="bg-[#c5a059] text-[#181818] hover:opacity-90 px-10 py-6 text-xs uppercase tracking-[0.3em] font-bold transition-all duration-500 rounded-full">
-                <span className="hidden md:inline">Schedule Your Complimentary Diagnostic Call</span>
+                <span className="hidden md:inline">Schedule Your Complimentary Discovery Call</span>
                 <span className="md:hidden">Schedule Free Call</span>
               </Button>
             </Link>
@@ -351,10 +351,10 @@ export default function Home() {
           >
             <span className="block text-[#c5a059] text-[10px] tracking-[0.4em] uppercase mb-6 font-bold">What We Do</span>
             <h2 className="text-5xl md:text-7xl font-serif leading-tight text-[#181818] mb-8 max-w-4xl">
-              We take a creative, yet simply practical, hands-on consultative approach to ensure your properties and projects don't just run, they <span className="italic text-[#c5a059]">thrive</span>.
+              We take a creative, yet simply practical, consultative approach to ensure your properties and projects don't just run, they <span className="italic text-[#c5a059]">thrive</span>.
             </h2>
             <p className="text-[#181818] text-lg leading-relaxed mb-8">
-                We will support you at every stage of your project and life cycle of your asset development including but not limited to….
+                We will support you at every stage of your project and life cycle of your asset including but not limited to….
               </p>
           </motion.div>
 
@@ -489,6 +489,10 @@ export default function Home() {
               <span className="text-2xl md:text-3xl font-serif text-white">Dublin</span>
               <span className="text-[#c5a059]">•</span>
               <span className="text-2xl md:text-3xl font-serif text-white">London</span>
+              <span className="text-[#c5a059]">•</span>
+              <span className="text-2xl md:text-3xl font-serif text-white">Boston</span>
+              <span className="text-[#c5a059]">•</span>
+              <span className="text-2xl md:text-3xl font-serif text-white">Barbados</span>
             </div>
           </motion.div>
         </div>
@@ -506,7 +510,7 @@ export default function Home() {
             <span className="block text-[#c5a059] text-[10px] tracking-[0.4em] uppercase mb-6 font-bold">Our Work</span>
             <h2 className="text-5xl md:text-7xl font-serif leading-tight text-white">
               Proven Excellence<br/>
-              <span className="italic text-[#c5a059]">Across Markets</span>
+              <span className="italic text-[#c5a059]">Across All Hospitality Assets</span>
             </h2>
           </motion.div>
 
@@ -938,7 +942,7 @@ export default function Home() {
             >
               <Link href="/contact">
                 <Button className="bg-[#181818] text-white hover:bg-white hover:text-[#181818] px-8 py-6 text-sm uppercase tracking-[0.3em] font-bold transition-all duration-500 rounded-full whitespace-normal h-auto text-center leading-normal">
-                  <span className="hidden md:inline">Schedule Your Complimentary<br />Diagnostic Call</span>
+                  <span className="hidden md:inline">Schedule Your Complimentary<br />Discovery Call</span>
                   <span className="md:hidden">Schedule Free Call</span>
                 </Button>
               </Link>
