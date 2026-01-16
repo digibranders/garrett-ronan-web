@@ -29,3 +29,5 @@ ts-debug.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+refactor_report.md
