@@ -36,7 +36,7 @@ _Status: Ready for user verification._
 - **Action**: Aligned Castle Image with Website Text
 - **Details**:
   - Added `padding-bottom: 25px` to the `<td>` element containing the castle image in both `.light-mode` and `.dark-mode` sections.
-  - This ensures the bottom of the castle image aligns visually with the "www.GKRHospitality.com" text in the adjacent left column.
+  - This ensures the bottom of the castle image align visually with the "www.GKRHospitality.com" text in the adjacent left column.
 - **Files Modified**: `email-sign.html`
 - **Result**: Castle image is now lifted to align with the text block baseline.
 
@@ -98,3 +98,37 @@ _Status: Ready for user verification._
   - Previous colors (Navy `#1F2A35` and Cream `#FFF7F2`) were completely replaced.
 - **Files Modified**: `email-sign.html`
 - **Result**: All text (Address, Email, Phone, Website) now renders in `#c79e7e`.
+
+### Update: 2026-01-16 11:25 AM
+
+- **Action**: Applied Ideal Dimensions (Explicit Heights)
+- **Details**:
+  - To prevent layout shifts in email clients (like Outlook) that don't respect CSS aspect ratios perfectly without explicit attributes:
+  - Added `height="18"` to all icon `<img>` tags (calculated from native 28x35 aspect ratio with width 14).
+  - Added `height="167"` to Castle `<img>` tags (calculated from native 545x507 aspect ratio with width 180).
+  - Maintained `auto` height for Logos (`GR_Gold.png`) as the source dimensions were variable/unverified, relying on the robust `width="180"` attribute.
+- **Files Modified**: `email-sign.html`
+- **Result**: Signature HTML is now more robust against initial rendering shifts.
+
+### Update: 2026-01-16 11:35 AM
+
+- **Action**: Downscaled Entire Signature
+- **Details**:
+  - Reduced overall width from 600px to 480px.
+  - Reduced Logo width from 180px to 130px.
+  - Reduced text font size from 13px to 11px (line-height 14px).
+  - Reduced icons from 14px to 11px width.
+  - Reduced Castle image from 180px to 130px width (height 120px).
+- **Files Modified**: `email-sign.html`
+- **Result**: A more compact signature (~20% smaller) while maintaining all alignment and proportions.
+
+### Update: 2026-01-16 11:45 AM
+
+- **Action**: Applied Bulletproof Link Styling
+- **Details**:
+  - To prevent Outlook from forcing blue/underlined links:
+  - Added `!important` to `color: #c79e7e` and `text-decoration: none` on both `<a>` and inner `<span>` tags.
+  - Added `mso-line-height-rule: exactly` to `<a>` tags.
+  - Applied to Email, Phone, and Website links in both Light and Dark mode sections.
+- **Files Modified**: `email-sign.html`
+- **Result**: Links are now "bulletproof" against Outlook style overrides.
