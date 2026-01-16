@@ -1,208 +1,232 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=600">
     <meta name="color-scheme" content="light dark">
     <meta name="supported-color-schemes" content="light dark">
-    <!--[if mso]>
-    <xml>
-        <o:OfficeDocumentSettings>
-            <o:AllowPNG/>
-            <o:PixelsPerInch>96</o:PixelsPerInch>
-        </o:OfficeDocumentSettings>
-    </xml>
-    <![endif]-->
-    <title>Garrett Ronan Email Signature</title>
+    <title>Garrett Ronan Signature</title>
     <style>
-        /* CSS Reset */
-        body,
-        table,
-        td,
-        a {
-            -webkit-text-size-adjust: 100%;
-            -ms-text-size-adjust: 100%;
+        :root {
+            color-scheme: light dark;
+            supported-color-schemes: light dark;
         }
 
-        table,
-        td {
-            mso-table-lspace: 0pt;
-            mso-table-rspace: 0pt;
+        .light-mode {
+            display: block;
         }
 
-        img {
-            -ms-interpolation-mode: bicubic;
-            border: 0;
-            height: auto;
-            line-height: 100%;
-            outline: none;
-            text-decoration: none;
+        .dark-mode {
+            display: none;
         }
 
-        /* Light Mode (Default) - Show dark logos and dark text */
-        .logo-light-mode {
-            display: block !important;
-            max-height: none !important;
-        }
-
-        .logo-dark-mode {
-            display: none !important;
-            max-height: 0px !important;
-            overflow: hidden !important;
-        }
-
-        .castle-light-mode {
-            display: block !important;
-            max-height: none !important;
-        }
-
-        .castle-dark-mode {
-            display: none !important;
-            max-height: 0px !important;
-            overflow: hidden !important;
-        }
-
-        .contact-text {
-            color: #333333 !important;
-        }
-
-        /* Dark Mode - Show light logos and light text */
         @media (prefers-color-scheme: dark) {
-            .logo-light-mode {
+            .light-mode {
                 display: none !important;
-                max-height: 0px !important;
-                overflow: hidden !important;
             }
 
-            .logo-dark-mode {
+            .dark-mode {
                 display: block !important;
-                max-height: none !important;
-            }
-
-            .castle-light-mode {
-                display: none !important;
-                max-height: 0px !important;
-                overflow: hidden !important;
-            }
-
-            .castle-dark-mode {
-                display: block !important;
-                max-height: none !important;
-            }
-
-            .contact-text {
-                color: #FFFFFF !important;
             }
         }
 
-        /* Outlook Dark Mode Support */
-        [data-ogsc] .logo-light-mode {
-            display: none !important;
+        a {
+            text-decoration: none !important;
+            color: inherit !important;
+            text-underline: none;
         }
 
-        [data-ogsc] .logo-dark-mode {
-            display: block !important;
-        }
-
-        [data-ogsc] .castle-light-mode {
-            display: none !important;
-        }
-
-        [data-ogsc] .castle-dark-mode {
-            display: block !important;
-        }
-
-        [data-ogsc] .contact-text {
-            color: #FFFFFF !important;
+        .exclude-outlook {
+            display: block;
         }
     </style>
 </head>
 
-<body style="margin: 0; padding: 0; background-color: transparent;">
-    <!-- Signature Container -->
-    <div style="margin: 0; padding: 0; background-color: transparent;">
-        <table width="600" border="0" cellpadding="0" cellspacing="0" role="presentation"
-            style="width: 600px; max-width: 600px; min-height: 300px; background-color: transparent; border-collapse: collapse; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, Helvetica, sans-serif; margin: 0; padding: 0;">
+<body style="margin:0;padding:0;background:transparent;">
 
-            <!-- Logo Row -->
+    <!-- LIGHT MODE VERSION -->
+    <div class="light-mode">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"
+            style="width:480px; border-collapse:collapse; background-color:transparent;">
             <tr>
-                <td colspan="2" style="padding: 30px 0 20px 40px; vertical-align: top;">
-                    <!-- Light Mode Logo (Dark colored logo for light backgrounds) -->
-                    <img src="https://raw.githubusercontent.com/digibranders/garrett-ronan-web/dev/public/email-signature/sign/GR_Gold.png"
-                        alt="Garrett Ronan" width="200" class="logo-light-mode"
-                        style="width: 200px; max-width: 200px; height: auto; display: block; border: 0; outline: none;">
-                    <!-- Dark Mode Logo (Light colored logo for dark backgrounds) -->
-                    <img src="https://raw.githubusercontent.com/digibranders/garrett-ronan-web/dev/public/email-signature/sign/GR_Gold.png"
-                        alt="Garrett Ronan" width="200" class="logo-dark-mode"
-                        style="width: 200px; max-width: 200px; height: auto; display: none; border: 0; outline: none;">
-                </td>
-            </tr>
+                <!-- Left Column: Logo & Contact Info -->
+                <td style="width:300px; vertical-align:top; padding:20px 0 0 20px;">
+                    <!-- Logo -->
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td>
+                                <img src="https://garrett-ronan-web.vercel.app/sign/GR_Gold.png" width="130"
+                                    alt="Garrett Ronan" style="display:block; border:0; outline:none; height:auto;">
+                            </td>
+                        </tr>
+                    </table>
 
-            <!-- Content Row -->
-            <tr>
-                <!-- Contact Information Column -->
-                <td style="padding: 0 40px 30px 40px; vertical-align: top; width: 400px;">
-                    <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+                    <!-- Spacer to push text down -->
+                    <div style="height:20px; line-height:20px; font-size:1px;">&nbsp;</div>
 
+                    <!-- Contact Info -->
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                         <!-- Address -->
                         <tr>
+                            <td style="width:20px; vertical-align:middle; padding-bottom:5px;">
+                                <img src="https://garrett-ronan-web.vercel.app/sign/Address.png" width="11" height="14"
+                                    alt="Address" style="display:block; border:0; outline:none; height:auto;">
+                            </td>
                             <td
-                                style="padding: 4px 0; font-size: 13px; line-height: 1.6; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, Helvetica, sans-serif;">
-                                <span style="color: #C8A882; margin-right: 8px; font-size: 14px;">📍</span>
-                                <span class="contact-text" style="color: #333333; text-decoration: none;">42 Brighton
-                                    View Rd Fairfield, CT, 06824 USA</span>
+                                style="vertical-align:middle; padding-bottom:5px; font-family:Arial, Helvetica, sans-serif; font-size:11px; line-height:14px; color:#c79e7e; white-space:nowrap;">
+                                <span style="color:#c79e7e;">42 Brighton View Rd Fairfield, CT, 06824 USA</span>
                             </td>
                         </tr>
-
                         <!-- Email -->
                         <tr>
+                            <td style="width:20px; vertical-align:middle; padding-bottom:5px;">
+                                <img src="https://garrett-ronan-web.vercel.app/sign/Mail.png" width="11" height="14"
+                                    alt="Email" style="display:block; border:0; outline:none; height:auto;">
+                            </td>
                             <td
-                                style="padding: 4px 0; font-size: 13px; line-height: 1.6; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, Helvetica, sans-serif;">
-                                <span style="color: #C8A882; margin-right: 8px; font-size: 14px;">✉️</span>
-                                <a href="mailto:garrett@GKRHospitality.com" class="contact-text"
-                                    style="color: #333333; text-decoration: none;">garrett@GKRHospitality.com</a>
+                                style="vertical-align:middle; padding-bottom:5px; font-family:Arial, Helvetica, sans-serif; font-size:11px; line-height:14px; color:#c79e7e; white-space:nowrap;">
+                                <a href="mailto:garrett@GKRHospitality.com"
+                                    style="color:#c79e7e !important; text-decoration:none !important; mso-line-height-rule:exactly;">
+                                    <span
+                                        style="color:#c79e7e !important; text-decoration:none !important;">garrett@GKRHospitality.com</span>
+                                </a>
                             </td>
                         </tr>
-
                         <!-- Phone -->
                         <tr>
+                            <td style="width:20px; vertical-align:middle; padding-bottom:5px;">
+                                <img src="https://garrett-ronan-web.vercel.app/sign/Phone.png" width="11" height="14"
+                                    alt="Phone" style="display:block; border:0; outline:none; height:auto;">
+                            </td>
                             <td
-                                style="padding: 4px 0; font-size: 13px; line-height: 1.6; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, Helvetica, sans-serif;">
-                                <span style="color: #C8A882; margin-right: 8px; font-size: 14px;">📞</span>
-                                <a href="tel:+19174605793" class="contact-text"
-                                    style="color: #333333; text-decoration: none;">+1-917-460-5793</a>
+                                style="vertical-align:middle; padding-bottom:5px; font-family:Arial, Helvetica, sans-serif; font-size:11px; line-height:14px; color:#c79e7e; white-space:nowrap;">
+                                <a href="tel:+19174605793"
+                                    style="color:#c79e7e !important; text-decoration:none !important; mso-line-height-rule:exactly;">
+                                    <span
+                                        style="color:#c79e7e !important; text-decoration:none !important;">+1-917-460-5793</span>
+                                </a>
                             </td>
                         </tr>
-
                         <!-- Website -->
                         <tr>
+                            <td style="width:20px; vertical-align:middle;">
+                                <img src="https://garrett-ronan-web.vercel.app/sign/Website.png" width="11" height="14"
+                                    alt="Website" style="display:block; border:0; outline:none; height:auto;">
+                            </td>
                             <td
-                                style="padding: 4px 0; font-size: 13px; line-height: 1.6; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, Helvetica, sans-serif;">
-                                <span style="color: #C8A882; margin-right: 8px; font-size: 14px;">🌐</span>
-                                <a href="https://www.GKRHospitality.com" target="_blank" class="contact-text"
-                                    style="color: #333333; text-decoration: none;">www.GKRHospitality.com</a>
+                                style="vertical-align:middle; font-family:Arial, Helvetica, sans-serif; font-size:11px; line-height:14px; color:#c79e7e; white-space:nowrap;">
+                                <a href="https://www.GKRHospitality.com"
+                                    style="color:#c79e7e !important; text-decoration:none !important; mso-line-height-rule:exactly;">
+                                    <span
+                                        style="color:#c79e7e !important; text-decoration:none !important;">www.GKRHospitality.com</span>
+                                </a>
                             </td>
                         </tr>
-
                     </table>
                 </td>
 
-                <!-- Logo Right Column -->
-                <td style="padding: 0 40px 30px 0; vertical-align: middle; text-align: right; width: 160px;">
-                    <!-- Light Mode Castle Logo (Dark colored for light backgrounds) -->
-                    <img src="https://raw.githubusercontent.com/digibranders/garrett-ronan-web/dev/Castle_Dark%20BG.png"
-                        alt="GKR" width="120" class="castle-light-mode"
-                        style="width: 120px; max-width: 120px; height: auto; display: block; border: 0; outline: none; margin-left: auto;">
-                    <!-- Dark Mode Castle Logo (Light colored for dark backgrounds) -->
-                    <img src="https://raw.githubusercontent.com/digibranders/garrett-ronan-web/dev/Castle_Dark%20BG.png"
-                        alt="GKR" width="120" class="castle-dark-mode"
-                        style="width: 120px; max-width: 120px; height: auto; display: none; border: 0; outline: none; margin-left: auto;">
+                <!-- Right Column: Castle Image -->
+                <td style="width:160px; vertical-align:bottom; text-align:right;">
+                    <img src="https://garrett-ronan-web.vercel.app/sign/Castle_Light%20BG.png" width="130" height="120"
+                        alt="" style="display:block; border:0; outline:none; height:auto;">
                 </td>
             </tr>
-
         </table>
     </div>
+
+    <!-- DARK MODE VERSION (Hidden from Outlook Desktop via Conditional Comments) -->
+    <!--[if !mso]><!-->
+    <div class="dark-mode" style="display:none;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0"
+            style="width:480px; border-collapse:collapse; background-color:transparent;">
+            <tr>
+                <!-- Left Column: Logo & Contact Info -->
+                <td style="width:240px; vertical-align:top; padding:20px 0 0 20px;">
+                    <!-- Logo -->
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td>
+                                <img src="https://garrett-ronan-web.vercel.app/sign/GR_Gold.png" width="130"
+                                    alt="Garrett Ronan" style="display:block; border:0; outline:none; height:auto;">
+                            </td>
+                        </tr>
+                    </table>
+
+                    <!-- Spacer -->
+                    <div style="height:20px; line-height:20px; font-size:1px;">&nbsp;</div>
+
+                    <!-- Contact Info -->
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                        <!-- Address -->
+                        <tr>
+                            <td style="width:20px; vertical-align:middle; padding-bottom:5px;">
+                                <img src="https://garrett-ronan-web.vercel.app/sign/Address.png" width="11" height="14"
+                                    alt="Address" style="display:block; border:0; outline:none; height:auto;">
+                            </td>
+                            <td
+                                style="vertical-align:middle; padding-bottom:5px; font-family:Arial, Helvetica, sans-serif; font-size:11px; line-height:14px; color:#c79e7e; white-space:nowrap;">
+                                <span style="color:#c79e7e;">42 Brighton View Rd Fairfield, CT, 06824 USA</span>
+                            </td>
+                        </tr>
+                        <!-- Email -->
+                        <tr>
+                            <td style="width:20px; vertical-align:middle; padding-bottom:5px;">
+                                <img src="https://garrett-ronan-web.vercel.app/sign/Mail.png" width="11" height="14"
+                                    alt="Email" style="display:block; border:0; outline:none; height:auto;">
+                            </td>
+                            <td
+                                style="vertical-align:middle; padding-bottom:5px; font-family:Arial, Helvetica, sans-serif; font-size:11px; line-height:14px; color:#c79e7e; white-space:nowrap;">
+                                <a href="mailto:garrett@GKRHospitality.com"
+                                    style="color:#c79e7e !important; text-decoration:none !important; mso-line-height-rule:exactly;">
+                                    <span
+                                        style="color:#c79e7e !important; text-decoration:none !important;">garrett@GKRHospitality.com</span>
+                                </a>
+                            </td>
+                        </tr>
+                        <!-- Phone -->
+                        <tr>
+                            <td style="width:20px; vertical-align:middle; padding-bottom:5px;">
+                                <img src="https://garrett-ronan-web.vercel.app/sign/Phone.png" width="11" height="14"
+                                    alt="Phone" style="display:block; border:0; outline:none; height:auto;">
+                            </td>
+                            <td
+                                style="vertical-align:middle; padding-bottom:5px; font-family:Arial, Helvetica, sans-serif; font-size:11px; line-height:14px; color:#c79e7e; white-space:nowrap;">
+                                <a href="tel:+19174605793"
+                                    style="color:#c79e7e !important; text-decoration:none !important; mso-line-height-rule:exactly;">
+                                    <span
+                                        style="color:#c79e7e !important; text-decoration:none !important;">+1-917-460-5793</span>
+                                </a>
+                            </td>
+                        </tr>
+                        <!-- Website -->
+                        <tr>
+                            <td style="width:20px; vertical-align:middle;">
+                                <img src="https://garrett-ronan-web.vercel.app/sign/Website.png" width="11" height="14"
+                                    alt="Website" style="display:block; border:0; outline:none; height:auto;">
+                            </td>
+                            <td
+                                style="vertical-align:middle; font-family:Arial, Helvetica, sans-serif; font-size:11px; line-height:14px; color:#c79e7e; white-space:nowrap;">
+                                <a href="https://www.GKRHospitality.com"
+                                    style="color:#c79e7e !important; text-decoration:none !important; mso-line-height-rule:exactly;">
+                                    <span
+                                        style="color:#c79e7e !important; text-decoration:none !important;">www.GKRHospitality.com</span>
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+
+                <!-- Right Column: Castle Image -->
+                <td style="width:160px; vertical-align:bottom; text-align:right;">
+                    <img src="https://garrett-ronan-web.vercel.app/sign/Castle_Dark%20BG.png" width="130" height="120"
+                        alt="GKR" style="display:block; border:0; outline:none; height:auto;">
+                </td>
+            </tr>
+        </table>
+    </div>
+    <!--<![endif]-->
+
 </body>
 
 </html>

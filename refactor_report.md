@@ -142,3 +142,23 @@ _Status: Ready for user verification._
   - Fixed a typo in the HTML (`</ta ble>`).
 - **Files Modified**: `public/email-sign.html`
 - **Result**: Signature is now accessible at `/email-sign.html` (e.g., `localhost:3000/email-sign.html`).
+
+## 2026-01-16 - Domain Configuration Guide
+
+- **Type**: Documentation
+- **Goal**: Provide steps to connect GoDaddy domain to Vercel.
+- **Action**: Created `Vercel_GoDaddy_Integration_Guide.md` with step-by-step instructions.
+- **Status**: Guide provided to user.
+
+## 2026-01-16 - UI Refinements
+
+- **Font Identification**: Confirmed stats numbers use **Cormorant Garamond** (via `font-serif` utility and `theme.css`).
+- **Navbar Update**: Hidden "Gallery" link as per user request (commented out in `Navbar.tsx`).
+- **Build Status**: Verified successfully.
+
+## 2026-01-16 - Mobile Menu Alignment
+
+- **Issue**: Mobile menu items were center-aligned, causing jagged numbering.
+- **Fix**: Updated `Navbar.tsx` to use `items-start` for left alignment within the centered container.
+- **Result**: "00", "01", etc. now form a vertical line.
+- **Build Status**: Verified successfully.
