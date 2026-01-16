@@ -59,3 +59,42 @@ _Status: Ready for user verification._
   - This applies to the address, email link/span, phone link/span, and website link/span.
 - **Files Modified**: `email-sign.html`
 - **Result**: Dark mode text now matches the specific brand color provided.
+
+### Update: 2026-01-16 10:45 AM
+
+- **Action**: Updated Icon File References
+- **Details**:
+  - Updated `email-sign.html` to point to user-named icon files: `Address.png`, `Mail.png`, `Phone.png`, `Website.png`.
+  - Replaced prior `icon-gold-*.png` references in both Light and Dark mode sections.
+- **Files Modified**: `email-sign.html`
+- **Result**: Signature now uses the finalized icon file names.
+
+### Update: 2026-01-16 10:55 AM
+
+- **Action**: Resized Icons to Match Text Height
+- **Details**:
+  - Updated the `width` attribute of all 4 icons (`Address.png`, `Mail.png`, `Phone.png`, `Website.png`) to `14px` in both Light and Dark mode sections.
+  - This aligns the visual weight of the icons with the adjacent 13px text.
+- **Files Modified**: `email-sign.html`
+- **Result**: Icons are now more proportional to the text.
+
+### Update: 2026-01-16 11:00 AM
+
+- **Action**: Aligned Castle Bottom with Text
+- **Details**:
+  - Removed fixed `height="300"` from the main `<table>` in both Light and Dark mode sections.
+  - Reduced Castle image `width` from `220` to `180` in both sections to ensure it doesn't dictate a table height taller than the text column.
+  - Removed `padding-bottom: 25px` from the Castle image container, allowing natural bottom alignment.
+  - Effectively, the table now shrinks to the height of the text column (~200px), and the bottom-aligned castle sits flush with the bottom of the text.
+- **Files Modified**: `email-sign.html`
+- **Result**: Visual bottom alignment of Website text and Castle image.
+
+### Update: 2026-01-16 11:15 AM
+
+- **Action**: Updated Global Text Color
+- **Details**:
+  - Replaced all text colors in both Light and Dark mode sections with `#c79e7e` (Gold/Bronze).
+  - This unifies the text color across all themes as per specific user request.
+  - Previous colors (Navy `#1F2A35` and Cream `#FFF7F2`) were completely replaced.
+- **Files Modified**: `email-sign.html`
+- **Result**: All text (Address, Email, Phone, Website) now renders in `#c79e7e`.
