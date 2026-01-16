@@ -49,3 +49,13 @@ _Status: Ready for user verification._
   - Updated `email-sign.html` to replace the previous emoji characters with these new images (width: 20px).
 - **Files Modified**: `email-sign.html`, `public/sign/*`
 - **Result**: Icons now match the strict gold design required by the user.
+
+### Update: 2026-01-16 10:40 AM
+
+- **Action**: Applied Custom Dark Mode Color
+- **Details**:
+  - Extracted color `#FFF7F2` from user-provided image.
+  - Replaced all occurrences of `#FFFFFF` (White) with `#FFF7F2` (Off-white/Cream) in the `.dark-mode` section of `email-sign.html`.
+  - This applies to the address, email link/span, phone link/span, and website link/span.
+- **Files Modified**: `email-sign.html`
+- **Result**: Dark mode text now matches the specific brand color provided.
