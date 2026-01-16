@@ -51,6 +51,8 @@ export default function Contact() {
     phone: '',
     company: '',
     projectType: '',
+    role: '',
+    roleDescription: '',
     message: ''
   });
 
@@ -60,7 +62,7 @@ export default function Contact() {
     console.log('Form submitted:', formData);
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
@@ -165,20 +167,79 @@ export default function Contact() {
                   />
                 </div>
 
+                {/* Role */}
+                <div>
+                  <label htmlFor="role" className="block text-stone-600 text-xs uppercase tracking-wider mb-3">
+                    Are you a
+                  </label>
+                  <div className="relative">
+                    <select
+                      id="role"
+                      name="role"
+                      value={formData.role}
+                      onChange={handleChange}
+                      required
+                      className="w-full bg-transparent border-b border-[#181818]/20 focus:border-[#c5a059] text-[#181818] py-3 appearance-none outline-none cursor-pointer"
+                    >
+                      <option value="" disabled>Select Role</option>
+                      <option value="Developer">Developer</option>
+                      <option value="Investor">Investor</option>
+                      <option value="Owner">Owner</option>
+                      <option value="Exec Manager/ Operator">Exec Manager/ Operator</option>
+                      <option value="Other">Other</option>
+                    </select>
+                    <ChevronDown className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400 pointer-events-none" />
+                  </div>
+                </div>
+
+                {/* Other Description - Conditional */}
+                {formData.role === 'Other' && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    className="overflow-hidden"
+                  >
+                    <label htmlFor="roleDescription" className="block text-stone-600 text-xs uppercase tracking-wider mb-3">
+                      Please describe
+                    </label>
+                    <input
+                      type="text"
+                      id="roleDescription"
+                      name="roleDescription"
+                      value={formData.roleDescription}
+                      onChange={handleChange}
+                      required
+                      className="w-full bg-transparent border-b border-[#181818]/20 focus:border-[#c5a059] text-[#181818] py-3 transition-colors outline-none placeholder:text-stone-400"
+                      placeholder="Tell us about your role"
+                    />
+                  </motion.div>
+                )}
+
                 {/* Project Type */}
                 <div>
                   <label htmlFor="projectType" className="block text-stone-600 text-xs uppercase tracking-wider mb-3">
-                    Project Type
+                    Project / Business Type
                   </label>
-                  <input
-                    type="text"
-                    id="projectType"
-                    name="projectType"
-                    value={formData.projectType}
-                    onChange={handleChange}
-                    className="w-full bg-transparent border-b border-[#181818]/20 focus:border-[#c5a059] text-[#181818] py-3 transition-colors outline-none placeholder:text-stone-400"
-                    placeholder="e.g. Hotel, Restaurant, Development"
-                  />
+                  <div className="relative">
+                    <select
+                      id="projectType"
+                      name="projectType"
+                      value={formData.projectType}
+                      onChange={handleChange}
+                      required
+                      className="w-full bg-transparent border-b border-[#181818]/20 focus:border-[#c5a059] text-[#181818] py-3 appearance-none outline-none cursor-pointer"
+                    >
+                      <option value="" disabled>Select Type</option>
+                      <option value="Hotel / Resort">Hotel / Resort</option>
+                      <option value="Restaurant">Restaurant</option>
+                      <option value="Bar">Bar</option>
+                      <option value="Nightlife">Nightlife</option>
+                      <option value="Meeting Event Venue">Meeting Event Venue</option>
+                      <option value="Private Club">Private Club</option>
+                      <option value="Mixed-Use Residential Properties">Mixed-Use Residential Properties</option>
+                    </select>
+                    <ChevronDown className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400 pointer-events-none" />
+                  </div>
                 </div>
 
                 {/* Message */}

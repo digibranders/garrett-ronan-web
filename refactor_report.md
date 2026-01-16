@@ -162,3 +162,28 @@ _Status: Ready for user verification._
 - **Fix**: Updated `Navbar.tsx` to use `items-start` for left alignment within the centered container.
 - **Result**: "00", "01", etc. now form a vertical line.
 - **Build Status**: Verified successfully.
+
+## 2026-01-16 - Portfolio Section Updates
+
+- **Action**: Updated `PORTFOLIO_PROJECTS` in `src/app/page.tsx`.
+- **Changes**:
+    - Replaced project titles with categories: Hotels & Resorts, Food & Beverage, Nightlife & Entertainment, Private & Member-Only Spaces, Residential & Commercial Developments.
+    - Removed `location` text from display.
+    - Reduced list to 5 items to match user input.
+- **Build Status**: Verified successfully.
+
+## 2026-01-16 - Added Meetings & Events
+
+- **Action**: Added "Meetings & Events" to `PORTFOLIO_PROJECTS`.
+- **Image Used**: `testimonialReception` (reused to fit context).
+- **Status**: Build verified.
+
+## 2026-01-16 - Contact Form Enhancements
+
+- **Action**: Updated `src/app/contact/page.tsx`.
+- **Changes**:
+    - Replaced "Project Type" text input with a standard select dropdown with 7 business type options.
+    - Added "Role" select dropdown (Developer, Investor, Owner, etc.).
+    - Implemented conditional rendering for "Other" role description (text input appears only when "Other" is selected).
+    - Updated `formData` interface and state to support new fields.
+- **Build Status**: Verified successfully.

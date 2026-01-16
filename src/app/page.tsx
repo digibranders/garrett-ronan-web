@@ -39,6 +39,8 @@ import residentLogo from '@/assets/images/logos/meet-resident.png';
 import affectLogo from '@/assets/images/logos/affect-group.png';
 import sageLogo from '@/assets/images/logos/sage-hospitality.png';
 import buccamentLogo from '@/assets/images/logos/buccament.png';
+import fairfieldLogo from '@/assets/images/logos/fairfield.png';
+import montaukLogo from '@/assets/images/logos/montauk.png';
 
 // Hero Images
 import heroNyc from '@/assets/images/hero/hero-nyc.jpg';
@@ -99,8 +101,8 @@ const CONSULTED_WITH_COMPANIES = [
   { name: 'Meet Resident', logo: residentLogo },
   { name: 'Bakan', logo: bakanLogo },
   { name: 'Support 305', logo: support305Logo },
-  // { name: 'FBC', logo: null },
-  // { name: 'Caribbean', logo: null }
+  { name: 'Fairfield', logo: fairfieldLogo },
+  { name: 'Montauk', logo: montaukLogo },
   { name: 'Buccament', logo: buccamentLogo }
 ];
 
@@ -110,6 +112,7 @@ const HERO_IMAGES = [
   heroLa,
   heroCaribbean
 ];
+
 
 // Services with background images
 const SERVICES_DATA = [
@@ -189,38 +192,31 @@ const HOW_WE_WORK = [
 // Portfolio projects
 const PORTFOLIO_PROJECTS = [
   {
-    title: "Boutique Hotel",
-    location: "Manhattan, NY",
+    title: "Hotels & Resorts",
     image: workExecution
   },
   {
-    title: "Fine Dining Restaurant",
-    location: "Los Angeles, CA",
+    title: "Food & Beverage",
     image: workDining
   },
   {
-    title: "Luxury Lounge",
-    location: "New York, NY",
+    title: "Nightlife & Entertainment",
     image: workBar
   },
   {
-    title: "Rooftop Dining",
-    location: "Los Angeles, CA",
+    title: "Private & Member-Only Spaces",
     image: workRooftop
   },
   {
-    title: "Caribbean Resort",
-    location: "Caribbean Islands",
-    image: heroCaribbean
+    title: "Residential & Commercial Developments",
+    image: testimonialGroup
   },
   {
-    title: "Restaurant Group",
-    location: "New York, NY",
-    image: testimonialGroup
+    title: "Meetings & Events",
+    image: testimonialReception
   }
 ];
 
-// Testimonials with property images
 // Testimonials with property images
 const TESTIMONIALS = [
   {
@@ -532,7 +528,6 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#181818] via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
                 
                 <div className="absolute bottom-0 left-0 right-0 p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                  <p className="text-[#c5a059] text-[10px] uppercase tracking-[0.3em] mb-2">{project.location}</p>
                   <h3 className="text-2xl font-serif text-white">{project.title}</h3>
                 </div>
               </motion.div>
@@ -592,13 +587,13 @@ export default function Home() {
               <motion.div
                 className="flex gap-24 items-center will-change-transform"
                 animate={{
-                  x: [-2400, 0],
+                  x: ["-50%", "0%"],
                 }}
                 transition={{
                   x: {
                     repeat: Infinity,
                     repeatType: "loop",
-                    duration: 45,
+                    duration: 24,
                     ease: "linear",
                   },
                 }}
@@ -677,13 +672,13 @@ export default function Home() {
               <motion.div
                 className="flex gap-24 items-center will-change-transform"
                 animate={{
-                  x: [-2400, 0],
+                  x: ["-50%", "0%"],
                 }}
                 transition={{
                   x: {
                     repeat: Infinity,
                     repeatType: "loop",
-                    duration: 45,
+                    duration: 24,
                     ease: "linear",
                   },
                 }}
