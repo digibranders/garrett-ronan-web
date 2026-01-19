@@ -36,10 +36,17 @@ import buccamentLogo from '@/assets/images/logos/buccament.png';
 import fairfieldLogo from '@/assets/images/logos/fairfield.png';
 import montaukLogo from '@/assets/images/logos/montauk.png';
 
+// New Logos
+import hiltonHotelsLogo from '@/assets/images/logos/hilton_hotels.png';
+import rLogo from '@/assets/images/logos/r.png';
+import blaceCopyLogo from '@/assets/images/logos/blace copy.png';
+import waldorfLogo from '@/assets/images/logos/waldorf.png';
+
 interface Company {
   name: string;
   logo: StaticImageData | null;
   dimensions?: string; // Optional custom dimensions
+  className?: string; // Optional custom tailwind classes to override defaults
 }
 
 // Default dimensions for logos if not specified
@@ -51,17 +58,19 @@ const EMPLOYED_BY_COMPANIES: Company[] = [
   { name: 'Adare Manor', logo: adareManorLogo },
   { name: 'Swallow Hotels', logo: swallowHotelsLogo },
   { name: 'Principal Hotels', logo: principalHotelsLogo },
-  { name: 'Waldorf Astoria', logo: waldorfAstoriaLogo, dimensions: 'max-h-10 max-w-[120px] md:max-h-14 md:max-w-[160px]' },
+  { name: 'Waldorf Astoria', logo: waldorfLogo, dimensions: 'max-h-12 max-w-[150px] md:max-h-16 md:max-w-[200px]' }, // Updated logo
   { name: 'Boston Harbor Hotel', logo: bostonHarborHotelLogo, dimensions: 'max-h-10 max-w-[120px] md:max-h-14 md:max-w-[160px]' },
   { name: 'The Beverly Hilton', logo: beverlyHiltonLogo },
+  { name: 'Hilton Hotels', logo: hiltonHotelsLogo }, // New
   { name: 'ROKA', logo: rokaLogo, dimensions: 'max-h-6 max-w-[70px] md:max-h-8 md:max-w-[100px]' },
   { name: 'Zuma', logo: zumaLogo, dimensions: 'max-h-6 max-w-[70px] md:max-h-8 md:max-w-[100px]' },
   { name: 'ETARU', logo: etaruLogo, dimensions: 'max-h-6 max-w-[70px] md:max-h-8 md:max-w-[100px]' },
-  { name: 'INKO NITO', logo: inkoNitoLogo, dimensions: 'max-h-6 max-w-[70px] md:max-h-8 md:max-w-[100px]' },
+  { name: 'INKO NITO', logo: inkoNitoLogo, dimensions: 'max-h-6 max-w-[70px] md:max-h-8 md:max-w-[100px]', className: 'grayscale-0 brightness-100' }, // Always light/visible
   { name: 'oblix', logo: oblixLogo, dimensions: 'max-h-6 max-w-[70px] md:max-h-8 md:max-w-[100px]' },
   { name: 'Starr Restaurants', logo: starrRestaurantsLogo },
   { name: 'Equinox Hotels', logo: equinoxHotelsLogo },
-  { name: 'etc.venues', logo: etcVenuesLogo, dimensions: 'max-h-12 max-w-[140px] md:max-h-20 md:max-w-[200px]' }, // Adjusted to prevent layout shift
+  { name: 'R', logo: rLogo }, // New
+  { name: 'etc.venues', logo: etcVenuesLogo, dimensions: 'max-h-6 max-w-[120px] md:max-h-12 md:max-w-[200px]' }, // Manually sized for balance
   { name: 'Convene', logo: conveneLogo }
 ];
 
@@ -71,7 +80,7 @@ const CONSULTED_WITH_COMPANIES: Company[] = [
   { name: 'Zuma', logo: zumaConsultedLogo, dimensions: 'max-h-6 max-w-[70px] md:max-h-8 md:max-w-[100px]' },
   { name: 'Affect Group', logo: affectLogo, dimensions: 'max-h-5 max-w-[65px] md:max-h-7 md:max-w-[90px]' },
   { name: 'Sage Hospitality', logo: sageLogo, dimensions: 'max-h-6 max-w-[80px] md:max-h-8 md:max-w-[110px]' },
-  { name: 'BLACE', logo: blaceLogo, dimensions: 'max-h-7 max-w-[70px] md:max-h-10 md:max-w-[100px]' },
+
   { name: 'Meet Resident', logo: residentLogo, dimensions: 'max-h-7 max-w-[120px] md:max-h-10 md:max-w-[160px]' },
   { name: 'Bakan', logo: bakanLogo, dimensions: 'max-h-7 max-w-[90px] md:max-h-10 md:max-w-[120px]' },
   { name: 'Support 305', logo: support305Logo, dimensions: 'max-h-8 max-w-[100px] md:max-h-11 md:max-w-[140px]' },
@@ -142,7 +151,7 @@ export default function LogosSection() {
                         <Image 
                           src={company.logo} 
                           alt={company.name} 
-                          className={`object-contain grayscale brightness-[0.3] group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-300 ${company.dimensions || DEFAULT_DIMENSIONS}`}
+                          className={`object-contain transition-all duration-300 ${company.dimensions || DEFAULT_DIMENSIONS} ${company.className || 'grayscale brightness-[0.3] group-hover:grayscale-0 group-hover:brightness-100'}`}
                         />
                       ) : (
                         <span className="text-[#181818] group-hover:text-[#c5a059] text-base md:text-lg font-medium tracking-wide whitespace-nowrap transition-colors duration-300">{company.name}</span>
@@ -195,7 +204,7 @@ export default function LogosSection() {
                         <Image 
                           src={company.logo} 
                           alt={company.name} 
-                          className={`object-contain grayscale brightness-[0.3] group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-300 ${company.dimensions || DEFAULT_DIMENSIONS}`}
+                          className={`object-contain transition-all duration-300 ${company.dimensions || DEFAULT_DIMENSIONS} ${company.className || 'grayscale brightness-[0.3] group-hover:grayscale-0 group-hover:brightness-100'}`}
                         />
                       ) : (
                         <span className="text-[#181818] group-hover:text-[#c5a059] text-base md:text-lg font-medium tracking-wide whitespace-nowrap transition-colors duration-300">{company.name}</span>
