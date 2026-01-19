@@ -158,37 +158,44 @@ const SERVICES_DATA = [
   {
     title: "Concept Creation",
     description: "We help guide your hospitality concepts from ideation through to delivering market ready, creative results.",
-    bgImage: serviceConcept
+    bgImage: serviceConcept,
+    anchor: "concept-creation"
   },
   {
     title: "Capital & Growth Investment",
     description: "We provide strategic advice  and guidance on growth and investment, capital sourcing, M&A’s and investor-ready business plans.",
-    bgImage: serviceInvestment
+    bgImage: serviceInvestment,
+    anchor: "capital-growth-investment"
   },
   {
     title: "Design, Development & Construction",
     description: "We provide skilled “Owners Rep” oversight through each phase of design and construction to deliver successful Projects.",
-    bgImage: serviceConstruction
+    bgImage: serviceConstruction,
+    anchor: "design-development-construction"
   },
   {
     title: "Operations",
     description: "We help deliver end-to-end operations excellence and efficiency from pre and post opening to ongoing operational management.",
-    bgImage: serviceOperations
+    bgImage: serviceOperations,
+    anchor: "operations"
   },
   {
     title: "Legal",
     description: "We help you manage the legal foundations that protect your deals, teams, and long-term operations.",
-    bgImage: serviceLegal
+    bgImage: serviceLegal,
+    anchor: "legal"
   },
   {
     title: "Financial",
     description: "We provide end-to-end insightful financial guidance, including budgeting, forecasting, audits, cost control, efficiency and profitability.",
-    bgImage: serviceAccounting
+    bgImage: serviceAccounting,
+    anchor: "financial"
   },
   {
     title: "Additional Support",
     description: "We provide targeted support wherever your business needs experienced hospitality operator oversight.",
-    bgImage: serviceTraining
+    bgImage: serviceTraining,
+    anchor: "additional-support"
   }
 ];
 
@@ -235,7 +242,7 @@ const PORTFOLIO_PROJECTS = [
     image: workExecution
   },
   {
-    title: "Food & Beverage",
+    title: "Restaurants & Bars",
     image: workDining
   },
   {
@@ -243,17 +250,17 @@ const PORTFOLIO_PROJECTS = [
     image: workBar
   },
   {
-    title: "Private & Member-Only Spaces",
+    title: "Private & Member-Only Clubs",
     image: workRooftop
   },
   {
-    title: "Residential & Commercial Developments",
-    image: testimonialGroup
+    title: "Meetings & Events Venues",
+    image: testimonialReception
   },
   {
-    title: "Meetings & Events",
-    image: testimonialReception
-  }
+    title: "Residential & CRE Amenities",
+    image: testimonialGroup
+  },
 ];
 
 // Testimonials with property images
@@ -418,10 +425,10 @@ export default function Home() {
           >
             <span className="block text-[#c5a059] text-[10px] tracking-[0.4em] uppercase mb-6 font-bold">What We Do</span>
             <h2 className="text-5xl md:text-7xl font-serif leading-tight text-[#181818] mb-8 max-w-4xl">
-              We take a creative, yet simply practical, consultative approach to ensure your properties and projects don't just run, they <span className="italic text-[#c5a059]">thrive</span>.
+              We take a creative, yet practical, consultative approach to ensure your properties and projects don't just run, they <span className="italic text-[#c5a059]">thrive</span>.
             </h2>
             <p className="text-[#181818] text-lg leading-relaxed mb-8">
-                We will support you at every stage of your project and life cycle of your asset including but not limited to….
+                We will support you at every stage of your project and life cycle of your asset, including but not limited to….
               </p>
           </motion.div>
 
@@ -433,35 +440,37 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className={`group relative overflow-hidden bg-white border border-[#181818]/10 hover:border-[#c5a059] transition-all duration-500 hover:shadow-xl ${
+                className={`${
                   index === SERVICES_DATA.length - 1 ? 'lg:col-start-2' : ''
                 }`}
               >
-                {/* Image at the top */}
-                <div className="aspect-[4/3] overflow-hidden relative">
-                  <Image 
-                    src={service.bgImage}
-                    alt={service.title}
-                    placeholder="blur"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 will-change-transform"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#181818] via-[#181818]/40 to-transparent opacity-60"></div>
-                  
-                  {/* Title overlay on image */}
-                  <div className="absolute bottom-6 left-6 right-6">
-                    <h3 className="text-3xl font-serif text-white group-hover:text-[#c5a059] transition-colors duration-300">
-                      {service.title}
-                    </h3>
+                <Link href={`/services#${service.anchor}`} className="group block relative overflow-hidden bg-white border border-[#181818]/10 hover:border-[#c5a059] transition-all duration-500 hover:shadow-xl h-full">
+                  {/* Image at the top */}
+                  <div className="aspect-[4/3] overflow-hidden relative">
+                    <Image 
+                      src={service.bgImage}
+                      alt={service.title}
+                      placeholder="blur"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 will-change-transform"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#181818] via-[#181818]/40 to-transparent opacity-60"></div>
+                    
+                    {/* Title overlay on image */}
+                    <div className="absolute bottom-6 left-6 right-6">
+                      <h3 className="text-3xl font-serif text-white group-hover:text-[#c5a059] transition-colors duration-300">
+                        {service.title}
+                      </h3>
+                    </div>
                   </div>
-                </div>
-                
-                {/* Content below image */}
-                <div className="p-8">
-                  <p className="text-stone-600 leading-relaxed">
-                    {service.description}
-                  </p>
-                </div>
+                  
+                  {/* Content below image */}
+                  <div className="p-8">
+                    <p className="text-stone-600 leading-relaxed">
+                      {service.description}
+                    </p>
+                  </div>
+                </Link>
               </motion.div>
             ))}
           </div>
@@ -550,6 +559,8 @@ export default function Home() {
               <span className="text-[#c5a059]">•</span>
               <span className="text-2xl md:text-3xl font-serif text-white">Miami</span>
               <span className="text-[#c5a059]">•</span>
+              <span className="text-2xl md:text-3xl font-serif text-white">Boston</span>
+              <span className="text-[#c5a059]">•</span>
               <span className="text-2xl md:text-3xl font-serif text-white">Las Vegas</span>
               <span className="text-[#c5a059]">•</span>
               <span className="text-2xl md:text-3xl font-serif text-white">Charleston</span>
@@ -558,8 +569,7 @@ export default function Home() {
               <span className="text-[#c5a059]">•</span>
               <span className="text-2xl md:text-3xl font-serif text-white">London</span>
               <span className="text-[#c5a059]">•</span>
-              <span className="text-2xl md:text-3xl font-serif text-white">Boston</span>
-              <span className="text-[#c5a059]">•</span>
+              
               <span className="text-2xl md:text-3xl font-serif text-white">Barbados</span>
             </div>
           </motion.div>
@@ -578,8 +588,11 @@ export default function Home() {
             <span className="block text-[#c5a059] text-[10px] tracking-[0.4em] uppercase mb-6 font-bold">Our Work</span>
             <h2 className="text-5xl md:text-7xl font-serif leading-tight text-white">
               Proven Excellence<br/>
-              <span className="italic text-[#c5a059]">Across All Hospitality Assets</span>
+              <span className="italic text-[#c5a059]">Across All Hospitality Ventures</span>
             </h2>
+            <p className="text-stone-400 text-base md:text-lg mt-6 whitespace-nowrap">
+              <span className="font-serif italic">"Experience is simply the name we give our mistakes"</span> ~ Let us help correct your experience
+            </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -616,7 +629,7 @@ export default function Home() {
             <div className="flex gap-6 md:gap-8 items-start md:items-center">
               <div className="w-[1px] h-32 md:h-36 bg-[#c5a059] flex-shrink-0"></div>
               <p className="text-2xl md:text-3xl font-serif text-stone-300 italic leading-relaxed">
-                GKR Hospitality is here to support. We offer the depth and breadth of experience in consulting and advisory services needed for every phase of your project and Asset ownership
+                GKR Hospitality is here to support. We offer the depth and breadth of experience in consulting and advisory services needed for every phase of your project and asset ownership
               </p>
             </div>
           </motion.div>
@@ -635,7 +648,7 @@ export default function Home() {
             <span className="block text-[#c5a059] text-[10px] tracking-[0.4em] uppercase mb-8 font-bold">Trusted By Industry Leaders</span>
             <h2 className="text-5xl md:text-8xl font-serif text-[#181818] mb-8 leading-tight">
               Brands We've<br/>
-              <span className="italic text-[#c5a059]">Transformed</span>
+              <span className="italic text-[#c5a059]">Supported</span>
             </h2>
           </motion.div>
 
@@ -768,6 +781,9 @@ export default function Home() {
             <h2 className="text-5xl md:text-7xl font-serif leading-tight text-white max-w-4xl">
               A Clear, Proven <span className="italic text-[#c5a059]">Process</span>
             </h2>
+            <p className="text-stone-400 text-base md:text-lg mt-6">
+              We do the difficult immediately. The impossible may take a little longer.
+            </p>
           </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">

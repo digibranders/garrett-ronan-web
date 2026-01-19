@@ -10,7 +10,8 @@ import Image from 'next/image';
 // Logo Import
 import logoImage from '@/assets/images/logos/gkr-logo.png';
 // Garrett Ronan image
-import garrettImage from '@/assets/images/about/garrett-ronan.png';
+// import garrettImage from '@/assets/images/about/garrett-ronan.png';
+import garrettImage from '@/assets/images/about/GKR_About_3.jpg';
 // Garrett signature
 import signatureImage from '@/assets/images/about/signature.png';
 
@@ -87,7 +88,7 @@ export default function About() {
                 </div>
                 <div className="border-l-2 border-[#c5a059] pl-6">
                   <p className="text-[#c5a059] text-xs uppercase tracking-[0.3em] mb-2">Founder</p>
-                  <Image src={signatureImage} alt="Garrett Ronan signature" className="h-16 mb-4" />
+                  <Image src={signatureImage} alt="Garrett Ronan signature" className="h-16 w-auto mb-4" />
                   <p className="text-stone-400 text-sm">30+ years of operational leadership in premium hospitality</p>
                 </div>
               </div>

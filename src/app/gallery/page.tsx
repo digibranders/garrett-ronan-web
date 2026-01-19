@@ -190,7 +190,7 @@ export default function GalleryPage() {
             <DialogPrimitive.Content className="fixed inset-0 z-50 w-screen h-screen bg-[#181818] p-0 shadow-none duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 overflow-y-auto md:overflow-hidden md:grid md:grid-cols-2 gap-0">
               
               {/* Close Button */}
-              <DialogPrimitive.Close className="absolute right-6 top-6 z-50 ring-offset-background transition-all hover:scale-110 focus:outline-none disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground p-2 bg-black/20 hover:bg-black/40 text-white rounded-full">
+              <DialogPrimitive.Close className="cursor-pointer absolute right-6 top-6 z-50 ring-offset-background transition-all hover:scale-110 focus:outline-none disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground p-2 bg-black/20 hover:bg-black/40 text-white rounded-full">
                 <X className="h-6 w-6" />
                 <span className="sr-only">Close</span>
               </DialogPrimitive.Close>
@@ -217,7 +217,7 @@ export default function GalleryPage() {
                       <>
                         <button 
                           onClick={(e) => { e.stopPropagation(); handlePreviousImage(); }}
-                          className="absolute left-4 top-1/2 -translate-y-1/2 p-3 bg-black/20 hover:bg-black/60 text-white hover:text-white rounded-full transition-all duration-300 backdrop-blur-sm hidden md:flex"
+                          className="cursor-pointer absolute left-4 top-1/2 -translate-y-1/2 p-3 bg-black/20 hover:bg-black/60 text-white hover:text-white rounded-full transition-all duration-300 backdrop-blur-sm hidden md:flex"
                           aria-label="Previous image"
                         >
                           <ChevronLeft size={32} strokeWidth={1} />
@@ -225,7 +225,7 @@ export default function GalleryPage() {
                         
                         <button 
                           onClick={(e) => { e.stopPropagation(); handleNextImage(); }}
-                          className="absolute right-4 top-1/2 -translate-y-1/2 p-3 bg-black/20 hover:bg-black/60 text-white hover:text-white rounded-full transition-all duration-300 backdrop-blur-sm hidden md:flex"
+                          className="cursor-pointer absolute right-4 top-1/2 -translate-y-1/2 p-3 bg-black/20 hover:bg-black/60 text-white hover:text-white rounded-full transition-all duration-300 backdrop-blur-sm hidden md:flex"
                           aria-label="Next image"
                         >
                           <ChevronRight size={32} strokeWidth={1} />

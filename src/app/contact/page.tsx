@@ -18,10 +18,6 @@ const FAQ_DATA = [
     answer: "Primarily on-site. Hospitality operations can't be fixed from spreadsheets. We're there, in your property, with your team."
   },
   {
-    question: "What size properties do you work with?",
-    answer: "Our sweet spot is boutique hotels (10-150 rooms), restaurant groups with 2-10 locations, and development projects with hospitality components. We occasionally work with larger properties if the fit is right."
-  },
-  {
     question: "How long are typical engagements?",
     answer: "Operations and revenue: 3-6 months. Concept-to-opening: 6-12 months depending on project stage. Some clients retain us for ongoing advisory after the initial engagement."
   },
@@ -39,7 +35,7 @@ const FAQ_DATA = [
   },
   {
     question: "Are you available for speaking engagements or advisory board roles?",
-    answer: "Yes, on a selective basis. Contact us to discuss."
+    answer: "Yes, on a selective basis. Please contact us to discuss."
   }
 ];
 
@@ -262,7 +258,7 @@ export default function Contact() {
                 {/* Submit */}
                 <button
                   type="submit"
-                  className="w-full bg-[#c5a059] text-[#181818] hover:bg-[#181818] hover:text-white py-6 text-xs uppercase tracking-[0.3em] font-bold transition-all duration-500 rounded-full"
+                  className="cursor-pointer w-full bg-[#c5a059] text-[#181818] hover:bg-[#181818] hover:text-white py-6 text-xs uppercase tracking-[0.3em] font-bold transition-all duration-500 rounded-full"
                 >
                   Send Message
                 </button>
@@ -300,7 +296,7 @@ export default function Contact() {
               >
                 <button
                   onClick={() => setOpenFAQ(openFAQ === index ? null : index)}
-                  className="w-full py-8 flex items-start justify-between gap-8 text-left group hover:bg-[#181818]/5 px-6 -mx-6 transition-colors duration-300"
+                  className="cursor-pointer w-full py-8 flex items-start justify-between gap-8 text-left group hover:bg-[#181818]/5 px-6 -mx-6 transition-colors duration-300"
                 >
                   <div className="flex items-start gap-6 flex-1">
                     <span className="text-[#c5a059] text-sm font-serif mt-1 flex-shrink-0">0{index + 1}</span>
