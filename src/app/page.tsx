@@ -86,6 +86,22 @@ const EMPLOYED_BY_COMPANIES = [
   { name: 'Starr Restaurants', logo: starrRestaurantsLogo },
   { name: 'Equinox Hotels', logo: equinoxHotelsLogo },
   { name: 'etc.venues', logo: etcVenuesLogo },
+  { name: 'Convene', logo: conveneLogo },
+  { name: 'Mövenpick', logo: movenpickLogo },
+  { name: 'Adare Manor', logo: adareManorLogo },
+  { name: 'Swallow Hotels', logo: swallowHotelsLogo },
+  { name: 'Principal Hotels', logo: principalHotelsLogo },
+  { name: 'Waldorf Astoria', logo: waldorfAstoriaLogo },
+  { name: 'Boston Harbor Hotel', logo: bostonHarborHotelLogo },
+  { name: 'The Beverly Hilton', logo: beverlyHiltonLogo },
+  { name: 'ROKA', logo: rokaLogo },
+  { name: 'Zuma', logo: zumaLogo },
+  { name: 'ETARU', logo: etaruLogo },
+  { name: 'INKO NITO', logo: inkoNitoLogo },
+  { name: 'oblix', logo: oblixLogo },
+  { name: 'Starr Restaurants', logo: starrRestaurantsLogo },
+  { name: 'Equinox Hotels', logo: equinoxHotelsLogo },
+  { name: 'etc.venues', logo: etcVenuesLogo },
   { name: 'Convene', logo: conveneLogo }
 ];
 
@@ -94,7 +110,30 @@ const CONSULTED_WITH_COMPANIES = [
   { name: 'BXP', logo: bxpLogo },
   { name: 'Rudin Group', logo: rudinLogo },
   { name: 'Zuma', logo: zumaConsultedLogo },
-  { name: 'MDC', logo: null },
+  { name: 'Affect Group', logo: affectLogo },
+  { name: 'Sage Hospitality', logo: sageLogo },
+  { name: 'BLACE', logo: blaceLogo },
+  { name: 'Meet Resident', logo: residentLogo },
+  { name: 'Bakan', logo: bakanLogo },
+  { name: 'Support 305', logo: support305Logo },
+  { name: 'Fairfield', logo: fairfieldLogo },
+  { name: 'Montauk', logo: montaukLogo },
+  { name: 'Buccament', logo: buccamentLogo },
+  { name: 'BXP', logo: bxpLogo },
+  { name: 'Rudin Group', logo: rudinLogo },
+  { name: 'Zuma', logo: zumaConsultedLogo },
+  { name: 'Affect Group', logo: affectLogo },
+  { name: 'Sage Hospitality', logo: sageLogo },
+  { name: 'BLACE', logo: blaceLogo },
+  { name: 'Meet Resident', logo: residentLogo },
+  { name: 'Bakan', logo: bakanLogo },
+  { name: 'Support 305', logo: support305Logo },
+  { name: 'Fairfield', logo: fairfieldLogo },
+  { name: 'Montauk', logo: montaukLogo },
+  { name: 'Buccament', logo: buccamentLogo },
+  { name: 'BXP', logo: bxpLogo },
+  { name: 'Rudin Group', logo: rudinLogo },
+  { name: 'Zuma', logo: zumaConsultedLogo },
   { name: 'Affect Group', logo: affectLogo },
   { name: 'Sage Hospitality', logo: sageLogo },
   { name: 'BLACE', logo: blaceLogo },
@@ -240,7 +279,7 @@ const TESTIMONIALS = [
 ];
 
 // Counter component for animated stats
-function AnimatedCounter({ end, duration = 2, suffix = "" }: { end: number; duration?: number; suffix?: string }) {
+function AnimatedCounter({ end, duration = 2, suffix = "" }: Readonly<{ end: number; duration?: number; suffix?: string }>) {
   const [count, setCount] = useState(0);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -269,11 +308,44 @@ function AnimatedCounter({ end, duration = 2, suffix = "" }: { end: number; dura
   return <span ref={ref}>{count}{suffix}</span>;
 }
 
+function getConsultedLogoDimensions(name: string) {
+  switch (name) {
+    case 'BXP':
+      return 'max-h-8 max-w-[90px] md:max-h-12 md:max-w-[120px]';
+    case 'Rudin Group':
+      return 'max-h-4 max-w-[70px] md:max-h-6 md:max-w-[90px]';
+    case 'Zuma':
+      return 'max-h-6 max-w-[70px] md:max-h-8 md:max-w-[100px]';
+    case 'Affect Group':
+      return 'max-h-5 max-w-[65px] md:max-h-7 md:max-w-[90px]';
+    case 'Sage Hospitality':
+      return 'max-h-6 max-w-[80px] md:max-h-8 md:max-w-[110px]';
+    case 'BLACE':
+      return 'max-h-7 max-w-[70px] md:max-h-10 md:max-w-[100px]';
+    case 'Meet Resident':
+      return 'max-h-7 max-w-[120px] md:max-h-10 md:max-w-[160px]';
+    case 'Bakan':
+      return 'max-h-7 max-w-[90px] md:max-h-10 md:max-w-[120px]';
+    case 'Support 305':
+      return 'max-h-8 max-w-[100px] md:max-h-11 md:max-w-[140px]';
+    default:
+      return 'max-h-8 max-w-[100px] md:max-h-12 md:max-w-[140px]';
+  }
+}
+
 export default function Home() {
   const [currentHeroImage, setCurrentHeroImage] = useState(0);
   const [currentWorkStep, setCurrentWorkStep] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
   const { scrollYProgress } = useScroll();
   const scale = useTransform(scrollYProgress, [0, 0.2], [1, 1.1]);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // Hero slideshow effect
   useEffect(() => {
@@ -286,7 +358,6 @@ export default function Home() {
   return (
     <div className="bg-[#181818] text-[#FFF7F2] font-sans selection:bg-[#c5a059] selection:text-white overflow-x-hidden">
       
-
 
       {/* Hero Section with Slideshow */}
       <section className="relative h-screen w-full overflow-hidden flex flex-col justify-center">
@@ -371,7 +442,8 @@ export default function Home() {
                   <Image 
                     src={service.bgImage}
                     alt={service.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    placeholder="blur"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 will-change-transform"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#181818] via-[#181818]/40 to-transparent opacity-60"></div>
@@ -585,24 +657,24 @@ export default function Home() {
               <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#FFF7F2] to-transparent z-10"></div>
               
               <motion.div
-                className="flex gap-24 items-center will-change-transform"
+                className="flex items-center will-change-transform"
                 animate={{
-                  x: ["-50%", "0%"],
+                  x: ["-50%", "-25%"],
                 }}
                 transition={{
                   x: {
                     repeat: Infinity,
                     repeatType: "loop",
-                    duration: 24,
+                    duration: isMobile ? 6 : 10,
                     ease: "linear",
                   },
                 }}
               >
-                {/* First set */}
-                {EMPLOYED_BY_COMPANIES.map((company, idx) => (
+                {/* 4 sets of data for seamless infinite loop with buffer */}
+                {[...EMPLOYED_BY_COMPANIES, ...EMPLOYED_BY_COMPANIES, ...EMPLOYED_BY_COMPANIES, ...EMPLOYED_BY_COMPANIES].map((company, idx) => (
                   <div 
-                    key={`employed-1-${idx}`} 
-                    className="flex-shrink-0 flex items-center justify-center group"
+                    key={`employed-${idx}`} 
+                    className="flex-shrink-0 flex items-center justify-center group pr-12"
                   >
                     {company.logo ? (
                       <Image 
@@ -610,37 +682,12 @@ export default function Home() {
                         alt={company.name} 
                         className={`object-contain grayscale brightness-[0.3] group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-300 ${
                           ['ROKA', 'Zuma', 'ETARU', 'oblix', 'INKO NITO'].includes(company.name)
-                            ? 'max-h-8 max-w-[100px]'
+                            ? 'max-h-6 max-w-[70px] md:max-h-8 md:max-w-[100px]'
                             : company.name === 'etc.venues'
-                            ? 'max-h-48 max-w-[400px]'
+                            ? 'max-h-32 max-w-[280px] md:max-h-48 md:max-w-[400px]'
                             : ['Waldorf Astoria', 'Boston Harbor Hotel'].includes(company.name)
-                            ? 'max-h-16 max-w-[200px]'
-                            : 'max-h-14 max-w-[180px]'
-                        }`}
-                      />
-                    ) : (
-                      <span className="text-[#181818] group-hover:text-[#c5a059] text-lg font-medium tracking-wide whitespace-nowrap transition-colors duration-300">{company.name}</span>
-                    )}
-                  </div>
-                ))}
-                {/* Duplicate set for seamless loop */}
-                {EMPLOYED_BY_COMPANIES.map((company, idx) => (
-                  <div 
-                    key={`employed-2-${idx}`} 
-                    className="flex-shrink-0 flex items-center justify-center group"
-                  >
-                    {company.logo ? (
-                      <Image 
-                        src={company.logo} 
-                        alt={company.name} 
-                        className={`object-contain grayscale brightness-[0.3] group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-300 ${
-                          ['ROKA', 'Zuma', 'ETARU', 'oblix', 'INKO NITO'].includes(company.name)
-                            ? 'max-h-8 max-w-[100px]'
-                            : company.name === 'etc.venues'
-                            ? 'max-h-48 max-w-[400px]'
-                            : ['Waldorf Astoria', 'Boston Harbor Hotel'].includes(company.name)
-                            ? 'max-h-16 max-w-[200px]'
-                            : 'max-h-14 max-w-[180px]'
+                            ? 'max-h-12 max-w-[150px] md:max-h-16 md:max-w-[200px]'
+                            : 'max-h-10 max-w-[140px] md:max-h-14 md:max-w-[180px]'
                         }`}
                       />
                     ) : (
@@ -670,86 +717,31 @@ export default function Home() {
               <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#FFF7F2] to-transparent z-10"></div>
               
               <motion.div
-                className="flex gap-24 items-center will-change-transform"
+                className="flex items-center will-change-transform"
                 animate={{
-                  x: ["-50%", "0%"],
+                  x: ["-50%", "-25%"],
                 }}
                 transition={{
                   x: {
                     repeat: Infinity,
                     repeatType: "loop",
-                    duration: 24,
+                    duration: isMobile ? 6 : 10,
                     ease: "linear",
                   },
                 }}
               >
-                {/* First set */}
-                {CONSULTED_WITH_COMPANIES.map((company, idx) => (
+                {/* 4 sets of data for seamless infinite loop with buffer */}
+                {[...CONSULTED_WITH_COMPANIES, ...CONSULTED_WITH_COMPANIES, ...CONSULTED_WITH_COMPANIES, ...CONSULTED_WITH_COMPANIES].map((company, idx) => (
                   <div 
-                    key={`consulted-1-${idx}`} 
-                    className="flex-shrink-0 flex items-center justify-center group"
+                    key={`consulted-${idx}`} 
+                    className="flex-shrink-0 flex items-center justify-center group pr-24"
                   >
                     {company.logo ? (
                       <Image 
                         src={company.logo} 
                         alt={company.name} 
                         className={`object-contain grayscale brightness-[0.3] group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-300 ${
-                          company.name === 'BXP'
-                            ? 'max-h-12 max-w-[120px]'
-                            : company.name === 'Rudin Group'
-                            ? 'max-h-6 max-w-[90px]'
-                            : company.name === 'Zuma'
-                            ? 'max-h-8 max-w-[100px]'
-                            : company.name === 'Affect Group'
-                            ? 'max-h-7 max-w-[90px]'
-                            : company.name === 'Sage Hospitality'
-                            ? 'max-h-8 max-w-[110px]'
-                            : company.name === 'BLACE'
-                            ? 'max-h-10 max-w-[100px]'
-                            : company.name === 'Meet Resident'
-                            ? 'max-h-10 max-w-[160px]'
-                            : company.name === 'Bakan'
-                            ? 'max-h-10 max-w-[120px]'
-                            : company.name === 'Support 305'
-                            ? 'max-h-11 max-w-[140px]'
-                            : 'max-h-12 max-w-[140px]'
-                        }`}
-                      />
-                    ) : (
-                      <span className="text-[#181818] group-hover:text-[#c5a059] text-lg font-medium tracking-wide whitespace-nowrap transition-colors duration-300">{company.name}</span>
-                    )}
-                  </div>
-                ))}
-                {/* Duplicate set for seamless loop */}
-                {CONSULTED_WITH_COMPANIES.map((company, idx) => (
-                  <div 
-                    key={`consulted-2-${idx}`} 
-                    className="flex-shrink-0 flex items-center justify-center group"
-                  >
-                    {company.logo ? (
-                      <Image 
-                        src={company.logo} 
-                        alt={company.name} 
-                        className={`object-contain grayscale brightness-[0.3] group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-300 ${
-                          company.name === 'BXP'
-                            ? 'max-h-12 max-w-[120px]'
-                            : company.name === 'Rudin Group'
-                            ? 'max-h-6 max-w-[90px]'
-                            : company.name === 'Zuma'
-                            ? 'max-h-8 max-w-[100px]'
-                            : company.name === 'Affect Group'
-                            ? 'max-h-7 max-w-[90px]'
-                            : company.name === 'Sage Hospitality'
-                            ? 'max-h-8 max-w-[110px]'
-                            : company.name === 'BLACE'
-                            ? 'max-h-10 max-w-[100px]'
-                            : company.name === 'Meet Resident'
-                            ? 'max-h-10 max-w-[160px]'
-                            : company.name === 'Bakan'
-                            ? 'max-h-10 max-w-[120px]'
-                            : company.name === 'Support 305'
-                            ? 'max-h-11 max-w-[140px]'
-                            : 'max-h-12 max-w-[140px]'
+                          getConsultedLogoDimensions(company.name)
                         }`}
                       />
                     ) : (
