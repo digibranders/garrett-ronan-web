@@ -167,9 +167,9 @@ _Status: Ready for user verification._
 
 - **Action**: Updated `PORTFOLIO_PROJECTS` in `src/app/page.tsx`.
 - **Changes**:
-    - Replaced project titles with categories: Hotels & Resorts, Food & Beverage, Nightlife & Entertainment, Private & Member-Only Spaces, Residential & Commercial Developments.
-    - Removed `location` text from display.
-    - Reduced list to 5 items to match user input.
+  - Replaced project titles with categories: Hotels & Resorts, Food & Beverage, Nightlife & Entertainment, Private & Member-Only Spaces, Residential & Commercial Developments.
+  - Removed `location` text from display.
+  - Reduced list to 5 items to match user input.
 - **Build Status**: Verified successfully.
 
 ## 2026-01-16 - Added Meetings & Events
@@ -182,8 +182,58 @@ _Status: Ready for user verification._
 
 - **Action**: Updated `src/app/contact/page.tsx`.
 - **Changes**:
-    - Replaced "Project Type" text input with a standard select dropdown with 7 business type options.
-    - Added "Role" select dropdown (Developer, Investor, Owner, etc.).
-    - Implemented conditional rendering for "Other" role description (text input appears only when "Other" is selected).
-    - Updated `formData` interface and state to support new fields.
+  - Replaced "Project Type" text input with a standard select dropdown with 7 business type options.
+  - Added "Role" select dropdown (Developer, Investor, Owner, etc.).
+  - Implemented conditional rendering for "Other" role description (text input appears only when "Other" is selected).
+  - Updated `formData` interface and state to support new fields.
+- **Build Status**: Verified successfully.
+
+## 2026-01-16 - Logo Carousel Optimization
+
+- **Issue**: "Shaky" animation at the loop reset point and uneven spacing.
+- **Fix**:
+  - Replaced `flex gap-X` with item-level `padding-right` to ensure mathematically precise width calculations for the `-50%` transform.
+  - Reduced spacing in "Employed By" carousel to `pr-12` (48px) for tighter layout.
+  - Maintained "Consulted With" at `pr-24` (96px).
+  - Set animation speeds to 10s (Desktop) and 6s (Mobile).
+- **Technique**: Used `[...data, ...data]` duplication with a single long flex container moving left-to-right.
+- **Build Status**: Verified successfully.
+
+### Update: 2026-01-16 21:40 - Bulletproof Infinite Carousel
+
+- **Issue**: Visible "reset" or "shaky" effect at loop end on wider screens with only 2 data sets.
+- **Fix**:
+  - **Quadrupled Data**: Rendered 4 consecutive copies of the logo arrays () to create a massive content buffer.
+  - **Animation Logic**: Adjusted animation range to translate from `-50%` to `-25%`. This standardizes the loop window, ensuring the "snap" back always happens with substantial off-screen content available, making the loop invisible.
+- **Result**: True seamless infinite scroll with zero visual jumps.
+- **Build Status**: Verified successfully.
+
+## 2026-01-16 - Codebase Refactoring
+
+- **Action**: Extracted Nested Ternary Operation
+- **File**: `src/app/page.tsx`
+- **Details**:
+  - Identified a complex, nested ternary operation used for determining logo dimensions in the "Consulted With" section.
+  - Extracted this logic into a dedicated helper function `getConsultedLogoDimensions(name: string)`.
+  - Replaced the inline ternary with a clean function call.
+- **Goal**: Improve code readability and maintainability.
+- **Build Status**: Verified successfully.
+
+## 2026-01-16 - Read-Only Props for AnimatedCounter
+
+- **Action**: Marked props of `AnimatedCounter` component as read-only.
+- **File**: `src/app/page.tsx`
+- **Details**:
+  - Updated the `AnimatedCounter` function signature.
+  - Used `Readonly<{ ... }>` to enforce immutability on props (`end`, `duration`, `suffix`).
+- **Goal**: Adhere to React best practices for component props and resolve specific user request.
+- **Build Status**: Verified successfully.
+
+## 2026-01-16 - Image Optimization
+
+- **Action**: Fix Image Flickering and rendering optimization.
+- **File**: `src/app/page.tsx`
+- **Details**:
+  - Added `placeholder="blur"` to "What We Do" section images to improve loading transition.
+  - Added `will-change-transform` class to hint the browser for hardware acceleration on the hover effect, reducing flickering during state changes.
 - **Build Status**: Verified successfully.

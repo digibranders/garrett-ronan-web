@@ -86,6 +86,22 @@ const EMPLOYED_BY_COMPANIES = [
   { name: 'Starr Restaurants', logo: starrRestaurantsLogo },
   { name: 'Equinox Hotels', logo: equinoxHotelsLogo },
   { name: 'etc.venues', logo: etcVenuesLogo },
+  { name: 'Convene', logo: conveneLogo },
+  { name: 'Mövenpick', logo: movenpickLogo },
+  { name: 'Adare Manor', logo: adareManorLogo },
+  { name: 'Swallow Hotels', logo: swallowHotelsLogo },
+  { name: 'Principal Hotels', logo: principalHotelsLogo },
+  { name: 'Waldorf Astoria', logo: waldorfAstoriaLogo },
+  { name: 'Boston Harbor Hotel', logo: bostonHarborHotelLogo },
+  { name: 'The Beverly Hilton', logo: beverlyHiltonLogo },
+  { name: 'ROKA', logo: rokaLogo },
+  { name: 'Zuma', logo: zumaLogo },
+  { name: 'ETARU', logo: etaruLogo },
+  { name: 'INKO NITO', logo: inkoNitoLogo },
+  { name: 'oblix', logo: oblixLogo },
+  { name: 'Starr Restaurants', logo: starrRestaurantsLogo },
+  { name: 'Equinox Hotels', logo: equinoxHotelsLogo },
+  { name: 'etc.venues', logo: etcVenuesLogo },
   { name: 'Convene', logo: conveneLogo }
 ];
 
@@ -94,7 +110,30 @@ const CONSULTED_WITH_COMPANIES = [
   { name: 'BXP', logo: bxpLogo },
   { name: 'Rudin Group', logo: rudinLogo },
   { name: 'Zuma', logo: zumaConsultedLogo },
-  { name: 'MDC', logo: null },
+  { name: 'Affect Group', logo: affectLogo },
+  { name: 'Sage Hospitality', logo: sageLogo },
+  { name: 'BLACE', logo: blaceLogo },
+  { name: 'Meet Resident', logo: residentLogo },
+  { name: 'Bakan', logo: bakanLogo },
+  { name: 'Support 305', logo: support305Logo },
+  { name: 'Fairfield', logo: fairfieldLogo },
+  { name: 'Montauk', logo: montaukLogo },
+  { name: 'Buccament', logo: buccamentLogo },
+  { name: 'BXP', logo: bxpLogo },
+  { name: 'Rudin Group', logo: rudinLogo },
+  { name: 'Zuma', logo: zumaConsultedLogo },
+  { name: 'Affect Group', logo: affectLogo },
+  { name: 'Sage Hospitality', logo: sageLogo },
+  { name: 'BLACE', logo: blaceLogo },
+  { name: 'Meet Resident', logo: residentLogo },
+  { name: 'Bakan', logo: bakanLogo },
+  { name: 'Support 305', logo: support305Logo },
+  { name: 'Fairfield', logo: fairfieldLogo },
+  { name: 'Montauk', logo: montaukLogo },
+  { name: 'Buccament', logo: buccamentLogo },
+  { name: 'BXP', logo: bxpLogo },
+  { name: 'Rudin Group', logo: rudinLogo },
+  { name: 'Zuma', logo: zumaConsultedLogo },
   { name: 'Affect Group', logo: affectLogo },
   { name: 'Sage Hospitality', logo: sageLogo },
   { name: 'BLACE', logo: blaceLogo },
@@ -119,37 +158,44 @@ const SERVICES_DATA = [
   {
     title: "Concept Creation",
     description: "We help guide your hospitality concepts from ideation through to delivering market ready, creative results.",
-    bgImage: serviceConcept
+    bgImage: serviceConcept,
+    anchor: "concept-creation"
   },
   {
     title: "Capital & Growth Investment",
     description: "We provide strategic advice  and guidance on growth and investment, capital sourcing, M&A’s and investor-ready business plans.",
-    bgImage: serviceInvestment
+    bgImage: serviceInvestment,
+    anchor: "capital-growth-investment"
   },
   {
     title: "Design, Development & Construction",
     description: "We provide skilled “Owners Rep” oversight through each phase of design and construction to deliver successful Projects.",
-    bgImage: serviceConstruction
+    bgImage: serviceConstruction,
+    anchor: "design-development-construction"
   },
   {
     title: "Operations",
     description: "We help deliver end-to-end operations excellence and efficiency from pre and post opening to ongoing operational management.",
-    bgImage: serviceOperations
+    bgImage: serviceOperations,
+    anchor: "operations"
   },
   {
     title: "Legal",
     description: "We help you manage the legal foundations that protect your deals, teams, and long-term operations.",
-    bgImage: serviceLegal
+    bgImage: serviceLegal,
+    anchor: "legal"
   },
   {
     title: "Financial",
     description: "We provide end-to-end insightful financial guidance, including budgeting, forecasting, audits, cost control, efficiency and profitability.",
-    bgImage: serviceAccounting
+    bgImage: serviceAccounting,
+    anchor: "financial"
   },
   {
     title: "Additional Support",
     description: "We provide targeted support wherever your business needs experienced hospitality operator oversight.",
-    bgImage: serviceTraining
+    bgImage: serviceTraining,
+    anchor: "additional-support"
   }
 ];
 
@@ -196,7 +242,7 @@ const PORTFOLIO_PROJECTS = [
     image: workExecution
   },
   {
-    title: "Food & Beverage",
+    title: "Restaurants & Bars",
     image: workDining
   },
   {
@@ -204,17 +250,17 @@ const PORTFOLIO_PROJECTS = [
     image: workBar
   },
   {
-    title: "Private & Member-Only Spaces",
+    title: "Private & Member-Only Clubs",
     image: workRooftop
   },
   {
-    title: "Residential & Commercial Developments",
-    image: testimonialGroup
+    title: "Meetings & Events Venues",
+    image: testimonialReception
   },
   {
-    title: "Meetings & Events",
-    image: testimonialReception
-  }
+    title: "Residential & CRE Amenities",
+    image: testimonialGroup
+  },
 ];
 
 // Testimonials with property images
@@ -240,7 +286,7 @@ const TESTIMONIALS = [
 ];
 
 // Counter component for animated stats
-function AnimatedCounter({ end, duration = 2, suffix = "" }: { end: number; duration?: number; suffix?: string }) {
+function AnimatedCounter({ end, duration = 2, suffix = "" }: Readonly<{ end: number; duration?: number; suffix?: string }>) {
   const [count, setCount] = useState(0);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -269,11 +315,44 @@ function AnimatedCounter({ end, duration = 2, suffix = "" }: { end: number; dura
   return <span ref={ref}>{count}{suffix}</span>;
 }
 
+function getConsultedLogoDimensions(name: string) {
+  switch (name) {
+    case 'BXP':
+      return 'max-h-8 max-w-[90px] md:max-h-12 md:max-w-[120px]';
+    case 'Rudin Group':
+      return 'max-h-4 max-w-[70px] md:max-h-6 md:max-w-[90px]';
+    case 'Zuma':
+      return 'max-h-6 max-w-[70px] md:max-h-8 md:max-w-[100px]';
+    case 'Affect Group':
+      return 'max-h-5 max-w-[65px] md:max-h-7 md:max-w-[90px]';
+    case 'Sage Hospitality':
+      return 'max-h-6 max-w-[80px] md:max-h-8 md:max-w-[110px]';
+    case 'BLACE':
+      return 'max-h-7 max-w-[70px] md:max-h-10 md:max-w-[100px]';
+    case 'Meet Resident':
+      return 'max-h-7 max-w-[120px] md:max-h-10 md:max-w-[160px]';
+    case 'Bakan':
+      return 'max-h-7 max-w-[90px] md:max-h-10 md:max-w-[120px]';
+    case 'Support 305':
+      return 'max-h-8 max-w-[100px] md:max-h-11 md:max-w-[140px]';
+    default:
+      return 'max-h-8 max-w-[100px] md:max-h-12 md:max-w-[140px]';
+  }
+}
+
 export default function Home() {
   const [currentHeroImage, setCurrentHeroImage] = useState(0);
   const [currentWorkStep, setCurrentWorkStep] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
   const { scrollYProgress } = useScroll();
   const scale = useTransform(scrollYProgress, [0, 0.2], [1, 1.1]);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // Hero slideshow effect
   useEffect(() => {
@@ -286,7 +365,6 @@ export default function Home() {
   return (
     <div className="bg-[#181818] text-[#FFF7F2] font-sans selection:bg-[#c5a059] selection:text-white overflow-x-hidden">
       
-
 
       {/* Hero Section with Slideshow */}
       <section className="relative h-screen w-full overflow-hidden flex flex-col justify-center">
@@ -347,10 +425,10 @@ export default function Home() {
           >
             <span className="block text-[#c5a059] text-[10px] tracking-[0.4em] uppercase mb-6 font-bold">What We Do</span>
             <h2 className="text-5xl md:text-7xl font-serif leading-tight text-[#181818] mb-8 max-w-4xl">
-              We take a creative, yet simply practical, consultative approach to ensure your properties and projects don't just run, they <span className="italic text-[#c5a059]">thrive</span>.
+              We take a creative, yet practical, consultative approach to ensure your properties and projects don't just run, they <span className="italic text-[#c5a059]">thrive</span>.
             </h2>
             <p className="text-[#181818] text-lg leading-relaxed mb-8">
-                We will support you at every stage of your project and life cycle of your asset including but not limited to….
+                We will support you at every stage of your project and life cycle of your asset, including but not limited to….
               </p>
           </motion.div>
 
@@ -362,34 +440,37 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className={`group relative overflow-hidden bg-white border border-[#181818]/10 hover:border-[#c5a059] transition-all duration-500 hover:shadow-xl ${
+                className={`${
                   index === SERVICES_DATA.length - 1 ? 'lg:col-start-2' : ''
                 }`}
               >
-                {/* Image at the top */}
-                <div className="aspect-[4/3] overflow-hidden relative">
-                  <Image 
-                    src={service.bgImage}
-                    alt={service.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#181818] via-[#181818]/40 to-transparent opacity-60"></div>
-                  
-                  {/* Title overlay on image */}
-                  <div className="absolute bottom-6 left-6 right-6">
-                    <h3 className="text-3xl font-serif text-white group-hover:text-[#c5a059] transition-colors duration-300">
-                      {service.title}
-                    </h3>
+                <Link href={`/services#${service.anchor}`} className="group block relative overflow-hidden bg-white border border-[#181818]/10 hover:border-[#c5a059] transition-all duration-500 hover:shadow-xl h-full">
+                  {/* Image at the top */}
+                  <div className="aspect-[4/3] overflow-hidden relative">
+                    <Image 
+                      src={service.bgImage}
+                      alt={service.title}
+                      placeholder="blur"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 will-change-transform"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#181818] via-[#181818]/40 to-transparent opacity-60"></div>
+                    
+                    {/* Title overlay on image */}
+                    <div className="absolute bottom-6 left-6 right-6">
+                      <h3 className="text-3xl font-serif text-white group-hover:text-[#c5a059] transition-colors duration-300">
+                        {service.title}
+                      </h3>
+                    </div>
                   </div>
-                </div>
-                
-                {/* Content below image */}
-                <div className="p-8">
-                  <p className="text-stone-600 leading-relaxed">
-                    {service.description}
-                  </p>
-                </div>
+                  
+                  {/* Content below image */}
+                  <div className="p-8">
+                    <p className="text-stone-600 leading-relaxed">
+                      {service.description}
+                    </p>
+                  </div>
+                </Link>
               </motion.div>
             ))}
           </div>
@@ -478,6 +559,8 @@ export default function Home() {
               <span className="text-[#c5a059]">•</span>
               <span className="text-2xl md:text-3xl font-serif text-white">Miami</span>
               <span className="text-[#c5a059]">•</span>
+              <span className="text-2xl md:text-3xl font-serif text-white">Boston</span>
+              <span className="text-[#c5a059]">•</span>
               <span className="text-2xl md:text-3xl font-serif text-white">Las Vegas</span>
               <span className="text-[#c5a059]">•</span>
               <span className="text-2xl md:text-3xl font-serif text-white">Charleston</span>
@@ -486,8 +569,7 @@ export default function Home() {
               <span className="text-[#c5a059]">•</span>
               <span className="text-2xl md:text-3xl font-serif text-white">London</span>
               <span className="text-[#c5a059]">•</span>
-              <span className="text-2xl md:text-3xl font-serif text-white">Boston</span>
-              <span className="text-[#c5a059]">•</span>
+              
               <span className="text-2xl md:text-3xl font-serif text-white">Barbados</span>
             </div>
           </motion.div>
@@ -506,8 +588,11 @@ export default function Home() {
             <span className="block text-[#c5a059] text-[10px] tracking-[0.4em] uppercase mb-6 font-bold">Our Work</span>
             <h2 className="text-5xl md:text-7xl font-serif leading-tight text-white">
               Proven Excellence<br/>
-              <span className="italic text-[#c5a059]">Across All Hospitality Assets</span>
+              <span className="italic text-[#c5a059]">Across All Hospitality Ventures</span>
             </h2>
+            <p className="text-stone-400 text-base md:text-lg mt-6 whitespace-nowrap">
+              <span className="font-serif italic">"Experience is simply the name we give our mistakes"</span> ~ Let us help correct your experience
+            </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -544,7 +629,7 @@ export default function Home() {
             <div className="flex gap-6 md:gap-8 items-start md:items-center">
               <div className="w-[1px] h-32 md:h-36 bg-[#c5a059] flex-shrink-0"></div>
               <p className="text-2xl md:text-3xl font-serif text-stone-300 italic leading-relaxed">
-                GKR Hospitality is here to support. We offer the depth and breadth of experience in consulting and advisory services needed for every phase of your project and Asset ownership
+                GKR Hospitality is here to support. We offer the depth and breadth of experience in consulting and advisory services needed for every phase of your project and asset ownership
               </p>
             </div>
           </motion.div>
@@ -563,7 +648,7 @@ export default function Home() {
             <span className="block text-[#c5a059] text-[10px] tracking-[0.4em] uppercase mb-8 font-bold">Trusted By Industry Leaders</span>
             <h2 className="text-5xl md:text-8xl font-serif text-[#181818] mb-8 leading-tight">
               Brands We've<br/>
-              <span className="italic text-[#c5a059]">Transformed</span>
+              <span className="italic text-[#c5a059]">Supported</span>
             </h2>
           </motion.div>
 
@@ -585,24 +670,24 @@ export default function Home() {
               <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#FFF7F2] to-transparent z-10"></div>
               
               <motion.div
-                className="flex gap-24 items-center will-change-transform"
+                className="flex items-center will-change-transform"
                 animate={{
-                  x: ["-50%", "0%"],
+                  x: ["-50%", "-25%"],
                 }}
                 transition={{
                   x: {
                     repeat: Infinity,
                     repeatType: "loop",
-                    duration: 24,
+                    duration: isMobile ? 6 : 10,
                     ease: "linear",
                   },
                 }}
               >
-                {/* First set */}
-                {EMPLOYED_BY_COMPANIES.map((company, idx) => (
+                {/* 4 sets of data for seamless infinite loop with buffer */}
+                {[...EMPLOYED_BY_COMPANIES, ...EMPLOYED_BY_COMPANIES, ...EMPLOYED_BY_COMPANIES, ...EMPLOYED_BY_COMPANIES].map((company, idx) => (
                   <div 
-                    key={`employed-1-${idx}`} 
-                    className="flex-shrink-0 flex items-center justify-center group"
+                    key={`employed-${idx}`} 
+                    className="flex-shrink-0 flex items-center justify-center group pr-12"
                   >
                     {company.logo ? (
                       <Image 
@@ -610,37 +695,12 @@ export default function Home() {
                         alt={company.name} 
                         className={`object-contain grayscale brightness-[0.3] group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-300 ${
                           ['ROKA', 'Zuma', 'ETARU', 'oblix', 'INKO NITO'].includes(company.name)
-                            ? 'max-h-8 max-w-[100px]'
+                            ? 'max-h-6 max-w-[70px] md:max-h-8 md:max-w-[100px]'
                             : company.name === 'etc.venues'
-                            ? 'max-h-48 max-w-[400px]'
+                            ? 'max-h-32 max-w-[280px] md:max-h-48 md:max-w-[400px]'
                             : ['Waldorf Astoria', 'Boston Harbor Hotel'].includes(company.name)
-                            ? 'max-h-16 max-w-[200px]'
-                            : 'max-h-14 max-w-[180px]'
-                        }`}
-                      />
-                    ) : (
-                      <span className="text-[#181818] group-hover:text-[#c5a059] text-lg font-medium tracking-wide whitespace-nowrap transition-colors duration-300">{company.name}</span>
-                    )}
-                  </div>
-                ))}
-                {/* Duplicate set for seamless loop */}
-                {EMPLOYED_BY_COMPANIES.map((company, idx) => (
-                  <div 
-                    key={`employed-2-${idx}`} 
-                    className="flex-shrink-0 flex items-center justify-center group"
-                  >
-                    {company.logo ? (
-                      <Image 
-                        src={company.logo} 
-                        alt={company.name} 
-                        className={`object-contain grayscale brightness-[0.3] group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-300 ${
-                          ['ROKA', 'Zuma', 'ETARU', 'oblix', 'INKO NITO'].includes(company.name)
-                            ? 'max-h-8 max-w-[100px]'
-                            : company.name === 'etc.venues'
-                            ? 'max-h-48 max-w-[400px]'
-                            : ['Waldorf Astoria', 'Boston Harbor Hotel'].includes(company.name)
-                            ? 'max-h-16 max-w-[200px]'
-                            : 'max-h-14 max-w-[180px]'
+                            ? 'max-h-12 max-w-[150px] md:max-h-16 md:max-w-[200px]'
+                            : 'max-h-10 max-w-[140px] md:max-h-14 md:max-w-[180px]'
                         }`}
                       />
                     ) : (
@@ -670,86 +730,31 @@ export default function Home() {
               <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#FFF7F2] to-transparent z-10"></div>
               
               <motion.div
-                className="flex gap-24 items-center will-change-transform"
+                className="flex items-center will-change-transform"
                 animate={{
-                  x: ["-50%", "0%"],
+                  x: ["-50%", "-25%"],
                 }}
                 transition={{
                   x: {
                     repeat: Infinity,
                     repeatType: "loop",
-                    duration: 24,
+                    duration: isMobile ? 6 : 10,
                     ease: "linear",
                   },
                 }}
               >
-                {/* First set */}
-                {CONSULTED_WITH_COMPANIES.map((company, idx) => (
+                {/* 4 sets of data for seamless infinite loop with buffer */}
+                {[...CONSULTED_WITH_COMPANIES, ...CONSULTED_WITH_COMPANIES, ...CONSULTED_WITH_COMPANIES, ...CONSULTED_WITH_COMPANIES].map((company, idx) => (
                   <div 
-                    key={`consulted-1-${idx}`} 
-                    className="flex-shrink-0 flex items-center justify-center group"
+                    key={`consulted-${idx}`} 
+                    className="flex-shrink-0 flex items-center justify-center group pr-24"
                   >
                     {company.logo ? (
                       <Image 
                         src={company.logo} 
                         alt={company.name} 
                         className={`object-contain grayscale brightness-[0.3] group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-300 ${
-                          company.name === 'BXP'
-                            ? 'max-h-12 max-w-[120px]'
-                            : company.name === 'Rudin Group'
-                            ? 'max-h-6 max-w-[90px]'
-                            : company.name === 'Zuma'
-                            ? 'max-h-8 max-w-[100px]'
-                            : company.name === 'Affect Group'
-                            ? 'max-h-7 max-w-[90px]'
-                            : company.name === 'Sage Hospitality'
-                            ? 'max-h-8 max-w-[110px]'
-                            : company.name === 'BLACE'
-                            ? 'max-h-10 max-w-[100px]'
-                            : company.name === 'Meet Resident'
-                            ? 'max-h-10 max-w-[160px]'
-                            : company.name === 'Bakan'
-                            ? 'max-h-10 max-w-[120px]'
-                            : company.name === 'Support 305'
-                            ? 'max-h-11 max-w-[140px]'
-                            : 'max-h-12 max-w-[140px]'
-                        }`}
-                      />
-                    ) : (
-                      <span className="text-[#181818] group-hover:text-[#c5a059] text-lg font-medium tracking-wide whitespace-nowrap transition-colors duration-300">{company.name}</span>
-                    )}
-                  </div>
-                ))}
-                {/* Duplicate set for seamless loop */}
-                {CONSULTED_WITH_COMPANIES.map((company, idx) => (
-                  <div 
-                    key={`consulted-2-${idx}`} 
-                    className="flex-shrink-0 flex items-center justify-center group"
-                  >
-                    {company.logo ? (
-                      <Image 
-                        src={company.logo} 
-                        alt={company.name} 
-                        className={`object-contain grayscale brightness-[0.3] group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-300 ${
-                          company.name === 'BXP'
-                            ? 'max-h-12 max-w-[120px]'
-                            : company.name === 'Rudin Group'
-                            ? 'max-h-6 max-w-[90px]'
-                            : company.name === 'Zuma'
-                            ? 'max-h-8 max-w-[100px]'
-                            : company.name === 'Affect Group'
-                            ? 'max-h-7 max-w-[90px]'
-                            : company.name === 'Sage Hospitality'
-                            ? 'max-h-8 max-w-[110px]'
-                            : company.name === 'BLACE'
-                            ? 'max-h-10 max-w-[100px]'
-                            : company.name === 'Meet Resident'
-                            ? 'max-h-10 max-w-[160px]'
-                            : company.name === 'Bakan'
-                            ? 'max-h-10 max-w-[120px]'
-                            : company.name === 'Support 305'
-                            ? 'max-h-11 max-w-[140px]'
-                            : 'max-h-12 max-w-[140px]'
+                          getConsultedLogoDimensions(company.name)
                         }`}
                       />
                     ) : (
@@ -776,6 +781,9 @@ export default function Home() {
             <h2 className="text-5xl md:text-7xl font-serif leading-tight text-white max-w-4xl">
               A Clear, Proven <span className="italic text-[#c5a059]">Process</span>
             </h2>
+            <p className="text-stone-400 text-base md:text-lg mt-6">
+              We do the difficult immediately. The impossible may take a little longer.
+            </p>
           </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">

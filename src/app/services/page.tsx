@@ -19,9 +19,10 @@ import serviceHospitality from '@/assets/images/services/service-hospitality.jpg
 
 const SERVICES_DATA = [
   {
+    id: "concept-creation",
     number: "01",
     title: "Concept Creation",
-    tagline: "Turning ideas into viable, market-ready concepts.",
+    tagline: "Turning ideas into viable, market-ready creative concepts.",
     description: [
       "Ideation and early-stage concept development",
       "Concept inception and positioning",
@@ -32,6 +33,7 @@ const SERVICES_DATA = [
     image: serviceConcept
   },
   {
+    id: "capital-growth-investment",
     number: "02",
     title: "Capital & Growth Investment",
     tagline: "Supporting smart growth with the right capital strategy.",
@@ -43,6 +45,7 @@ const SERVICES_DATA = [
     image: serviceInvestment
   },
   {
+    id: "design-development-construction",
     number: "03",
     title: "Design, Development & Construction",
     tagline: "Design that looks right and works operationally.",
@@ -61,9 +64,10 @@ const SERVICES_DATA = [
     image: serviceConstruction
   },
   {
+    id: "operations",
     number: "04",
     title: "Operations",
-    tagline: "Building operations that perform under real conditions.",
+    tagline: "Building operations that perform successfully under real conditions.",
     description: [
       "Pre-opening planning and operational standards creation",
       "Launch and opening support",
@@ -81,6 +85,7 @@ const SERVICES_DATA = [
     image: serviceOperations
   },
   {
+    id: "legal",
     number: "05",
     title: "Legal",
     tagline: "Practical legal oversight for hospitality operations.",
@@ -93,6 +98,7 @@ const SERVICES_DATA = [
     image: serviceLegal
   },
   {
+    id: "financial",
     number: "06",
     title: "Financial",
     tagline: "Clear financial control and accountability.",
@@ -108,16 +114,30 @@ const SERVICES_DATA = [
     image: serviceAccounting
   },
   {
+    id: "additional-support",
     number: "07",
     title: "Additional Support",
-    tagline: "Specialized support tailored to unique project or operational needs.",
-    description: [],
+    tagline: "Specialized support tailored to each unique project or operational needs.",
+    description: [
+      "Every Hospitality Business and Project has unique attributes ~ We are here to support whatever you may need."
+    ],
     image: serviceHospitality
   }
 ];
 
 export default function Services() {
   const [expandedService, setExpandedService] = useState<number | null>(null);
+
+  // Auto-expand service section when navigating via anchor link
+  useEffect(() => {
+    const hash = window.location.hash.slice(1); // Remove the # symbol
+    if (hash) {
+      const serviceIndex = SERVICES_DATA.findIndex(service => service.id === hash);
+      if (serviceIndex !== -1) {
+        setExpandedService(serviceIndex);
+      }
+    }
+  }, []);
 
   return (
     <div className="bg-[#181818] text-[#FFF7F2] font-sans selection:bg-[#c5a059] selection:text-white overflow-x-hidden">
@@ -151,26 +171,19 @@ export default function Services() {
             {SERVICES_DATA.map((service, index) => (
               <motion.div
                 key={index}
+                id={service.id}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="border-b border-white/10 last:border-0"
+                className="border-b border-white/10 last:border-0 scroll-mt-24"
               >
                 <div 
-                  className={`py-16 md:py-20 cursor-pointer group ${
-                    index === SERVICES_DATA.length - 1 
-                      ? 'flex flex-col items-center text-center max-w-4xl mx-auto' 
-                      : 'grid grid-cols-1 lg:grid-cols-12 gap-8'
-                  }`}
+                  className="py-16 md:py-20 cursor-pointer group grid grid-cols-1 lg:grid-cols-12 gap-8"
                   onClick={() => setExpandedService(expandedService === index ? null : index)}
                 >
                   {/* Image Column */}
-                  <div className={`${
-                    index === SERVICES_DATA.length - 1 
-                      ? 'w-full max-w-2xl mb-12' 
-                      : 'lg:col-span-5'
-                  }`}>
+                  <div className="lg:col-span-5">
                     <div className="aspect-[4/3] overflow-hidden rounded-sm relative">
                       <Image 
                         src={service.image} 
@@ -185,16 +198,8 @@ export default function Services() {
                   </div>
 
                   {/* Content Column */}
-                  <div className={`${
-                    index === SERVICES_DATA.length - 1 
-                      ? 'w-full flex flex-col items-center' 
-                      : 'lg:col-span-7 flex flex-col justify-center'
-                  }`}>
-                    <div className={`${
-                      index === SERVICES_DATA.length - 1 
-                        ? 'border-t-2 border-[#c5a059] pt-8' 
-                        : 'border-l-2 border-[#c5a059] pl-8'
-                    }`}>
+                  <div className="lg:col-span-7 flex flex-col justify-center">
+                    <div className="border-l-2 border-[#c5a059] pl-8">
                       <h2 className="text-4xl md:text-5xl font-serif text-white mb-4 group-hover:text-[#c5a059] transition-colors duration-300">
                         {service.title}
                       </h2>
@@ -213,9 +218,7 @@ export default function Services() {
                           transition={{ duration: 0.4 }}
                           className="overflow-hidden"
                         >
-                          <ul className={`space-y-3 mb-6 ${
-                            index === SERVICES_DATA.length - 1 ? 'text-left inline-block' : ''
-                          }`}>
+                          <ul className="space-y-3 mb-6">
                             {service.description.map((item, i) => (
                               <li key={i} className="text-stone-500 text-sm flex items-start gap-3">
                                 <span className="text-[#c5a059] mt-1 flex-shrink-0">•</span>
@@ -226,9 +229,7 @@ export default function Services() {
                         </motion.div>
                       )}
 
-                      <button className={`flex items-center gap-2 text-[#c5a059] text-xs uppercase tracking-[0.3em] font-bold group-hover:gap-4 transition-all duration-300 ${
-                        index === SERVICES_DATA.length - 1 ? 'mx-auto' : ''
-                      }`}>
+                      <button className="cursor-pointer flex items-center gap-2 text-[#c5a059] text-xs uppercase tracking-[0.3em] font-bold group-hover:gap-4 transition-all duration-300">
                         {expandedService === index ? 'Show Less' : 'Learn More'}
                         <ArrowUpRight className={`w-4 h-4 transition-transform duration-300 ${expandedService === index ? 'rotate-180' : ''}`} />
                       </button>
