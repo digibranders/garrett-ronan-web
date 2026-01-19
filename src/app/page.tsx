@@ -7,40 +7,8 @@ import { Button } from '@/app/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
 
-// Logo Import
-import logoImage from '@/assets/images/logos/gkr-logo.png';
-
-// Employed By Logos
-import beverlyHiltonLogo from '@/assets/images/logos/beverly-hilton.png';
-import starrRestaurantsLogo from '@/assets/images/logos/starr-restaurants.png';
-import equinoxHotelsLogo from '@/assets/images/logos/equinox-hotels.png';
-import rokaLogo from '@/assets/images/logos/roka.png';
-import zumaLogo from '@/assets/images/logos/zuma.png';
-import etaruLogo from '@/assets/images/logos/etaru.png';
-import inkoNitoLogo from '@/assets/images/logos/inko-nito.png';
-import oblixLogo from '@/assets/images/logos/oblix.png';
-import movenpickLogo from '@/assets/images/logos/movenpick.png';
-import adareManorLogo from '@/assets/images/logos/adare-manor.png';
-import swallowHotelsLogo from '@/assets/images/logos/swallow-hotels.png';
-import principalHotelsLogo from '@/assets/images/logos/principal-hotels.png';
-import waldorfAstoriaLogo from '@/assets/images/logos/waldorf-astoria.png';
-import bostonHarborHotelLogo from '@/assets/images/logos/boston-harbor-hotel.png';
-import etcVenuesLogo from '@/assets/images/logos/etc-venues.png';
-import conveneLogo from '@/assets/images/logos/convene.png';
-
-// Consulted With Logos
-import bakanLogo from '@/assets/images/logos/bakan.png';
-import support305Logo from '@/assets/images/logos/support-305.png';
-import zumaConsultedLogo from '@/assets/images/logos/zuma-consulted.png';
-import bxpLogo from '@/assets/images/logos/bxp.png';
-import rudinLogo from '@/assets/images/logos/rudin.png';
-import blaceLogo from '@/assets/images/logos/blace.png';
-import residentLogo from '@/assets/images/logos/meet-resident.png';
-import affectLogo from '@/assets/images/logos/affect-group.png';
-import sageLogo from '@/assets/images/logos/sage-hospitality.png';
-import buccamentLogo from '@/assets/images/logos/buccament.png';
-import fairfieldLogo from '@/assets/images/logos/fairfield.png';
-import montaukLogo from '@/assets/images/logos/montauk.png';
+// Logos Section is now in src/app/components/LogosSection.tsx
+import LogosSection from '@/app/components/LogosSection';
 
 // Hero Images
 import heroNyc from '@/assets/images/hero/hero-nyc.jpg';
@@ -69,81 +37,7 @@ import testimonialGroup from '@/assets/images/testimonials/testimonial-group.jpg
 import testimonialLobby from '@/assets/images/testimonials/testimonial-lobby.jpg';
 import testimonialReception from '@/assets/images/testimonials/testimonial-reception.jpg';
 
-// Employed By Companies - Logo or Text
-const EMPLOYED_BY_COMPANIES = [
-  { name: 'Mövenpick', logo: movenpickLogo },
-  { name: 'Adare Manor', logo: adareManorLogo },
-  { name: 'Swallow Hotels', logo: swallowHotelsLogo },
-  { name: 'Principal Hotels', logo: principalHotelsLogo },
-  { name: 'Waldorf Astoria', logo: waldorfAstoriaLogo },
-  { name: 'Boston Harbor Hotel', logo: bostonHarborHotelLogo },
-  { name: 'The Beverly Hilton', logo: beverlyHiltonLogo },
-  { name: 'ROKA', logo: rokaLogo },
-  { name: 'Zuma', logo: zumaLogo },
-  { name: 'ETARU', logo: etaruLogo },
-  { name: 'INKO NITO', logo: inkoNitoLogo },
-  { name: 'oblix', logo: oblixLogo },
-  { name: 'Starr Restaurants', logo: starrRestaurantsLogo },
-  { name: 'Equinox Hotels', logo: equinoxHotelsLogo },
-  { name: 'etc.venues', logo: etcVenuesLogo },
-  { name: 'Convene', logo: conveneLogo },
-  { name: 'Mövenpick', logo: movenpickLogo },
-  { name: 'Adare Manor', logo: adareManorLogo },
-  { name: 'Swallow Hotels', logo: swallowHotelsLogo },
-  { name: 'Principal Hotels', logo: principalHotelsLogo },
-  { name: 'Waldorf Astoria', logo: waldorfAstoriaLogo },
-  { name: 'Boston Harbor Hotel', logo: bostonHarborHotelLogo },
-  { name: 'The Beverly Hilton', logo: beverlyHiltonLogo },
-  { name: 'ROKA', logo: rokaLogo },
-  { name: 'Zuma', logo: zumaLogo },
-  { name: 'ETARU', logo: etaruLogo },
-  { name: 'INKO NITO', logo: inkoNitoLogo },
-  { name: 'oblix', logo: oblixLogo },
-  { name: 'Starr Restaurants', logo: starrRestaurantsLogo },
-  { name: 'Equinox Hotels', logo: equinoxHotelsLogo },
-  { name: 'etc.venues', logo: etcVenuesLogo },
-  { name: 'Convene', logo: conveneLogo }
-];
 
-// Consulted With Companies - Logo or Text
-const CONSULTED_WITH_COMPANIES = [
-  { name: 'BXP', logo: bxpLogo },
-  { name: 'Rudin Group', logo: rudinLogo },
-  { name: 'Zuma', logo: zumaConsultedLogo },
-  { name: 'Affect Group', logo: affectLogo },
-  { name: 'Sage Hospitality', logo: sageLogo },
-  { name: 'BLACE', logo: blaceLogo },
-  { name: 'Meet Resident', logo: residentLogo },
-  { name: 'Bakan', logo: bakanLogo },
-  { name: 'Support 305', logo: support305Logo },
-  { name: 'Fairfield', logo: fairfieldLogo },
-  { name: 'Montauk', logo: montaukLogo },
-  { name: 'Buccament', logo: buccamentLogo },
-  { name: 'BXP', logo: bxpLogo },
-  { name: 'Rudin Group', logo: rudinLogo },
-  { name: 'Zuma', logo: zumaConsultedLogo },
-  { name: 'Affect Group', logo: affectLogo },
-  { name: 'Sage Hospitality', logo: sageLogo },
-  { name: 'BLACE', logo: blaceLogo },
-  { name: 'Meet Resident', logo: residentLogo },
-  { name: 'Bakan', logo: bakanLogo },
-  { name: 'Support 305', logo: support305Logo },
-  { name: 'Fairfield', logo: fairfieldLogo },
-  { name: 'Montauk', logo: montaukLogo },
-  { name: 'Buccament', logo: buccamentLogo },
-  { name: 'BXP', logo: bxpLogo },
-  { name: 'Rudin Group', logo: rudinLogo },
-  { name: 'Zuma', logo: zumaConsultedLogo },
-  { name: 'Affect Group', logo: affectLogo },
-  { name: 'Sage Hospitality', logo: sageLogo },
-  { name: 'BLACE', logo: blaceLogo },
-  { name: 'Meet Resident', logo: residentLogo },
-  { name: 'Bakan', logo: bakanLogo },
-  { name: 'Support 305', logo: support305Logo },
-  { name: 'Fairfield', logo: fairfieldLogo },
-  { name: 'Montauk', logo: montaukLogo },
-  { name: 'Buccament', logo: buccamentLogo }
-];
 
 // Hero Slideshow Images - NYC, LA, Caribbean
 const HERO_IMAGES = [
@@ -315,30 +209,7 @@ function AnimatedCounter({ end, duration = 2, suffix = "" }: Readonly<{ end: num
   return <span ref={ref}>{count}{suffix}</span>;
 }
 
-function getConsultedLogoDimensions(name: string) {
-  switch (name) {
-    case 'BXP':
-      return 'max-h-8 max-w-[90px] md:max-h-12 md:max-w-[120px]';
-    case 'Rudin Group':
-      return 'max-h-4 max-w-[70px] md:max-h-6 md:max-w-[90px]';
-    case 'Zuma':
-      return 'max-h-6 max-w-[70px] md:max-h-8 md:max-w-[100px]';
-    case 'Affect Group':
-      return 'max-h-5 max-w-[65px] md:max-h-7 md:max-w-[90px]';
-    case 'Sage Hospitality':
-      return 'max-h-6 max-w-[80px] md:max-h-8 md:max-w-[110px]';
-    case 'BLACE':
-      return 'max-h-7 max-w-[70px] md:max-h-10 md:max-w-[100px]';
-    case 'Meet Resident':
-      return 'max-h-7 max-w-[120px] md:max-h-10 md:max-w-[160px]';
-    case 'Bakan':
-      return 'max-h-7 max-w-[90px] md:max-h-10 md:max-w-[120px]';
-    case 'Support 305':
-      return 'max-h-8 max-w-[100px] md:max-h-11 md:max-w-[140px]';
-    default:
-      return 'max-h-8 max-w-[100px] md:max-h-12 md:max-w-[140px]';
-  }
-}
+
 
 export default function Home() {
   const [currentHeroImage, setCurrentHeroImage] = useState(0);
@@ -636,137 +507,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Why Clients Partner With Us */}
-      <section id="expertise" className="py-32 md:py-48 bg-[#FFF7F2] relative overflow-hidden">
-        <div className="container mx-auto px-6 md:px-12 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-20"
-          >
-            <span className="block text-[#c5a059] text-[10px] tracking-[0.4em] uppercase mb-8 font-bold">Trusted By Industry Leaders</span>
-            <h2 className="text-5xl md:text-8xl font-serif text-[#181818] mb-8 leading-tight">
-              Brands We've<br/>
-              <span className="italic text-[#c5a059]">Supported</span>
-            </h2>
-          </motion.div>
-
-          {/* Employed By Marquee */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-20"
-          >
-            <div className="text-center mb-6">
-              <h3 className="text-xl md:text-2xl font-serif text-[#181818] mb-2">Employed By</h3>
-              <div className="w-16 h-px bg-[#c5a059] mx-auto"></div>
-            </div>
-            
-            <div className="relative overflow-hidden -mt-8">
-              {/* Gradient overlays for fade effect */}
-              <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#FFF7F2] to-transparent z-10"></div>
-              <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#FFF7F2] to-transparent z-10"></div>
-              
-              <motion.div
-                className="flex items-center will-change-transform"
-                animate={{
-                  x: ["-50%", "-25%"],
-                }}
-                transition={{
-                  x: {
-                    repeat: Infinity,
-                    repeatType: "loop",
-                    duration: isMobile ? 6 : 10,
-                    ease: "linear",
-                  },
-                }}
-              >
-                {/* 4 sets of data for seamless infinite loop with buffer */}
-                {[...EMPLOYED_BY_COMPANIES, ...EMPLOYED_BY_COMPANIES, ...EMPLOYED_BY_COMPANIES, ...EMPLOYED_BY_COMPANIES].map((company, idx) => (
-                  <div 
-                    key={`employed-${idx}`} 
-                    className="flex-shrink-0 flex items-center justify-center group pr-12"
-                  >
-                    {company.logo ? (
-                      <Image 
-                        src={company.logo} 
-                        alt={company.name} 
-                        className={`object-contain grayscale brightness-[0.3] group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-300 ${
-                          ['ROKA', 'Zuma', 'ETARU', 'oblix', 'INKO NITO'].includes(company.name)
-                            ? 'max-h-6 max-w-[70px] md:max-h-8 md:max-w-[100px]'
-                            : company.name === 'etc.venues'
-                            ? 'max-h-32 max-w-[280px] md:max-h-48 md:max-w-[400px]'
-                            : ['Waldorf Astoria', 'Boston Harbor Hotel'].includes(company.name)
-                            ? 'max-h-12 max-w-[150px] md:max-h-16 md:max-w-[200px]'
-                            : 'max-h-10 max-w-[140px] md:max-h-14 md:max-w-[180px]'
-                        }`}
-                      />
-                    ) : (
-                      <span className="text-[#181818] group-hover:text-[#c5a059] text-lg font-medium tracking-wide whitespace-nowrap transition-colors duration-300">{company.name}</span>
-                    )}
-                  </div>
-                ))}
-              </motion.div>
-            </div>
-          </motion.div>
-
-          {/* Consulted With Marquee */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-          >
-            <div className="text-center mb-6">
-              <h3 className="text-xl md:text-2xl font-serif text-[#181818] mb-2">Consulted With</h3>
-              <div className="w-16 h-px bg-[#c5a059] mx-auto"></div>
-            </div>
-            
-            <div className="relative overflow-hidden mt-4">
-              {/* Gradient overlays for fade effect */}
-              <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#FFF7F2] to-transparent z-10"></div>
-              <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#FFF7F2] to-transparent z-10"></div>
-              
-              <motion.div
-                className="flex items-center will-change-transform"
-                animate={{
-                  x: ["-50%", "-25%"],
-                }}
-                transition={{
-                  x: {
-                    repeat: Infinity,
-                    repeatType: "loop",
-                    duration: isMobile ? 6 : 10,
-                    ease: "linear",
-                  },
-                }}
-              >
-                {/* 4 sets of data for seamless infinite loop with buffer */}
-                {[...CONSULTED_WITH_COMPANIES, ...CONSULTED_WITH_COMPANIES, ...CONSULTED_WITH_COMPANIES, ...CONSULTED_WITH_COMPANIES].map((company, idx) => (
-                  <div 
-                    key={`consulted-${idx}`} 
-                    className="flex-shrink-0 flex items-center justify-center group pr-24"
-                  >
-                    {company.logo ? (
-                      <Image 
-                        src={company.logo} 
-                        alt={company.name} 
-                        className={`object-contain grayscale brightness-[0.3] group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-300 ${
-                          getConsultedLogoDimensions(company.name)
-                        }`}
-                      />
-                    ) : (
-                      <span className="text-[#181818] group-hover:text-[#c5a059] text-lg font-medium tracking-wide whitespace-nowrap transition-colors duration-300">{company.name}</span>
-                    )}
-                  </div>
-                ))}
-              </motion.div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <LogosSection />
 
       {/* How We Work Section - Enhanced with Split Screen */}
       <section className="py-32 md:py-48 bg-[#181818]">
