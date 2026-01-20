@@ -237,3 +237,13 @@ _Status: Ready for user verification._
   - Added `placeholder="blur"` to "What We Do" section images to improve loading transition.
   - Added `will-change-transform` class to hint the browser for hardware acceleration on the hover effect, reducing flickering during state changes.
 - **Build Status**: Verified successfully.
+
+## 2026-01-20 - Email Signatures (Light/Dark Separate Files)
+
+- **Goal**: Create separate fixed Light and Dark mode signature files with specific castle images.
+- **Action**: Created `email-sign-light.html` and `email-sign-dark.html` in `public/sign/`.
+- **Details**:
+  - `email-sign-light.html`: Fixed Light mode layout using `Castle_GR_Light.png`.
+  - `email-sign-dark.html`: Fixed Dark mode layout using `Castle_GR_Dark.png`.
+  - Removed complex media queries to ensure consistent display for the specific mode.
+- **Status**: Files created and verified.
