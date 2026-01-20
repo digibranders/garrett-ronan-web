@@ -4,12 +4,26 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=600">
+    <meta name="color-scheme" content="light dark">
+    <meta name="supported-color-schemes" content="light dark">
     <title>Garrett Ronan Signature - Dark</title>
     <style>
+        :root {
+            color-scheme: light dark;
+            supported-color-schemes: light dark;
+        }
+
         a {
             text-decoration: none !important;
             color: inherit !important;
             text-underline: none;
+        }
+
+        /* Light Mode Overrides for Gold/Light Text */
+        @media (prefers-color-scheme: light) {
+            .adaptive-text {
+                color: #1F2A35 !important;
+            }
         }
     </style>
 </head>
@@ -36,12 +50,13 @@
                     <!-- Address -->
                     <tr>
                         <td style="width:20px; vertical-align:middle; padding-bottom:5px;">
-                            <img src="https://garrett-ronan-web.vercel.app/sign/Address.png" width="11"
-                                height="14" alt="Address" style="display:block; border:0; outline:none; height:auto;">
+                            <img src="https://garrett-ronan-web.vercel.app/sign/Address.png" width="11" height="14"
+                                alt="Address" style="display:block; border:0; outline:none; height:auto;">
                         </td>
                         <td
                             style="vertical-align:middle; padding-bottom:5px; font-family:Arial, Helvetica, sans-serif; font-size:11px; line-height:14px; color:#c79e7e; white-space:nowrap;">
-                            <span style="color:#c79e7e;">42 Brighton View Rd Fairfield, CT, 06824 USA</span>
+                            <span class="adaptive-text" style="color:#c79e7e;">42 Brighton View Rd Fairfield, CT, 06824
+                                USA</span>
                         </td>
                     </tr>
                     <!-- Email -->
@@ -54,7 +69,7 @@
                             style="vertical-align:middle; padding-bottom:5px; font-family:Arial, Helvetica, sans-serif; font-size:11px; line-height:14px; color:#c79e7e; white-space:nowrap;">
                             <a href="mailto:garrett@GKRHospitality.com"
                                 style="color:#c79e7e !important; text-decoration:none !important; mso-line-height-rule:exactly;">
-                                <span
+                                <span class="adaptive-text"
                                     style="color:#c79e7e !important; text-decoration:none !important;">garrett@GKRHospitality.com</span>
                             </a>
                         </td>
@@ -62,14 +77,14 @@
                     <!-- Phone -->
                     <tr>
                         <td style="width:20px; vertical-align:middle; padding-bottom:5px;">
-                            <img src="https://garrett-ronan-web.vercel.app/sign/Phone.png" width="11"
-                                height="14" alt="Phone" style="display:block; border:0; outline:none; height:auto;">
+                            <img src="https://garrett-ronan-web.vercel.app/sign/Phone.png" width="11" height="14"
+                                alt="Phone" style="display:block; border:0; outline:none; height:auto;">
                         </td>
                         <td
                             style="vertical-align:middle; padding-bottom:5px; font-family:Arial, Helvetica, sans-serif; font-size:11px; line-height:14px; color:#c79e7e; white-space:nowrap;">
                             <a href="tel:+19174605793"
                                 style="color:#c79e7e !important; text-decoration:none !important; mso-line-height-rule:exactly;">
-                                <span
+                                <span class="adaptive-text"
                                     style="color:#c79e7e !important; text-decoration:none !important;">+1-917-460-5793</span>
                             </a>
                         </td>
@@ -77,14 +92,14 @@
                     <!-- Website -->
                     <tr>
                         <td style="width:20px; vertical-align:middle;">
-                            <img src="https://garrett-ronan-web.vercel.app/sign/Website.png" width="11"
-                                height="14" alt="Website" style="display:block; border:0; outline:none; height:auto;">
+                            <img src="https://garrett-ronan-web.vercel.app/sign/Website.png" width="11" height="14"
+                                alt="Website" style="display:block; border:0; outline:none; height:auto;">
                         </td>
                         <td
                             style="vertical-align:middle; font-family:Arial, Helvetica, sans-serif; font-size:11px; line-height:14px; color:#c79e7e; white-space:nowrap;">
                             <a href="https://www.GKRHospitality.com"
                                 style="color:#c79e7e !important; text-decoration:none !important; mso-line-height-rule:exactly;">
-                                <span
+                                <span class="adaptive-text"
                                     style="color:#c79e7e !important; text-decoration:none !important;">www.GKRHospitality.com</span>
                             </a>
                         </td>

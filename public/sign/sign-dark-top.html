@@ -4,12 +4,26 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=600">
+    <meta name="color-scheme" content="light dark">
+    <meta name="supported-color-schemes" content="light dark">
     <title>Garrett Ronan Signature - Dark Top</title>
     <style>
+        :root {
+            color-scheme: light dark;
+            supported-color-schemes: light dark;
+        }
+
         a {
             text-decoration: none !important;
             color: inherit !important;
             text-underline: none;
+        }
+
+        /* Light Mode Overrides for Dark Signature */
+        @media (prefers-color-scheme: light) {
+            .adaptive-text {
+                color: #1F2A35 !important;
+            }
         }
     </style>
 </head>
@@ -22,7 +36,7 @@
             <td style="width:300px; vertical-align:top; padding:20px 0 0 20px;">
 
                 <!-- Title Top -->
-                <div
+                <div class="adaptive-text"
                     style="font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:bold; color:#FFFFFF; padding-bottom:5px;">
                     Founder & Principal
                 </div>
@@ -48,7 +62,8 @@
                         </td>
                         <td
                             style="vertical-align:middle; padding-bottom:5px; font-family:Arial, Helvetica, sans-serif; font-size:11px; line-height:14px; color:#fff7f2; white-space:nowrap;">
-                            <span style="color:#fff7f2;">42 Brighton View Rd Fairfield, CT, 06824 USA</span>
+                            <span class="adaptive-text" style="color:#fff7f2;">42 Brighton View Rd Fairfield, CT, 06824
+                                USA</span>
                         </td>
                     </tr>
                     <!-- Email -->
@@ -61,7 +76,7 @@
                             style="vertical-align:middle; padding-bottom:5px; font-family:Arial, Helvetica, sans-serif; font-size:11px; line-height:14px; color:#fff7f2; white-space:nowrap;">
                             <a href="mailto:garrett@GKRHospitality.com"
                                 style="color:#fff7f2 !important; text-decoration:none !important; mso-line-height-rule:exactly;">
-                                <span
+                                <span class="adaptive-text"
                                     style="color:#fff7f2 !important; text-decoration:none !important;">garrett@GKRHospitality.com</span>
                             </a>
                         </td>
@@ -76,7 +91,7 @@
                             style="vertical-align:middle; padding-bottom:5px; font-family:Arial, Helvetica, sans-serif; font-size:11px; line-height:14px; color:#fff7f2; white-space:nowrap;">
                             <a href="tel:+19174605793"
                                 style="color:#fff7f2 !important; text-decoration:none !important; mso-line-height-rule:exactly;">
-                                <span
+                                <span class="adaptive-text"
                                     style="color:#fff7f2 !important; text-decoration:none !important;">+1-917-460-5793</span>
                             </a>
                         </td>
@@ -91,7 +106,7 @@
                             style="vertical-align:middle; font-family:Arial, Helvetica, sans-serif; font-size:11px; line-height:14px; color:#fff7f2; white-space:nowrap;">
                             <a href="https://www.GKRHospitality.com"
                                 style="color:#fff7f2 !important; text-decoration:none !important; mso-line-height-rule:exactly;">
-                                <span
+                                <span class="adaptive-text"
                                     style="color:#fff7f2 !important; text-decoration:none !important;">www.GKRHospitality.com</span>
                             </a>
                         </td>
