@@ -94,6 +94,30 @@ export default function LogosSection() {
   const employedMarquee = [...EMPLOYED_BY_COMPANIES, ...EMPLOYED_BY_COMPANIES, ...EMPLOYED_BY_COMPANIES];
   const consultedMarquee = [...CONSULTED_WITH_COMPANIES, ...CONSULTED_WITH_COMPANIES, ...CONSULTED_WITH_COMPANIES];
 
+  // Default to desktop speeds (40s and 30s)
+  const [employedDuration, setEmployedDuration] = React.useState(40);
+  const [consultedDuration, setConsultedDuration] = React.useState(30);
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        // Mobile: Slower speed (25s as requested)
+        setEmployedDuration(25);
+        setConsultedDuration(20); // Proportional adjustment
+      } else {
+        // Desktop: Original speed
+        setEmployedDuration(40);
+        setConsultedDuration(30);
+      }
+    };
+
+    // Set initial value
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <section id="expertise" className="py-20 md:py-48 bg-[#FFF7F2] relative overflow-hidden">
         <div className="container mx-auto px-6 md:px-12 relative z-10">
@@ -129,7 +153,7 @@ export default function LogosSection() {
               
               <div className="flex">
                 <motion.div
-                  className="flex items-center gap-8 md:gap-16 flex-nowrap will-change-transform"
+                  className="flex items-center gap-4 md:gap-16 flex-nowrap will-change-transform"
                   animate={{
                     x: ["-33.33%", "0%"], 
                   }}
@@ -137,7 +161,7 @@ export default function LogosSection() {
                     x: {
                       repeat: Infinity,
                       repeatType: "loop",
-                      duration: 40, // Consistent slow speed
+                      duration: employedDuration, 
                       ease: "linear",
                     },
                   }}
@@ -182,7 +206,7 @@ export default function LogosSection() {
               
                <div className="flex">
                 <motion.div
-                  className="flex items-center gap-8 md:gap-16 flex-nowrap will-change-transform"
+                  className="flex items-center gap-4 md:gap-16 flex-nowrap will-change-transform"
                   animate={{
                     x: ["-33.33%", "0%"],
                   }}
@@ -190,7 +214,7 @@ export default function LogosSection() {
                     x: {
                       repeat: Infinity,
                       repeatType: "loop",
-                      duration: 30, // Adjusted to 30s (12 items) to match speed of Employed (16 items @ 40s)
+                      duration: consultedDuration, 
                       ease: "linear",
                     },
                   }}
