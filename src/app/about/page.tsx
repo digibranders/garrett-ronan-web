@@ -19,6 +19,7 @@ import signatureImage from '@/assets/images/about/signature.png';
 import aboutFounder from '@/assets/images/about/about-founder.jpg';
 import aboutHotel from '@/assets/images/about/about-hotel.jpg';
 import aboutRestaurant from '@/assets/images/about/about-restaurant.jpg';
+import ctaImage from '@/assets/images/about/GKR_About_4.jpg';
 
 const ABOUT_IMAGES = {
   founder: aboutFounder,
@@ -28,10 +29,10 @@ const ABOUT_IMAGES = {
 
 const EXPERIENCE_TIMELINE = [
   { role: "COO", company: "BLACE", description: "Tech-enabled event marketplace, NYC & LA" },
-  { role: "US COO", company: "etc.venues", description: "Launched NYC market, opened 3 venues, guided merger with Convene" },
-  { role: "VP Operations & Development", company: "Starr Restaurants", description: "Oversaw F&B and events for Equinox Hotel, Hudson Yards" },
+  { role: "US COO", company: "etc.venues", description: "Launched US market, opened 3 NYC venues, successful merger with Convene." },
+  { role: "VP Hotel Operations & Development", company: "Starr Restaurants", description: "Oversaw F&B and events for opening of first ever Equinox Hotel, Hudson Yards." },
   { role: "VP Operations & Development", company: "Azumi/Zuma", description: "Directed multi-city U.S. expansion across 6 major markets" },
-  { role: "Senior Leadership", company: "Premium Hospitality", description: "Waldorf Astoria, The Beverly Hilton, Boston Harbor Hotel, Principal Hotels UK, Adare Manor, Mövenpick" },
+  { role: "Senior Leadership", company: "Premium Hotels & Resorts", description: "Waldorf Astoria, The Beverly Hilton, Boston Harbor Hotel, Principal Hotels UK, Adare Manor, Mövenpick" },
 ];
 
 const SERVICES_LIST = [
@@ -67,12 +68,15 @@ export default function About() {
               Real Operators,<br/>
               <span className="italic text-[#c5a059]">GKR Hospitality</span>
             </h1>
+            <p className="text-stone-300 text-xl max-w-3xl leading-relaxed">
+              30+ years of US and International Hospitality Experience ~ Operational and Strategic.
+            </p>
           </motion.div>
         </div>
       </section>
 
       {/* Founder Story */}
-      <section className="py-8 md:py-24 bg-[#181818]">
+      <section className="py-5 md:py-12 bg-[#181818]">
         <div className="container mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
             <motion.div 
@@ -87,7 +91,7 @@ export default function About() {
                   <Image src={garrettImage} alt="Garrett Ronan" className="w-full h-full object-cover" />
                 </div>
                 <div className="border-l-2 border-[#c5a059] pl-6">
-                  <p className="text-[#c5a059] text-xs uppercase tracking-[0.3em] mb-2">Founder</p>
+                  <p className="text-[#c5a059] text-xs uppercase tracking-[0.3em] mb-2">Founder & Principal</p>
                   <Image src={signatureImage} alt="Garrett Ronan signature" className="h-16 w-auto mb-4" />
                   <p className="text-stone-400 text-sm">30+ years of operational leadership in premium hospitality</p>
                 </div>
@@ -102,20 +106,23 @@ export default function About() {
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
                 <p className="text-2xl md:text-3xl font-serif text-stone-300 leading-relaxed mb-8">
-                  GKR Hospitality Consulting was founded by Garrett Ronan after 30 years of running hotels, restaurants, and hospitality venues—often in situations where failure wasn't an option.
+                  GKR Hospitality Consulting was founded by Garrett Ronan based on 30+ years of concepting, designing, building and operating hotels, resorts, restaurants, bars and hospitality venues—often in situations where failure is not an option.
                 </p>
 
-                <div className="space-y-6 text-stone-400 leading-relaxed">
+                <div className="space-y-6 text-stone-400 leading-relaxed ">
                   <p>
-                    We've been the operator responsible for opening Zuma across six U.S. cities. The COO who had to stabilize a tech-enabled venue marketplace across NYC and LA. The VP of Operations who launched etc.venues in New York and guided it through a merger. The leader who made sure Equinox Hotel's F&B operation matched the brand's premium positioning from day one.
+                    This includes responsibility for opening and operating, Zuma and Azumi restaurants across Six U.S. Cities.
+In 2023 , he went on to join and develop BLACE as COO, a unique start up tech-enabled meeting /event/ venue marketplace. Established in NYC and LA, he later oversaw their merger acquisition  to form, Resident BLACE Holdings,  where he serves as Senior Advisor.  
+The COO who launched etc.venues in the US, opening their first 3 NYC venues, going on to transition the company through a successful M&A with Convene.
+The leader who made sure the first ever Equinox Hotel’s F&B operation matched the brand's premium positioning from day one.
                   </p>
 
                   <p className="text-white text-lg font-serif italic border-l-2 border-[#c5a059] pl-6 py-2">
-                    We started this firm because we got tired of watching consultants write reports that never get implemented.
+                    We started this firm because we identified a gap in the market for a true “end to end” consultancy service that can deliver real value and real solutions for hospitality projects and businesses at any stage in their lifecycle.
                   </p>
 
                   <p>
-                    Hospitality doesn't need more theory. It needs operators who've done the work—who know what it feels like when your opening is 90 days away and you're not ready, when your team can't execute, when you're busy but losing money.
+                    Hospitality doesn't need more theory. It needs operators who've done the work—who know what it feels like when your opening is 90 days away and you must be ready, when your team must execute better, when you're busy but need to be more profitable.
                   </p>
                 </div>
               </motion.div>
@@ -157,11 +164,11 @@ export default function About() {
             ))}
           </div>
 
-          <div className="mt-16 pt-16 border-t border-white/10 grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div className="mt-16 pt-16 border-t border-white/10 grid grid-cols-1 md:grid-cols-3 gap-12">
             <div>
               <h4 className="text-white font-serif text-xl mb-4">Education & Background</h4>
               <p className="text-stone-400 leading-relaxed">
-                Graduate of Shannon College of Hotel Management. Career started in Switzerland and UK before moving to New York in 1998.
+                Honors Graduate of Shannon College of Hotel Management. Career started in Switzerland and UK before moving to New York in 1998.
               </p>
             </div>
             <div>
@@ -169,6 +176,16 @@ export default function About() {
               <p className="text-stone-400 leading-relaxed">
                 Active member of HSMAI. Board member, NYC Hospitality Alliance—supporting advocacy and policy work for the industry.
               </p>
+            </div>
+             <div>
+              <h4 className="text-white font-serif text-xl mb-4">Certificates/Associations</h4>
+              <ul className="text-stone-400 leading-relaxed space-y-2">
+                <li>Cornell University PDP. Real Estate Evaluation, Rev Management</li>
+                <li>Court Of Master Sommeliers.</li>
+                <li>Member of The Waldorf=Astoria Distinguished Alumni.</li>
+                <li>Finalist, 2025 HSMAI Frank W. Berkman “Hospitality Professional of the Year” Award</li>
+                <li>Head of Alumni for SCHM in the US</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -257,7 +274,7 @@ export default function About() {
             className="mt-16 pt-16 border-t border-[#181818]/10"
           >
             <h3 className="text-2xl font-serif text-[#181818] mb-8">Complete Service Capabilities</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
               {SERVICES_LIST.slice(6).map((service, index) => (
                 <div key={index} className="flex items-start gap-2">
                   <Check className="w-4 h-4 text-[#c5a059] flex-shrink-0 mt-0.5" />
@@ -265,32 +282,54 @@ export default function About() {
                 </div>
               ))}
             </div>
+            <p className="text-stone-600 leading-relaxed max-w-4xl">
+              Garrett and his team have worked at all levels of the industry with some of the most recognized brands in the hospitality world allowing them to bring a unique experience and perspective to you and any business, project or situation.
+            </p>
           </motion.div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 md:py-48 bg-[#c5a059] relative overflow-hidden">
-        <div className="container mx-auto px-6 md:px-12 text-center relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-5xl md:text-7xl font-serif text-[#181818] mb-8 leading-tight">
-              Ready to Build Something<br/>
-              <span className="italic text-white">Exceptional?</span>
-            </h2>
-            <p className="text-[#181818] text-lg mb-12 max-w-2xl mx-auto">
-              Let's discuss how we can support your hospitality vision
-            </p>
-            <Link href="/contact">
-              <Button className="bg-[#181818] text-white hover:bg-white hover:text-[#181818] px-12 py-7 text-sm uppercase tracking-[0.3em] font-bold transition-all duration-500">
-                <span className="hidden md:inline">Schedule Your Free Discovery Call</span>
-                <span className="md:hidden">Schedule Free Call</span>
-              </Button>
-            </Link>
-          </motion.div>
+      <section className="py-20 md:py-24 bg-[#c5a059] relative overflow-hidden">
+        <div className="container mx-auto px-6 md:px-12 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            {/* Left Column: Image */}
+            <motion.div 
+              className="lg:col-span-5"
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="aspect-[3/4] overflow-hidden rounded-sm">
+                <Image src={ctaImage} alt="Ready to Build" className="w-full h-full object-cover" />
+              </div>
+            </motion.div>
+
+            {/* Right Column: Content */}
+            <div className="lg:col-span-7">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                <h2 className="text-5xl md:text-7xl font-serif text-[#181818] mb-8 leading-tight">
+                  Ready to Build Something<br/>
+                  <span className="italic text-white">Exceptional?</span>
+                </h2>
+                <p className="text-[#181818] text-lg mb-12 max-w-2xl">
+                  Let's discuss how we can support your hospitality vision
+                </p>
+                <Link href="/contact">
+                  <Button className="bg-[#181818] text-white hover:bg-white hover:text-[#181818] px-12 py-7 text-sm uppercase tracking-[0.3em] font-bold transition-all duration-500 rounded-full">
+                    <span className="hidden md:inline">Schedule Your Free Discovery Call</span>
+                    <span className="md:hidden">Schedule Free Call</span>
+                  </Button>
+                </Link>
+              </motion.div>
+            </div>
+          </div>
         </div>
       </section>
     </div>

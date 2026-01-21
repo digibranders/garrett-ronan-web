@@ -22,8 +22,8 @@ export default function Navbar() {
   }, []);
 
   const NAV_ITEMS = [
-    { label: 'Philosophy', href: '/#philosophy' },
-    { label: 'Expertise', href: '/#expertise' },
+    // { label: 'Philosophy', href: '/#philosophy' },
+    // { label: 'Expertise', href: '/#expertise' },
     // { label: 'Gallery', href: '/gallery' },
     { label: 'About', href: '/about' },
     { label: 'Services', href: '/services' }

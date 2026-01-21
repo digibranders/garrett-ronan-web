@@ -11,9 +11,14 @@ import Image from 'next/image';
 import LogosSection from '@/app/components/LogosSection';
 
 // Hero Images
-import heroNyc from '@/assets/images/hero/hero-nyc.jpg';
-import heroLa from '@/assets/images/hero/hero-la.jpg';
-import heroCaribbean from '@/assets/images/hero/hero-caribbean.jpg';
+// Hero Images
+// import heroCaribbean from '@/assets/images/hero/caribbean.png';
+import heroCaribbean2 from '@/assets/images/hero/caribbean-2.jpg';
+import heroLa1 from '@/assets/images/hero/la-1.jpg';
+import heroLa2 from '@/assets/images/hero/la-2.jpg';
+import heroNyc1 from '@/assets/images/hero/nyc-1.jpg';
+import heroNyc2 from '@/assets/images/hero/nyc-2.jpg';
+import heroNyc4 from '@/assets/images/hero/nyc-4.png';
 
 // Service Images
 import serviceConcept from '@/assets/images/services/service-concept.jpg';
@@ -33,6 +38,14 @@ import workBar from '@/assets/images/work/work-bar.jpg';
 import workRooftop from '@/assets/images/work/work-rooftop.jpg';
 import testimonialGroup from '@/assets/images/testimonials/testimonial-group.jpg';
 
+import adare_1 from '@/assets/images/gallery/adare-hotels/adare_1.png';
+import bakan_1 from '@/assets/images/gallery/bakan-restaurant/BAKAN 2.png';
+import blace_1 from '@/assets/images/gallery/blace-nightlife/Blace 4.jpg';
+import beverly_1 from '@/assets/images/gallery/beverly-meeting-events/The Beverly Hills .png';
+import fbc_1 from '@/assets/images/gallery/fbc-members-only-club/fbc_1.jpg';
+import affect_group_1 from '@/assets/images/gallery/affect-group-residential-amenities/Affect Group.png';
+
+
 // Testimonial Images
 import testimonialLobby from '@/assets/images/testimonials/testimonial-lobby.jpg';
 import testimonialReception from '@/assets/images/testimonials/testimonial-reception.jpg';
@@ -41,9 +54,13 @@ import testimonialReception from '@/assets/images/testimonials/testimonial-recep
 
 // Hero Slideshow Images - NYC, LA, Caribbean
 const HERO_IMAGES = [
-  heroNyc,
-  heroLa,
-  heroCaribbean
+  heroNyc4,
+  heroLa1,
+  // heroCaribbean, 
+  heroNyc1,
+  heroLa2,
+  heroCaribbean2,
+  heroNyc2
 ];
 
 
@@ -51,19 +68,19 @@ const HERO_IMAGES = [
 const SERVICES_DATA = [
   {
     title: "Concept Creation",
-    description: "We help guide your hospitality concepts from ideation through to delivering market ready, creative results.",
+    description: "We help guide your hospitality concepts from ideation through to delivering market ready, creative outcomes.",
     bgImage: serviceConcept,
     anchor: "concept-creation"
   },
   {
     title: "Capital & Growth Investment",
-    description: "We provide strategic advice  and guidance on growth and investment, capital sourcing, M&A’s and investor-ready business plans.",
+    description: "We provide strategic advice  and guidance on growth and investment, capital sourcing, M&A’s and create investor-ready business plans.",
     bgImage: serviceInvestment,
     anchor: "capital-growth-investment"
   },
   {
     title: "Design, Development & Construction",
-    description: "We provide skilled “Owners Rep” oversight through each phase of design and construction to deliver successful Projects.",
+    description: "We provide skilled “Owners Rep” oversight through each phase of design and construction to deliver your projects successfully.",
     bgImage: serviceConstruction,
     anchor: "design-development-construction"
   },
@@ -81,13 +98,13 @@ const SERVICES_DATA = [
   },
   {
     title: "Financial",
-    description: "We provide end-to-end insightful financial guidance, including budgeting, forecasting, audits, cost control, efficiency and profitability.",
+    description: "We provide end-to-end insightful financial guidance, on budgeting, forecasting, audits, cost control, efficiency and profitability.",
     bgImage: serviceAccounting,
     anchor: "financial"
   },
   {
     title: "Additional Support",
-    description: "We provide targeted support wherever your business needs experienced hospitality operator oversight.",
+    description: "We provide targeted support wherever your business may need experienced hospitality operator guidance and oversight.",
     bgImage: serviceTraining,
     anchor: "additional-support"
   }
@@ -99,13 +116,13 @@ const HOW_WE_WORK = [
   {
     number: "01",
     title: "Initial Briefing",
-    description: "We take the necessary time understanding our client’s needs, starting with core objectives, opportunities and challenges. Then, working through to agree best approach and actionable next steps.",
+    description: "We take the necessary time understanding our client’s needs, starting with core objectives, opportunities and challenges. Then, working colaboratively with you  to agree best approach and actionable next steps.",
     image: workStrategy
   },
   {
     number: "02",
     title: "Audit and Clear Diagnosis",
-    description: "We spend time on site and with your key team players to observe and audit your project or business appropriately.  We get under the hood to advise on potential risks and opportunities with the best direction forward.  Where there are challenges, we identify root causes, quantify the impact. We provide clear recommendations and real solutions.",
+    description: "We spend time on site and with you and your key team players to observe and audit your project or business appropriately.  We get under the hood to advise on potential risks and opportunities with the best direction forward.  Where there are challenges, we identify root causes, quantify the impact. We provide clear recommendations and real solutions.",
     image: workPlanning
   },
   {
@@ -123,37 +140,37 @@ const HOW_WE_WORK = [
   {
     number: "05",
     title: "Real Results",
-    description: "When we leave, you and your team knows how to maintain what we collectively build. The solutions stick. The performance lasts. The project is set for success",
+    description: "When we leave, you and your team know how to maintain what we collectively build.  Solutions that stick.  Performance that lasts. You and the project is set for success",
     image: testimonialReception
   }
 ];
 
-// Portfolio projects
+
 // Portfolio projects
 const PORTFOLIO_PROJECTS = [
   {
     title: "Hotels & Resorts",
-    image: workExecution
+    image: adare_1
   },
   {
     title: "Restaurants & Bars",
-    image: workDining
+    image: bakan_1
   },
   {
     title: "Nightlife & Entertainment",
-    image: workBar
+    image: blace_1
   },
   {
     title: "Private & Member-Only Clubs",
-    image: workRooftop
+    image: fbc_1
   },
   {
-    title: "Meetings & Events Venues",
-    image: testimonialReception
+    title: "Meeting & Event Venues",
+    image: beverly_1
   },
   {
     title: "Residential & CRE Amenities",
-    image: testimonialGroup
+    image: affect_group_1
   },
 ];
 
@@ -299,7 +316,7 @@ export default function Home() {
               We take a creative, yet practical, consultative approach to ensure your properties and projects don't just run, they <span className="italic text-[#c5a059]">thrive</span>.
             </h2>
             <p className="text-[#181818] text-lg leading-relaxed mb-8">
-                We will support you at every stage of your project and life cycle of your asset, including but not limited to….
+                We will support you at every stage of your project and the life cycle of your asset, including but not limited to….
               </p>
           </motion.div>
 
@@ -462,7 +479,7 @@ export default function Home() {
               <span className="italic text-[#c5a059]">Across All Hospitality Ventures</span>
             </h2>
             <p className="text-stone-400 text-base md:text-lg mt-6 whitespace-nowrap">
-              <span className="font-serif italic">"Experience is simply the name we give our mistakes"</span> ~ Let us help correct your experience
+              <span className="font-serif italic">"Experience is simply the name we give our mistakes"</span> ~ Oscar Wilde
             </p>
           </motion.div>
 
@@ -523,7 +540,7 @@ export default function Home() {
               A Clear, Proven <span className="italic text-[#c5a059]">Process</span>
             </h2>
             <p className="text-stone-400 text-base md:text-lg mt-6">
-              We do the difficult immediately. The impossible may take a little longer.
+              <span className="font-serif italic">"We do the difficult immediately. The impossible may take us a few moments longer."</span> ~ Waldorf Astoria
             </p>
           </motion.div>
 

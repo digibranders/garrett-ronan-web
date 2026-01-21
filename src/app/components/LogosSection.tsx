@@ -12,7 +12,7 @@ import rokaLogo from '@/assets/images/logos/roka.png';
 import zumaLogo from '@/assets/images/logos/zuma.png';
 import etaruLogo from '@/assets/images/logos/etaru.png';
 import inkoNitoLogo from '@/assets/images/logos/inko-nito.png';
-import oblixLogo from '@/assets/images/logos/oblix.png';
+
 import movenpickLogo from '@/assets/images/logos/movenpick.png';
 import adareManorLogo from '@/assets/images/logos/adare-manor.png';
 import swallowHotelsLogo from '@/assets/images/logos/swallow-hotels.png';
@@ -29,7 +29,7 @@ import zumaConsultedLogo from '@/assets/images/logos/zuma-consulted.png';
 import bxpLogo from '@/assets/images/logos/bxp.png';
 import rudinLogo from '@/assets/images/logos/rudin.png';
 import blaceLogo from '@/assets/images/logos/blace.png';
-import residentLogo from '@/assets/images/logos/meet-resident.png';
+
 import affectLogo from '@/assets/images/logos/affect-group.png';
 import sageLogo from '@/assets/images/logos/sage-hospitality.png';
 import buccamentLogo from '@/assets/images/logos/buccament.png';
@@ -66,22 +66,19 @@ const EMPLOYED_BY_COMPANIES: Company[] = [
   { name: 'Zuma', logo: zumaLogo, dimensions: 'max-h-6 max-w-[70px] md:max-h-8 md:max-w-[100px]' },
   { name: 'ETARU', logo: etaruLogo, dimensions: 'max-h-6 max-w-[70px] md:max-h-8 md:max-w-[100px]' },
   { name: 'INKO NITO', logo: inkoNitoLogo, dimensions: 'max-h-6 max-w-[70px] md:max-h-8 md:max-w-[100px]', className: 'grayscale-0 brightness-100' }, // Always light/visible
-  { name: 'oblix', logo: oblixLogo, dimensions: 'max-h-6 max-w-[70px] md:max-h-8 md:max-w-[100px]' },
   { name: 'Starr Restaurants', logo: starrRestaurantsLogo },
-  { name: 'Equinox Hotels', logo: equinoxHotelsLogo },
-  { name: 'R', logo: rLogo }, // New
   { name: 'etc.venues', logo: etcVenuesLogo, dimensions: 'max-h-6 max-w-[120px] md:max-h-12 md:max-w-[200px]' }, // Manually sized for balance
-  { name: 'Convene', logo: conveneLogo }
 ];
 
 const CONSULTED_WITH_COMPANIES: Company[] = [
   { name: 'BXP', logo: bxpLogo, dimensions: 'max-h-8 max-w-[90px] md:max-h-12 md:max-w-[120px]' },
   { name: 'Rudin Group', logo: rudinLogo, dimensions: 'max-h-4 max-w-[70px] md:max-h-6 md:max-w-[90px]' },
   { name: 'Zuma', logo: zumaConsultedLogo, dimensions: 'max-h-6 max-w-[70px] md:max-h-8 md:max-w-[100px]' },
+  { name: 'Equinox Hotels', logo: equinoxHotelsLogo },
+  { name: 'R', logo: rLogo },
+  { name: 'Convene', logo: conveneLogo },
   { name: 'Affect Group', logo: affectLogo, dimensions: 'max-h-5 max-w-[65px] md:max-h-7 md:max-w-[90px]' },
   { name: 'Sage Hospitality', logo: sageLogo, dimensions: 'max-h-6 max-w-[80px] md:max-h-8 md:max-w-[110px]' },
-
-  { name: 'Meet Resident', logo: residentLogo, dimensions: 'max-h-7 max-w-[120px] md:max-h-10 md:max-w-[160px]' },
   { name: 'Bakan', logo: bakanLogo, dimensions: 'max-h-7 max-w-[90px] md:max-h-10 md:max-w-[120px]' },
   { name: 'Support 305', logo: support305Logo, dimensions: 'max-h-8 max-w-[100px] md:max-h-11 md:max-w-[140px]' },
   { name: 'Fairfield', logo: fairfieldLogo },
