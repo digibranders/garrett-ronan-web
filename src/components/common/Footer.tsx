@@ -19,7 +19,7 @@ export default function Footer() {
           <div className="md:col-span-3 md:col-start-7">
              <h4 className="text-white font-serif text-xl mb-6">Office</h4>
              <address className="text-stone-500 text-sm leading-relaxed not-italic">
-               42 Brighton View Rd<br/>
+               42 Brighton View Rd.<br/>
                Fairfield, CT, 06824<br/>
                USA
              </address>

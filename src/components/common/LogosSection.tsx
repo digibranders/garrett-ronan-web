@@ -9,7 +9,7 @@ import beverlyHiltonLogo from '@/assets/images/logos/beverly-hilton.png';
 import starrRestaurantsLogo from '@/assets/images/logos/starr-restaurants.png';
 import equinoxHotelsLogo from '@/assets/images/logos/equinox-hotels.png';
 import rokaLogo from '@/assets/images/logos/roka.png';
-import zumaLogo from '@/assets/images/logos/zuma.png';
+import azumiLogo from '@/assets/images/logos/azumi.png';
 import etaruLogo from '@/assets/images/logos/etaru.png';
 import inkoNitoLogo from '@/assets/images/logos/inko-nito.png';
 
@@ -33,6 +33,7 @@ import blaceLogo from '@/assets/images/logos/blace.png';
 import affectLogo from '@/assets/images/logos/affect-group.png';
 import sageLogo from '@/assets/images/logos/sage-hospitality.png';
 import buccamentLogo from '@/assets/images/logos/buccament.png';
+import buccamentTransperentLogo from '@/assets/images/logos/buccament-transperant.png';
 import fairfieldLogo from '@/assets/images/logos/fairfield.png';
 import montaukLogo from '@/assets/images/logos/montauk.png';
 
@@ -40,7 +41,6 @@ import montaukLogo from '@/assets/images/logos/montauk.png';
 import hiltonHotelsLogo from '@/assets/images/logos/hilton_hotels.png';
 import rLogo from '@/assets/images/logos/r.png';
 import rTransparentLogo from '@/assets/images/logos/r-transperent.png';
-import blaceCopyLogo from '@/assets/images/logos/blace copy.png';
 import waldorfLogo from '@/assets/images/logos/waldorf.png';
 
 interface Company {
@@ -65,11 +65,11 @@ const EMPLOYED_BY_COMPANIES: Company[] = [
   { name: 'The Beverly Hilton', logo: beverlyHiltonLogo },
   { name: 'Hilton Hotels', logo: hiltonHotelsLogo }, // New
   { name: 'ROKA', logo: rokaLogo, dimensions: 'h-6 w-[70px] md:h-8 w-[100px]' },
-  { name: 'Zuma', logo: zumaLogo, dimensions: 'h-6 w-[70px] md:h-8 w-[100px]' },
+  { name: 'Azumi', logo: azumiLogo, dimensions: 'h-6 w-[70px] md:h-8 w-[100px]' },
   { name: 'ETARU', logo: etaruLogo, dimensions: 'h-6 w-[70px] md:h-8 w-[100px]' },
   { name: 'INKO NITO', logo: inkoNitoLogo, dimensions: 'h-6 w-[70px] md:h-8 w-[100px]', className: 'grayscale-0 brightness-100' }, // Always light/visible
   { name: 'Starr Restaurants', logo: starrRestaurantsLogo },
-  { name: 'etc.venues', logo: etcVenuesLogo, dimensions: 'h-6 w-[120px] md:h-12 w-[200px]' }, // Manually sized for balance
+  { name: 'etc.venues', logo: etcVenuesLogo, dimensions: 'h-6 w-[120px] md:h-12 w-[180px]' }, // Manually sized for balance
 ];
 
 const CONSULTED_WITH_COMPANIES: Company[] = [
@@ -77,7 +77,7 @@ const CONSULTED_WITH_COMPANIES: Company[] = [
   { name: 'Rudin Group', logo: rudinLogo, dimensions: 'h-4 w-[70px] md:h-6 w-[90px]' },
   { name: 'Zuma', logo: zumaConsultedLogo, dimensions: 'h-6 w-[70px] md:h-8 w-[100px]' },
   { name: 'Equinox Hotels', logo: equinoxHotelsLogo },
-  { name: 'R', logo: rTransparentLogo, hoverLogo: rLogo, className: 'grayscale-0 brightness-100' },
+  { name: 'R', logo: rLogo, hoverLogo: rLogo, className: 'grayscale-0 brightness-100' },
   { name: 'Convene', logo: conveneLogo },
   { name: 'Affect Group', logo: affectLogo, dimensions: 'h-5 w-[65px] md:h-7 w-[90px]' },
   { name: 'Sage Hospitality', logo: sageLogo, dimensions: 'h-6 w-[80px] md:h-8 w-[110px]' },
@@ -85,7 +85,8 @@ const CONSULTED_WITH_COMPANIES: Company[] = [
   { name: 'Support 305', logo: support305Logo, dimensions: 'h-8 w-[100px] md:h-11 w-[140px]' },
   { name: 'Fairfield', logo: fairfieldLogo },
   { name: 'Montauk', logo: montaukLogo },
-  { name: 'Buccament', logo: buccamentLogo }
+  { name: 'Blace', logo: blaceLogo, dimensions: 'h-6 w-[100px] md:h-8 w-[120px]' },
+  { name: 'Buccament', logo: buccamentTransperentLogo, hoverLogo: buccamentLogo, className: 'grayscale-0 brightness-100' }
 ];
 
 export default function LogosSection() {

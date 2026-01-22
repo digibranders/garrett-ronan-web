@@ -28,10 +28,10 @@ const ABOUT_IMAGES = {
 };
 
 const EXPERIENCE_TIMELINE = [
-  { role: "COO", company: "BLACE", description: "Tech-enabled event marketplace, NYC & LA" },
+  { role: "COO", company: "BLACE", description: "Tech-enabled meeting, event, venue marketplace, NYC & LA" },
   { role: "US COO", company: "etc.venues", description: "Launched US market, opened 3 NYC venues, successful merger with Convene." },
   { role: "VP Hotel Operations & Development", company: "Starr Restaurants", description: "Oversaw F&B and events for opening of first ever Equinox Hotel, Hudson Yards." },
-  { role: "VP Operations & Development", company: "Azumi/Zuma", description: "Directed multi-city U.S. expansion across 6 major markets" },
+  { role: "VP Operations & Development", company: "Azumi/Zuma", description: "Directed multi-city U.S. expansion across 6 major markets for 3 Brands Zuma, Etaru & Inko Nito" },
   { role: "Senior Leadership", company: "Premium Hotels & Resorts", description: "Waldorf Astoria, The Beverly Hilton, Boston Harbor Hotel, Principal Hotels UK, Adare Manor, Mövenpick" },
 ];
 
@@ -39,10 +39,10 @@ const SERVICES_LIST = [
   "Finance, capital, and accounting",
   "Legal coordination support",
   "Design, development, and construction management",
-  "Vendor and supply chain planning",
+  "Logistics, vendor, and supply chain planning",
   "Real estate, market analysis, and site sourcing",
   "Deal support and negotiations",
-  "HR and labor support (recruiting, training, compliance, unions, wage-and-hour, tips and gratuities, benefits)",
+  "HR and labor support (recruiting, training, compliance, unions, wage-and-hour, tips and gratuities and benefits)",
   "Operations, sales, and marketing",
   "Travel and tour planning",
   "Fractional COO and C-suite support",
@@ -174,7 +174,13 @@ The leader who made sure the first ever Equinox Hotel’s F&B operation matched 
             <div>
               <h4 className="text-white font-serif text-xl mb-4">Industry Involvement</h4>
               <p className="text-stone-400 leading-relaxed">
-                Active member of HSMAI. Board member, NYC Hospitality Alliance—supporting advocacy and policy work for the industry.
+                Active member of HSMAI. Board member,
+              </p>
+              <p className="text-stone-400 leading-relaxed">
+                Active member of NYC Tourism + Conventions,
+              </p>
+              <p className="text-stone-400 leading-relaxed">
+                Board member: NYC Hospitality Alliance—supporting advocacy and policy work for the industry.
               </p>
             </div>
              <div>
@@ -215,7 +221,7 @@ The leader who made sure the first ever Equinox Hotel’s F&B operation matched 
                 <h3 className="text-2xl font-serif text-[#181818] mb-4">Full Life-Cycle Support</h3>
               </div>
               <p className="text-stone-600 leading-relaxed">
-                We can support you from early concept and business planning through feasibility, site sourcing, build-out, opening, and performance improvement. This keeps decisions aligned and reduces costly handoffs.
+                We can support you from early concept and business planning through feasibility, site sourcing, build-out, pre and post opening, and performance improvement. This keeps decisions aligned and reduces costly handoffs.
               </p>
             </motion.div>
 
@@ -261,7 +267,7 @@ The leader who made sure the first ever Equinox Hotel’s F&B operation matched 
                 <h3 className="text-2xl font-serif text-[#181818] mb-4">Flexible Engagement Model</h3>
               </div>
               <p className="text-stone-600 leading-relaxed">
-                Choose à la carte support or an end-to-end engagement based on your stage, priorities, and internal capacity.
+                Choose à la carte support or an end-to-end engagement based on your stage, priorities, and internal resources and capacity.
               </p>
             </motion.div>
           </div>
