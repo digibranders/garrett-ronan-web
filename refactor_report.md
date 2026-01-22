@@ -238,12 +238,39 @@ _Status: Ready for user verification._
   - Added `will-change-transform` class to hint the browser for hardware acceleration on the hover effect, reducing flickering during state changes.
 - **Build Status**: Verified successfully.
 
-## 2026-01-20 - Email Signatures (Light/Dark Separate Files)
-
-- **Goal**: Create separate fixed Light and Dark mode signature files with specific castle images.
-- **Action**: Created `email-sign-light.html` and `email-sign-dark.html` in `public/sign/`.
+- Action: Created `email-sign-light.html` and `email-sign-dark.html` in `public/sign/`.
 - **Details**:
   - `email-sign-light.html`: Fixed Light mode layout using `Castle_GR_Light.png`.
   - `email-sign-dark.html`: Fixed Dark mode layout using `Castle_GR_Dark.png`.
   - Removed complex media queries to ensure consistent display for the specific mode.
 - **Status**: Files created and verified.
+
+## 2026-01-21 - Home Page Optimization & Global Component Reorganization
+
+- **Goal**: Optimize `src/app/page.tsx` LOC and reorganize project structure for better maintainability.
+- **Data Layer**:
+  - Extracted all static data (images, services, testimonials, etc.) from `src/app/page.tsx` into `src/data/homeData.ts`.
+- **Component Reorganization**:
+  - Moved `src/app/components` directory to `src/components` to follow Next.js conventions.
+  - Organized components into functional subdirectories:
+    - `@/components/common`: Shared layout elements (Navbar, Footer, LogosSection, ScrollToTop).
+    - `@/components/home`: Specific sections for the landing page (Hero, Philosophy, Stats, etc.).
+    - `@/components/ui`: Shared primitive components (Shadcn UI).
+- **Home Page Refactoring**:
+  - Extracted each section of the home page into standalone components.
+  - Reduced `src/app/page.tsx` from ~700 lines to ~60 lines.
+- **Cleanup**:
+  - Deleted unused primitive components in `src/components/ui`, keeping only `button.tsx` and `utils.ts`.
+  - Deleted unused `src/components/figma` folder.
+- **Verification**:
+  - Updated all project-wide imports to use the new `@/components/` path.
+  - Fixed 'R' logo in `LogosSection.tsx` to swap between `r-transperent.png` (default) and `r.png` (hover).
+  - Fixed logo clipping and inconsistent heights in `LogosSection.tsx` by using fixed height `h-X` instead of `max-h-X`.
+  - Migrated heavy `gallery` images (178MB) from `src/assets/images` to `public/images/gallery`.
+  - Updated `homeData.ts` and `PortfolioSection.tsx` to support both static and public paths.
+  - Refactored `src/app/gallery/page.tsx` to separate data into `src/data/galleryData.ts`.
+  - Populated `galleryData.ts` with 20 real projects using the public images.
+  - Fixed accessibility issue in Gallery Dialog by adding hidden Title/Description.
+  - Successfully ran `npm run build` with no errors.
+
+_Status: Refactoring complete and verified._

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import "@/styles/index.css";
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+import Navbar from '@/components/common/Navbar';
+import Footer from '@/components/common/Footer';
 
 export const metadata: Metadata = {
   title: "GKR Hospitality",

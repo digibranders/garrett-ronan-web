@@ -16,7 +16,7 @@ vi.mock('next/link', () => ({
 vi.mock('next/image', () => ({
   default: (props: any) => <img {...props} alt={props.alt} />,
 }));
-vi.mock('@/app/components/ui/button', () => ({
+vi.mock('@/components/ui/button', () => ({
   Button: ({ children, ...props }: any) => <button {...props}>{children}</button>,
 }));
 

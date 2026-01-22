@@ -4,96 +4,11 @@ import { useState, useCallback, useEffect } from 'react';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { X, ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
-import { Button } from '@/app/components/ui/button';
+import { Button } from '@/components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
+import { GALLERY_ITEMS } from '@/data/galleryData';
 
-// Mock Data
-const GALLERY_ITEMS = [
-  {
-    id: 1,
-    title: 'Adare Manor',
-    description: 'A luxurious and welcoming lobby design that sets the tone for the guest experience. Featuring warm lighting and contemporary furniture.',
-    link: 'https://examples.com/project-1',
-    images: [
-      '/assests/images/gallery/adare_01.png',
-      '/assests/images/gallery/adare_02.png',
-    ]
-  },
-  {
-    id: 2,
-    title: 'Minimalist Bedroom',
-    description: 'A serene bedroom retreat designed for relaxation, utilizing a neutral color palette and natural materials.',
-    link: 'https://examples.com/project-2',
-    images: [
-      'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1616594039964-40891a91395b?q=80&w=1200&auto=format&fit=crop'
-    ]
-  },
-  {
-    id: 3,
-    title: 'Tropical Resort Pool',
-    description: 'An infinity pool overlooking the ocean, designed to blend seamlessly with the surrounding tropical landscape.',
-    link: 'https://examples.com/project-3',
-    images: [
-      'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1572331165267-854da2dc72af?q=80&w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=1200&auto=format&fit=crop'
-    ]
-  },
-  {
-    id: 4,
-    title: 'Fine Dining Restaurant',
-    description: 'An elegant dining space with custom lighting fixtures and bespoke furniture, creating an intimate atmosphere.',
-    link: 'https://examples.com/project-4',
-    images: [
-      'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1550966871-3ed3c47e2ce2?q=80&w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=1200&auto=format&fit=crop'
-    ]
-  },
-  {
-    id: 5,
-    title: 'Cozy Cafe Corner',
-    description: 'A charming cafe interior maximizing small spaces with clever seating arrangements and vibrant decor.',
-    link: 'https://examples.com/project-5',
-    images: [
-      'https://images.unsplash.com/photo-1565538810643-b5bdb714032a?q=80&w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=1200&auto=format&fit=crop'
-    ]
-  },
-  {
-    id: 6,
-    title: 'Urban Loft Kitchen',
-    description: 'A modern industrial kitchen design featuring exposed brick, stainless steel appliances, and open shelving.',
-    link: 'https://examples.com/project-6',
-    images: [
-      'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop'
-    ]
-  },
-  {
-    id: 7,
-    title: 'Boutique Retail Space',
-    description: 'A retail environment focused on product storytelling, with custom displays and directed lighting.',
-    link: 'https://examples.com/project-7',
-    images: [
-      'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?q=80&w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1200&auto=format&fit=crop'
-    ]
-  },
-   {
-    id: 8,
-    title: 'Corporate Office Lounge',
-    description: 'A collaborative workspace lounge designed to foster creativity and informal meetings.',
-    link: 'https://examples.com/project-8',
-    images: [
-      'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1200&auto=format&fit=crop'
-    ]
-  },
-];
+
 
 export default function GalleryPage() {
   const [selectedItemIndex, setSelectedItemIndex] = useState<number | null>(null);
@@ -188,6 +103,12 @@ export default function GalleryPage() {
           <DialogPrimitive.Portal>
             <DialogPrimitive.Overlay className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0" />
             <DialogPrimitive.Content className="fixed inset-0 z-50 w-screen h-screen bg-[#181818] p-0 shadow-none duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 overflow-y-auto md:overflow-hidden md:grid md:grid-cols-2 gap-0">
+              <DialogPrimitive.Title className="sr-only">
+                {selectedItem?.title}
+              </DialogPrimitive.Title>
+              <DialogPrimitive.Description className="sr-only">
+                {selectedItem?.description}
+              </DialogPrimitive.Description>
               
               {/* Close Button */}
               <DialogPrimitive.Close className="cursor-pointer absolute right-6 top-6 z-50 ring-offset-background transition-all hover:scale-110 focus:outline-none disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground p-2 bg-black/20 hover:bg-black/40 text-white rounded-full">
@@ -196,7 +117,7 @@ export default function GalleryPage() {
               </DialogPrimitive.Close>
               
               {/* Left Side: Image & Navigation */}
-              <div className="sticky top-0 z-0 h-[40vh] md:static md:h-full w-full bg-black flex items-center justify-center overflow-hidden group/image shrink-0">
+              <div className="sticky top-0 z-0 h-[40vh] md:relative md:h-full w-full bg-black flex items-center justify-center overflow-hidden group/image shrink-0">
                 {selectedItem && (
                   <>
                    <AnimatePresence mode="wait">

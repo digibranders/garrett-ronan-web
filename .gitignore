@@ -30,4 +30,5 @@ ts-debug.log*
 *.tsbuildinfo
 next-env.d.ts
 
-refactor_report.md
+refactor_report.md.env
+.env
