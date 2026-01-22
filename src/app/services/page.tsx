@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { ArrowUpRight } from 'lucide-react';
-import { Button } from '@/app/components/ui/button';
+import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
 import logoImage from '@/assets/images/logos/gkr-logo.png';
@@ -258,7 +258,7 @@ export default function Services() {
               Let's explore how our services can support your hospitality vision
             </p>
             <Link href="/contact">
-              <Button className="bg-[#181818] text-white hover:bg-white hover:text-[#181818] px-12 py-7 text-sm uppercase tracking-[0.3em] font-bold transition-all duration-500">
+              <Button className="bg-[#181818] text-white hover:bg-white hover:text-[#181818] px-12 py-7 text-sm uppercase tracking-[0.3em] font-bold transition-all duration-500 rounded-full">
                 Start a Conversation
               </Button>
             </Link>
