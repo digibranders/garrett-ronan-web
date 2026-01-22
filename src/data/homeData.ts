@@ -38,14 +38,16 @@ import testimonialReception from '@/assets/images/testimonials/testimonial-recep
 
 // Hero Slideshow Images - NYC, LA, Caribbean
 export const HERO_IMAGES = [
+  
+  hero4,
+  hero3,
   heroNyc4,
   heroLa1,
   heroNyc1,
   heroLa2,
   heroCaribbean2,
-  heroNyc2,
-  hero3,
-  hero4
+  heroNyc2
+
 ];
 
 // Services with background images
