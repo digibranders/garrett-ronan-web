@@ -15,7 +15,7 @@ const FAQ_DATA = [
   },
   {
     question: "Do you work remotely or on-site?",
-    answer: "Primarily on-site. Hospitality operations can't be fixed from spreadsheets. We're there, in your property, with your team."
+    answer: "Where appropriate we work on-site with you and your team. Hospitality operations can't be fixed from spreadsheets. So we're there, on property, to support you when needed to ensure the successful implementation and completion of your project."
   },
   {
     question: "How long are typical engagements?",
@@ -24,10 +24,6 @@ const FAQ_DATA = [
   {
     question: "What does it cost?",
     answer: "$12,000-$50,000/month depending on project scope, property size, and complexity. We provide specific pricing after understanding your situation."
-  },
-  {
-    question: "What results can we expect?",
-    answer: "Operational clients typically see 30-50% reduction in staff turnover, measurable improvements in guest satisfaction, and operational cost savings of 2-5x our fee. Revenue clients typically see 5-12% margin improvement within 12 months. Opening clients launch on time with trained, confident teams."
   },
   {
     question: "Do you sign NDAs?",
@@ -67,7 +63,7 @@ export default function Contact() {
 
   return (
     <div className="bg-[#181818] text-[#FFF7F2] font-sans selection:bg-[#c5a059] selection:text-white overflow-x-hidden">
-      
+
 
 
       {/* Hero Section with Minimal Contact Form */}
@@ -279,7 +275,7 @@ export default function Contact() {
           >
             <span className="text-[#c5a059] text-[10px] font-bold tracking-[0.4em] uppercase block mb-6">FAQ</span>
             <h2 className="text-5xl md:text-7xl font-serif text-[#181818] leading-tight">
-              Frequently Asked<br/>
+              Frequently Asked<br />
               <span className="italic text-[#c5a059]">Questions</span>
             </h2>
           </motion.div>
@@ -304,16 +300,16 @@ export default function Contact() {
                       {faq.question}
                     </h3>
                   </div>
-                  <ChevronDown 
-                    className={`w-5 h-5 text-[#c5a059] flex-shrink-0 mt-2 transition-transform duration-300 ${openFAQ === index ? 'rotate-180' : ''}`} 
+                  <ChevronDown
+                    className={`w-5 h-5 text-[#c5a059] flex-shrink-0 mt-2 transition-transform duration-300 ${openFAQ === index ? 'rotate-180' : ''}`}
                   />
                 </button>
-                
+
                 <motion.div
                   initial={false}
-                  animate={{ 
+                  animate={{
                     height: openFAQ === index ? 'auto' : 0,
-                    opacity: openFAQ === index ? 1 : 0 
+                    opacity: openFAQ === index ? 1 : 0
                   }}
                   transition={{ duration: 0.3 }}
                   className="overflow-hidden"

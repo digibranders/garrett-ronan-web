@@ -9,13 +9,13 @@ import hero3 from '@/assets/images/hero/hero 3.jpg';
 import hero4 from '@/assets/images/hero/hero_2.png';
 
 // Service Images
-import serviceConcept from '@/assets/images/services/service-concept.jpg';
-import serviceInvestment from '@/assets/images/services/service-investment.jpg';
-import serviceConstruction from '@/assets/images/services/service-construction.jpg';
-import serviceOperations from '@/assets/images/services/service-operations.jpg';
+import serviceConcept from '@/assets/images/services/service-concept.jpeg';
+import serviceInvestment from '@/assets/images/services/service-investment.png';
+import serviceConstruction from '@/assets/images/services/service-construction.png';
+import serviceOperations from '@/assets/images/services/service-operations.png';
 import serviceLegal from '@/assets/images/services/service-legal.jpg';
-import serviceAccounting from '@/assets/images/services/service-accounting.jpg';
-import serviceTraining from '@/assets/images/services/service-training.jpg';
+import serviceAccounting from '@/assets/images/services/service-accounting.png';
+import serviceTraining from '@/assets/images/services/service-training.png';
 
 // Work Images
 import workStrategy from '@/assets/images/work/work-strategy.jpg';
@@ -38,7 +38,7 @@ import testimonialReception from '@/assets/images/testimonials/testimonial-recep
 
 // Hero Slideshow Images - NYC, LA, Caribbean
 export const HERO_IMAGES = [
-  
+
   hero4,
   hero3,
   heroNyc4,
@@ -107,7 +107,7 @@ export const HOW_WE_WORK = [
   {
     number: "02",
     title: "Audit and Clear Diagnosis",
-    description: "We spend time on site and with you and your key team players to observe and audit your project or business appropriately.  We get under the hood to advise on potential risks and opportunities with the best direction forward.  Where there are challenges, we identify root causes, quantify the impact. We provide clear recommendations and real solutions.",
+    description: "We spend time on site with you and your key team players to observe and audit your project or business appropriately.  We get under the hood to advise on potential risks and opportunities with the best direction forward.  Where there are challenges, we identify root causes, quantify the impact. We provide clear recommendations and real solutions.",
     image: workPlanning
   },
   {
@@ -119,13 +119,13 @@ export const HOW_WE_WORK = [
   {
     number: "04",
     title: "Project Management ~ Hands-On Implementation",
-    description: "Where appropriate we work on-site with your team, helping build systems, managing, supporting and solving for the unexpected. We will help ensure proper implementation and successful completion for every project.",
+    description: "Where appropriate we work on-site with you and your team, helping build systems, managing, supporting and solving for the unexpected. We will help ensure proper implementation and successful completion for every project.",
     image: serviceTraining
   },
   {
     number: "05",
     title: "Real Results",
-    description: "When we leave, you and your team know how to maintain what we collectively build.  Solutions that stick.  Performance that lasts. You and the project is set for success",
+    description: "When we leave, you and your team know how to maintain what we collectively build.  Solutions that stick.  Performance that lasts. You and the project are set for success",
     image: testimonialReception
   }
 ];

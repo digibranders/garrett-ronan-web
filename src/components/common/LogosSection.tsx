@@ -64,7 +64,7 @@ const EMPLOYED_BY_COMPANIES: Company[] = [
   { name: 'Boston Harbor Hotel', logo: bostonHarborHotelLogo, dimensions: 'h-10 w-[120px] md:h-14 w-[160px]' },
   { name: 'The Beverly Hilton', logo: beverlyHiltonLogo },
   { name: 'Hilton Hotels', logo: hiltonHotelsLogo }, // New
-  { name: 'ROKA', logo: rokaLogo, dimensions: 'h-6 w-[70px] md:h-8 w-[100px]' },
+  // { name: 'ROKA', logo: rokaLogo, dimensions: 'h-6 w-[70px] md:h-8 w-[100px]' },
   { name: 'Azumi', logo: azumiLogo, dimensions: 'h-6 w-[70px] md:h-8 w-[100px]' },
   { name: 'ETARU', logo: etaruLogo, dimensions: 'h-6 w-[70px] md:h-8 w-[100px]' },
   { name: 'INKO NITO', logo: inkoNitoLogo, dimensions: 'h-6 w-[70px] md:h-8 w-[100px]', className: 'grayscale-0 brightness-100' }, // Always light/visible
@@ -120,144 +120,144 @@ export default function LogosSection() {
 
   return (
     <section id="expertise" className="py-20 md:py-48 bg-[#FFF7F2] relative overflow-hidden">
-        <div className="container mx-auto px-6 md:px-12 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16 md:mb-20"
-          >
-            <span className="block text-[#c5a059] text-[10px] tracking-[0.4em] uppercase mb-6 md:mb-8 font-bold">Trusted By Industry Leaders</span>
-            <h2 className="text-4xl md:text-6xl lg:text-8xl font-serif text-[#181818] mb-8 leading-tight">
-              Brands We've<br/>
-              <span className="italic text-[#c5a059]">Supported</span>
-            </h2>
-          </motion.div>
+      <div className="container mx-auto px-6 md:px-12 relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16 md:mb-20"
+        >
+          <span className="block text-[#c5a059] text-[10px] tracking-[0.4em] uppercase mb-6 md:mb-8 font-bold">Trusted By Industry Leaders</span>
+          <h2 className="text-4xl md:text-6xl lg:text-8xl font-serif text-[#181818] mb-8 leading-tight">
+            Brands We've<br />
+            <span className="italic text-[#c5a059]">Supported</span>
+          </h2>
+        </motion.div>
 
-          {/* Employed By Marquee */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-16 md:mb-20"
-          >
-            <div className="text-center mb-6">
-              <h3 className="text-xl md:text-2xl font-serif text-[#181818] mb-2">Employed By</h3>
-              <div className="w-16 h-px bg-[#c5a059] mx-auto"></div>
-            </div>
-            
-            <div className="relative overflow-hidden w-full mt-2">
-              {/* Gradient overlays for fade effect - visible on all devices */}
-              <div className="absolute left-0 top-0 bottom-0 w-12 md:w-32 bg-gradient-to-r from-[#FFF7F2] to-transparent z-10"></div>
-              <div className="absolute right-0 top-0 bottom-0 w-12 md:w-32 bg-gradient-to-l from-[#FFF7F2] to-transparent z-10"></div>
-              
-              <div className="flex">
-                <motion.div
-                  className="flex items-center gap-4 md:gap-16 flex-nowrap will-change-transform"
-                  animate={{
-                    x: ["-33.33%", "0%"], 
-                  }}
-                  transition={{
-                    x: {
-                      repeat: Infinity,
-                      repeatType: "loop",
-                      duration: employedDuration, 
-                      ease: "linear",
-                    },
-                  }}
-                >
-                  {employedMarquee.map((company, idx) => (
-                    <div 
-                      key={`employed-${idx}`} 
-                      className="flex-shrink-0 flex items-center justify-center group"
-                    >
-                      {company.logo ? (
-                        <div className={`relative ${company.dimensions || DEFAULT_DIMENSIONS}`}>
-                          <Image 
-                            src={company.logo} 
-                            alt={company.name} 
-                            className={`object-contain transition-all duration-500 w-full h-full ${company.className || 'grayscale brightness-[0.3] group-hover:grayscale-0 group-hover:brightness-100'} ${company.hoverLogo ? 'group-hover:opacity-0' : ''}`}
-                          />
-                          {company.hoverLogo && (
-                            <Image 
-                              src={company.hoverLogo} 
-                              alt={`${company.name} hover`} 
-                              className={`absolute inset-0 object-contain transition-all duration-500 opacity-0 group-hover:opacity-100 w-full h-full ${company.className || ''}`}
-                            />
-                          )}
-                        </div>
-                      ) : (
-                        <span className="text-[#181818] group-hover:text-[#c5a059] text-base md:text-lg font-medium tracking-wide whitespace-nowrap transition-colors duration-300">{company.name}</span>
-                      )}
-                    </div>
-                  ))}
-                </motion.div>
-              </div>
-            </div>
-          </motion.div>
+        {/* Employed By Marquee */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-16 md:mb-20"
+        >
+          <div className="text-center mb-6">
+            <h3 className="text-xl md:text-2xl font-serif text-[#181818] mb-2">Employed By</h3>
+            <div className="w-16 h-px bg-[#c5a059] mx-auto"></div>
+          </div>
 
-          {/* Consulted With Marquee */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-          >
-            <div className="text-center mb-6">
-              <h3 className="text-xl md:text-2xl font-serif text-[#181818] mb-2">Consulted With</h3>
-              <div className="w-16 h-px bg-[#c5a059] mx-auto"></div>
-            </div>
-            
-            <div className="relative overflow-hidden w-full mt-2">
-              {/* Gradient overlays for fade effect */}
-              <div className="absolute left-0 top-0 bottom-0 w-12 md:w-32 bg-gradient-to-r from-[#FFF7F2] to-transparent z-10"></div>
-              <div className="absolute right-0 top-0 bottom-0 w-12 md:w-32 bg-gradient-to-l from-[#FFF7F2] to-transparent z-10"></div>
-              
-               <div className="flex">
-                <motion.div
-                  className="flex items-center gap-4 md:gap-16 flex-nowrap will-change-transform"
-                  animate={{
-                    x: ["-33.33%", "0%"],
-                  }}
-                  transition={{
-                    x: {
-                      repeat: Infinity,
-                      repeatType: "loop",
-                      duration: consultedDuration, 
-                      ease: "linear",
-                    },
-                  }}
-                >
-                  {consultedMarquee.map((company, idx) => (
-                    <div 
-                      key={`consulted-${idx}`} 
-                      className="flex-shrink-0 flex items-center justify-center group"
-                    >
-                       {company.logo ? (
-                        <div className={`relative ${company.dimensions || DEFAULT_DIMENSIONS}`}>
-                          <Image 
-                            src={company.logo} 
-                            alt={company.name} 
-                            className={`object-contain transition-all duration-500 w-full h-full ${company.className || 'grayscale brightness-[0.3] group-hover:grayscale-0 group-hover:brightness-100'} ${company.hoverLogo ? 'group-hover:opacity-0' : ''}`}
+          <div className="relative overflow-hidden w-full mt-2">
+            {/* Gradient overlays for fade effect - visible on all devices */}
+            <div className="absolute left-0 top-0 bottom-0 w-12 md:w-32 bg-gradient-to-r from-[#FFF7F2] to-transparent z-10"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-12 md:w-32 bg-gradient-to-l from-[#FFF7F2] to-transparent z-10"></div>
+
+            <div className="flex">
+              <motion.div
+                className="flex items-center gap-4 md:gap-16 flex-nowrap will-change-transform"
+                animate={{
+                  x: ["-33.33%", "0%"],
+                }}
+                transition={{
+                  x: {
+                    repeat: Infinity,
+                    repeatType: "loop",
+                    duration: employedDuration,
+                    ease: "linear",
+                  },
+                }}
+              >
+                {employedMarquee.map((company, idx) => (
+                  <div
+                    key={`employed-${idx}`}
+                    className="flex-shrink-0 flex items-center justify-center group"
+                  >
+                    {company.logo ? (
+                      <div className={`relative ${company.dimensions || DEFAULT_DIMENSIONS}`}>
+                        <Image
+                          src={company.logo}
+                          alt={company.name}
+                          className={`object-contain transition-all duration-500 w-full h-full ${company.className || 'grayscale brightness-[0.3] group-hover:grayscale-0 group-hover:brightness-100'} ${company.hoverLogo ? 'group-hover:opacity-0' : ''}`}
+                        />
+                        {company.hoverLogo && (
+                          <Image
+                            src={company.hoverLogo}
+                            alt={`${company.name} hover`}
+                            className={`absolute inset-0 object-contain transition-all duration-500 opacity-0 group-hover:opacity-100 w-full h-full ${company.className || ''}`}
                           />
-                          {company.hoverLogo && (
-                            <Image 
-                              src={company.hoverLogo} 
-                              alt={`${company.name} hover`} 
-                              className={`absolute inset-0 object-contain transition-all duration-500 opacity-0 group-hover:opacity-100 w-full h-full ${company.className || ''}`}
-                            />
-                          )}
-                        </div>
-                      ) : (
-                        <span className="text-[#181818] group-hover:text-[#c5a059] text-base md:text-lg font-medium tracking-wide whitespace-nowrap transition-colors duration-300">{company.name}</span>
-                      )}
-                    </div>
-                  ))}
-                </motion.div>
-              </div>
+                        )}
+                      </div>
+                    ) : (
+                      <span className="text-[#181818] group-hover:text-[#c5a059] text-base md:text-lg font-medium tracking-wide whitespace-nowrap transition-colors duration-300">{company.name}</span>
+                    )}
+                  </div>
+                ))}
+              </motion.div>
             </div>
-          </motion.div>
-        </div>
-      </section>
+          </div>
+        </motion.div>
+
+        {/* Consulted With Marquee */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+        >
+          <div className="text-center mb-6">
+            <h3 className="text-xl md:text-2xl font-serif text-[#181818] mb-2">Consulted With</h3>
+            <div className="w-16 h-px bg-[#c5a059] mx-auto"></div>
+          </div>
+
+          <div className="relative overflow-hidden w-full mt-2">
+            {/* Gradient overlays for fade effect */}
+            <div className="absolute left-0 top-0 bottom-0 w-12 md:w-32 bg-gradient-to-r from-[#FFF7F2] to-transparent z-10"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-12 md:w-32 bg-gradient-to-l from-[#FFF7F2] to-transparent z-10"></div>
+
+            <div className="flex">
+              <motion.div
+                className="flex items-center gap-4 md:gap-16 flex-nowrap will-change-transform"
+                animate={{
+                  x: ["-33.33%", "0%"],
+                }}
+                transition={{
+                  x: {
+                    repeat: Infinity,
+                    repeatType: "loop",
+                    duration: consultedDuration,
+                    ease: "linear",
+                  },
+                }}
+              >
+                {consultedMarquee.map((company, idx) => (
+                  <div
+                    key={`consulted-${idx}`}
+                    className="flex-shrink-0 flex items-center justify-center group"
+                  >
+                    {company.logo ? (
+                      <div className={`relative ${company.dimensions || DEFAULT_DIMENSIONS}`}>
+                        <Image
+                          src={company.logo}
+                          alt={company.name}
+                          className={`object-contain transition-all duration-500 w-full h-full ${company.className || 'grayscale brightness-[0.3] group-hover:grayscale-0 group-hover:brightness-100'} ${company.hoverLogo ? 'group-hover:opacity-0' : ''}`}
+                        />
+                        {company.hoverLogo && (
+                          <Image
+                            src={company.hoverLogo}
+                            alt={`${company.name} hover`}
+                            className={`absolute inset-0 object-contain transition-all duration-500 opacity-0 group-hover:opacity-100 w-full h-full ${company.className || ''}`}
+                          />
+                        )}
+                      </div>
+                    ) : (
+                      <span className="text-[#181818] group-hover:text-[#c5a059] text-base md:text-lg font-medium tracking-wide whitespace-nowrap transition-colors duration-300">{company.name}</span>
+                    )}
+                  </div>
+                ))}
+              </motion.div>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
   );
 }
