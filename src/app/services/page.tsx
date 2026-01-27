@@ -15,7 +15,7 @@ import serviceConstruction from '@/assets/images/services/service-construction.p
 import serviceOperations from '@/assets/images/services/service-operations.png';
 import serviceLegal from '@/assets/images/services/service-legal.jpg';
 import serviceAccounting from '@/assets/images/services/service-accounting.png';
-import serviceHospitality from '@/assets/images/services/service-hospitality.jpg';
+import serviceTraining from '@/assets/images/services/service-training.png';
 
 const SERVICES_DATA = [
   {
@@ -121,7 +121,7 @@ const SERVICES_DATA = [
     description: [
       "Every Hospitality Business and Project has unique attributes ~ We are here to support whatever you may need."
     ],
-    image: serviceHospitality
+    image: serviceTraining
   }
 ];
 
