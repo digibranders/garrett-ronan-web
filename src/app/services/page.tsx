@@ -9,12 +9,12 @@ import Image from 'next/image';
 import logoImage from '@/assets/images/logos/gkr-logo.png';
 
 // Service Images
-import serviceConcept from '@/assets/images/services/service-concept.jpg';
-import serviceInvestment from '@/assets/images/services/service-investment.jpg';
-import serviceConstruction from '@/assets/images/services/service-construction.jpg';
-import serviceOperations from '@/assets/images/services/service-operations.jpg';
+import serviceConcept from '@/assets/images/services/service-concept.jpeg';
+import serviceInvestment from '@/assets/images/services/service-investment.png';
+import serviceConstruction from '@/assets/images/services/service-construction.png';
+import serviceOperations from '@/assets/images/services/service-operations.png';
 import serviceLegal from '@/assets/images/services/service-legal.jpg';
-import serviceAccounting from '@/assets/images/services/service-accounting.jpg';
+import serviceAccounting from '@/assets/images/services/service-accounting.png';
 import serviceHospitality from '@/assets/images/services/service-hospitality.jpg';
 
 const SERVICES_DATA = [
@@ -141,7 +141,7 @@ export default function Services() {
 
   return (
     <div className="bg-[#181818] text-[#FFF7F2] font-sans selection:bg-[#c5a059] selection:text-white overflow-x-hidden">
-      
+
 
 
       {/* Hero Section - NOW LIGHT */}
@@ -154,7 +154,7 @@ export default function Services() {
           >
             <span className="text-[#c5a059] text-[10px] font-bold tracking-[0.4em] uppercase block mb-6">What We Offer</span>
             <h1 className="text-6xl md:text-8xl font-serif font-light text-[#181818] leading-[0.9] tracking-tight mb-8">
-              Comprehensive<br/>
+              Comprehensive<br />
               <span className="italic text-[#c5a059]">Hospitality Solutions</span>
             </h1>
             <p className="text-stone-600 text-xl max-w-3xl leading-relaxed">
@@ -178,17 +178,17 @@ export default function Services() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="border-b border-white/10 last:border-0 scroll-mt-24"
               >
-                <div 
+                <div
                   className="py-16 md:py-20 cursor-pointer group grid grid-cols-1 lg:grid-cols-12 gap-8"
                   onClick={() => setExpandedService(expandedService === index ? null : index)}
                 >
                   {/* Image Column */}
                   <div className="lg:col-span-5">
                     <div className="aspect-[4/3] overflow-hidden rounded-sm relative">
-                      <Image 
-                        src={service.image} 
-                        alt={service.title} 
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                      <Image
+                        src={service.image}
+                        alt={service.title}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#181818] via-transparent to-transparent opacity-60"></div>
                       <div className="absolute bottom-8 left-8">
@@ -211,9 +211,9 @@ export default function Services() {
                       {service.description.length > 0 && (
                         <motion.div
                           initial={false}
-                          animate={{ 
+                          animate={{
                             height: expandedService === index ? 'auto' : 0,
-                            opacity: expandedService === index ? 1 : 0 
+                            opacity: expandedService === index ? 1 : 0
                           }}
                           transition={{ duration: 0.4 }}
                           className="overflow-hidden"
@@ -251,7 +251,7 @@ export default function Services() {
             viewport={{ once: true }}
           >
             <h2 className="text-5xl md:text-7xl font-serif text-[#181818] mb-8 leading-tight">
-              Ready to Discuss<br/>
+              Ready to Discuss<br />
               <span className="italic text-white">Your Project?</span>
             </h2>
             <p className="text-[#181818] text-lg mb-12 max-w-2xl mx-auto">
