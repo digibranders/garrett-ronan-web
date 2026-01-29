@@ -92,7 +92,7 @@ export default function GalleryPage() {
                   className="w-full h-auto object-cover transition-all duration-700 ease-in-out transform group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <span className="text-white tracking-[0.2em] uppercase text-sm border border-white/30 px-6 py-3 backdrop-blur-sm">View Case Study</span>
+                  <span className="text-white tracking-[0.2em] uppercase text-sm border border-white/30 px-6 py-3 backdrop-blur-sm">{item.title}</span>                 
                 </div>
               </motion.div>
             ))}

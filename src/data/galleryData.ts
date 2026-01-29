@@ -24,16 +24,16 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     "description": "Gallery for Bxp ",
     "link": "https://www.bxp.com/",
     "images": [
-      "/images/gallery/BXP Residential & CRE Amenities/BXP 3.png",
+      "/images/gallery/BXP Residential & CRE Amenities/BXP 1.jpg",
       "/images/gallery/BXP Residential & CRE Amenities/BXP 2.png",
-      "/images/gallery/BXP Residential & CRE Amenities/BXP 1.jpg"
+      "/images/gallery/BXP Residential & CRE Amenities/BXP_3.png"
     ]
   },
   {
     "id": 3,
     "title": "The Beverly Hilton",
     "description": "Gallery for The Beverly Hilton",
-    "link": "#",
+    "link": "https://www.hilton.com/en/hotels/laxbhhh-the-beverly-hilton/events/",
     "images": [
       "/images/gallery/Beverly Hilton/Beverly_1.png",
       "/images/gallery/Beverly Hilton/Beverly_2.png",
@@ -44,7 +44,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     "id": 4,
     "title": "Boston Harbor",
     "description": "Gallery for Boston Harbor",
-    "link": "#",
+    "link": "https://www.bostonharborhotel.com/",
     "images": [
       "/images/gallery/Boston Harbor Hotel/Boston Harbor 2.png",
       "/images/gallery/Boston Harbor Hotel/Boston Harbor 3.png",
@@ -123,8 +123,8 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     "description": "Gallery for Rudin Group",
     "link": "https://www.rudin.com/",
     "images": [
-      "/images/gallery/Rudin Group Residential & CRE Amenities/Rudin 1.png",
       "/images/gallery/Rudin Group Residential & CRE Amenities/Rudin_2.png",
+      "/images/gallery/Rudin Group Residential & CRE Amenities/Rudin 1.png",
       "/images/gallery/Rudin Group Residential & CRE Amenities/Rudin_3.png"
     ]
   },
@@ -143,7 +143,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     "id": 13,
     "title": "Sage Hospitality",
     "description": "Gallery for Sage Hospitality",
-    "link": "https://www.sagehospitalitygroup.com/",
+    "link": "https://sagerealty.com/",
     "images": [
       "/images/gallery/Sage Hospitality Residential & CRE Amenities/sage_1.png",
       "/images/gallery/Sage Hospitality Residential & CRE Amenities/sage_2.png",
@@ -165,7 +165,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     "id": 15,
     "title": "Zuma New York",
     "description": "Gallery for Zuma New York",
-    "link": "https://www.zumarestaurant.com/en/new-york",
+    "link": "https://www.zumarestaurant.com/",
     "images": [
       "/images/gallery/Zuma New York Restaurants/zuma_1.png",
       "/images/gallery/Zuma New York Restaurants/zuma_2.png",
@@ -176,7 +176,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     "id": 16,
     "title": "Adare",
     "description": "Gallery for Adare",
-    "link": "#",
+    "link": "https://www.adaremanor.com/",
     "images": [
       "/images/gallery/adare-hotels/adare_1.png",
       "/images/gallery/adare-hotels/adare_2.png",
@@ -220,7 +220,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     "id": 20,
     "title": "Etc.venues",
     "description": "Gallery for Etc.venues",
-    "link": "#",
+    "link": "https://convene.com/about-us/etc-venues/",
     "images": [
       "/images/gallery/etc.venues meetings and events/etc_1.png",
       "/images/gallery/etc.venues meetings and events/etc_2.png",

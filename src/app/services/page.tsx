@@ -16,6 +16,7 @@ import serviceOperations from '@/assets/images/services/service-operations.png';
 import serviceLegal from '@/assets/images/services/service-legal.jpg';
 import serviceAccounting from '@/assets/images/services/service-accounting.png';
 import serviceTraining from '@/assets/images/services/service-training.png';
+import garettDiscussImage from '@/assets/images/services/garett-discuss.png';
 
 const SERVICES_DATA = [
   {
@@ -243,26 +244,46 @@ export default function Services() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 md:py-48 bg-[#c5a059] relative overflow-hidden">
-        <div className="container mx-auto px-6 md:px-12 text-center relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-5xl md:text-7xl font-serif text-[#181818] mb-8 leading-tight">
-              Ready to Discuss<br />
-              <span className="italic text-white">Your Project?</span>
-            </h2>
-            <p className="text-[#181818] text-lg mb-12 max-w-2xl mx-auto">
-              Let's explore how our services can support your hospitality vision
-            </p>
-            <Link href="/contact">
-              <Button className="bg-[#181818] text-white hover:bg-white hover:text-[#181818] px-12 py-7 text-sm uppercase tracking-[0.3em] font-bold transition-all duration-500 rounded-full">
-                Start a Conversation
-              </Button>
-            </Link>
-          </motion.div>
+      <section className="py-20 md:py-24 bg-[#c5a059] relative overflow-hidden">
+        <div className="container mx-auto px-6 md:px-12 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            {/* Left Column: Image */}
+            <motion.div
+              className="lg:col-span-5"
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="aspect-[3/4] overflow-hidden rounded-sm">
+                <Image src={garettDiscussImage} alt="Ready to Build" className="w-full h-full object-cover" />
+              </div>
+            </motion.div>
+
+            {/* Right Column: Content */}
+            <div className="lg:col-span-7">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                <h2 className="text-5xl md:text-7xl font-serif text-[#181818] mb-8 leading-tight">
+                  Ready to Build Something<br />
+                  <span className="italic text-white">Exceptional?</span>
+                </h2>
+                <p className="text-[#181818] text-lg mb-12 max-w-2xl">
+                  Let's discuss how we can support your hospitality vision
+                </p>
+                <Link href="/contact">
+                  <Button className="bg-[#181818] text-white hover:bg-white hover:text-[#181818] px-12 py-7 text-sm uppercase tracking-[0.3em] font-bold transition-all duration-500 rounded-full">
+                    <span className="hidden md:inline">Schedule Your Free Discovery Call</span>
+                    <span className="md:hidden">Schedule Free Call</span>
+                  </Button>
+                </Link>
+              </motion.div>
+            </div>
+          </div>
         </div>
       </section>
     </div>
