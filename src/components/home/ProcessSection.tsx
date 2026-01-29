@@ -19,7 +19,7 @@ export default function ProcessSection({ steps }: ProcessSectionProps) {
   const [currentWorkStep, setCurrentWorkStep] = useState(0);
 
   return (
-    <section className="py-32 md:py-48 bg-[#181818]">
+    <section id="how-we-work" className="py-32 md:py-48 bg-[#181818]">
       <div className="container mx-auto px-6 md:px-12">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -47,20 +47,17 @@ export default function ProcessSection({ steps }: ProcessSectionProps) {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 onMouseEnter={() => setCurrentWorkStep(index)}
-                className={`border-b border-white/10 last:border-0 py-8 cursor-pointer group transition-all duration-300 ${
-                  currentWorkStep === index ? 'bg-white/5' : ''
-                }`}
+                className={`border-b border-white/10 last:border-0 py-8 cursor-pointer group transition-all duration-300 ${currentWorkStep === index ? 'bg-white/5' : ''
+                  }`}
               >
                 <div className="flex gap-6 items-start px-6">
-                  <span className={`text-4xl font-serif transition-colors duration-300 ${
-                    currentWorkStep === index ? 'text-[#c5a059]' : 'text-[#c5a059]/50'
-                  }`}>
+                  <span className={`text-4xl font-serif transition-colors duration-300 ${currentWorkStep === index ? 'text-[#c5a059]' : 'text-[#c5a059]/50'
+                    }`}>
                     {step.number}
                   </span>
                   <div>
-                    <h3 className={`text-2xl md:text-3xl font-serif mb-4 transition-colors duration-300 ${
-                      currentWorkStep === index ? 'text-[#c5a059]' : 'text-white'
-                    }`}>
+                    <h3 className={`text-2xl md:text-3xl font-serif mb-4 transition-colors duration-300 ${currentWorkStep === index ? 'text-[#c5a059]' : 'text-white'
+                      }`}>
                       {step.title}
                     </h3>
                     <p className="text-stone-400 leading-relaxed">
@@ -79,7 +76,7 @@ export default function ProcessSection({ steps }: ProcessSectionProps) {
                 <motion.div
                   key={index}
                   initial={{ opacity: 0 }}
-                  animate={{ 
+                  animate={{
                     opacity: currentWorkStep === index ? 1 : 0,
                     scale: currentWorkStep === index ? 1 : 1.1
                   }}

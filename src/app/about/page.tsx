@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
-import {  Check } from 'lucide-react';
+import { Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -54,7 +54,7 @@ export default function About() {
 
   return (
     <div className="bg-[#181818] text-[#FFF7F2] font-sans selection:bg-[#c5a059] selection:text-white overflow-x-hidden">
-      
+
       {/* Hero Section */}
       <section className="relative pt-32 md:pt-48 pb-8 md:pb-32">
         <div className="container mx-auto px-6 md:px-12">
@@ -65,7 +65,7 @@ export default function About() {
           >
             <span className="text-[#c5a059] text-[10px] font-bold tracking-[0.4em] uppercase block mb-6">About Us</span>
             <h1 className="text-6xl md:text-8xl font-serif font-light text-white leading-[1.1] mb-12 max-w-6xl">
-              Real Operators,<br/>
+              Real Operators,<br />
               <span className="italic text-[#c5a059]">GKR Hospitality</span>
             </h1>
             <p className="text-stone-300 text-xl max-w-3xl leading-relaxed">
@@ -79,7 +79,7 @@ export default function About() {
       <section className="py-5 md:py-12 bg-[#181818]">
         <div className="container mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-            <motion.div 
+            <motion.div
               className="lg:col-span-5"
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -110,11 +110,11 @@ export default function About() {
                 </p>
 
                 <div className="space-y-6 text-stone-400 leading-relaxed ">
-                  <p>
-                    This includes responsibility for opening and operating, Zuma and Azumi restaurants across Six U.S. Cities.
-In 2023 , he went on to join and develop BLACE as COO, a unique start up tech-enabled meeting /event/ venue marketplace. Established in NYC and LA, he later oversaw their merger acquisition  to form, Resident BLACE Holdings,  where he serves as Senior Advisor.  
-The COO who launched etc.venues in the US, opening their first 3 NYC venues, going on to transition the company through a successful M&A with Convene.
-The leader who made sure the first ever Equinox Hotel’s F&B operation matched the brand's premium positioning from day one.
+                  <p className="mb-5"><p className="mb-5">
+                    This includes responsibility for opening and operating, Zuma and Azumi restaurants across Six U.S. Cities.</p><p className="mb-5">
+                      In 2023 , he went on to join and develop BLACE as COO, a unique start up tech-enabled meeting /event/ venue marketplace. Established in NYC and LA, he later oversaw their merger acquisition  to form, Resident BLACE Holdings,  where he serves as Senior Advisor. </p>
+                    <p className="mb-5">The COO who launched etc.venues in the US, opening their first 3 NYC venues, going on to transition the company through a successful M&A with Convene.</p>
+                    <p className="mb-5">The leader who made sure the first ever Equinox Hotel’s F&B operation matched the brand's premium positioning from day one.</p>
                   </p>
 
                   <p className="text-white text-lg font-serif italic border-l-2 border-[#c5a059] pl-6 py-2">
@@ -136,7 +136,7 @@ The leader who made sure the first ever Equinox Hotel’s F&B operation matched 
         <div className="container mx-auto px-6 md:px-12">
           <div className="mb-16">
             <span className="text-[#c5a059] text-[10px] tracking-[0.4em] uppercase font-bold block mb-4">30+ Years</span>
-            <h2 className="text-4xl md:text-6xl font-serif text-white mb-6">The Experience That<br/>Built This Firm</h2>
+            <h2 className="text-4xl md:text-6xl font-serif text-white mb-6">The Experience That<br />Built This Firm</h2>
           </div>
 
           <div className="space-y-1">
@@ -174,7 +174,7 @@ The leader who made sure the first ever Equinox Hotel’s F&B operation matched 
             <div>
               <h4 className="text-white font-serif text-xl mb-4">Industry Involvement</h4>
               <p className="text-stone-400 leading-relaxed">
-                Active member of HSMAI. Board member,
+                Active member of HSMAI.
               </p>
               <p className="text-stone-400 leading-relaxed">
                 Active member of NYC Tourism + Conventions,
@@ -183,7 +183,7 @@ The leader who made sure the first ever Equinox Hotel’s F&B operation matched 
                 Board member: NYC Hospitality Alliance—supporting advocacy and policy work for the industry.
               </p>
             </div>
-             <div>
+            <div>
               <h4 className="text-white font-serif text-xl mb-4">Certificates/Associations</h4>
               <ul className="text-stone-400 leading-relaxed space-y-2">
                 <li>Cornell University PDP. Real Estate Evaluation, Rev Management</li>
@@ -205,7 +205,7 @@ The leader who made sure the first ever Equinox Hotel’s F&B operation matched 
             <h2 className="text-4xl md:text-6xl font-serif text-[#181818]">What Makes Us Different</h2>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {/* Full Life-Cycle Support */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
@@ -270,28 +270,33 @@ The leader who made sure the first ever Equinox Hotel’s F&B operation matched 
                 Choose à la carte support or an end-to-end engagement based on your stage, priorities, and internal resources and capacity.
               </p>
             </motion.div>
-          </div>
-
-          {/* Complete Services List */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mt-16 pt-16 border-t border-[#181818]/10"
-          >
-            <h3 className="text-2xl font-serif text-[#181818] mb-8">Complete Service Capabilities</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
-              {SERVICES_LIST.slice(6).map((service, index) => (
-                <div key={index} className="flex items-start gap-2">
-                  <Check className="w-4 h-4 text-[#c5a059] flex-shrink-0 mt-0.5" />
-                  <span className="text-stone-600 text-sm">{service}</span>
+            {/* Complete Services List - Converted to Card 04 */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="border border-[#181818]/10 p-8 hover:border-[#c5a059] hover:bg-white transition-all duration-500"
+            >
+              <div className="mb-6">
+                <div className="w-12 h-12 rounded-full border-2 border-[#c5a059] flex items-center justify-center mb-4">
+                  <span className="text-[#c5a059] text-xl font-serif">04</span>
                 </div>
-              ))}
-            </div>
-            <p className="text-stone-600 leading-relaxed max-w-4xl">
-              Garrett and his team have worked at all levels of the industry with some of the most recognized brands in the hospitality world allowing them to bring a unique experience and perspective to you and any business, project or situation.
-            </p>
-          </motion.div>
+                <h3 className="text-2xl font-serif text-[#181818] mb-4">Complete Service Capabilities</h3>
+              </div>
+              <div className="space-y-2 mb-6">
+                {SERVICES_LIST.slice(6).map((service, index) => (
+                  <div key={index} className="flex items-start gap-2">
+                    <Check className="w-4 h-4 text-[#c5a059] flex-shrink-0 mt-0.5" />
+                    <span className="text-stone-600 text-sm">{service}</span>
+                  </div>
+                ))}
+              </div>
+              <p className="text-stone-600 leading-relaxed text-sm">
+                Garrett and his team have worked at all levels of the industry allowing them to bring a unique experience to you.
+              </p>
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -300,7 +305,7 @@ The leader who made sure the first ever Equinox Hotel’s F&B operation matched 
         <div className="container mx-auto px-6 md:px-12 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
             {/* Left Column: Image */}
-            <motion.div 
+            <motion.div
               className="lg:col-span-5"
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -321,7 +326,7 @@ The leader who made sure the first ever Equinox Hotel’s F&B operation matched 
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
                 <h2 className="text-5xl md:text-7xl font-serif text-[#181818] mb-8 leading-tight">
-                  Ready to Build Something<br/>
+                  Ready to Build Something<br />
                   <span className="italic text-white">Exceptional?</span>
                 </h2>
                 <p className="text-[#181818] text-lg mb-12 max-w-2xl">

@@ -42,6 +42,7 @@ import hiltonHotelsLogo from '@/assets/images/logos/hilton_hotels.png';
 import rLogo from '@/assets/images/logos/r.png';
 import rTransparentLogo from '@/assets/images/logos/r-transperent.png';
 import waldorfLogo from '@/assets/images/logos/waldorf.png';
+import nycHospitalityLogo from '@/assets/images/logos/nyc_hospitality.png';
 
 interface Company {
   name: string;
@@ -75,7 +76,7 @@ const EMPLOYED_BY_COMPANIES: Company[] = [
 const CONSULTED_WITH_COMPANIES: Company[] = [
   { name: 'BXP', logo: bxpLogo, dimensions: 'h-8 w-[90px] md:h-12 w-[120px]' },
   { name: 'Rudin Group', logo: rudinLogo, dimensions: 'h-4 w-[70px] md:h-6 w-[90px]' },
-  { name: 'Zuma', logo: zumaConsultedLogo, dimensions: 'h-6 w-[70px] md:h-8 w-[100px]' },
+  { name: 'Zuma', logo: zumaConsultedLogo, dimensions: 'h-4 w-[70px] md:h-6 w-[90px]' },
   { name: 'Equinox Hotels', logo: equinoxHotelsLogo },
   { name: 'R', logo: rLogo, hoverLogo: rLogo, className: 'grayscale-0 brightness-100' },
   { name: 'Convene', logo: conveneLogo },
@@ -86,7 +87,8 @@ const CONSULTED_WITH_COMPANIES: Company[] = [
   { name: 'Fairfield', logo: fairfieldLogo },
   { name: 'Montauk', logo: montaukLogo },
   { name: 'Blace', logo: blaceLogo, dimensions: 'h-6 w-[100px] md:h-8 w-[120px]' },
-  { name: 'Buccament', logo: buccamentTransperentLogo, hoverLogo: buccamentLogo, className: 'grayscale-0 brightness-100' }
+  { name: 'Buccament', logo: buccamentTransperentLogo, hoverLogo: buccamentLogo, className: 'grayscale-0 brightness-100' },
+  { name: 'Nyc Hospitality', logo: nycHospitalityLogo, hoverLogo: nycHospitalityLogo, className: 'grayscale-0 brightness-100' },
 ];
 
 export default function LogosSection() {
@@ -215,7 +217,7 @@ export default function LogosSection() {
 
             <div className="flex">
               <motion.div
-                className="flex items-center gap-4 md:gap-16 flex-nowrap will-change-transform"
+                className="flex items-center gap-8 md:gap-24 flex-nowrap will-change-transform"
                 animate={{
                   x: ["-33.33%", "0%"],
                 }}
