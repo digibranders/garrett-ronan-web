@@ -22,7 +22,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     "id": 2,
     "title": "BXP",
     "description": "Gallery for Bxp ",
-    "link": "#",
+    "link": "https://www.bxp.com/",
     "images": [
       "/images/gallery/BXP Residential & CRE Amenities/BXP 3.png",
       "/images/gallery/BXP Residential & CRE Amenities/BXP 2.png",
@@ -55,7 +55,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     "id": 5,
     "title": "Equinox Hotels",
     "description": "Gallery for Equinox Hotels",
-    "link": "#",
+    "link": "https://www.equinox-hotels.com/",
     "images": [
       "/images/gallery/EQUINOX HOTELS/EQUINOX HOTELS 2.png",
       "/images/gallery/EQUINOX HOTELS/Equionix_2.png",
@@ -64,9 +64,9 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     "id": 6,
-    "title": "Fierfield Beach Club",
-    "description": "Gallery for Fierfield Beach Club",
-    "link": "#",
+    "title": "Fairfield Beach Club",
+    "description": "Gallery for Fairfield Beach Club",
+    "link": "https://www.fbc.club/",
     "images": [
       "/images/gallery/FBC Private & Member-only/SaveClip.App_455806974_737759325100612_7556852630658393511_n.jpg",
       "/images/gallery/FBC Private & Member-only/SaveClip.App_455877427_1155219119098693_8402729839714548611_n.jpg",
@@ -88,7 +88,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     "id": 8,
     "title": "Meet Resident",
     "description": "Gallery for Meet Resident",
-    "link": "#",
+    "link": "https://www.meetresident.com/",
     "images": [
       "/images/gallery/Meet Resident Private & Members Only/Resident .png",
       "/images/gallery/Meet Resident Private & Members Only/Resident 2.png",
@@ -99,7 +99,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     "id": 9,
     "title": "Montauk Distilling Co",
     "description": "Gallery for Montauk Distilling Co",
-    "link": "#",
+    "link": "https://www.montaukdistillingco.com/",
     "images": [
       "/images/gallery/Montauk Distilling Co Restaurants & Bar/Montauk Distilling Co. 1.png",
       "/images/gallery/Montauk Distilling Co Restaurants & Bar/Montauk Distilling Co. 2.png",
@@ -121,7 +121,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     "id": 11,
     "title": "Rudin Group",
     "description": "Gallery for Rudin Group",
-    "link": "#",
+    "link": "https://www.rudin.com/",
     "images": [
       "/images/gallery/Rudin Group Residential & CRE Amenities/Rudin 1.png",
       "/images/gallery/Rudin Group Residential & CRE Amenities/Rudin_2.png",
@@ -132,7 +132,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     "id": 12,
     "title": "Starr Restaurants",
     "description": "Gallery for Starr Restaurants",
-    "link": "#",
+    "link": "https://www.starr-restaurants.com/",
     "images": [
       "/images/gallery/STARR Restaurants/Starr_1.jpg",
       "/images/gallery/STARR Restaurants/Starr_2.jpg",
@@ -143,7 +143,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     "id": 13,
     "title": "Sage Hospitality",
     "description": "Gallery for Sage Hospitality",
-    "link": "#",
+    "link": "https://www.sagehospitalitygroup.com/",
     "images": [
       "/images/gallery/Sage Hospitality Residential & CRE Amenities/sage_1.png",
       "/images/gallery/Sage Hospitality Residential & CRE Amenities/sage_2.png",
@@ -154,7 +154,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     "id": 14,
     "title": "Waldorf Astoria New York",
     "description": "Gallery for Waldorf Astoria New York",
-    "link": "#",
+    "link": "https://www.waldorfastorianewyork.com/",
     "images": [
       "/images/gallery/Waldorf Astoria New York Hotels/Waldorf Astoria New York 2.png",
       "/images/gallery/Waldorf Astoria New York Hotels/waldrof_2.png",
@@ -165,7 +165,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     "id": 15,
     "title": "Zuma New York",
     "description": "Gallery for Zuma New York",
-    "link": "#",
+    "link": "https://www.zumarestaurant.com/en/new-york",
     "images": [
       "/images/gallery/Zuma New York Restaurants/zuma_1.png",
       "/images/gallery/Zuma New York Restaurants/zuma_2.png",
@@ -198,7 +198,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     "id": 18,
     "title": "Bakan",
     "description": "Gallery for Bakan",
-    "link": "#",
+    "link": "https://www.bakanwynwood.com/",
     "images": [
       "/images/gallery/bakan-restaurant/BAKAN 1.webp",
       "/images/gallery/bakan-restaurant/BAKAN 2.webp",
