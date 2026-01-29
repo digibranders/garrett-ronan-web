@@ -292,11 +292,15 @@ export default function About() {
                   </div>
                 ))}
               </div>
-              <p className="text-stone-600 leading-relaxed text-sm">
+              {/* <p className="text-stone-600 leading-relaxed text-sm">
                 Garrett and his team have worked at all levels of the industry allowing them to bring a unique experience to you.
-              </p>
+              </p> */}
             </motion.div>
           </div>
+
+          <p className="text-stone-600 leading-relaxed text-lg md:text-xl text-center max-w-4xl mx-auto mt-12">
+            Garrett and his team have worked at all levels of the industry allowing them to bring a unique experience to you.
+          </p>
         </div>
       </section>
 
