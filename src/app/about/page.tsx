@@ -110,11 +110,17 @@ export default function About() {
                 </p>
 
                 <div className="space-y-6 text-stone-400 leading-relaxed ">
-                  <p className="mb-5"><p className="mb-5">
-                    This includes responsibility for opening and operating, Zuma and Azumi restaurants across Six U.S. Cities.</p><p className="mb-5">
-                      In 2023 , he went on to join and develop BLACE as COO, a unique start up tech-enabled meeting /event/ venue marketplace. Established in NYC and LA, he later oversaw their merger acquisition  to form, Resident BLACE Holdings,  where he serves as Senior Advisor. </p>
-                    <p className="mb-5">The COO who launched etc.venues in the US, opening their first 3 NYC venues, going on to transition the company through a successful M&A with Convene.</p>
-                    <p className="mb-5">The leader who made sure the first ever Equinox Hotel’s F&B operation matched the brand's premium positioning from day one.</p>
+                  <p>
+                    This includes responsibility for opening and operating, Zuma and Azumi restaurants across Six U.S. Cities.
+                  </p>
+                  <p>
+                    In 2023, he went on to join and develop BLACE as COO, a unique start up tech-enabled meeting /event/ venue marketplace. Established in NYC and LA, he later oversaw their merger acquisition to form, Resident BLACE Holdings, where he serves as Senior Advisor.
+                  </p>
+                  <p>
+                    The COO who launched etc.venues in the US, opening their first 3 NYC venues, going on to transition the company through a successful M&A with Convene.
+                  </p>
+                  <p>
+                    The leader who made sure the first ever Equinox Hotel’s F&B operation matched the brand's premium positioning from day one.
                   </p>
 
                   <p className="text-white text-lg font-serif italic border-l-2 border-[#c5a059] pl-6 py-2">
