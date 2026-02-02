@@ -18,9 +18,12 @@ import serviceAccounting from '@/assets/images/services/service-accounting.png';
 import serviceTraining from '@/assets/images/services/service-training.png';
 
 // Work Images
-import workStrategy from '@/assets/images/work/work-strategy.jpg';
-import workPlanning from '@/assets/images/work/work-planning.jpg';
-import workDining from '@/assets/images/work/work-dining.jpg';
+import initialBriefingImg from '@/assets/images/work/initial-briefing.png';
+import auditDiagnosisImg from '@/assets/images/work/audit-diagnosis.png';
+import practicalPlanImg from '@/assets/images/work/practical-plan.png';
+import projectManagementImg from '@/assets/images/work/project-management.png';
+import realResultsImg from '@/assets/images/work/real-results.png';
+
 
 // Portfolio Images
 import hotelsImg from '@/assets/images/our_work/hotels.png';
@@ -30,11 +33,10 @@ import privateClubImg from '@/assets/images/our_work/private club 1.jpg';
 import eventsImg from '@/assets/images/our_work/events.png';
 import residentImg from '@/assets/images/our_work/resident_1.png';
 
-
-
 // Testimonial Images
 import testimonialLobby from '@/assets/images/testimonials/testimonial-lobby.jpg';
 import testimonialReception from '@/assets/images/testimonials/testimonial-reception.jpg';
+import testimonialDining from '@/assets/images/testimonials/testimonial-dining.jpg';
 
 // Hero Slideshow Images - NYC, LA, Caribbean
 export const HERO_IMAGES = [
@@ -102,31 +104,31 @@ export const HOW_WE_WORK = [
     number: "01",
     title: "Initial Briefing",
     description: "We take the necessary time understanding our client’s needs, starting with core objectives, opportunities and challenges. Then, working colaboratively with you  to agree best approach and actionable next steps.",
-    image: workStrategy
+    image: initialBriefingImg
   },
   {
     number: "02",
     title: "Audit and Clear Diagnosis",
     description: "We spend time on site with you and your key team players to observe and audit your project or business appropriately.  We get under the hood to advise on potential risks and opportunities with the best direction forward.  Where there are challenges, we identify root causes, quantify the impact. We provide clear recommendations and real solutions.",
-    image: workPlanning
+    image: auditDiagnosisImg
   },
   {
     number: "03",
     title: "Practical Plan",
     description: "We build a focused roadmap with specific actions, clear timelines, and realistic outcomes. You'll know what we're doing, when, and what results to expect.",
-    image: workPlanning // Using same image as was done in original code (duplicate URL)
+    image: practicalPlanImg
   },
   {
     number: "04",
     title: "Project Management ~ Hands-On Implementation",
     description: "Where appropriate we work on-site with you and your team, helping build systems, managing, supporting and solving for the unexpected. We will help ensure proper implementation and successful completion for every project.",
-    image: serviceTraining
+    image: projectManagementImg
   },
   {
     number: "05",
     title: "Real Results",
-    description: "When we leave, you and your team know how to maintain what we collectively build.  Solutions that stick.  Performance that lasts. You and the project are set for success",
-    image: testimonialReception
+    description: "When we leave, you and your team know how to maintain what we collectively build.  Solutions that stick.  Performance that lasts. You and the project are set for success.",
+    image: realResultsImg
   }
 ];
 
@@ -170,7 +172,7 @@ export const TESTIMONIALS = [
     quote: "Our margins were disappearing and we couldn't figure out why. Within 30 days, they identified $200K in annual leakage and gave us a plan to fix it. Six months later, we're profitable again.",
     author: "Owner",
     company: "Restaurant Group",
-    image: workDining
+    image: testimonialDining
   },
   {
     quote: "Most consultants tell you what's wrong and leave. These guys stayed until it was fixed. That made all the difference.",

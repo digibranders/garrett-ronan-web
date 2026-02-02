@@ -17,11 +17,11 @@ export default function CTASection() {
             viewport={{ once: true }}
           >
             <h2 className="text-5xl md:text-7xl font-serif text-[#181818] mb-8 leading-tight">
-              Let's Talk About<br/>
+              Let's Talk About<br />
               <span className="italic text-white">Your Situation</span>
             </h2>
             <p className="text-[#181818] text-lg leading-relaxed mb-8">
-              We offer an initial complimentary discovery call and where practical an in person meeting where we'll:
+              We offer an initial complimentary discovery call and where practical, an in-person meeting where we will:
             </p>
             <ul className="space-y-4 mb-12">
               {[

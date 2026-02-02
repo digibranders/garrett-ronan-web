@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import { Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -9,8 +10,16 @@ import { motion, AnimatePresence } from 'framer-motion';
 import logoImage from '@/assets/images/logos/gkr-logo.png';
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const handleLogoClick = (e: React.MouseEvent) => {
+    if (pathname === '/') {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,10 +42,12 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className={`fixed top-0 w-full z-50 transition-all duration-700 ${scrolled ? 'bg-[#181818]/95 backdrop-blur-xl py-4 border-b border-white/10 shadow-lg' : 'bg-[#181818]/60 backdrop-blur-md py-8'}`}>
+      <nav className={`fixed top-10 w-full z-50 transition-all duration-700 ${scrolled ? 'bg-[#181818]/95 backdrop-blur-xl py-4 border-b border-white/10 shadow-lg' : 'bg-[#181818]/60 backdrop-blur-md py-8'}`}>
         <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <img src={logoImage.src} alt="GKR" className={`object-contain transition-all duration-500 ${scrolled ? 'h-10' : 'h-14'} brightness-0 invert`} />
+            <Link href="/" onClick={handleLogoClick}>
+              <img src={logoImage.src} alt="GKR" className={`object-contain transition-all duration-500 ${scrolled ? 'h-10' : 'h-14'} brightness-0 invert cursor-pointer`} />
+            </Link>
           </div>
 
           <div className="hidden md:flex items-center gap-16">
@@ -92,7 +103,12 @@ export default function Navbar() {
 
             {/* Mobile Menu Logo */}
             <div className="absolute top-8 left-1/2 -translate-x-1/2">
-              <img src={logoImage.src} alt="GKR" className="h-12 object-contain brightness-0 invert opacity-80" />
+              <Link href="/" onClick={(e) => {
+                handleLogoClick(e);
+                setMobileMenuOpen(false);
+              }}>
+                <img src={logoImage.src} alt="GKR" className="h-12 object-contain brightness-0 invert opacity-80 cursor-pointer" />
+              </Link>
             </div>
 
             <motion.div

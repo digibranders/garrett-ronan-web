@@ -274,3 +274,24 @@ _Status: Ready for user verification._
   - Successfully ran `npm run build` with no errors.
 
 _Status: Refactoring complete and verified._
+
+## 2026-02-02 - Logo Home Link Integration
+
+- **Goal**: Add home navigation links and "scroll-to-top" behavior to the logos in the header.
+- **Changes**:
+  - **Navbar Refactoring**:
+    - Wrapped the desktop logo `<img>` in a Next.js `<Link href="/">` component.
+    - Wrapped the mobile menu logo `<img>` in a Next.js `<Link href="/">` component.
+    - Implemented `handleLogoClick` using `usePathname` from `next/navigation`:
+      - If user is already on the home page (`/`), the click triggers a smooth scroll to the top of the page using `window.scrollTo`.
+      - If user is on a different page, it performs standard navigation to `/`.
+    - Added `onClick={handleLogoClick}` to the desktop logo.
+    - Added `onClick={(e) => { handleLogoClick(e); setMobileMenuOpen(false); }}` to the mobile logo to ensure the menu closes upon navigation/scrolling.
+    - Added `cursor-pointer` utility class for correct affordance.
+  - **Decision**: Skipped footer logo link as per user request.
+- **Verification**:
+  - Performed `npm run build` - **SUCCESS**.
+  - Verified path-aware scrolling logic and mobile state management.
+- **Build Status**: Verified successfully.
+
+_Status: Implementation complete and verified._
