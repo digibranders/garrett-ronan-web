@@ -7,6 +7,32 @@ import Footer from '@/components/common/Footer';
 export const metadata: Metadata = {
   title: "GKR Hospitality",
   description: "Simply Practical Yet Creative Solutions for Hospitality",
+  metadataBase: new URL('https://gkrhospitality.com'),
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title: 'GKR Hospitality',
+    description: 'Simply Practical Yet Creative Solutions for Hospitality',
+    url: 'https://gkrhospitality.com',
+    siteName: 'GKR Hospitality',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'GKR Hospitality Logo',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'GKR Hospitality',
+    description: 'Simply Practical Yet Creative Solutions for Hospitality',
+    images: ['/og-image.png'],
+  },
   icons: {
     icon: [
       { url: '/favicon.ico' },

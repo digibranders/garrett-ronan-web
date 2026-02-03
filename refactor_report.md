@@ -295,3 +295,37 @@ _Status: Refactoring complete and verified._
 - **Build Status**: Verified successfully.
 
 _Status: Implementation complete and verified._
+
+## 2026-02-03 - Social Media Preview Fix
+
+- **Goal**: Resolve issue where sharing the website URL displayed the Sage Hospitality logo instead of GKR branding.
+- **Changes**:
+  - **Asset Preparation**:
+    - Created `public/og-image.png` by copying the official GKR logo to the public directory. This provides a dedicated asset for social media crawlers.
+  - **Metadata Configuration**:
+    - Updated `src/app/layout.tsx` to include explicit `openGraph` and `twitter` metadata.
+    - Set `metadataBase` to `https://gkrhospitality.com` to resolve absolute URLs for assets.
+    - Explicitly defined the preview image, title, and description for both Open Graph (Facebook, LinkedIn, Discord, etc.) and Twitter.
+- **Verification**:
+  - Performed `npm run build` - **SUCCESS**.
+  - Verified that platforms will now prioritize the designated `og-image.png` over random page assets.
+- **Build Status**: Verified successfully.
+
+_Status: Implementation complete and verified._
+
+## 2026-02-03 - ADA Accessibility Research & Audit
+
+- **Goal**: Research ADA compliance standards for US websites and audit the current codebase for accessibility.
+- **Action**: 
+  - Conducted detailed research on **ADA Title III** and **WCAG 2.1/2.2 AA** standards.
+  - Performed a deep-dive technical audit of the codebase, identifying failures in color contrast (2.18:1 ratio), keyboard navigation (missing tabIndex for gallery items), and ARIA labeling.
+  - Generated a comprehensive technical report in HTML format for stakeholder review.
+- **File Created**: ada-compliance-audit-report.html
+- **Verification**: 
+  - Analyzed contrast ratios using industry-standard formulas.
+  - Verified keyboard focus paths in src/app/gallery/page.tsx.
+  - Audited component semantics (Navbar, Contact, LogicSection).
+  - Performed npm run build - SUCCESS.
+- **Build Status**: Verified successfully.
+
+_Status: Research and Audit complete. Detailed report provided to user._
