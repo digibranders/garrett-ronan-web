@@ -24,7 +24,7 @@ export default function MovingRibbon() {
                     x: ["0%", "-50%"],
                 }}
                 transition={{
-                    duration: 200,
+                    duration: 300,
                     repeat: Infinity,
                     ease: "linear",
                 }}

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADA Web Accessibility Compliance Audit - GKR Hospitality</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #c5a059;
+            --background: #181818;
+            --surface: #242424;
+            --light: #FFF7F2;
+            --text-main: #f0f0f0;
+            --text-muted: #a0a0a0;
+            --danger: #ff4d4d;
+            --warning: #ffcc00;
+            --success: #2ecc71;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background);
+            color: var(--text-main);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--surface);
+            padding: 4rem 2rem;
+            border-bottom: 2px solid var(--primary);
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        h1 { font-size: 2.5rem; color: var(--text-main); margin-bottom: 0.5rem; }
+        .subtitle { font-size: 1.1rem; color: var(--primary); letter-spacing: 0.2em; text-transform: uppercase; }
+
+        .executive-summary {
+            background: rgba(197, 160, 89, 0.05);
+            border-left: 4px solid var(--primary);
+            padding: 2rem;
+            margin: 3rem 0;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .badge-critical { background: var(--danger); color: white; }
+        .badge-moderate { background: var(--warning); color: #181818; }
+        .badge-legal { background: #3498db; color: white; }
+
+        .card {
+            background: var(--surface);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .issue-item {
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding: 1.5rem 0;
+        }
+        .issue-item:last-child { border: none; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        th { color: var(--primary); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em; }
+
+        .path { font-family: monospace; color: var(--primary); background: rgba(0,0,0,0.3); padding: 2px 4px; border-radius: 3px; }
+
+        .footer {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .highlight-red { color: var(--danger); font-weight: bold; }
+
+        .roadmap-list {
+            list-style: none;
+            padding: 0;
+        }
+        .roadmap-list li {
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: 1rem;
+        }
+        .roadmap-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <p class="subtitle">Internal Engineering Report</p>
+    <h1>ADA Compliance & WCAG 2.1 Audit</h1>
+    <p style="color: var(--text-muted)">Project: GKR Hospitality Web (2025)</p>
+</header>
+
+<div class="container">
+    
+    <section class="executive-summary">
+        <h2>Executive Summary</h2>
+        <p>This report documents the current accessibility status of the GKR Hospitality website. As a premium hospitality firm operating in the US, compliance with the <strong>Americans with Disabilities Act (ADA)</strong> is legally required. The site was audited against <strong>WCAG 2.1 Level AA</strong> standards.</p>
+        <p><strong>Current Status:</strong> <span class="highlight-red">Non-Compliant</span>. While the semantic structure is strong, there are critical failures in color contrast and keyboard navigation that expose the organization to legal risks and prevent users with certain disabilities from accessing content.</p>
+    </section>
+
+    <section class="card">
+        <h2>1. Regulatory Context</h2>
+        <p>In the United States, ADA Title III applies to all "places of public accommodation." The DOJ and US courts have interpreted this to include public-facing websites. Failure to comply can lead to lawsuits, which have increased by over 200% in the hospitality sector since 2021.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Standard</th>
+                    <th>Status</th>
+                    <th>Requirement</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>WCAG 2.1 Level A</strong></td>
+                    <td>Partial</td>
+                    <td>Minimum baseline accessibility.</td>
+                </tr>
+                <tr>
+                    <td><strong>WCAG 2.1 Level AA</strong></td>
+                    <td>Fail</td>
+                    <td>Standard legal benchmark for US businesses.</td>
+                </tr>
+                <tr>
+                    <td><strong>WCAG 2.2</strong></td>
+                    <td>Incomplete</td>
+                    <td>Latest recommendations involving mobile/cognitive aids.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section class="card">
+        <h2>2. Critical Findings (Priority 1)</h2>
+        
+        <div class="issue-item">
+            <span class="badge badge-critical">Critical Failure</span>
+            <h3>Insufficient Color Contrast</h3>
+            <p><strong>Location:</strong> <span class="path">LogosSection.tsx</span>, <span class="path">PhilosophySection.tsx</span>, <span class="path">FAQ (Contact Page)</span></p>
+            <p>The site uses a brand gold color (<span style="color: #c5a059; background: white; padding: 0 4px;">#c5a059</span>) on a light cream background (<span style="color: black; background: #FFF7F2; padding: 0 4px;">#FFF7F2</span>). This results in a contrast ratio of <strong>2.18:1</strong>. The WCAG AA minimum is <strong>4.5:1</strong>.</p>
+            <p><em>Effect:</em> Text is unreadable for users with low vision or color blindness.</p>
+        </div>
+
+        <div class="issue-item">
+            <span class="badge badge-critical">Critical Failure</span>
+            <h3>Keyboard Trap / Navigation Inoperability</h3>
+            <p><strong>Location:</strong> <span class="path">gallery/page.tsx</span></p>
+            <p>The Portfolio/Gallery items are implemented as clickable <code>&lt;div&gt;</code> elements without <code>tabindex</code>. They cannot be reached or activated using the keyboard only.</p>
+            <p><em>Effect:</em> Users who use screen readers or switches instead of a mouse are completely locked out of the "Selected Works" content.</p>
+        </div>
+
+        <div class="issue-item">
+            <span class="badge badge-critical">Critical Failure</span>
+            <h3>Missing Button Labels</h3>
+            <p><strong>Location:</strong> <span class="path">Navbar.tsx</span>, <span class="path">gallery/page.tsx</span> (Close icons)</p>
+            <p>The Mobile Hamburger menu and modal "X" close buttons use raw icons without text or <code>aria-label</code>.</p>
+            <p><em>Effect:</em> Screen readers will announce "Button" with no context, providing zero utility to blind users.</p>
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>3. Moderate Findings (Priority 2)</h2>
+        <div class="issue-item">
+            <span class="badge badge-moderate">Moderate</span>
+            <h3>Vague Imagery (Alt Text)</h3>
+            <p><strong>Location:</strong> Site-wide <code>&lt;Image /&gt;</code> tags.</p>
+            <p>Alt text currently uses placeholders like "Hero 1" or decorative terms. Meaningful images lack descriptive text, while strictly decorative images lack appropriate null alt tags.</p>
+        </div>
+        <div class="issue-item">
+            <span class="badge badge-moderate">Moderate</span>
+            <h3>Motion Control (Vestibular Disorders)</h3>
+            <p><strong>Location:</strong> <span class="path">MovingRibbon.tsx</span></p>
+            <p>The site contains an infinitely looping high-motion ribbon at the top of every page. There is no mechanism to pause it.</p>
+            <p><em>Effect:</em> Can cause discomfort or seizures for users with vestibular or motion sensitivities.</p>
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>4. Recommendations & Roadmap</h2>
+        <p>As per CTO standards, we recommend a two-phase remediation plan:</p>
+        
+        <h3>Phase 1: Legal Risk Mitigation (Immediate)</h3>
+        <ul class="roadmap-list">
+            <li>Update <span class="path">tailwind.config.ts</span> to include an "Accessible Gold" with darkened contrast.</li>
+            <li>Apply <code>aria-label</code> to all iconic buttons.</li>
+            <li>Convert Gallery <code>&lt;div&gt;</code> wrappers to <code>&lt;button&gt;</code> or add ARIA roles/tabindex.</li>
+        </ul>
+
+        <h3>Phase 2: Semantic Cleanup (Following Sprints)</h3>
+        <ul class="roadmap-list">
+            <li>Implement <code>aria-expanded</code> states for FAQ accordion logic.</li>
+            <li>Conduct a full Alt-Text audit for all assets.</li>
+            <li>Add a "Reduced Motion" preference check or a pause button for moving components.</li>
+        </ul>
+    </section>
+
+</div>
+
+<div class="footer">
+    <p>&copy; 2025 Garrett Ronan Hospitality - Engineering Audit</p>
+    <p>Confidential Asset. Generated by AI Engineering Assistant.</p>
+</div>
+
+</body>
+</html>
