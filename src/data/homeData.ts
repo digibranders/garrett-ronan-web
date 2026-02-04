@@ -19,10 +19,10 @@ import serviceTraining from '@/assets/images/services/service-training.png';
 
 // Work Images
 import initialBriefingImg from '@/assets/images/work/initial-briefing.png';
-import auditDiagnosisImg from '@/assets/images/work/audit-diagnosis.png';
-import practicalPlanImg from '@/assets/images/work/practical-plan.png';
-import projectManagementImg from '@/assets/images/work/project-management.png';
-import realResultsImg from '@/assets/images/work/real-results.png';
+import auditDiagnosisImg from '@/assets/images/work/Audit and Clear Diagnosis.png';
+import practicalPlanImg from '@/assets/images/work/Practical Plan.png';
+import projectManagementImg from '@/assets/images/work/Project Management.png';
+import realResultsImg from '@/assets/images/work/Real Results.png';
 
 
 // Portfolio Images

@@ -14,8 +14,25 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const handleLogoClick = (e: React.MouseEvent) => {
-    if (pathname === '/') {
+  const handleNavClick = (e: React.MouseEvent, href: string) => {
+    // Check if it's a hash link pointing to the current page
+    if (href.includes('#')) {
+      const [path, hash] = href.split('#');
+      // Check if we're on the same page (ignoring the hash)
+      if (pathname === path || (path === '' && pathname === '/')) {
+        e.preventDefault();
+        const element = document.getElementById(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+      return;
+    }
+
+
+
+    // Standard page link - scroll to top if already on page
+    if (pathname === href) {
       e.preventDefault();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
@@ -42,12 +59,13 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className={`fixed top-10 w-full z-50 transition-all duration-700 ${scrolled ? 'bg-[#181818]/95 backdrop-blur-xl py-4 border-b border-white/10 shadow-lg' : 'bg-[#181818]/60 backdrop-blur-md py-8'}`}>
+      <nav className={`fixed top-0 w-full z-50 transition-all duration-700 ${scrolled ? 'bg-[#181818]/95 backdrop-blur-xl py-4 border-b border-white/10 shadow-lg' : 'bg-[#181818]/60 backdrop-blur-md py-8'}`}>
         <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <Link href="/" onClick={handleLogoClick}>
+            <Link href="/" onClick={(e) => handleNavClick(e, '/')}>
               <img src={logoImage.src} alt="GKR" className={`object-contain transition-all duration-500 ${scrolled ? 'h-10' : 'h-14'} brightness-0 invert cursor-pointer`} />
             </Link>
+
           </div>
 
           <div className="hidden md:flex items-center gap-16">
@@ -57,6 +75,7 @@ export default function Navbar() {
                   key={item.label}
                   href={item.href}
                   className="text-[10px] uppercase tracking-[0.3em] font-medium text-stone-300 hover:text-[#c5a059] transition-colors relative group"
+                  onClick={(e) => handleNavClick(e, item.href)}
                 >
                   <span className="text-[#c5a059] mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute -left-6">0{i + 1}</span>
                   {item.label}
@@ -104,7 +123,7 @@ export default function Navbar() {
             {/* Mobile Menu Logo */}
             <div className="absolute top-8 left-1/2 -translate-x-1/2">
               <Link href="/" onClick={(e) => {
-                handleLogoClick(e);
+                handleNavClick(e, '/');
                 setMobileMenuOpen(false);
               }}>
                 <img src={logoImage.src} alt="GKR" className="h-12 object-contain brightness-0 invert opacity-80 cursor-pointer" />
@@ -122,7 +141,10 @@ export default function Navbar() {
                   key={item.label}
                   href={item.href}
                   className="text-xl font-light tracking-[0.2em] hover:text-[#c5a059] transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={(e) => {
+                    handleNavClick(e, item.href);
+                    setMobileMenuOpen(false);
+                  }}
                 >
                   <span className="text-[#c5a059] mr-3">0{i + 1}</span> {item.label}
                 </Link>

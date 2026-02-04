@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import "@/styles/index.css";
 import Navbar from '@/components/common/Navbar';
-import MovingRibbon from '@/components/common/MovingRibbon';
+// import MovingRibbon from '@/components/common/MovingRibbon';
 import Footer from '@/components/common/Footer';
 
 export const metadata: Metadata = {
@@ -58,7 +58,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased bg-[#141414] text-white selection:bg-[#c5a059] selection:text-white overflow-x-hidden w-full" suppressHydrationWarning>
-        <MovingRibbon />
+        {/* <MovingRibbon /> */}
         <Navbar />
         {children}
         <Footer />

@@ -85,6 +85,22 @@ export default function Contact() {
               </p>
             </motion.div>
 
+            {/* Contact Info Header - Above Form */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.1 }}
+              className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4 md:gap-0 px-4"
+            >
+              <a href="mailto:Garrett@GKRHospitality.com" className="text-[#c5a059] text-[10px]  tracking-[0.2em] hover:text-white transition-colors font-bold">
+                Garrett@GKRHospitality.com
+              </a>
+              {/* <span className="hidden md:block w-1.5 h-1.5 bg-[#c5a059] rounded-full"></span> */}
+              <a href="tel:+19174605793" className="text-[#c5a059] text-[10px] uppercase tracking-[0.2em] hover:text-white transition-colors font-bold">
+                +1-917-460-5793
+              </a>
+            </motion.div>
+
             <motion.form
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -92,6 +108,8 @@ export default function Contact() {
               onSubmit={handleSubmit}
               className="bg-[#FFF7F2] border border-[#c5a059]/20 rounded-sm p-8 md:p-12 shadow-xl"
             >
+
+
               <div className="space-y-6">
                 {/* Name */}
                 <div>
