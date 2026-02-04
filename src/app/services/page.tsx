@@ -255,7 +255,7 @@ export default function Services() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <div className="aspect-[3/4] overflow-hidden rounded-sm">
+              <div className="aspect-[3/4] w-auto h-[490px] overflow-hidden rounded-sm">
                 <Image src={garettDiscussImage} alt="Ready to Build" className="w-full h-full object-cover" />
               </div>
             </motion.div>
