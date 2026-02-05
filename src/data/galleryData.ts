@@ -42,13 +42,13 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     "id": 4,
-    "title": "Boston Harbor",
-    "description": "Gallery for Boston Harbor",
-    "link": "https://www.bostonharborhotel.com/",
+    "title": "Zuma New York",
+    "description": "Gallery for Zuma New York",
+    "link": "https://www.zumarestaurant.com/",
     "images": [
-      "/images/gallery/Boston Harbor Hotel/Boston Harbor 2.png",
-      "/images/gallery/Boston Harbor Hotel/Boston Harbor 3.png",
-    "/images/gallery/Boston Harbor Hotel/Boston Harbor.png"
+      "/images/gallery/Zuma New York Restaurants/zuma_1.png",
+      "/images/gallery/Zuma New York Restaurants/zuma_2.png",
+      "/images/gallery/Zuma New York Restaurants/zuma_3.png"
     ]
   },
   {
@@ -64,13 +64,13 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     "id": 6,
-    "title": "Fairfield Beach Club",
-    "description": "Gallery for Fairfield Beach Club",
-    "link": "https://www.fbc.club/",
+    "title": "Adare",
+    "description": "Gallery for Adare",
+    "link": "https://www.adaremanor.com/",
     "images": [
-      "/images/gallery/FBC Private & Member-only/SaveClip.App_455806974_737759325100612_7556852630658393511_n.jpg",
-      "/images/gallery/FBC Private & Member-only/SaveClip.App_455877427_1155219119098693_8402729839714548611_n.jpg",
-      "/images/gallery/FBC Private & Member-only/SaveClip.App_456197073_994329485776863_3726931994884086630_n.jpg"
+      "/images/gallery/adare-hotels/adare_1.png",
+      "/images/gallery/adare-hotels/adare_2.png",
+      "/images/gallery/adare-hotels/Adare_3new.png"
     ]
   },
   // {
@@ -86,13 +86,13 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   // },
   {
     "id": 8,
-    "title": "Meet Resident",
-    "description": "Gallery for Meet Resident",
-    "link": "https://www.meetresident.com/",
+    "title": "Etc.venues",
+    "description": "Gallery for Etc.venues",
+    "link": "https://convene.com/about-us/etc-venues/",
     "images": [
-      "/images/gallery/Meet Resident Private & Members Only/Resident .png",
-      "/images/gallery/Meet Resident Private & Members Only/Resident 2.png",
-      "/images/gallery/Meet Resident Private & Members Only/Resident 3.png"
+      "/images/gallery/etc.venues meetings and events/etc_1.png",
+      "/images/gallery/etc.venues meetings and events/etc_2.png",
+      "/images/gallery/etc.venues meetings and events/etc_3.png"
     ]
   },
   {
@@ -163,24 +163,24 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     "id": 15,
-    "title": "Zuma New York",
-    "description": "Gallery for Zuma New York",
-    "link": "https://www.zumarestaurant.com/",
+    "title": "Boston Harbor",
+    "description": "Gallery for Boston Harbor",
+    "link": "https://www.bostonharborhotel.com/",
     "images": [
-      "/images/gallery/Zuma New York Restaurants/zuma_1.png",
-      "/images/gallery/Zuma New York Restaurants/zuma_2.png",
-      "/images/gallery/Zuma New York Restaurants/zuma_3.png"
+      "/images/gallery/Boston Harbor Hotel/Boston Harbor 2.png",
+      "/images/gallery/Boston Harbor Hotel/Boston Harbor 3.png",
+      "/images/gallery/Boston Harbor Hotel/Boston Harbor.png"
     ]
   },
   {
     "id": 16,
-    "title": "Adare",
-    "description": "Gallery for Adare",
-    "link": "https://www.adaremanor.com/",
+    "title": "Fairfield Beach Club",
+    "description": "Gallery for Fairfield Beach Club",
+    "link": "https://www.fbc.club/",
     "images": [
-      "/images/gallery/adare-hotels/adare_1.png",
-      "/images/gallery/adare-hotels/adare_2.png",
-      "/images/gallery/adare-hotels/Adare_3new.png"
+      "/images/gallery/FBC Private & Member-only/SaveClip.App_455806974_737759325100612_7556852630658393511_n.jpg",
+      "/images/gallery/FBC Private & Member-only/SaveClip.App_455877427_1155219119098693_8402729839714548611_n.jpg",
+      "/images/gallery/FBC Private & Member-only/SaveClip.App_456197073_994329485776863_3726931994884086630_n.jpg"
     ]
   },
   // {
@@ -218,13 +218,13 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   // },
   {
     "id": 20,
-    "title": "Etc.venues",
-    "description": "Gallery for Etc.venues",
-    "link": "https://convene.com/about-us/etc-venues/",
+    "title": "Meet Resident",
+    "description": "Gallery for Meet Resident",
+    "link": "https://www.meetresident.com/",
     "images": [
-      "/images/gallery/etc.venues meetings and events/etc_1.png",
-      "/images/gallery/etc.venues meetings and events/etc_2.png",
-      "/images/gallery/etc.venues meetings and events/etc_3.png"
+      "/images/gallery/Meet Resident Private & Members Only/Resident .png",
+      "/images/gallery/Meet Resident Private & Members Only/Resident 2.png",
+      "/images/gallery/Meet Resident Private & Members Only/Resident 3.png"
     ]
   }
 ];
