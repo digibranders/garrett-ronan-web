@@ -9,16 +9,14 @@ import HeroSection from '@/components/home/HeroSection';
 import PhilosophySection from '@/components/home/PhilosophySection';
 import StatsSection from '@/components/home/StatsSection';
 import PortfolioSection from '@/components/home/PortfolioSection';
-import ProcessSection from '@/components/home/ProcessSection';
 import TestimonialsSection from '@/components/home/TestimonialsSection';
 import CTASection from '@/components/home/CTASection';
 
 // Data
-import { 
-  HERO_IMAGES, 
-  SERVICES_DATA, 
-  PORTFOLIO_PROJECTS, 
-  HOW_WE_WORK, 
+import {
+  HERO_IMAGES,
+  SERVICES_DATA,
+  PORTFOLIO_PROJECTS,
   TESTIMONIALS,
   testimonialLobby
 } from '@/data/homeData';
@@ -29,7 +27,7 @@ export default function Home() {
 
   return (
     <div className="bg-[#181818] text-[#FFF7F2] font-sans selection:bg-[#c5a059] selection:text-white overflow-x-hidden">
-      
+
       {/* Hero Section */}
       <HeroSection images={HERO_IMAGES} scale={scale} />
 
@@ -44,9 +42,6 @@ export default function Home() {
 
       {/* Logos Section */}
       <LogosSection />
-
-      {/* Process Section */}
-      <ProcessSection steps={HOW_WE_WORK} />
 
       {/* Testimonials Section */}
       <TestimonialsSection testimonials={TESTIMONIALS} />
