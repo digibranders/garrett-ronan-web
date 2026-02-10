@@ -163,24 +163,6 @@ export const PORTFOLIO_PROJECTS = [
 // Testimonials with property images
 export const TESTIMONIALS = [
   {
-    quote: "We were three months from opening and nowhere near ready. Garrett came in and built the entire operational framework—hiring, training, systems, everything. We opened on time with a team that actually knew what they were doing.",
-    author: "Managing Partner",
-    company: "Boutique Hotel Group",
-    image: testimonialLobby
-  },
-  {
-    quote: "Our margins were disappearing and we couldn't figure out why. Within 30 days, they identified $200K in annual leakage and gave us a plan to fix it. Six months later, we're profitable again.",
-    author: "Owner",
-    company: "Restaurant Group",
-    image: testimonialDining
-  },
-  {
-    quote: "Most consultants tell you what's wrong and leave. These guys stayed until it was fixed. That made all the difference.",
-    author: "Hotel GM",
-    company: "Northeast Market",
-    image: testimonialReception
-  },
-  {
     quote: "Garrett was a key member of the leadership team during a pivotal phase of etc.venues’ international expansion. He successfully built out and established the company in the US overseeing development and operations. Despite the challenges of Covid, Garrett opened three new venues. He also launched a new consulting vertical, partnering with leading NYC CRE developers to design and deliver innovative tenant amenity spaces. A dependable leader throughout a successful M&A with Convene, he consistently delivered exceptional results and comes highly recommended.",
     author: "Ex MD",
     company: "Etc.venues",
@@ -191,7 +173,14 @@ export const TESTIMONIALS = [
     author: "CEO",
     company: "Azumi Restaurant Group",
     image: testimonialLobby
+  },
+  {
+    quote: "Most consultants tell you what's wrong and leave. These guys stayed until it was fixed. That made all the difference.",
+    author: "Hotel GM",
+    company: "Northeast Market",
+    image: testimonialReception
   }
+ 
 ];
 
 // For background images in stats section or others
