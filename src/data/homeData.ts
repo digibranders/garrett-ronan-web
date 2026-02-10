@@ -122,13 +122,13 @@ export const HOW_WE_WORK = [
     number: "04",
     title: "Project Management ~ Hands-On Implementation",
     description: "Where appropriate we work on-site with you and your team, helping build systems, managing, supporting and solving for the unexpected. We will help ensure proper implementation and successful completion for every project.",
-    image: projectManagementImg
+    image: realResultsImg
   },
   {
     number: "05",
     title: "Real Results",
     description: "When we leave, you and your team know how to maintain what we collectively build.  Solutions that stick.  Performance that lasts. You and the project are set for success.",
-    image: realResultsImg
+    image: projectManagementImg
   }
 ];
 
