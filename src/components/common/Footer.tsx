@@ -24,8 +24,8 @@ export default function Footer() {
                USA
              </address>
              <div className="mt-8">
-               <a href="mailto:garrett@GKRHospitality.com" className="text-stone-500 hover:text-[#c5a059] text-sm transition-colors">
-                 garrett@GKRHospitality.com
+               <a href="mailto:Connect@GKRHospitality.com" className="text-stone-500 hover:text-[#c5a059] text-sm transition-colors">
+                 Connect@GKRHospitality.com
                </a>
              </div>
           </div>
