@@ -122,13 +122,13 @@ export const HOW_WE_WORK = [
     number: "04",
     title: "Project Management ~ Hands-On Implementation",
     description: "Where appropriate we work on-site with you and your team, helping build systems, managing, supporting and solving for the unexpected. We will help ensure proper implementation and successful completion for every project.",
-    image: projectManagementImg
+    image: realResultsImg
   },
   {
     number: "05",
     title: "Real Results",
     description: "When we leave, you and your team know how to maintain what we collectively build.  Solutions that stick.  Performance that lasts. You and the project are set for success.",
-    image: realResultsImg
+    image: projectManagementImg
   }
 ];
 
@@ -179,6 +179,18 @@ export const TESTIMONIALS = [
     author: "Hotel GM",
     company: "Northeast Market",
     image: testimonialReception
+  },
+  {
+    quote: "Garrett was a key member of the leadership team during a pivotal phase of etc.venues’ international expansion. He successfully built out and established the company in the US overseeing development and operations. Despite the challenges of Covid, Garrett opened three new venues. He also launched a new consulting vertical, partnering with leading NYC CRE developers to design and deliver innovative tenant amenity spaces. A dependable leader throughout a successful M&A with Convene, he consistently delivered exceptional results and comes highly recommended.",
+    author: "Ex MD",
+    company: "Etc.venues",
+    image: testimonialDining
+  },
+  {
+    quote: "I’ve known and worked with Garrett for many years. He Joined Azumi in 2013 and led the US in all aspects of development and operations. He oversaw the successful opening of Zuma flagship locations in NYC, Las Vegas, and Boston; spearheaded opening two Etaru’s in South Florida and was instrumental in the creation and opening two of our first ever “Inko Nito’s” in Los Angeles. To this day, we still look to Garrett for his expertise and guidance in certain aspects our US business",
+    author: "CEO",
+    company: "Azumi Restaurant Group",
+    image: testimonialLobby
   }
 ];
 

@@ -92,11 +92,11 @@ export default function Contact() {
               transition={{ duration: 1, delay: 0.1 }}
               className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4 md:gap-0 px-4"
             >
-              <a href="mailto:Garrett@GKRHospitality.com" className="text-[#c5a059] text-[10px]  tracking-[0.2em] hover:text-white transition-colors font-bold">
+              <a href="mailto:Garrett@GKRHospitality.com" className="text-[#c5a059] text-[15px]  tracking-[0.2em] hover:text-white transition-colors font-bold">
                 Garrett@GKRHospitality.com
               </a>
               {/* <span className="hidden md:block w-1.5 h-1.5 bg-[#c5a059] rounded-full"></span> */}
-              <a href="tel:+19174605793" className="text-[#c5a059] text-[10px] uppercase tracking-[0.2em] hover:text-white transition-colors font-bold">
+              <a href="tel:+19174605793" className="text-[#c5a059] text-[15px] uppercase tracking-[0.2em] hover:text-white transition-colors font-bold">
                 +1-917-460-5793
               </a>
             </motion.div>

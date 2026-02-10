@@ -27,7 +27,7 @@ export default function TestimonialsSection({ testimonials }: TestimonialsSectio
         >
           <span className="block text-[#c5a059] text-[10px] tracking-[0.4em] uppercase mb-6 font-bold">What Our Clients Say</span>
           <h2 className="text-5xl md:text-7xl font-serif leading-tight text-white">
-            Real Results,<br/>
+            Real Results,<br />
             <span className="italic text-[#c5a059]">Real Impact</span>
           </h2>
         </motion.div>
@@ -40,24 +40,24 @@ export default function TestimonialsSection({ testimonials }: TestimonialsSectio
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.15 }}
-              className="bg-white/5 border border-white/10 rounded-sm overflow-hidden group hover:bg-white/10 hover:border-[#c5a059]/30 transition-all duration-300"
+              className="bg-white/5 border border-white/10 rounded-sm overflow-hidden group hover:bg-white/10 hover:border-[#c5a059]/30 transition-all duration-300 flex flex-col h-full"
             >
               {/* Property Image */}
-              <div className="relative h-48 overflow-hidden">
-                <Image 
-                   src={testimonial.image} 
-                   alt={testimonial.company}
-                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              <div className="relative h-48 overflow-hidden shrink-0">
+                <Image
+                  src={testimonial.image}
+                  alt={testimonial.company}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#181818] to-transparent"></div>
               </div>
 
-              <div className="p-8 md:p-10">
+              <div className="p-8 md:p-10 flex flex-col flex-grow">
                 <p className="text-stone-300 text-lg font-serif italic leading-relaxed mb-8">
                   "{testimonial.quote}"
                 </p>
-                <div className="border-t border-white/10 pt-6">
+                <div className="border-t border-white/10 pt-6 mt-auto">
                   <p className="text-white font-bold text-sm mb-1">{testimonial.author}</p>
                   <p className="text-stone-500 text-xs uppercase tracking-wider">{testimonial.company}</p>
                 </div>
