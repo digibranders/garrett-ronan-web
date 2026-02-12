@@ -4,17 +4,17 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
-import { Menu, ChevronDown } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
 import logoImage from '@/assets/images/logos/gkr-logo.png';
-import { SERVICES_DATA } from '@/data/homeData';
 
 export default function Navbar() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   const handleNavClick = (e: React.MouseEvent, href: string) => {
     // Check if it's a hash link pointing to the current page
@@ -31,8 +31,6 @@ export default function Navbar() {
       return;
     }
 
-
-
     // Standard page link - scroll to top if already on page
     if (pathname === href) {
       e.preventDefault();
@@ -41,6 +39,7 @@ export default function Navbar() {
   };
 
   useEffect(() => {
+    setMounted(true);
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
@@ -50,9 +49,7 @@ export default function Navbar() {
   }, []);
 
   const NAV_ITEMS = [
-    // { label: 'Philosophy', href: '/#philosophy' },
-    // { label: 'Expertise', href: '/#expertise' },
-    { label: 'Home', href: '/' },
+    { label: 'Work', href: '/work' },
     { label: 'About', href: '/about' },
     { label: 'How We Work', href: '/how-we-work' },
     { label: 'Gallery', href: '/gallery' },
@@ -72,53 +69,16 @@ export default function Navbar() {
 
           <div className="hidden md:flex items-center gap-16">
             <div className="flex gap-16">
-              {NAV_ITEMS.map((item, i) => (
-                <div key={item.label} className="relative group">
-                  {item.label === 'Services' ? (
-                    <>
-                      <Link
-                        href={item.href}
-                        className="text-[10px] uppercase tracking-[0.3em] font-medium text-stone-300 hover:text-[#c5a059] transition-colors relative block py-4"
-                        onClick={(e) => handleNavClick(e, item.href)}
-                      >
-                        <span className="text-[#c5a059] mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute -left-6">0{i + 1}</span>
-                        {item.label}
-                      </Link>
-
-                      {/* Services Dropdown */}
-                      <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 pointer-events-none group-hover:pointer-events-auto min-w-[280px]">
-                        <div className="bg-[#181818]/95 backdrop-blur-xl border border-white/10 p-2 shadow-2xl rounded-sm">
-                          <div className="flex flex-col">
-                            {SERVICES_DATA.map((service, idx) => (
-                              <Link
-                                key={service.anchor}
-                                href={`/services#${service.anchor}`}
-                                className="text-stone-300 hover:text-[#c5a059] hover:bg-white/5 py-3 px-4 text-sm font-serif transition-colors text-left"
-                                onClick={(e) => {
-                                  // Close dropdown interaction by removing focus if needed, but navigation will handle it
-                                  // We can reuse handleNavClick if strictly necessary but direct link is mostly fine for hash
-                                  // handleNavClick(e, `/services#${service.anchor}`); 
-                                  // Actually standard link behavior is best for hash navigation across pages
-                                }}
-                              >
-                                {service.title}
-                              </Link>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                    </>
-                  ) : (
-                    <Link
-                      href={item.href}
-                      className="text-[10px] uppercase tracking-[0.3em] font-medium text-stone-300 hover:text-[#c5a059] transition-colors relative block py-4"
-                      onClick={(e) => handleNavClick(e, item.href)}
-                    >
-                      <span className="text-[#c5a059] mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute -left-6">0{i + 1}</span>
-                      {item.label}
-                    </Link>
-                  )}
-                </div>
+              {mounted && NAV_ITEMS.map((item, i) => (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className="text-[10px] uppercase tracking-[0.3em] font-medium text-stone-300 hover:text-[#c5a059] transition-colors relative block py-4 group"
+                  onClick={(e) => handleNavClick(e, item.href)}
+                >
+                  <span className="text-[#c5a059] mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute -left-6">0{i + 1}</span>
+                  {item.label}
+                </Link>
               ))}
             </div>
 
@@ -175,61 +135,18 @@ export default function Navbar() {
               transition={{ delay: 0.1 }}
               className="flex flex-col gap-8 items-start"
             >
-              {NAV_ITEMS.map((item, i) => (
+              {mounted && NAV_ITEMS.map((item, i) => (
                 <div key={item.label} className="w-full">
-                  {item.label === 'Services' ? (
-                    <div className="flex flex-col w-full">
-                      <div
-                        className="flex items-center justify-between w-full cursor-pointer group"
-                        onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                      >
-                        <span className="text-xl font-light tracking-[0.2em] group-hover:text-[#c5a059] transition-colors">
-                          <span className="text-[#c5a059] mr-3">0{i + 1}</span>
-                          {item.label}
-                        </span>
-                        <ChevronDown
-                          size={20}
-                          className={`text-white transition-transform duration-300 ${mobileServicesOpen ? 'rotate-180 text-[#c5a059]' : ''}`}
-                        />
-                      </div>
-
-                      <AnimatePresence>
-                        {mobileServicesOpen && (
-                          <motion.div
-                            initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: 'auto', opacity: 1 }}
-                            exit={{ height: 0, opacity: 0 }}
-                            transition={{ duration: 0.3 }}
-                            className="overflow-hidden"
-                          >
-                            <div className="flex flex-col gap-4 mt-4 pl-12 border-l border-[#c5a059]/30 ml-2">
-                              {SERVICES_DATA.map((service) => (
-                                <Link
-                                  key={service.anchor}
-                                  href={`/services#${service.anchor}`}
-                                  className="text-lg font-light text-stone-400 hover:text-[#c5a059] transition-colors"
-                                  onClick={() => setMobileMenuOpen(false)}
-                                >
-                                  {service.title}
-                                </Link>
-                              ))}
-                            </div>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
-                    </div>
-                  ) : (
-                    <Link
-                      href={item.href}
-                      className="text-xl font-light tracking-[0.2em] hover:text-[#c5a059] transition-colors block w-full"
-                      onClick={(e) => {
-                        handleNavClick(e, item.href);
-                        setMobileMenuOpen(false);
-                      }}
-                    >
-                      <span className="text-[#c5a059] mr-3">0{i + 1}</span> {item.label}
-                    </Link>
-                  )}
+                  <Link
+                    href={item.href}
+                    className="text-xl font-light tracking-[0.2em] hover:text-[#c5a059] transition-colors block w-full"
+                    onClick={(e) => {
+                      handleNavClick(e, item.href);
+                      setMobileMenuOpen(false);
+                    }}
+                  >
+                    <span className="text-[#c5a059] mr-3">0{i + 1}</span> {item.label}
+                  </Link>
                 </div>
               ))}
               <Link

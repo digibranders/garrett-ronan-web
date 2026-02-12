@@ -4,20 +4,15 @@ import React from 'react';
 import { useScroll, useTransform } from 'motion/react';
 
 // Sections
-import LogosSection from '@/components/common/LogosSection';
 import HeroSection from '@/components/home/HeroSection';
 import PhilosophySection from '@/components/home/PhilosophySection';
 import StatsSection from '@/components/home/StatsSection';
-import PortfolioSection from '@/components/home/PortfolioSection';
-import TestimonialsSection from '@/components/home/TestimonialsSection';
 import CTASection from '@/components/home/CTASection';
 
 // Data
 import {
   HERO_IMAGES,
   SERVICES_DATA,
-  PORTFOLIO_PROJECTS,
-  TESTIMONIALS,
   testimonialLobby
 } from '@/data/homeData';
 
@@ -36,15 +31,6 @@ export default function Home() {
 
       {/* Animated Stats Section */}
       <StatsSection backgroundImage={testimonialLobby} />
-
-      {/* Portfolio Projects Section */}
-      <PortfolioSection projects={PORTFOLIO_PROJECTS} />
-
-      {/* Logos Section */}
-      <LogosSection />
-
-      {/* Testimonials Section */}
-      <TestimonialsSection testimonials={TESTIMONIALS} />
 
       {/* CTA Section */}
       <CTASection />

@@ -50,7 +50,7 @@ export default function HeroSection({ images, scale }: HeroSectionProps) {
       </div>
 
       <div className="container mx-auto px-6 md:px-12 relative z-20 mt-20">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
@@ -60,9 +60,8 @@ export default function HeroSection({ images, scale }: HeroSectionProps) {
           </h1>
 
           <Link href="/contact">
-            <Button className="bg-[#c5a059] text-[#181818] hover:opacity-90 px-10 py-6 text-xs uppercase tracking-[0.3em] font-bold transition-all duration-500 rounded-full">
-              <span className="hidden md:inline">Schedule Your Complimentary Discovery Call</span>
-              <span className="md:hidden">Schedule Free Call</span>
+            <Button className="bg-[#c5a059] text-[#181818] hover:opacity-90 px-8 py-4 md:px-10 md:py-6 text-[10px] md:text-xs uppercase tracking-[0.3em] font-bold transition-all duration-500 rounded-full h-auto whitespace-normal leading-relaxed max-w-[280px] md:max-w-none">
+              Schedule Your Complimentary Discovery Call
             </Button>
           </Link>
         </motion.div>

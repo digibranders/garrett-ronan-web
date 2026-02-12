@@ -25,7 +25,7 @@ export default function Footer() {
              </address>
              <div className="mt-8">
                <a href="mailto:Connect@GKRHospitality.com" className="text-stone-500 hover:text-[#c5a059] text-sm transition-colors">
-                 Connect@GKRHospitality.com
+                 connect@GKRHospitality.com
                </a>
              </div>
           </div>
