@@ -20,7 +20,7 @@ import principalHotelsLogo from '@/assets/images/logos/principal-hotels.png';
 import waldorfAstoriaLogo from '@/assets/images/logos/waldorf-astoria.png';
 import bostonHarborHotelLogo from '@/assets/images/logos/boston-harbor-hotel.png';
 import etcVenuesLogo from '@/assets/images/logos/etc-venues.png';
-import conveneLogo from '@/assets/images/logos/convene_new.png';
+import conveneLogo from '@/assets/images/logos/convene-etcvenues.png';
 
 // Consulted With Logos
 import bakanLogo from '@/assets/images/logos/bakan.png';
@@ -79,7 +79,7 @@ const CONSULTED_WITH_COMPANIES: Company[] = [
   { name: 'Zuma', logo: zumaConsultedLogo, dimensions: 'h-4 w-[70px] md:h-6 w-[90px]' },
   { name: 'Equinox Hotels', logo: equinoxHotelsLogo },
   { name: 'R', logo: rLogo, hoverLogo: rLogo, className: 'grayscale-0 brightness-100' },
-  { name: 'Convene', logo: conveneLogo },
+  { name: 'Convene', logo: conveneLogo, dimensions: 'h-6 w-[140px] md:h-8 w-[200px]' },
   { name: 'Affect Group', logo: affectLogo, dimensions: 'h-5 w-[65px] md:h-7 w-[90px]' },
   { name: 'Sage Hospitality', logo: sageLogo, dimensions: 'h-6 w-[80px] md:h-8 w-[110px]' },
   { name: 'Bakan', logo: bakanLogo, dimensions: 'h-7 w-[90px] md:h-10 w-[120px]' },
