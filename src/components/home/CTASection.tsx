@@ -54,8 +54,7 @@ export default function CTASection() {
           >
             <Link href="/contact">
               <Button className="bg-[#181818] text-white hover:bg-white hover:text-[#181818] px-8 py-6 text-sm uppercase tracking-[0.3em] font-bold transition-all duration-500 rounded-full whitespace-normal h-auto text-center leading-normal">
-                <span className="hidden md:inline">Schedule Your Complimentary<br />Discovery Call</span>
-                <span className="md:hidden">Schedule Free Call</span>
+                Schedule Your Complimentary Discovery Call
               </Button>
             </Link>
           </motion.div>

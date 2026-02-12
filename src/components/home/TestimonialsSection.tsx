@@ -107,7 +107,7 @@ export default function TestimonialsSection({ testimonials }: TestimonialsSectio
         <div className="max-w-7xl mx-auto relative h-[700px] flex items-center justify-center">
 
           {/* Circular Navigation Buttons - Aligned with Navbar */}
-          <div className="absolute inset-0 z-50 pointer-events-none flex items-center">
+          <div className="absolute inset-0 z-50 pointer-events-none hidden md:flex items-center">
             <div className="container mx-auto px-6 md:px-12 flex justify-between w-full">
               <button
                 onClick={prevTestimonial}

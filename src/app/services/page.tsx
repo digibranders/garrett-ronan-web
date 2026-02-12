@@ -1,8 +1,8 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import { motion } from 'motion/react';
-import { ArrowUpRight } from 'lucide-react';
+import React, { useState, useEffect, useCallback } from 'react';
+import { motion, AnimatePresence, Variants } from 'framer-motion';
+import { ArrowUpRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -127,25 +127,60 @@ const SERVICES_DATA = [
 ];
 
 export default function Services() {
-  const [expandedService, setExpandedService] = useState<number | null>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [direction, setDirection] = useState(0);
 
-  // Auto-expand service section when navigating via anchor link
-  useEffect(() => {
-    const hash = window.location.hash.slice(1); // Remove the # symbol
-    if (hash) {
-      const serviceIndex = SERVICES_DATA.findIndex(service => service.id === hash);
-      if (serviceIndex !== -1) {
-        setExpandedService(serviceIndex);
-      }
-    }
+  const nextService = useCallback(() => {
+    setDirection(1);
+    setActiveIndex((prev) => (prev + 1) % SERVICES_DATA.length);
   }, []);
+
+  const prevService = useCallback(() => {
+    setDirection(-1);
+    setActiveIndex((prev) => (prev - 1 + SERVICES_DATA.length) % SERVICES_DATA.length);
+  }, []);
+
+  const leftIndex = (activeIndex - 1 + SERVICES_DATA.length) % SERVICES_DATA.length;
+  const rightIndex = (activeIndex + 1) % SERVICES_DATA.length;
+
+  const cardVariants: Variants = {
+    active: {
+      x: 0,
+      scale: 1,
+      opacity: 1,
+      zIndex: 30,
+      filter: 'none',
+      transition: { duration: 0.6, ease: [0.32, 0.72, 0, 1] }
+    },
+    left: {
+      x: '-105%',
+      scale: 0.9,
+      opacity: 0.5,
+      zIndex: 10,
+      filter: 'blur(0px)',
+      transition: { duration: 0.6, ease: [0.32, 0.72, 0, 1] }
+    },
+    right: {
+      x: '105%',
+      scale: 0.9,
+      opacity: 0.5,
+      zIndex: 10,
+      filter: 'blur(0px)',
+      transition: { duration: 0.6, ease: [0.32, 0.72, 0, 1] }
+    },
+    hidden: {
+      scale: 0.5,
+      opacity: 0,
+      zIndex: 0,
+      filter: 'blur(20px)',
+      transition: { duration: 0.5 }
+    }
+  };
 
   return (
     <div className="bg-[#181818] text-[#FFF7F2] font-sans selection:bg-[#c5a059] selection:text-white overflow-x-hidden">
 
-
-
-      {/* Hero Section - NOW LIGHT */}
+      {/* Hero Section */}
       <section className="relative pt-32 md:pt-48 pb-20 md:pb-32 bg-[#FFF7F2]">
         <div className="container mx-auto px-6 md:px-12">
           <motion.div
@@ -165,80 +200,84 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="py-16 md:py-24 bg-[#181818]">
-        <div className="container mx-auto px-6 md:px-12">
-          <div className="space-y-0">
-            {SERVICES_DATA.map((service, index) => (
-              <motion.div
-                key={index}
-                id={service.id}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="border-b border-white/10 last:border-0 scroll-mt-24"
-              >
-                <div
-                  className="py-16 md:py-20 cursor-pointer group grid grid-cols-1 lg:grid-cols-12 gap-8"
-                  onClick={() => setExpandedService(expandedService === index ? null : index)}
+      {/* Services Carousel */}
+      <section className="py-24 md:py-48 bg-[#080a0f] relative overflow-hidden">
+        <div className="container mx-auto px-6 md:px-12 relative z-10">
+          <div className="max-w-7xl mx-auto relative h-[800px] flex items-center justify-center">
+
+            {/* Navigation Arrows */}
+            <div className="absolute inset-0 z-50 pointer-events-none hidden md:flex items-center">
+              <div className="container mx-auto flex justify-between w-full">
+                <button
+                  onClick={prevService}
+                  className="w-14 h-14 border border-white/10 bg-white/5 backdrop-blur-md flex items-center justify-center text-white hover:bg-[#c5a059] hover:border-[#c5a059] transition-all duration-500 pointer-events-auto group"
                 >
-                  {/* Image Column */}
-                  <div className="lg:col-span-5">
-                    <div className="aspect-[4/3] overflow-hidden rounded-sm relative">
+                  <ChevronLeft className="w-6 h-6 transition-transform group-hover:-translate-x-1" />
+                </button>
+                <button
+                  onClick={nextService}
+                  className="w-14 h-14 border border-white/10 bg-white/5 backdrop-blur-md flex items-center justify-center text-white hover:bg-[#c5a059] hover:border-[#c5a059] transition-all duration-500 pointer-events-auto group"
+                >
+                  <ChevronRight className="w-6 h-6 transition-transform group-hover:translate-x-1" />
+                </button>
+              </div>
+            </div>
+
+            <div className="relative w-full h-full flex items-center justify-center [perspective:2000px]">
+              {SERVICES_DATA.map((service, index) => {
+                let position = "hidden";
+                if (index === activeIndex) position = "active";
+                else if (index === leftIndex) position = "left";
+                else if (index === rightIndex) position = "right";
+
+                return (
+                  <motion.div
+                    key={index}
+                    variants={cardVariants}
+                    animate={position}
+                    initial="hidden"
+                    className="absolute w-[90%] md:w-[420px] bg-[#121212]/90 border border-white/5 p-0 shadow-2xl backdrop-blur-sm overflow-hidden flex flex-col min-h-[700px] md:min-h-[750px] h-auto"
+                  >
+                    {/* Image/Title Section */}
+                    <div className="w-full relative h-[300px] md:h-[350px] flex-shrink-0">
                       <Image
                         src={service.image}
                         alt={service.title}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        fill
+                        className="object-cover"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#181818] via-transparent to-transparent opacity-60"></div>
-                      <div className="absolute bottom-8 left-8">
-                        <span className="text-[#c5a059] text-7xl font-serif">{service.number}</span>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+                      <div className="absolute bottom-6 left-6 right-6">
+                        {/* <span className="text-[#c5a059] text-[10px] uppercase tracking-[0.4em] font-bold block mb-3">Service {service.number}</span> */}
+                        <h3 className="text-white text-2xl md:text-3xl font-serif uppercase tracking-wider leading-tight">
+                          {service.title}
+                        </h3>
                       </div>
                     </div>
-                  </div>
 
-                  {/* Content Column */}
-                  <div className="lg:col-span-7 flex flex-col justify-center">
-                    <div className="border-l-2 border-[#c5a059] pl-8">
-                      <h2 className="text-4xl md:text-5xl font-serif text-white mb-4 group-hover:text-[#c5a059] transition-colors duration-300">
-                        {service.title}
-                      </h2>
-                      <p className="text-stone-400 text-lg md:text-xl mb-8 leading-relaxed">
-                        {service.tagline}
-                      </p>
-
-                      {/* Expandable List */}
-                      {service.description.length > 0 && (
-                        <motion.div
-                          initial={false}
-                          animate={{
-                            height: expandedService === index ? 'auto' : 0,
-                            opacity: expandedService === index ? 1 : 0
-                          }}
-                          transition={{ duration: 0.4 }}
-                          className="overflow-hidden"
-                        >
-                          <ul className="space-y-3 mb-6">
-                            {service.description.map((item, i) => (
-                              <li key={i} className="text-stone-500 text-sm flex items-start gap-3">
-                                <span className="text-[#c5a059] mt-1 flex-shrink-0">•</span>
-                                <span>{item}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </motion.div>
-                      )}
-
-                      <button className="cursor-pointer flex items-center gap-2 text-[#c5a059] text-xs uppercase tracking-[0.3em] font-bold group-hover:gap-4 transition-all duration-300">
-                        {expandedService === index ? 'Show Less' : 'Learn More'}
-                        <ArrowUpRight className={`w-4 h-4 transition-transform duration-300 ${expandedService === index ? 'rotate-180' : ''}`} />
-                      </button>
+                    {/* Description Section (Now Below) */}
+                    <div className="w-full p-6 md:p-8 flex flex-col flex-grow">
+                      <div className="mb-4 md:mb-6 border-l-2 border-[#c5a059] pl-4 md:pl-6">
+                        <p className="text-[#c5a059] italic font-light text-[14px] md:text-base leading-relaxed">
+                          {service.tagline}
+                        </p>
+                      </div>
+                      <div className="space-y-3 md:space-y-4 pb-8">
+                        {service.description.map((item, i) => (
+                          <div key={i} className="flex items-start gap-3">
+                            <span className="text-[#c5a059] mt-1 text-base leading-none">•</span>
+                            <span className="text-stone-300 text-[12px] md:text-[13px] leading-relaxed font-light">{item}</span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+                  </motion.div>
+                );
+              })}
+            </div>
+
+            {/* Background Glow */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#c5a059]/5 rounded-full blur-[120px] pointer-events-none -z-10"></div>
           </div>
         </div>
       </section>
@@ -276,9 +315,8 @@ export default function Services() {
                   Let's discuss how we can support your hospitality vision
                 </p>
                 <Link href="/contact">
-                  <Button className="bg-[#181818] text-white hover:bg-white hover:text-[#181818] px-12 py-7 text-sm uppercase tracking-[0.3em] font-bold transition-all duration-500 rounded-full">
-                    <span className="hidden md:inline">Schedule Your Complimentary Discovery Call</span>
-                    <span className="md:hidden">Schedule Free Call</span>
+                  <Button className="bg-[#181818] text-white hover:bg-white hover:text-[#181818] px-8 py-4 md:px-12 md:py-7 text-[10px] md:text-sm uppercase tracking-[0.3em] font-bold transition-all duration-500 rounded-full h-auto whitespace-normal leading-relaxed max-w-[300px] md:max-w-none">
+                    Schedule Your Complimentary Discovery Call
                   </Button>
                 </Link>
               </motion.div>

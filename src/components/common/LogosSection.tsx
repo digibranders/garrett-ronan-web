@@ -20,7 +20,7 @@ import principalHotelsLogo from '@/assets/images/logos/principal-hotels.png';
 import waldorfAstoriaLogo from '@/assets/images/logos/waldorf-astoria.png';
 import bostonHarborHotelLogo from '@/assets/images/logos/boston-harbor-hotel.png';
 import etcVenuesLogo from '@/assets/images/logos/etc-venues.png';
-import conveneLogo from '@/assets/images/logos/convene.png';
+import conveneLogo from '@/assets/images/logos/convene_new.png';
 
 // Consulted With Logos
 import bakanLogo from '@/assets/images/logos/bakan.png';

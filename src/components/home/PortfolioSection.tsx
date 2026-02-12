@@ -28,8 +28,8 @@ export default function PortfolioSection({ projects }: PortfolioSectionProps) {
             Proven Excellence<br />
             <span className="italic text-[#c5a059]">Across All Hospitality Ventures</span>
           </h2>
-          <p className="text-stone-400 text-base md:text-lg mt-6 whitespace-nowrap">
-            <span className="font-serif italic">"Experience is simply the name we give our mistakes"</span> ~ Let us help correct yor experience
+          <p className="text-stone-400 text-base md:text-lg mt-6">
+            <span className="font-serif italic">"Experience is simply the name we give our mistakes"</span> ~ Let us help correct your experience
           </p>
         </motion.div>
 
