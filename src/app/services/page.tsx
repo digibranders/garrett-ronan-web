@@ -314,7 +314,7 @@ export default function Services() {
             </motion.div>
 
             {/* Right Column: Content */}
-            <div className="lg:col-span-7">
+            <div className="lg:col-span-7 text-center lg:text-left">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -325,11 +325,11 @@ export default function Services() {
                   Ready to Build Something<br />
                   <span className="italic text-white">Exceptional?</span>
                 </h2>
-                <p className="text-[#181818] text-lg mb-12 max-w-2xl">
+                <p className="text-[#181818] text-lg mb-12 max-w-2xl mx-auto lg:mx-0">
                   Let's discuss how we can support your hospitality vision
                 </p>
-                <Link href="/contact">
-                  <Button className="bg-[#181818] text-white hover:bg-white hover:text-[#181818] px-5 py-5 md:px-12 md:py-7 text-xs md:text-sm uppercase tracking-[0.2em] md:tracking-[0.3em] font-bold transition-all duration-500 rounded-full h-auto whitespace-nowrap leading-relaxed w-auto max-w-none">
+                <Link href="/contact" className="inline-block">
+                  <Button className="bg-[#181818] text-white hover:bg-white hover:text-[#181818] px-4 py-4 md:px-12 md:py-7 text-[9px] md:text-sm uppercase tracking-[0.15em] md:tracking-[0.3em] font-bold transition-all duration-500 rounded-full h-auto whitespace-nowrap leading-relaxed w-auto max-w-none">
                     Schedule Your Complimentary Discovery Call
                   </Button>
                 </Link>
