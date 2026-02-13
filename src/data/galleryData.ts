@@ -9,7 +9,7 @@ export interface GalleryItem {
 export const GALLERY_ITEMS: GalleryItem[] = [
   {
     "id": 1,
-    "title": "Blace",
+    "title": "BLACE",
     "description": "Gallery for Blace",
     "link": "https://www.blace.com/",
     "images": [
@@ -31,7 +31,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     "id": 3,
-    "title": "The Beverly Hilton",
+    "title": "THE BEVERLY HILTON",
     "description": "Gallery for The Beverly Hilton",
     "link": "https://www.hilton.com/en/hotels/laxbhhh-the-beverly-hilton/events/",
     "images": [
@@ -42,7 +42,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     "id": 4,
-    "title": "Zuma New York",
+    "title": "ZUMA NEW YORK",
     "description": "Gallery for Zuma New York",
     "link": "https://www.zumarestaurant.com/",
     "images": [
@@ -53,7 +53,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     "id": 5,
-    "title": "Equinox Hotels",
+    "title": "EQUINOX HOTELS",
     "description": "Gallery for Equinox Hotels",
     "link": "https://www.equinox-hotels.com/",
     "images": [
@@ -64,7 +64,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     "id": 6,
-    "title": "Adare",
+    "title": "ADARE",
     "description": "Gallery for Adare",
     "link": "https://www.adaremanor.com/",
     "images": [
@@ -86,8 +86,8 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   // },
   {
     "id": 8,
-    "title": "Etc.venues",
-    "description": "Gallery for Etc.venues",
+    "title": "CONVENE | Etc.venues",
+    "description": "Gallery for CONVENE | Etc.venues",
     "link": "https://convene.com/about-us/etc-venues/",
     "images": [
       "/images/gallery/etc.venues meetings and events/etc_1.png",
@@ -97,7 +97,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     "id": 9,
-    "title": "Montauk Distilling Co",
+    "title": "MONTAUK DISTILLING CO",
     "description": "Gallery for Montauk Distilling Co",
     "link": "https://www.montaukdistillingco.com/",
     "images": [
@@ -108,7 +108,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     "id": 10,
-    "title": "Principal Hotels",
+    "title": "PRINCIPAL HOTELS",
     "description": "Gallery for Principal Hotels",
     "link": "#",
     "images": [
@@ -119,7 +119,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     "id": 11,
-    "title": "Rudin Group",
+    "title": "RUDIN GROUP",
     "description": "Gallery for Rudin Group",
     "link": "https://www.rudin.com/",
     "images": [
@@ -130,7 +130,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     "id": 12,
-    "title": "Starr Restaurants",
+    "title": "STARR RESTAURANTS",
     "description": "Gallery for Starr Restaurants",
     "link": "https://www.starr-restaurants.com/",
     "images": [
@@ -141,7 +141,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     "id": 13,
-    "title": "Sage Hospitality",
+    "title": "SAGE HOSPITALITY",
     "description": "Gallery for Sage Hospitality",
     "link": "https://sagerealty.com/",
     "images": [
@@ -152,7 +152,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     "id": 14,
-    "title": "Waldorf Astoria New York",
+    "title": "WALDORF ASTORIA NEW YORK",
     "description": "Gallery for Waldorf Astoria New York",
     "link": "https://www.waldorfastorianewyork.com/",
     "images": [
@@ -163,7 +163,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     "id": 15,
-    "title": "Boston Harbor",
+    "title": "BOSTON HARBOR",
     "description": "Gallery for Boston Harbor",
     "link": "https://www.bostonharborhotel.com/",
     "images": [
@@ -174,7 +174,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     "id": 16,
-    "title": "Fairfield Beach Club",
+    "title": "FAIRFIELD BEACH CLUB",
     "description": "Gallery for Fairfield Beach Club",
     "link": "https://www.fbc.club/",
     "images": [
@@ -196,7 +196,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   // },
   {
     "id": 18,
-    "title": "Bakan",
+    "title": "BAKAN",
     "description": "Gallery for Bakan",
     "link": "https://www.bakanwynwood.com/",
     "images": [
@@ -218,7 +218,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   // },
   {
     "id": 20,
-    "title": "Meet Resident",
+    "title": "MEET RESIDENT",
     "description": "Gallery for Meet Resident",
     "link": "https://www.meetresident.com/",
     "images": [
