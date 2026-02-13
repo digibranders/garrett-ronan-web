@@ -60,7 +60,7 @@ export default function HeroSection({ images, scale }: HeroSectionProps) {
           </h1>
 
           <Link href="/contact">
-            <Button className="bg-[#c5a059] text-[#181818] hover:opacity-90 px-8 py-4 md:px-10 md:py-6 text-[10px] md:text-xs uppercase tracking-[0.3em] font-bold transition-all duration-500 rounded-full h-auto whitespace-normal leading-relaxed max-w-[280px] md:max-w-none">
+            <Button className="bg-[#c5a059] text-[#181818] hover:opacity-90 px-5 py-4 md:px-10 md:py-6 text-[10px] md:text-xs uppercase tracking-[0.2em] md:tracking-[0.3em] font-bold transition-all duration-500 rounded-full h-auto whitespace-nowrap leading-relaxed w-auto max-w-none">
               Schedule Your Complimentary Discovery Call
             </Button>
           </Link>

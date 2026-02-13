@@ -10,8 +10,7 @@ interface Testimonial {
   highlight?: string;
   name: string;
   author: string;
-  company: string;
-  image: StaticImageData;
+  logo: StaticImageData;
 }
 
 interface TestimonialsSectionProps {
@@ -31,6 +30,16 @@ export default function TestimonialsSection({ testimonials }: TestimonialsSectio
     setDirection(-1);
     setActiveIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   }, [testimonials.length]);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowLeft') prevTestimonial();
+      if (e.key === 'ArrowRight') nextTestimonial();
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [nextTestimonial, prevTestimonial]);
 
   const renderQuote = (quote: string, highlight?: string) => {
     if (!highlight) return `"${quote}"`;
@@ -105,25 +114,23 @@ export default function TestimonialsSection({ testimonials }: TestimonialsSectio
           </h2>
         </motion.div>
 
-        <div className="max-w-7xl mx-auto relative h-[700px] flex items-center justify-center">
+        {/* Circular Navigation Buttons - Aligned with Navbar */}
+        <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 z-[60] pointer-events-none hidden md:flex items-center justify-between px-6 md:px-12 w-full max-w-[1400px] mx-auto left-0 right-0">
+          <button
+            onClick={prevTestimonial}
+            className="w-14 h-14 rounded-full border border-white/10 bg-white/5 backdrop-blur-md flex items-center justify-center text-white hover:bg-[#c5a059] hover:border-[#c5a059] transition-all duration-300 pointer-events-auto group z-[60]"
+          >
+            <ChevronLeft className="w-6 h-6 transition-transform group-hover:-translate-x-1" />
+          </button>
+          <button
+            onClick={nextTestimonial}
+            className="w-14 h-14 rounded-full border border-white/10 bg-white/5 backdrop-blur-md flex items-center justify-center text-white hover:bg-[#c5a059] hover:border-[#c5a059] transition-all duration-300 pointer-events-auto group z-[60]"
+          >
+            <ChevronRight className="w-6 h-6 transition-transform group-hover:translate-x-1" />
+          </button>
+        </div>
 
-          {/* Circular Navigation Buttons - Aligned with Navbar */}
-          <div className="absolute inset-0 z-50 pointer-events-none hidden md:flex items-center">
-            <div className="container mx-auto px-6 md:px-12 flex justify-between w-full">
-              <button
-                onClick={prevTestimonial}
-                className="w-14 h-14 rounded-none border border-white/10 bg-white/5 backdrop-blur-md flex items-center justify-center text-white hover:bg-[#c5a059] hover:border-[#c5a059] transition-all duration-500 pointer-events-auto group"
-              >
-                <ChevronLeft className="w-6 h-6 transition-transform group-hover:-translate-x-1" />
-              </button>
-              <button
-                onClick={nextTestimonial}
-                className="w-14 h-14 rounded-none border border-white/10 bg-white/5 backdrop-blur-md flex items-center justify-center text-white hover:bg-[#c5a059] hover:border-[#c5a059] transition-all duration-500 pointer-events-auto group"
-              >
-                <ChevronRight className="w-6 h-6 transition-transform group-hover:translate-x-1" />
-              </button>
-            </div>
-          </div>
+        <div className="max-w-7xl mx-auto relative h-[800px] flex items-center justify-center">
 
           <div className="relative w-full h-full flex items-center justify-center">
             {testimonials.map((testimonial, index) => {
@@ -152,32 +159,31 @@ export default function TestimonialsSection({ testimonials }: TestimonialsSectio
                     textRendering: 'geometricPrecision',
                     backfaceVisibility: 'visible',
                   }}
-                  className="absolute w-[95%] md:w-[850px] bg-white/[0.03] border border-white/5 rounded-none p-8 md:p-16 lg:px-20 lg:py-20 md:shadow-2xl flex flex-col items-center justify-center cursor-grab active:cursor-grabbing"
+                  className="absolute w-[95%] md:w-[850px] h-[900px] md:h-[800px] bg-white/[0.03] border border-white/5 rounded-none p-6 md:p-10 lg:px-16 md:shadow-2xl flex flex-col items-center justify-center cursor-grab active:cursor-grabbing"
                 >
                   {/* Large Background Quote Icon */}
                   <div className="absolute top-12 left-12 text-white/[0.03] pointer-events-none">
                     <Quote size={120} fill="currentColor" strokeWidth={0} />
                   </div>
 
-                  <div className="relative z-10 text-center flex flex-col items-center select-none">
-                    <p className="text-lg md:text-2xl lg:text-2xl text-white font-serif font-light leading-[1.6] mb-12 max-w-2xl px-4">
+                  <div className="relative z-10 text-center flex flex-col items-center select-none w-full max-w-4xl mx-auto px-4">
+                    {/* Logo at the top */}
+                    <div className="mb-6 md:mb-10 relative h-16 md:h-20 w-40 md:w-56 mx-auto">
+                      <Image
+                        src={testimonial.logo}
+                        alt="Company Logo"
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
+
+                    <p className="text-base md:text-xl lg:text-2xl text-white font-serif font-light leading-[1.6] mb-8 md:mb-10 max-w-3xl mx-auto">
                       {renderQuote(testimonial.quote, testimonial.highlight)}
                     </p>
 
                     <div className="flex flex-col items-center">
-                      {/* Avatar inside card for context */}
-                      <div className="w-16 h-16 rounded-none overflow-hidden border-2 border-[#c5a059] mb-4 shadow-xl">
-                        <Image
-                          src={testimonial.image}
-                          alt={testimonial.name}
-                          width={64}
-                          height={64}
-                          className="object-cover w-full h-full"
-                        />
-                      </div>
-                      <h3 className="text-[#c5a059] font-serif text-2xl md:text-3xl mb-1">{testimonial.name}</h3>
-                      <h4 className="text-white/80 font-light text-xs md:text-sm tracking-[0.2em] uppercase mb-1">{testimonial.author}</h4>
-                      <p className="text-stone-500 text-[10px] uppercase tracking-[0.2em] font-bold">{testimonial.company}</p>
+                      <h3 className="text-[#c5a059] font-serif text-xl md:text-2xl mb-2">{testimonial.name}</h3>
+                      <h4 className="text-white/60 font-light text-xs md:text-sm tracking-[0.2em] uppercase">{testimonial.author}</h4>
                     </div>
                   </div>
                 </motion.div>

@@ -140,6 +140,16 @@ export default function Services() {
     setActiveIndex((prev) => (prev - 1 + SERVICES_DATA.length) % SERVICES_DATA.length);
   }, []);
 
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowLeft') prevService();
+      if (e.key === 'ArrowRight') nextService();
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [nextService, prevService]);
+
   const leftIndex = (activeIndex - 1 + SERVICES_DATA.length) % SERVICES_DATA.length;
   const rightIndex = (activeIndex + 1) % SERVICES_DATA.length;
 
@@ -203,7 +213,7 @@ export default function Services() {
       {/* Services Carousel */}
       <section className="py-24 md:py-48 bg-[#080a0f] relative overflow-hidden">
         <div className="container mx-auto px-6 md:px-12 relative z-10">
-          <div className="max-w-7xl mx-auto relative h-[850px] md:h-[950px] flex items-center justify-center">
+          <div className="max-w-7xl mx-auto relative h-[800px] flex items-center justify-center">
 
             {/* Navigation Arrows */}
             <div className="absolute inset-0 z-50 pointer-events-none hidden md:flex items-center">
@@ -250,10 +260,10 @@ export default function Services() {
                       textRendering: 'geometricPrecision',
                       backfaceVisibility: 'visible',
                     }}
-                    className="absolute w-[90%] md:w-[420px] bg-[#121212] md:bg-[#121212]/95 border border-white/5 p-0 md:shadow-2xl overflow-hidden flex flex-col h-[750px] md:h-[850px] cursor-grab active:cursor-grabbing"
+                    className="absolute w-[90%] md:w-[420px] bg-[#121212] md:bg-[#121212]/95 border border-white/5 p-0 md:shadow-2xl overflow-hidden flex flex-col h-[900px] md:h-[800px] cursor-grab active:cursor-grabbing"
                   >
                     {/* Image/Title Section */}
-                    <div className="w-full relative h-[300px] md:h-[350px] flex-shrink-0">
+                    <div className="w-full relative h-[250px] md:h-[300px] flex-shrink-0">
                       <Image
                         src={service.image}
                         alt={service.title}
@@ -269,21 +279,11 @@ export default function Services() {
                       </div>
                     </div>
 
-                    {/* Description Section (Now Below) */}
-                    <div className="w-full p-6 md:p-8 flex flex-col flex-grow">
-                      <div className="mb-2 md:mb-4 border-l-2 border-[#c5a059] pl-4 md:pl-6">
-                        <p className="text-[#c5a059] italic font-light text-[15px] md:text-[18px] leading-relaxed">
-                          {service.tagline}
-                        </p>
-                      </div>
-                      <div className="space-y-1.5 md:space-y-2 pb-4">
-                        {service.description.map((item, i) => (
-                          <div key={i} className="flex items-start gap-3">
-                            <span className="text-[#c5a059] mt-1 text-base leading-none">•</span>
-                            <span className="text-stone-300 text-[11px] md:text-[14px] leading-tight font-light">{item}</span>
-                          </div>
-                        ))}
-                      </div>
+                    {/* Description Section */}
+                    <div className="w-full p-6 md:p-8 flex flex-col flex-grow items-center justify-center text-center">
+                      <p className="text-stone-300 text-sm md:text-base leading-relaxed font-light">
+                        {service.description}
+                      </p>
                     </div>
                   </motion.div>
                 );
@@ -329,7 +329,7 @@ export default function Services() {
                   Let's discuss how we can support your hospitality vision
                 </p>
                 <Link href="/contact">
-                  <Button className="bg-[#181818] text-white hover:bg-white hover:text-[#181818] px-8 py-4 md:px-12 md:py-7 text-[10px] md:text-sm uppercase tracking-[0.3em] font-bold transition-all duration-500 rounded-full h-auto whitespace-normal leading-relaxed max-w-[300px] md:max-w-none">
+                  <Button className="bg-[#181818] text-white hover:bg-white hover:text-[#181818] px-5 py-5 md:px-12 md:py-7 text-xs md:text-sm uppercase tracking-[0.2em] md:tracking-[0.3em] font-bold transition-all duration-500 rounded-full h-auto whitespace-nowrap leading-relaxed w-auto max-w-none">
                     Schedule Your Complimentary Discovery Call
                   </Button>
                 </Link>
