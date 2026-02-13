@@ -79,7 +79,7 @@ const CONSULTED_WITH_COMPANIES: Company[] = [
   { name: 'Zuma', logo: zumaConsultedLogo, dimensions: 'h-4 w-[70px] md:h-6 w-[90px]' },
   { name: 'Equinox Hotels', logo: equinoxHotelsLogo },
   { name: 'R', logo: rLogo, hoverLogo: rLogo, className: 'grayscale-0 brightness-100' },
-  { name: 'Convene', logo: conveneLogo, dimensions: 'h-6 w-[140px] md:h-8 w-[200px]' },
+  { name: 'Convene', logo: conveneLogo, dimensions: 'h-6 w-[140px] md:h-15 w-[310px]' },
   { name: 'Affect Group', logo: affectLogo, dimensions: 'h-5 w-[65px] md:h-7 w-[90px]' },
   { name: 'Sage Hospitality', logo: sageLogo, dimensions: 'h-6 w-[80px] md:h-8 w-[110px]' },
   { name: 'Bakan', logo: bakanLogo, dimensions: 'h-7 w-[90px] md:h-10 w-[120px]' },
@@ -98,7 +98,7 @@ export default function LogosSection() {
 
   // Default to desktop speeds (40s and 30s)
   const [employedDuration, setEmployedDuration] = React.useState(40);
-  const [consultedDuration, setConsultedDuration] = React.useState(30);
+  const [consultedDuration, setConsultedDuration] = React.useState(40);
 
   React.useEffect(() => {
     const handleResize = () => {

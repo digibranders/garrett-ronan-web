@@ -165,6 +165,7 @@ export const TESTIMONIALS = [
   {
     quote: "Garrett was a key member of the leadership team during a pivotal phase of etc.venues’ international expansion. He successfully built out and established the company in the US overseeing development and operations. Despite the challenges of Covid, Garrett opened three new venues. He also launched a new consulting vertical, partnering with leading NYC CRE developers to design and deliver innovative tenant amenity spaces. A dependable leader throughout a successful M&A with Convene, he consistently delivered exceptional results and comes highly recommended.",
     highlight: "consistently delivered exceptional results",
+    name: "Nick Hoare",
     author: "Ex MD",
     company: "Etc.venues",
     image: testimonialDining
@@ -172,15 +173,17 @@ export const TESTIMONIALS = [
   {
     quote: "I’ve known and worked with Garrett for many years. He Joined Azumi in 2013 and led the US in all aspects of development and operations. He oversaw the successful opening of Zuma flagship locations in NYC, Las Vegas, and Boston; spearheaded opening two Etaru’s in South Florida and was instrumental in the creation and opening two of our first ever “Inko Nito’s” in Los Angeles. To this day, we still look to Garrett for his expertise and guidance in certain aspects our US business",
     highlight: "instrumental in the creation and opening",
+    name: "Sven Koch",
     author: "CEO",
     company: "Azumi Restaurant Group",
     image: testimonialLobby
   },
   {
-    quote: "Most consultants tell you what's wrong and leave. These guys stayed until it was fixed. That made all the difference.",
+    quote: "Having worked with Garrett for over a decade, I have consistently been impressed by his expertise and command of the hospitality industry. He combines sharp financial acumen with deep experience across operations, development, start-up buildouts, C-suite leadership, M&A activity, and end-to-end project management — always with a meticulous, detail-oriented approach. As a business owner, I genuinely value Garrett’s perspective; he brings clarity, structure, and strategic insight to every challenge. He is someone I trust to deliver and a talent I would welcome as part of any company’s senior leadership and strategic planning team.",
     highlight: "stayed until it was fixed",
-    author: "Hotel GM",
-    company: "Northeast Market",
+    name: "Nish Patel",
+    author: "Group CEO",
+    company: "Paperchase",
     image: testimonialReception
   }
 ];

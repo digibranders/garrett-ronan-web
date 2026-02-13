@@ -157,7 +157,7 @@ export default function Services() {
       scale: 0.9,
       opacity: 0.5,
       zIndex: 10,
-      filter: 'blur(0px)',
+      filter: 'none',
       transition: { duration: 0.6, ease: [0.32, 0.72, 0, 1] }
     },
     right: {
@@ -165,7 +165,7 @@ export default function Services() {
       scale: 0.9,
       opacity: 0.5,
       zIndex: 10,
-      filter: 'blur(0px)',
+      filter: 'none',
       transition: { duration: 0.6, ease: [0.32, 0.72, 0, 1] }
     },
     hidden: {
@@ -203,7 +203,7 @@ export default function Services() {
       {/* Services Carousel */}
       <section className="py-24 md:py-48 bg-[#080a0f] relative overflow-hidden">
         <div className="container mx-auto px-6 md:px-12 relative z-10">
-          <div className="max-w-7xl mx-auto relative h-[800px] flex items-center justify-center">
+          <div className="max-w-7xl mx-auto relative h-[850px] md:h-[950px] flex items-center justify-center">
 
             {/* Navigation Arrows */}
             <div className="absolute inset-0 z-50 pointer-events-none hidden md:flex items-center">
@@ -223,7 +223,7 @@ export default function Services() {
               </div>
             </div>
 
-            <div className="relative w-full h-full flex items-center justify-center [perspective:2000px]">
+            <div className="relative w-full h-full flex items-center justify-center md:[perspective:2000px]">
               {SERVICES_DATA.map((service, index) => {
                 let position = "hidden";
                 if (index === activeIndex) position = "active";
@@ -236,7 +236,21 @@ export default function Services() {
                     variants={cardVariants}
                     animate={position}
                     initial="hidden"
-                    className="absolute w-[90%] md:w-[420px] bg-[#121212]/90 border border-white/5 p-0 shadow-2xl backdrop-blur-sm overflow-hidden flex flex-col min-h-[700px] md:min-h-[750px] h-auto"
+                    drag="x"
+                    dragConstraints={{ left: 0, right: 0 }}
+                    dragElastic={0.1}
+                    onDragEnd={(_, info) => {
+                      if (info.offset.x < -50) nextService();
+                      if (info.offset.x > 50) prevService();
+                    }}
+                    style={{
+                      touchAction: 'pan-y',
+                      WebkitFontSmoothing: 'antialiased',
+                      MozOsxFontSmoothing: 'auto',
+                      textRendering: 'geometricPrecision',
+                      backfaceVisibility: 'visible',
+                    }}
+                    className="absolute w-[90%] md:w-[420px] bg-[#121212] md:bg-[#121212]/95 border border-white/5 p-0 md:shadow-2xl overflow-hidden flex flex-col h-[750px] md:h-[850px] cursor-grab active:cursor-grabbing"
                   >
                     {/* Image/Title Section */}
                     <div className="w-full relative h-[300px] md:h-[350px] flex-shrink-0">
@@ -257,16 +271,16 @@ export default function Services() {
 
                     {/* Description Section (Now Below) */}
                     <div className="w-full p-6 md:p-8 flex flex-col flex-grow">
-                      <div className="mb-4 md:mb-6 border-l-2 border-[#c5a059] pl-4 md:pl-6">
-                        <p className="text-[#c5a059] italic font-light text-[14px] md:text-base leading-relaxed">
+                      <div className="mb-2 md:mb-4 border-l-2 border-[#c5a059] pl-4 md:pl-6">
+                        <p className="text-[#c5a059] italic font-light text-[15px] md:text-[18px] leading-relaxed">
                           {service.tagline}
                         </p>
                       </div>
-                      <div className="space-y-3 md:space-y-4 pb-8">
+                      <div className="space-y-1.5 md:space-y-2 pb-4">
                         {service.description.map((item, i) => (
                           <div key={i} className="flex items-start gap-3">
                             <span className="text-[#c5a059] mt-1 text-base leading-none">•</span>
-                            <span className="text-stone-300 text-[12px] md:text-[13px] leading-relaxed font-light">{item}</span>
+                            <span className="text-stone-300 text-[11px] md:text-[14px] leading-tight font-light">{item}</span>
                           </div>
                         ))}
                       </div>

@@ -8,6 +8,7 @@ import { Quote, ChevronLeft, ChevronRight } from 'lucide-react';
 interface Testimonial {
   quote: string;
   highlight?: string;
+  name: string;
   author: string;
   company: string;
   image: StaticImageData;
@@ -60,7 +61,7 @@ export default function TestimonialsSection({ testimonials }: TestimonialsSectio
       scale: 1,
       opacity: 1,
       zIndex: 30,
-      filter: 'blur(0px)',
+      filter: 'none',
       transition: { duration: 0.6, ease: [0.32, 0.72, 0, 1] as const }
     },
     left: {
@@ -137,7 +138,21 @@ export default function TestimonialsSection({ testimonials }: TestimonialsSectio
                   variants={cardVariants}
                   animate={position}
                   initial="hidden"
-                  className="absolute w-[95%] md:w-[850px] bg-white/[0.03] border border-white/5 rounded-none p-8 md:p-16 lg:px-20 lg:py-20 shadow-2xl backdrop-blur-md flex flex-col items-center justify-center"
+                  drag="x"
+                  dragConstraints={{ left: 0, right: 0 }}
+                  dragElastic={0.1}
+                  onDragEnd={(_, info) => {
+                    if (info.offset.x < -50) nextTestimonial();
+                    if (info.offset.x > 50) prevTestimonial();
+                  }}
+                  style={{
+                    touchAction: 'pan-y',
+                    WebkitFontSmoothing: 'antialiased',
+                    MozOsxFontSmoothing: 'auto',
+                    textRendering: 'geometricPrecision',
+                    backfaceVisibility: 'visible',
+                  }}
+                  className="absolute w-[95%] md:w-[850px] bg-white/[0.03] border border-white/5 rounded-none p-8 md:p-16 lg:px-20 lg:py-20 md:shadow-2xl flex flex-col items-center justify-center cursor-grab active:cursor-grabbing"
                 >
                   {/* Large Background Quote Icon */}
                   <div className="absolute top-12 left-12 text-white/[0.03] pointer-events-none">
@@ -151,18 +166,18 @@ export default function TestimonialsSection({ testimonials }: TestimonialsSectio
 
                     <div className="flex flex-col items-center">
                       {/* Avatar inside card for context */}
-                      <div className="w-16 h-16 rounded-none overflow-hidden border-2 border-[#c5a059] mb-6 shadow-xl">
+                      <div className="w-16 h-16 rounded-none overflow-hidden border-2 border-[#c5a059] mb-4 shadow-xl">
                         <Image
                           src={testimonial.image}
-                          alt={testimonial.author}
+                          alt={testimonial.name}
                           width={64}
                           height={64}
                           className="object-cover w-full h-full"
                         />
                       </div>
-                      <h4 className="text-white font-medium text-lg tracking-[0.1em] uppercase">{testimonial.author}</h4>
-                      <div className="w-6 h-[1px] bg-white/20 my-4"></div>
-                      <p className="text-stone-500 text-[10px] uppercase tracking-[0.3em] font-bold">{testimonial.company}</p>
+                      <h3 className="text-[#c5a059] font-serif text-2xl md:text-3xl mb-1">{testimonial.name}</h3>
+                      <h4 className="text-white/80 font-light text-xs md:text-sm tracking-[0.2em] uppercase mb-1">{testimonial.author}</h4>
+                      <p className="text-stone-500 text-[10px] uppercase tracking-[0.2em] font-bold">{testimonial.company}</p>
                     </div>
                   </div>
                 </motion.div>
