@@ -73,7 +73,7 @@ export default function GalleryPage() {
             <span className="italic text-[#c5a059]">Works</span>
           </h1>
           <p className="text-stone-400 text-xl max-w-3xl leading-relaxed">
-            A curated selection of our finest hospitality projects, showcasing our commitment to design excellence and practical innovation.
+            A curated selection of the finest  hospitality projects & assets, showcasing our career background and experience. Each is an example of a commitment to design excellence and practical innovation.
           </p>
         </motion.div>
 
@@ -98,7 +98,7 @@ export default function GalleryPage() {
                     className="w-full h-full object-cover transition-all duration-700 ease-in-out transform group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <span className="text-white tracking-[0.2em] uppercase text-sm border border-white/30 px-6 py-3 backdrop-blur-sm">{item.title}</span>
+                    <span className="text-white tracking-[0.2em] text-sm border border-white/30 px-6 py-3 backdrop-blur-sm">{item.title}</span>
                   </div>
                 </motion.div>
               ))}
@@ -181,7 +181,7 @@ export default function GalleryPage() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.4, delay: 0.1 }}
                   >
-                    <h2 className="text-3xl md:text-4xl font-light uppercase tracking-[0.15em] text-white">
+                    <h2 className="text-3xl md:text-4xl font-light tracking-[0.15em] text-white">
                       {selectedItem.title}
                     </h2>
                     <div className="w-12 h-[1px] bg-[#c5a059] my-6"></div>

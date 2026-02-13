@@ -280,10 +280,14 @@ export default function Services() {
                     </div>
 
                     {/* Description Section */}
-                    <div className="w-full p-6 md:p-8 flex flex-col flex-grow items-center justify-center text-center">
-                      <p className="text-stone-300 text-sm md:text-base leading-relaxed font-light">
-                        {service.description}
-                      </p>
+                    <div className="w-full p-4 md:p-8 flex flex-col flex-grow relative">
+                      <ul className="space-y-2 list-disc pl-4 text-left w-full">
+                        {service.description.map((item, i) => (
+                          <li key={i} className="text-stone-300 text-xs md:text-sm leading-relaxed font-light pl-1">
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </motion.div>
                 );

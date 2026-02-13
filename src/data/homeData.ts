@@ -166,11 +166,11 @@ export const TESTIMONIALS = [
     quote: "Garrett was a key member of the leadership team during a pivotal phase of etc.venues’ international expansion. He successfully built out and established the company in the US overseeing development and operations. Despite the challenges of Covid, Garrett opened three new venues. He also launched a new consulting vertical, partnering with leading NYC CRE developers to design and deliver innovative tenant amenity spaces. A dependable leader throughout a successful M&A with Convene, he consistently delivered exceptional results and comes highly recommended.",
     highlight: "consistently delivered exceptional results",
     name: "Nick Hoare",
-    author: "Ex MD",
+    author: "Former MD",
     logo: etcVenuesLogo
   },
   {
-    quote: "I’ve known and worked with Garrett for many years. He Joined Azumi in 2013 and led the US in all aspects of development and operations. He oversaw the successful opening of Zuma flagship locations in NYC, Las Vegas, and Boston; spearheaded opening two Etaru’s in South Florida and was instrumental in the creation and opening two of our first ever “Inko Nito’s” in Los Angeles. To this day, we still look to Garrett for his expertise and guidance in certain aspects our US business",
+    quote: "I’ve known and worked with Garrett for many years. He Joined Azumi in 2013 and led the US in all aspects of development and operations. He oversaw the successful opening of Zuma flagship locations in NYC on Madison Ave, Las Vegas at The Cosmopolitan & Boston at The Four Seasons; spearheaded opening two Etaru’s in South Florida and was instrumental in the creation and opening two of our first ever “Inko Nito’s” in Los Angeles. To this day, we still look to Garrett for his expertise and guidance in certain aspects of our US business",
     highlight: "instrumental in the creation and opening",
     name: "Sven Koch",
     author: "CEO",
