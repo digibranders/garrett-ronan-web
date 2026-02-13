@@ -140,6 +140,16 @@ export default function Services() {
     setActiveIndex((prev) => (prev - 1 + SERVICES_DATA.length) % SERVICES_DATA.length);
   }, []);
 
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowLeft') prevService();
+      if (e.key === 'ArrowRight') nextService();
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [nextService, prevService]);
+
   const leftIndex = (activeIndex - 1 + SERVICES_DATA.length) % SERVICES_DATA.length;
   const rightIndex = (activeIndex + 1) % SERVICES_DATA.length;
 
@@ -157,7 +167,7 @@ export default function Services() {
       scale: 0.9,
       opacity: 0.5,
       zIndex: 10,
-      filter: 'blur(0px)',
+      filter: 'none',
       transition: { duration: 0.6, ease: [0.32, 0.72, 0, 1] }
     },
     right: {
@@ -165,7 +175,7 @@ export default function Services() {
       scale: 0.9,
       opacity: 0.5,
       zIndex: 10,
-      filter: 'blur(0px)',
+      filter: 'none',
       transition: { duration: 0.6, ease: [0.32, 0.72, 0, 1] }
     },
     hidden: {
@@ -223,7 +233,7 @@ export default function Services() {
               </div>
             </div>
 
-            <div className="relative w-full h-full flex items-center justify-center [perspective:2000px]">
+            <div className="relative w-full h-full flex items-center justify-center md:[perspective:2000px]">
               {SERVICES_DATA.map((service, index) => {
                 let position = "hidden";
                 if (index === activeIndex) position = "active";
@@ -236,10 +246,24 @@ export default function Services() {
                     variants={cardVariants}
                     animate={position}
                     initial="hidden"
-                    className="absolute w-[90%] md:w-[420px] bg-[#121212]/90 border border-white/5 p-0 shadow-2xl backdrop-blur-sm overflow-hidden flex flex-col min-h-[700px] md:min-h-[750px] h-auto"
+                    drag="x"
+                    dragConstraints={{ left: 0, right: 0 }}
+                    dragElastic={0.1}
+                    onDragEnd={(_, info) => {
+                      if (info.offset.x < -50) nextService();
+                      if (info.offset.x > 50) prevService();
+                    }}
+                    style={{
+                      touchAction: 'pan-y',
+                      WebkitFontSmoothing: 'antialiased',
+                      MozOsxFontSmoothing: 'auto',
+                      textRendering: 'geometricPrecision',
+                      backfaceVisibility: 'visible',
+                    }}
+                    className="absolute w-[90%] md:w-[420px] bg-[#121212] md:bg-[#121212]/95 border border-white/5 p-0 md:shadow-2xl overflow-hidden flex flex-col h-[900px] md:h-[800px] cursor-grab active:cursor-grabbing"
                   >
                     {/* Image/Title Section */}
-                    <div className="w-full relative h-[300px] md:h-[350px] flex-shrink-0">
+                    <div className="w-full relative h-[250px] md:h-[300px] flex-shrink-0">
                       <Image
                         src={service.image}
                         alt={service.title}
@@ -255,21 +279,11 @@ export default function Services() {
                       </div>
                     </div>
 
-                    {/* Description Section (Now Below) */}
-                    <div className="w-full p-6 md:p-8 flex flex-col flex-grow">
-                      <div className="mb-4 md:mb-6 border-l-2 border-[#c5a059] pl-4 md:pl-6">
-                        <p className="text-[#c5a059] italic font-light text-[14px] md:text-base leading-relaxed">
-                          {service.tagline}
-                        </p>
-                      </div>
-                      <div className="space-y-3 md:space-y-4 pb-8">
-                        {service.description.map((item, i) => (
-                          <div key={i} className="flex items-start gap-3">
-                            <span className="text-[#c5a059] mt-1 text-base leading-none">•</span>
-                            <span className="text-stone-300 text-[12px] md:text-[13px] leading-relaxed font-light">{item}</span>
-                          </div>
-                        ))}
-                      </div>
+                    {/* Description Section */}
+                    <div className="w-full p-6 md:p-8 flex flex-col flex-grow items-center justify-center text-center">
+                      <p className="text-stone-300 text-sm md:text-base leading-relaxed font-light">
+                        {service.description}
+                      </p>
                     </div>
                   </motion.div>
                 );
@@ -315,7 +329,7 @@ export default function Services() {
                   Let's discuss how we can support your hospitality vision
                 </p>
                 <Link href="/contact">
-                  <Button className="bg-[#181818] text-white hover:bg-white hover:text-[#181818] px-8 py-4 md:px-12 md:py-7 text-[10px] md:text-sm uppercase tracking-[0.3em] font-bold transition-all duration-500 rounded-full h-auto whitespace-normal leading-relaxed max-w-[300px] md:max-w-none">
+                  <Button className="bg-[#181818] text-white hover:bg-white hover:text-[#181818] px-5 py-5 md:px-12 md:py-7 text-xs md:text-sm uppercase tracking-[0.2em] md:tracking-[0.3em] font-bold transition-all duration-500 rounded-full h-auto whitespace-nowrap leading-relaxed w-auto max-w-none">
                     Schedule Your Complimentary Discovery Call
                   </Button>
                 </Link>

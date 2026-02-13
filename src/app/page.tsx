@@ -13,8 +13,10 @@ import CTASection from '@/components/home/CTASection';
 import {
   HERO_IMAGES,
   SERVICES_DATA,
-  testimonialLobby
 } from '@/data/homeData';
+
+// Images
+import testimonialLobby from '@/assets/images/testimonials/testimonial-lobby.jpg';
 
 export default function Home() {
   const { scrollYProgress } = useScroll();
