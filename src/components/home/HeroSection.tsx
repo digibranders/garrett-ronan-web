@@ -49,18 +49,18 @@ export default function HeroSection({ images, scale }: HeroSectionProps) {
         </motion.div>
       </div>
 
-      <div className="container mx-auto px-6 md:px-12 relative z-20 mt-20">
+      <div className="container mx-auto px-6 md:px-12 relative z-20 mt-20 text-center md:text-left">
         <motion.div
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
         >
-          <h1 className="text-6xl md:text-8xl font-serif font-light text-white leading-[1.1] tracking-tight mb-12 max-w-6xl">
+          <h1 className="text-6xl md:text-8xl font-serif font-light text-white leading-[1.1] tracking-tight mb-12 max-w-6xl mx-auto md:mx-0">
             Simply Practical Yet Creative  <span className="text-[#c5a059] italic">Solutions</span>
           </h1>
 
-          <Link href="/contact">
-            <Button className="bg-[#c5a059] text-[#181818] hover:opacity-90 px-5 py-4 md:px-10 md:py-6 text-[10px] md:text-xs uppercase tracking-[0.2em] md:tracking-[0.3em] font-bold transition-all duration-500 rounded-full h-auto whitespace-nowrap leading-relaxed w-auto max-w-none">
+          <Link href="/contact" className="inline-block">
+            <Button className="bg-[#c5a059] text-[#181818] hover:opacity-90 px-4 py-4 md:px-10 md:py-6 text-[9px] md:text-xs uppercase tracking-[0.15em] md:tracking-[0.3em] font-bold transition-all duration-500 rounded-full h-auto whitespace-nowrap leading-relaxed w-auto max-w-none">
               Schedule Your Complimentary Discovery Call
             </Button>
           </Link>
