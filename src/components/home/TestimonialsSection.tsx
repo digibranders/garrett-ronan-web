@@ -11,6 +11,7 @@ interface Testimonial {
   name: string;
   author: string;
   logo: StaticImageData;
+  invertLogo?: boolean;
 }
 
 interface TestimonialsSectionProps {
@@ -174,31 +175,31 @@ export default function TestimonialsSection({ testimonials }: TestimonialsSectio
                     textRendering: 'geometricPrecision',
                     backfaceVisibility: 'visible',
                   }}
-                  className="absolute inset-0 m-auto w-[80%] md:w-[850px] h-[700px] md:h-[600px] lg:h-[700px] bg-[#111111] border border-white/5 rounded-sm p-8 md:p-14 lg:p-20 shadow-2xl flex flex-col items-center justify-center cursor-grab active:cursor-grabbing"
+                  className="absolute inset-0 m-auto w-[85%] md:w-[850px] h-[650px] md:h-[600px] lg:h-[700px] bg-[#111111] border border-white/5 rounded-sm p-6 md:p-14 lg:p-20 shadow-2xl flex flex-col items-center justify-center cursor-grab active:cursor-grabbing"
                 >
                   {/* Large Background Quote Icon */}
-                  <div className="absolute top-10 left-10 text-white/[0.02] pointer-events-none">
-                    <Quote size={140} fill="currentColor" strokeWidth={0} />
+                  <div className="absolute top-6 left-6 md:top-10 md:left-10 text-white/[0.02] pointer-events-none">
+                    <Quote size={isMobile ? 80 : 140} fill="currentColor" strokeWidth={0} />
                   </div>
 
-                  <div className="relative z-10 text-center flex flex-col items-center select-none w-full max-w-4xl mx-auto px-4">
+                  <div className="relative z-10 text-center flex flex-col items-center select-none w-full max-w-4xl mx-auto px-2 md:px-4">
                     {/* Logo at the top */}
-                    <div className="mb-6 md:mb-10 relative h-16 md:h-20 w-40 md:w-56 mx-auto">
+                    <div className="mb-6 md:mb-10 relative h-12 md:h-20 w-32 md:w-56 mx-auto">
                       <Image
                         src={testimonial.logo}
                         alt="Company Logo"
                         fill
-                        className="object-contain"
+                        className={`object-contain ${testimonial.invertLogo ? 'brightness-0 invert' : ''}`}
                       />
                     </div>
 
-                    <p className="text-base md:text-lg lg:text-xl text-white font-serif font-light leading-relaxed mb-8 md:mb-10 max-w-3xl mx-auto">
+                    <p className="text-xs md:text-lg lg:text-xl text-white font-serif font-light leading-relaxed mb-4 md:mb-10 max-w-3xl mx-auto">
                       {renderQuote(testimonial.quote, testimonial.highlight)}
                     </p>
 
-                    <div className="flex flex-col items-center">
-                      <h3 className="text-[#c5a059] font-serif text-xl md:text-2xl mb-2">{testimonial.name}</h3>
-                      <h4 className="text-white/60 font-light text-xs md:text-sm tracking-[0.2em] uppercase">{testimonial.author}</h4>
+                    <div className="flex flex-col items-center mt-auto">
+                      <h3 className="text-[#c5a059] font-serif text-lg md:text-2xl mb-1 md:mb-2">{testimonial.name}</h3>
+                      <h4 className="text-white/60 font-light text-[10px] md:text-sm tracking-[0.2em] uppercase">{testimonial.author}</h4>
                     </div>
                   </div>
                 </motion.div>
