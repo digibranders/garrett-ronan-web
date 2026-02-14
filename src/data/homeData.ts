@@ -57,42 +57,98 @@ export const SERVICES_DATA = [
   {
     title: "Concept Creation",
     description: "We help guide your hospitality concepts from ideation through to delivering market ready, creative outcomes.",
+    descriptionList: [
+      "Ideation and early-stage concept development",
+      "Concept inception and positioning",
+      "Structured brainstorming and refinement",
+      "Market research and competitive analysis",
+      "Market and site identification and sourcing"
+    ],
     bgImage: serviceConcept,
     anchor: "concept-creation"
   },
   {
     title: "Capital & Growth Investment",
     description: "We provide strategic advice  and guidance on growth and investment, capital sourcing, M&A’s and create investor-ready business plans.",
+    descriptionList: [
+      "Growth capital and investment sourcing",
+      "Mergers and acquisitions support",
+      "Business planning and investor-ready models"
+    ],
     bgImage: serviceInvestment,
     anchor: "capital-growth-investment"
   },
   {
     title: "Design, Development & Construction",
     description: "We provide skilled “Owners Rep” oversight through each phase of design and construction to deliver your projects successfully.",
+    descriptionList: [
+      "Conceptual design briefing aligned to client and tenant needs",
+      "Schematic design coordination with design and consultant teams",
+      "Value engineering reviews to protect budgets and functionality",
+      "Contract review and risk assessment",
+      "Design development and style narrative definition",
+      "RFP and bidding process management",
+      "Construction documentation and approvals",
+      "End-to-end project management",
+      "Change order review and cost control",
+      "Coordination of lighting, AV, FF&E, and specialty elements"
+    ],
     bgImage: serviceConstruction,
     anchor: "design-development-construction"
   },
   {
     title: "Operations",
     description: "We help deliver end-to-end operations excellence and efficiency from pre and post opening to ongoing operational management.",
+    descriptionList: [
+      "Pre-opening planning and operational standards creation",
+      "Launch and opening support",
+      "Post-opening stabilization",
+      "Day-to-day operational leadership and advisory",
+      "SOP creation, review, and implementation",
+      "Full operational audits, including secret shops",
+      "Sales and marketing strategy and execution",
+      "Revenue management and performance optimization",
+      "HR, recruitment, and team development",
+      "Labor relations, collective bargaining, and union negotiations",
+      "Logistics and procurement",
+      "F&B menu planning, design, costing, and performance analysis"
+    ],
     bgImage: serviceOperations,
     anchor: "operations"
   },
   {
     title: "Legal",
     description: "We help you manage the legal foundations that protect your deals, teams, and long-term operations.",
+    descriptionList: [
+      "Lease review and negotiations",
+      "Licensing and permitting",
+      "Contract review and negotiations",
+      "Employment and labor support"
+    ],
     bgImage: serviceLegal,
     anchor: "legal"
   },
   {
     title: "Financial",
     description: "We provide end-to-end insightful financial guidance, on budgeting, forecasting, audits, cost control, efficiency and profitability.",
+    descriptionList: [
+      "Project and operational budgeting and forecasting",
+      "Full and partial financial audits",
+      "Cost analysis and control systems",
+      "Profitability and performance analysis",
+      "M&A financial support",
+      "Sale and exit preparation",
+      "Business dissolution support"
+    ],
     bgImage: serviceAccounting,
     anchor: "financial"
   },
   {
     title: "Additional Support",
     description: "We provide targeted support wherever your business may need experienced hospitality operator guidance and oversight.",
+    descriptionList: [
+      "Every Hospitality Business and Project has unique attributes ~ We are here to support whatever you may need."
+    ],
     bgImage: serviceTraining,
     anchor: "additional-support"
   }
