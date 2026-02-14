@@ -53,6 +53,7 @@ function ServiceCard({ service, index, total }: { service: Service; index: numbe
         <div
             className={`relative h-[500px] overflow-hidden group cursor-pointer shadow-xl ${index === total - 1 ? 'lg:col-start-2' : ''}`}
             onClick={() => setIsActive(!isActive)}
+            onMouseLeave={() => setIsActive(false)}
         >
             {/* Image Background */}
             <div className="absolute inset-0 w-full h-full">
