@@ -86,8 +86,8 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   // },
   {
     "id": 8,
-    "title": "CONVENE | Etc.venues",
-    "description": "Gallery for CONVENE | Etc.venues",
+    "title": "CONVENE | etc.venues",
+    "description": "Gallery for CONVENE | etc.venues",
     "link": "https://convene.com/about-us/etc-venues/",
     "images": [
       "/images/gallery/etc.venues meetings and events/etc_1.png",

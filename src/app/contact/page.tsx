@@ -77,7 +77,7 @@ export default function Contact() {
               className="text-center mb-16"
             >
               <span className="text-[#c5a059] text-[10px] font-bold tracking-[0.4em] uppercase block mb-6">Start a Conversation</span>
-              <h1 className="text-5xl md:text-7xl font-serif font-light text-white leading-tight tracking-tight mb-6">
+              <h1 className="text-4xl md:text-7xl font-serif font-light text-white leading-tight tracking-tight mb-6">
                 Let's Talk
               </h1>
               <p className="text-stone-400 text-sm max-w-md mx-auto">
@@ -93,7 +93,7 @@ export default function Contact() {
               className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4 md:gap-0 px-4"
             >
               <a href="mailto:Connect@GKRHospitality.com" className="text-[#c5a059] text-[15px]  tracking-[0.2em] hover:text-white transition-colors font-bold">
-               connect@GKRHospitality.com
+                connect@GKRHospitality.com
               </a>
               {/* <span className="hidden md:block w-1.5 h-1.5 bg-[#c5a059] rounded-full"></span> */}
               <a href="tel:+19174605793" className="text-[#c5a059] text-[15px] uppercase tracking-[0.2em] hover:text-white transition-colors font-bold">

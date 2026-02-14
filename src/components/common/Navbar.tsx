@@ -49,11 +49,12 @@ export default function Navbar() {
   }, []);
 
   const NAV_ITEMS = [
-    { label: 'Work', href: '/work' },
-    { label: 'About', href: '/about' },
+    { label: 'About Us', href: '/about' },
+    { label: 'Our Work', href: '/work' },
     { label: 'How We Work', href: '/how-we-work' },
-    { label: 'Gallery', href: '/gallery' },
-    { label: 'Services', href: '/services' }
+    { label: 'What our Clients Say', href: '/reviews' },
+    { label: 'What we do', href: '/what-we-do' },
+    { label: 'Gallery', href: '/gallery' }
   ];
 
   return (
@@ -67,8 +68,8 @@ export default function Navbar() {
 
           </div>
 
-          <div className="hidden md:flex items-center gap-16">
-            <div className="flex gap-16">
+          <div className="hidden xl:flex items-center gap-10">
+            <div className="flex gap-10">
               {mounted && NAV_ITEMS.map((item, i) => (
                 <Link
                   key={item.label}
@@ -92,7 +93,7 @@ export default function Navbar() {
           </div>
 
           <button
-            className="md:hidden text-white hover:text-[#c5a059] transition-colors"
+            className="xl:hidden text-white hover:text-[#c5a059] transition-colors"
             onClick={() => setMobileMenuOpen(true)}
           >
             <Menu size={28} strokeWidth={1} />
