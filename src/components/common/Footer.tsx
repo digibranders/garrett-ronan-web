@@ -41,11 +41,12 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="flex flex-col md:flex-row justify-between items-end pt-8 border-t border-white/5">
-          <div className="flex items-center gap-4 mb-4 md:mb-0">
+        <div className="flex flex-col md:flex-row justify-between items-center md:items-end pt-8 border-t border-white/5">
+          <div className="flex items-center gap-4 mb-6 md:mb-0">
              <img src={logoImage.src} alt="GKR" className="h-8 brightness-0 invert opacity-30" />
           </div>
-          <div className="flex gap-8 text-[10px] uppercase tracking-[0.2em] text-stone-600 font-bold">
+          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 text-[10px] uppercase tracking-[0.2em] text-stone-600 font-bold text-center md:text-right">
+             <Link href="/accessibility" className="hover:text-white transition-colors">Accessibility</Link>
              <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
              <span>© 2025 GKR Consulting</span>
           </div>

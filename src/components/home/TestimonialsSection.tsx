@@ -136,13 +136,15 @@ export default function TestimonialsSection({ testimonials }: TestimonialsSectio
           <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 z-[60] pointer-events-none hidden md:flex items-center justify-between px-2 md:-px-12 w-full">
             <button
               onClick={prevTestimonial}
-              className="w-12 h-12 md:w-14 md:h-14 rounded-full border border-white/10 bg-white/5 backdrop-blur-md flex items-center justify-center text-white hover:bg-[#c5a059] hover:border-[#c5a059] transition-all duration-300 pointer-events-auto group"
+              className="w-12 h-12 md:w-14 md:h-14 rounded-full border border-white/10 bg-white/5 backdrop-blur-md flex items-center justify-center text-white hover:bg-[#c5a059] hover:border-[#c5a059] transition-all duration-300 pointer-events-auto group focus:outline-none focus-visible:ring-1 focus-visible:ring-[#c5a059] cursor-pointer"
+              aria-label="Previous testimonial"
             >
               <ChevronLeft className="w-5 h-5 md:w-6 md:h-6 transition-transform group-hover:-translate-x-1" />
             </button>
             <button
               onClick={nextTestimonial}
-              className="w-12 h-12 md:w-14 md:h-14 rounded-full border border-white/10 bg-white/5 backdrop-blur-md flex items-center justify-center text-white hover:bg-[#c5a059] hover:border-[#c5a059] transition-all duration-300 pointer-events-auto group"
+              className="w-12 h-12 md:w-14 md:h-14 rounded-full border border-white/10 bg-white/5 backdrop-blur-md flex items-center justify-center text-white hover:bg-[#c5a059] hover:border-[#c5a059] transition-all duration-300 pointer-events-auto group focus:outline-none focus-visible:ring-1 focus-visible:ring-[#c5a059] cursor-pointer"
+              aria-label="Next testimonial"
             >
               <ChevronRight className="w-5 h-5 md:w-6 md:h-6 transition-transform group-hover:translate-x-1" />
             </button>

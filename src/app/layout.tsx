@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import "@/styles/index.css";
 import Navbar from '@/components/common/Navbar';
-// import MovingRibbon from '@/components/common/MovingRibbon';
+import ScrollToTop from '@/components/common/ScrollToTop';
+
 import Footer from '@/components/common/Footer';
 
 export const metadata: Metadata = {
@@ -26,6 +27,7 @@ export const metadata: Metadata = {
     ],
     locale: 'en_US',
     type: 'website',
+    // type: 'website', // Removed duplicate key
   },
   twitter: {
     card: 'summary_large_image',
@@ -58,9 +60,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased bg-[#141414] text-white selection:bg-[#c5a059] selection:text-white overflow-x-hidden w-full" suppressHydrationWarning>
+        <ScrollToTop />
+        <a 
+          href="#main-content" 
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 bg-[#c5a059] text-[#181818] px-6 py-3 font-bold rounded-sm shadow-lg border-2 border-white/20 outline-none"
+        >
+          Skip to Content
+        </a>
+        
         {/* <MovingRibbon /> */}
         <Navbar />
-        {children}
+        <main id="main-content" className="flex-grow">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

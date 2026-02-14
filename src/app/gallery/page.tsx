@@ -83,24 +83,25 @@ export default function GalleryPage() {
           >
             <Masonry gutter="20px">
               {GALLERY_ITEMS.map((item, index) => (
-                <motion.div
+                <motion.button
                   key={item.id}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="relative group cursor-pointer overflow-hidden"
+                  className="relative group cursor-pointer overflow-hidden w-full block text-left bg-transparent border-0 p-0 m-0 focus:outline-none focus-visible:ring-1 focus-visible:ring-[#c5a059] focus-visible:ring-offset-2 focus-visible:ring-offset-[#181818]"
                   onClick={() => setSelectedItemIndex(index)}
+                  aria-label={`View project: ${item.title}`}
                 >
                   <img
                     src={item.images[0]} // Display first image as cover
-                    alt={item.title}
+                    alt=""
                     className="w-full h-full object-cover transition-all duration-700 ease-in-out transform group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <span className="text-white tracking-[0.2em] text-sm border border-white/30 px-6 py-3 backdrop-blur-sm">{item.title}</span>
                   </div>
-                </motion.div>
+                </motion.button>
               ))}
             </Masonry>
           </ResponsiveMasonry>

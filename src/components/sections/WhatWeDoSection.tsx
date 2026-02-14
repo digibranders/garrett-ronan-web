@@ -51,7 +51,7 @@ function ServiceCard({ service, index, total }: { service: Service; index: numbe
 
     return (
         <div
-            className={`relative h-[500px] overflow-hidden group cursor-pointer shadow-xl ${index === total - 1 ? 'lg:col-start-2' : ''}`}
+            className={`relative w-full h-[500px] overflow-hidden group shadow-xl ${index === total - 1 ? 'lg:col-start-2' : ''}`}
             onClick={() => setIsActive(!isActive)}
             onMouseLeave={() => setIsActive(false)}
         >

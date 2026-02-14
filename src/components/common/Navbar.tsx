@@ -93,8 +93,9 @@ export default function Navbar() {
           </div>
 
           <button
-            className="xl:hidden text-white hover:text-[#c5a059] transition-colors"
+            className="xl:hidden text-white hover:text-[#c5a059] transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-[#c5a059] rounded-md p-1"
             onClick={() => setMobileMenuOpen(true)}
+            aria-label="Open main menu"
           >
             <Menu size={28} strokeWidth={1} />
           </button>
@@ -111,8 +112,9 @@ export default function Navbar() {
             className="fixed inset-0 z-50 bg-[#181818] flex flex-col justify-center items-center"
           >
             <button
-              className="absolute top-8 right-6 text-white hover:text-[#c5a059] transition-colors"
+              className="absolute top-8 right-6 text-white hover:text-[#c5a059] transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-[#c5a059] rounded-full p-2"
               onClick={() => setMobileMenuOpen(false)}
+              aria-label="Close menu"
             >
               <div className="relative w-8 h-8 flex flex-col justify-center items-center gap-2">
                 <span className="w-full h-[1px] bg-current rotate-45 absolute"></span>

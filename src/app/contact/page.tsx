@@ -310,7 +310,9 @@ export default function Contact() {
               >
                 <button
                   onClick={() => setOpenFAQ(openFAQ === index ? null : index)}
-                  className="cursor-pointer w-full py-8 flex items-start justify-between gap-8 text-left group hover:bg-[#181818]/5 px-6 -mx-6 transition-colors duration-300"
+                  className="cursor-pointer w-full py-8 flex items-start justify-between gap-8 text-left group hover:bg-[#181818]/5 px-6 -mx-6 transition-colors duration-300 focus:outline-none focus-visible:ring-1 focus-visible:ring-[#c5a059] rounded-md"
+                  aria-expanded={openFAQ === index}
+                  aria-controls={`faq-answer-${index}`}
                 >
                   <div className="flex items-start gap-6 flex-1">
                     <span className="text-[#c5a059] text-sm font-serif mt-1 flex-shrink-0">0{index + 1}</span>
@@ -331,6 +333,8 @@ export default function Contact() {
                   }}
                   transition={{ duration: 0.3 }}
                   className="overflow-hidden"
+                  id={`faq-answer-${index}`}
+                  role="region"
                 >
                   <div className="pb-8 pl-6 pr-6">
                     <div className="pl-12">

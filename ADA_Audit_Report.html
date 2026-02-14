@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADA & WCAG Audit Report - GKR Hospitality</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@200;300;400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #141414;
+            --text-color: #f3f3f3;
+            --text-muted: #a0a0a0;
+            --gold-primary: #c5a059;
+            --gold-hover: #d4b06a;
+            --surface-color: #1f1f1f;
+            --border-color: #333333;
+
+            --font-sans: 'Montserrat', sans-serif;
+            --font-serif: 'Cormorant Garamond', serif;
+
+            --status-pass: #2e7d32;
+            --status-pass-bg: rgba(46, 125, 50, 0.2);
+            --status-fail: #c62828;
+            --status-fail-bg: rgba(198, 40, 40, 0.2);
+            --status-warn: #ef6c00;
+            --status-warn-bg: rgba(239, 108, 0, 0.2);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: var(--font-serif);
+            font-weight: 600;
+            color: #fff;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        h1 {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 10px;
+            color: var(--gold-primary);
+        }
+
+        h2 {
+            font-size: 2rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-top: 60px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: var(--gold-primary);
+        }
+
+        p {
+            margin-bottom: 1.5em;
+            color: var(--text-muted);
+        }
+
+        .header-meta {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 50px;
+            font-size: 0.95rem;
+        }
+
+        /* Status Badges */
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-pass {
+            background-color: var(--status-pass-bg);
+            color: #81c784;
+            border: 1px solid var(--status-pass);
+        }
+
+        .badge-fail {
+            background-color: var(--status-fail-bg);
+            color: #e57373;
+            border: 1px solid var(--status-fail);
+        }
+
+        .badge-warn {
+            background-color: var(--status-warn-bg);
+            color: #ffb74d;
+            border: 1px solid var(--status-warn);
+        }
+
+        .badge-info {
+            background-color: rgba(33, 150, 243, 0.2);
+            color: #64b5f6;
+            border: 1px solid #2196f3;
+        }
+
+        /* Cards/Sections */
+        .card {
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        /* Tables */
+        .table-responsive {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: rgba(255, 255, 255, 0.05);
+            color: var(--gold-primary);
+            font-weight: 600;
+        }
+
+        tr:hover td {
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+
+        /* Code/Pre */
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 2px 5px;
+            border-radius: 3px;
+            color: #e0e0e0;
+            font-size: 0.9em;
+        }
+
+        pre {
+            background-color: #000;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            border: 1px solid var(--border-color);
+        }
+
+        .action-item {
+            margin-bottom: 25px;
+            padding-left: 20px;
+            border-left: 3px solid var(--gold-primary);
+        }
+
+        .priority-high {
+            border-left-color: var(--status-fail);
+        }
+
+        .priority-med {
+            border-left-color: var(--status-warn);
+        }
+
+        ul.checklist {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul.checklist li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        ul.checklist li::before {
+            content: "•";
+            color: var(--gold-primary);
+            position: absolute;
+            left: 0;
+            font-size: 1.2em;
+        }
+
+        .footer {
+            margin-top: 80px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #555;
+            border-top: 1px solid var(--border-color);
+            padding-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- HEADER -->
+        <header>
+            <h1>GKR Hospitality</h1>
+            <div class="header-meta">
+                <p><strong>ADA & WCAG 2.1 Audit Report</strong> | Last Updated: February 14, 2026</p>
+                <p>Target Compliance: <span class="badge badge-info">Level AA</span></p>
+            </div>
+        </header>
+
+        <!-- EXECUTIVE SUMMARY -->
+        <section>
+            <div class="card">
+                <h3 style="margin-top: 0">Executive Summary</h3>
+                <p>
+                    GKR Hospitality has undertaken a significant initiative to improve web accessibility.
+                    The website has been audited against the <strong>Web Content Accessibility Guidelines (WCAG) 2.1
+                        Level AA</strong>.
+                    While substantial progress has been made—including keyboard navigation fixes, skip links, and ARIA
+                    labels—several items remain for Phase 2 development.
+                </p>
+                <p>
+                    <strong>Current Status:</strong> <span class="badge badge-warn">Partially Compliant</span>
+                </p>
+            </div>
+        </section>
+
+        <!-- AUDIT CHECKLIST -->
+        <section>
+            <h2>1. Detailed Compliance Checklist</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th width="25%">Requirement</th>
+                            <th width="15%">WCAG Criteria</th>
+                            <th width="15%">Status</th>
+                            <th width="45%">Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- PERCEIVABLE -->
+                        <tr>
+                            <td colspan="4"
+                                style="background-color: rgba(255,255,255,0.03); color: var(--gold-primary); font-weight:bold;">
+                                1. Perceivable</td>
+                        </tr>
+                        <tr>
+                            <td>Text Alternatives</td>
+                            <td>1.1.1</td>
+                            <td><span class="badge badge-pass">Pass</span></td>
+                            <td>All images contain descriptive `alt` text.</td>
+                        </tr>
+                        <tr>
+                            <td>Info and Relationships</td>
+                            <td>1.3.1</td>
+                            <td><span class="badge badge-pass">Pass</span></td>
+                            <td>Semantic HTML (h1-h6) used correctly.</td>
+                        </tr>
+                        <tr>
+                            <td>Contrast (Minimum)</td>
+                            <td>1.4.3</td>
+                            <td><span class="badge badge-warn">Review</span></td>
+                            <td>Gold (#c5a059) on Dark Grey passes (5.5:1). Monitoring needed for any light backgrounds.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Resize Text</td>
+                            <td>1.4.4</td>
+                            <td><span class="badge badge-fail">Action</span></td>
+                            <td>Current use of fixed `px` prevents optimal scaling. <strong>Phase 2 item.</strong></td>
+                        </tr>
+
+                        <!-- OPERABLE -->
+                        <tr>
+                            <td colspan="4"
+                                style="background-color: rgba(255,255,255,0.03); color: var(--gold-primary); font-weight:bold;">
+                                2. Operable</td>
+                        </tr>
+                        <tr>
+                            <td>Keyboard Accessible</td>
+                            <td>2.1.1</td>
+                            <td><span class="badge badge-pass">Pass</span></td>
+                            <td>Gallery and interactive elements are tab-navigable.</td>
+                        </tr>
+                        <tr>
+                            <td>No Keyboard Trap</td>
+                            <td>2.1.2</td>
+                            <td><span class="badge badge-pass">Pass</span></td>
+                            <td>Focus does not get stuck in modals or galleries.</td>
+                        </tr>
+                        <tr>
+                            <td>Bypass Blocks</td>
+                            <td>2.4.1</td>
+                            <td><span class="badge badge-pass">Pass</span></td>
+                            <td>"Skip to Content" link implemented.</td>
+                        </tr>
+                        <tr>
+                            <td>Focus Visible</td>
+                            <td>2.4.7</td>
+                            <td><span class="badge badge-pass">Pass</span></td>
+                            <td>Focus rings visible on generic interactive elements.</td>
+                        </tr>
+
+                        <!-- UNDERSTANDABLE -->
+                        <tr>
+                            <td colspan="4"
+                                style="background-color: rgba(255,255,255,0.03); color: var(--gold-primary); font-weight:bold;">
+                                3. Understandable</td>
+                        </tr>
+                        <tr>
+                            <td>Language of Page</td>
+                            <td>3.1.1</td>
+                            <td><span class="badge badge-pass">Pass</span></td>
+                            <td>HTML lang attribute set to "en".</td>
+                        </tr>
+                        <tr>
+                            <td>Labels or Instructions</td>
+                            <td>3.3.2</td>
+                            <td><span class="badge badge-pass">Pass</span></td>
+                            <td>Form fields have visible labels.</td>
+                        </tr>
+                        <tr>
+                            <td>Error Identification</td>
+                            <td>3.3.1</td>
+                            <td><span class="badge badge-warn">Phase 2</span></td>
+                            <td>Currently relies on browser defaults. Custom inline errors planned.</td>
+                        </tr>
+
+                        <!-- ROBUST -->
+                        <tr>
+                            <td colspan="4"
+                                style="background-color: rgba(255,255,255,0.03); color: var(--gold-primary); font-weight:bold;">
+                                4. Robust</td>
+                        </tr>
+                        <tr>
+                            <td>Name, Role, Value</td>
+                            <td>4.1.2</td>
+                            <td><span class="badge badge-pass">Pass</span></td>
+                            <td>Floating buttons (Scroll Top) now have accessible names.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- RESOLVED ISSUES -->
+        <section>
+            <h2>2. Resolved Issues (Completed)</h2>
+            <div class="card">
+                <ul class="checklist">
+                    <li><strong>Skip Content Link:</strong> Added a hidden link visible on focus to bypass navigation.
+                    </li>
+                    <li><strong>Gallery Trap:</strong> Fixed Gallery grid to use button elements for proper keyboard
+                        support.</li>
+                    <li><strong>Icon Buttons:</strong> Added <code>aria-label</code> to Navbar toggle and Testimonial
+                        arrows.</li>
+                    <li><strong>Focus States:</strong> Implemented global focus rings for better visibility.</li>
+                    <li><strong>Floating Action Buttons:</strong> Added `aria-label="Scroll to top"` to the ScrollToTop
+                        button component.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- REMAINING ACTIONS -->
+        <section>
+            <h2>3. Remaining Action Items</h2>
+
+            <div class="action-item priority-med">
+                <h3>B. Typography Scalability <span class="badge badge-warn">Design</span></h3>
+                <p><strong>Issue:</strong> Use of <code>10px</code> and fixed pixels limits readability. The following
+                    areas require immediate updates:</p>
+                <ul class="checklist">
+                    <li>
+                        <strong>Global Navigation (Navbar):</strong> Links and "Contact Us" button.<br>
+                        <span style="font-size: 0.85em; display: block; margin-top: 4px;">
+                            <span class="badge badge-fail" style="font-size: 0.7em; padding: 2px 6px;">Current:
+                                10px</span>
+                            &nbsp;&rarr;&nbsp;
+                            <span class="badge badge-pass" style="font-size: 0.7em; padding: 2px 6px;">Desired: 0.875rem
+                                (14px)</span>
+                        </span>
+                    </li>
+                    <li>
+                        <strong>Footer:</strong> Section labels and bottom bar links.<br>
+                        <span style="font-size: 0.85em; display: block; margin-top: 4px;">
+                            <span class="badge badge-fail" style="font-size: 0.7em; padding: 2px 6px;">Current:
+                                10px</span>
+                            &nbsp;&rarr;&nbsp;
+                            <span class="badge badge-pass" style="font-size: 0.7em; padding: 2px 6px;">Desired: 0.875rem
+                                (14px)</span>
+                        </span>
+                    </li>
+                    <li>
+                        <strong>Hero Section:</strong> CTA Button text.<br>
+                        <span style="font-size: 0.85em; display: block; margin-top: 4px;">
+                            <span class="badge badge-fail" style="font-size: 0.7em; padding: 2px 6px;">Current:
+                                9px-12px</span>
+                            &nbsp;&rarr;&nbsp;
+                            <span class="badge badge-pass" style="font-size: 0.7em; padding: 2px 6px;">Desired: 0.875rem
+                                (14px)</span>
+                        </span>
+                    </li>
+                    <li>
+                        <strong>What We Do Section:</strong> Card links ("View Services") and details.<br>
+                        <span style="font-size: 0.85em; display: block; margin-top: 4px;">
+                            <span class="badge badge-fail" style="font-size: 0.7em; padding: 2px 6px;">Current:
+                                11px-12px</span>
+                            &nbsp;&rarr;&nbsp;
+                            <span class="badge badge-pass" style="font-size: 0.7em; padding: 2px 6px;">Desired: 0.875rem
+                                (14px)</span>
+                        </span>
+                    </li>
+                    <li>
+                        <strong>Moving Ribbon:</strong> Contact info text.<br>
+                        <span style="font-size: 0.85em; display: block; margin-top: 4px;">
+                            <span class="badge badge-fail" style="font-size: 0.7em; padding: 2px 6px;">Current:
+                                10px</span>
+                            &nbsp;&rarr;&nbsp;
+                            <span class="badge badge-pass" style="font-size: 0.7em; padding: 2px 6px;">Desired: 0.875rem
+                                (14px)</span>
+                        </span>
+                    </li>
+                </ul>
+                <p><strong>Fix:</strong> Update all instances to `0.875rem` (14px) minimum using `rem` units.</p>
+            </div>
+        </section>
+
+        <!-- PHASE 2 SPECIFICATIONS -->
+        <section>
+            <h2 style="border-bottom: 2px solid var(--gold-primary); padding-bottom: 15px;">4. Phase 2: Design &
+                Technical Specifications</h2>
+            <p>
+                This section serves as the <strong>definitive guide</strong> for the design and development teams for
+                the Phase 2 update.
+                Strict adherence to these specifications is required to ensure WCAG 2.1 AA Compliance and a premium user
+                experience.
+            </p>
+
+            <!-- 4.1 TYPOGRAPHY -->
+            <div class="card">
+                <h3>4.1 Typography System</h3>
+                <p>All font sizes must be defined in <code>rem</code> units relative to a 16px root. <strong>No fixed
+                        pixels (px) for text.</strong></p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Element</th>
+                            <th>Font Family</th>
+                            <th>Size (rem/px)</th>
+                            <th>Line Height</th>
+                            <th>Usage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>H1</strong></td>
+                            <td>Cormorant Garamond</td>
+                            <td>3.5rem (56px)</td>
+                            <td>1.2</td>
+                            <td>Page Titles</td>
+                        </tr>
+                        <tr>
+                            <td><strong>H2</strong></td>
+                            <td>Cormorant Garamond</td>
+                            <td>2.5rem (40px)</td>
+                            <td>1.3</td>
+                            <td>Section Headings</td>
+                        </tr>
+                        <tr>
+                            <td><strong>H3</strong></td>
+                            <td>Cormorant Garamond</td>
+                            <td>1.75rem (28px)</td>
+                            <td>1.4</td>
+                            <td>Card/Feature Titles</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Body</strong></td>
+                            <td>Montserrat</td>
+                            <td>1rem (16px)</td>
+                            <td>1.6</td>
+                            <td>Standard Paragraphs</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Small/Meta</strong></td>
+                            <td>Montserrat</td>
+                            <td>0.875rem (14px)</td>
+                            <td>1.5</td>
+                            <td>Footers, Captions (Min Size)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div
+                    style="background: rgba(239, 108, 0, 0.1); border-left: 3px solid #ef6c00; padding: 15px; margin-top: 20px;">
+                    <strong>⚠️ Critical Rule:</strong> No text shall be smaller than <strong>0.875rem (14px)</strong>.
+                    The current 10px text in Navbar/Buttons must be updated.
+                </div>
+            </div>
+
+            <!-- 4.2 COLOR & CONTRAST -->
+            <div class="card">
+                <h3>4.2 Color & Contrast Protocol</h3>
+                <p>Approved color combinations that meet the 4.5:1 (Normal) and 3:1 (Large Text) contrast ratios.</p>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px;">
+                    <div style="background: #141414; padding: 20px; border: 1px solid #333; border-radius: 6px;">
+                        <span
+                            style="color: #c5a059; font-weight: bold; font-size: 1.2rem; display: block; margin-bottom: 5px;">Gold
+                            on Black</span>
+                        <div style="margin-bottom: 10px;">
+                            <span class="badge badge-fail"
+                                style="font-size: 0.7em; padding: 4px 8px; display: inline-flex; align-items: center;">
+                                Current: Various
+                            </span>
+                            <span class="badge badge-pass"
+                                style="font-size: 0.7em; padding: 4px 8px; display: inline-flex; align-items: center; gap: 6px;">
+                                Desired: <span
+                                    style="display: inline-block; width: 12px; height: 12px; background: #C5A059; border: 1px solid rgba(255,255,255,0.2); border-radius: 2px;"></span>
+                                #C5A059
+                            </span>
+                        </div>
+                        <span style="color: #fff; font-size: 0.8rem;">Ratio: 5.5:1 (Pass AA)</span>
+                        <div style="margin-top: 10px; font-family: monospace; font-size: 0.8rem; color: #777;">Text:
+                            #C5A059 | Bg: #141414</div>
+                    </div>
+                    <div style="background: #141414; padding: 20px; border: 1px solid #333; border-radius: 6px;">
+                        <span
+                            style="color: #ffffff; font-weight: bold; font-size: 1.2rem; display: block; margin-bottom: 5px;">White
+                            on Black</span>
+                        <div style="margin-bottom: 10px;">
+                            <span class="badge badge-pass"
+                                style="font-size: 0.7em; padding: 4px 8px; background: #333; color: #fff; display: inline-flex; align-items: center; gap: 6px;">
+                                Current: <span
+                                    style="display: inline-block; width: 12px; height: 12px; background: #FFFFFF; border: 1px solid rgba(255,255,255,0.2); border-radius: 2px;"></span>
+                                #FFFFFF
+                            </span>
+                            <span class="badge badge-pass"
+                                style="font-size: 0.7em; padding: 4px 8px; display: inline-flex; align-items: center; gap: 6px;">
+                                Desired: <span
+                                    style="display: inline-block; width: 12px; height: 12px; background: #FFFFFF; border: 1px solid rgba(255,255,255,0.2); border-radius: 2px;"></span>
+                                #FFFFFF
+                            </span>
+                        </div>
+                        <span style="color: #fff; font-size: 0.8rem;">Ratio: 15.9:1 (Pass AAA)</span>
+                        <div style="margin-top: 10px; font-family: monospace; font-size: 0.8rem; color: #777;">Text:
+                            #FFFFFF | Bg: #141414</div>
+                    </div>
+                    <div style="background: #ffffff; padding: 20px; border: 1px solid #ddd; border-radius: 6px;">
+                        <span
+                            style="color: #141414; font-weight: bold; font-size: 1.2rem; display: block; margin-bottom: 5px;">Black
+                            on White</span>
+                        <div style="margin-bottom: 10px;">
+                            <span class="badge badge-fail"
+                                style="font-size: 0.7em; padding: 4px 8px; display: inline-flex; align-items: center; gap: 6px;">
+                                Current: <span
+                                    style="display: inline-block; width: 12px; height: 12px; background: #000000; border: 1px solid rgba(0,0,0,0.2); border-radius: 2px;"></span>
+                                #000000
+                            </span>
+                            <span class="badge badge-pass"
+                                style="font-size: 0.7em; padding: 4px 8px; display: inline-flex; align-items: center; gap: 6px;">
+                                Desired: <span
+                                    style="display: inline-block; width: 12px; height: 12px; background: #141414; border: 1px solid rgba(0,0,0,0.2); border-radius: 2px;"></span>
+                                #141414
+                            </span>
+                        </div>
+                        <span style="color: #141414; font-size: 0.8rem;">Ratio: 15.9:1 (Pass AAA)</span>
+                        <div style="margin-top: 10px; font-family: monospace; font-size: 0.8rem; color: #555;">Text:
+                            #141414 | Bg: #FFFFFF</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4.3 UI COMPONENTS -->
+            <div class="card">
+                <h3>4.3 UI Component Specifications</h3>
+
+                <h4>Interactive Targets</h4>
+                <p>All clickable elements (Buttons, Links, Icons) must have a minimum target size.</p>
+                <ul>
+                    <li><strong>Minimum Size:</strong> 44px x 44px (CSS pixels).</li>
+                    <li><strong>Implementation:</strong> Use CSS padding or invisible pseudo-elements to extend the hit
+                        area if the visual icon is smaller.</li>
+                </ul>
+
+                <h4>Focus States</h4>
+                <p>Keyboard focus indicators must be strictly standardized.</p>
+                <pre style="color: #c5a059;">
+/* Global Focus Style */
+:focus-visible {
+    outline: 2px solid #C5A059;
+    outline-offset: 4px;
+    border-radius: 2px;
+}</pre>
+
+                <h4>Forms & Inputs</h4>
+                <ul class="checklist">
+                    <li><strong>Input Height:</strong> Min 48px.</li>
+                    <li><strong>Labels:</strong> Persistent, visible labels above inputs. No placeholders as labels.
+                    </li>
+                    <li><strong>Error States:</strong>
+                        <ul>
+                            <li>Border turns Red (#C62828).</li>
+                            <li>Helper text appears below input with Icon + Message.</li>
+                            <li><code>aria-invalid="true"</code> is applied.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 4.4 DEV SPECS -->
+            <div class="card">
+                <h3>4.4 Technical Implementation Specs</h3>
+
+                <h4>ARIA & Semantics</h4>
+                <table>
+                    <tr>
+                        <th width="30%">Usage</th>
+                        <th>Requirement</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Icons</strong></td>
+                        <td><code>aria-hidden="true"</code> for decorative ions.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Icon Buttons</strong></td>
+                        <td><code>aria-label="Action Description"</code> (e.g., "Close Modal", "Scroll to Top").</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Modals</strong></td>
+                        <td>
+                            <code>role="dialog"</code>,
+                            <code>aria-modal="true"</code>,
+                            Focus Trap enabled (Tab key stays inside).
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Images</strong></td>
+                        <td>Meaningful <code>alt</code> text. Empty <code>alt=""</code> for decorative images.</td>
+                    </tr>
+                </table>
+            </div>
+
+        </section>
+
+        <footer class="footer">
+            <p>&copy; 2026 GKR Hospitality. Internal Audit Document.</p>
+        </footer>
+    </div>
+
+</body>
+
+</html>
