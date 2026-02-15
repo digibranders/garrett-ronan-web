@@ -1,6 +1,6 @@
 @theme {
-  --font-sans: 'Montserrat', sans-serif;
-  --font-serif: 'Cormorant Garamond', serif;
+  --font-sans: "Montserrat", sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
 }
 
 @layer base {
@@ -9,8 +9,18 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-serif);
+  }
+
+  *:focus-visible {
+    outline: 1px solid #c5a059;
+    outline-offset: 2px;
   }
 }
