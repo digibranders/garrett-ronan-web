@@ -1,6 +1,7 @@
 @theme {
   --font-sans: "Montserrat", sans-serif;
   --font-serif: "Cormorant Garamond", serif;
+  --color-gold-deep: #8a6d3b;
 }
 
 @layer base {

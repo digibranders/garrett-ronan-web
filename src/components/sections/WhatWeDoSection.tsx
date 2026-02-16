@@ -26,10 +26,10 @@ export default function WhatWeDoSection({ services }: WhatWeDoSectionProps) {
                     viewport={{ once: true }}
                     className="mb-20 text-center"
                 >
-                    <span className="block text-[#c5a059] text-[0.875rem] tracking-[0.4em] uppercase mb-6 font-bold">What We Do</span>
+                    <span className="block text-[#8a6d3b] text-[0.875rem] tracking-[0.4em] uppercase mb-6 font-bold">What We Do</span>
                     <h2 className="text-5xl md:text-7xl font-serif leading-tight text-[#181818] mb-8">
                         Comprehensive <br />
-                        <span className="italic text-[#c5a059]">Hospitality Solutions</span>
+                        <span className="italic text-[#8a6d3b]">Hospitality Solutions</span>
                     </h2>
                     <p className="text-[#181818] text-lg leading-relaxed mb-8 max-w-3xl mx-auto font-medium">
                         From concept to operations, we provide integrated support across every phase of your hospitality journey.
