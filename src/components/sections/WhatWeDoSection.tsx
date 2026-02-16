@@ -26,7 +26,7 @@ export default function WhatWeDoSection({ services }: WhatWeDoSectionProps) {
                     viewport={{ once: true }}
                     className="mb-20 text-center"
                 >
-                    <span className="block text-[#c5a059] text-[10px] tracking-[0.4em] uppercase mb-6 font-bold">What We Do</span>
+                    <span className="block text-[#c5a059] text-[0.875rem] tracking-[0.4em] uppercase mb-6 font-bold">What We Do</span>
                     <h2 className="text-5xl md:text-7xl font-serif leading-tight text-[#181818] mb-8">
                         Comprehensive <br />
                         <span className="italic text-[#c5a059]">Hospitality Solutions</span>
@@ -72,7 +72,7 @@ function ServiceCard({ service, index, total }: { service: Service; index: numbe
                 <h3 className="text-3xl font-serif text-white mb-2">
                     {service.title}
                 </h3>
-                <span className="text-[#c5a059] text-xs uppercase tracking-widest font-bold inline-flex items-center gap-2">
+                <span className="text-[#c5a059] text-[0.875rem] uppercase tracking-widest font-bold inline-flex items-center gap-2">
                     View Services <span className="text-lg">&uarr;</span>
                 </span>
             </div>
@@ -81,7 +81,7 @@ function ServiceCard({ service, index, total }: { service: Service; index: numbe
             <div className={`absolute inset-0 bg-[#c5a059] p-6 flex flex-col justify-center transition-transform duration-500 z-20 ${isActive ? 'translate-y-0' : 'translate-y-full group-hover:translate-y-0'}`}>
                 <ul className="space-y-1.5 w-full">
                     {service.descriptionList?.map((item, i) => (
-                        <li key={i} className="text-[#181818] text-[11px] md:text-xs leading-snug border-b border-[#181818]/10 pb-1 last:border-0 last:pb-0 font-medium">
+                        <li key={i} className="text-[#181818] text-[0.875rem] leading-snug border-b border-[#181818]/10 pb-1 last:border-0 last:pb-0 font-medium">
                             {item}
                         </li>
                     ))}

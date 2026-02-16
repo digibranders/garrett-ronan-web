@@ -19,7 +19,7 @@ export default function MovingRibbon() {
     return (
         <div className="fixed top-0 w-full z-[60] h-10 bg-[#c5a059] flex items-center overflow-hidden border-b border-[#181818]/10 select-none">
             <motion.div
-                className="flex whitespace-nowrap items-center text-[#181818] text-[10px] tracking-[0.3em] font-bold"
+                className="flex whitespace-nowrap items-center text-[#181818] text-[0.875rem] tracking-[0.3em] font-bold"
                 animate={{
                     x: ["0%", "-50%"],
                 }}
