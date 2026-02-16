@@ -9,8 +9,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-32">
           {/* Inquiries */}
           <div className="md:col-span-5">
-            <span className="text-[#c5a059] text-[0.75rem] tracking-[0.4em] uppercase font-bold block mb-8">Inquiries</span>
-            <a href="mailto:garrett@GKRHospitality.com" className="text-4xl md:text-6xl font-serif text-white hover:text-[#c5a059] transition-colors leading-none block mb-2">
+            <span className="text-[#d4b06b] text-[0.75rem] tracking-[0.4em] uppercase font-bold block mb-8">Inquiries</span>
+            <a href="mailto:garrett@GKRHospitality.com" className="text-4xl md:text-6xl font-serif text-white hover:text-[#d4b06b] transition-colors leading-none block mb-2">
               Start a<br />Conversation
             </a>
           </div>
@@ -24,7 +24,7 @@ export default function Footer() {
               USA
             </address>
             <div className="mt-8">
-              <a href="mailto:Connect@GKRHospitality.com" className="text-stone-300 hover:text-[#c5a059] text-[0.75rem] transition-colors">
+              <a href="mailto:Connect@GKRHospitality.com" className="text-stone-300 hover:text-[#d4b06b] text-[0.75rem] transition-colors">
                 connect@GKRHospitality.com
               </a>
             </div>
@@ -34,8 +34,8 @@ export default function Footer() {
           <div className="md:col-span-3">
             <h4 className="text-white font-serif text-xl mb-6">Connect</h4>
             <div className="flex flex-col gap-4">
-              <a href="https://www.linkedin.com/in/garrettronan/" target="_blank" rel="noopener noreferrer" className="text-stone-300 hover:text-[#c5a059] text-[0.75rem] uppercase tracking-widest transition-colors" aria-label="Visit our LinkedIn profile">LinkedIn</a>
-              <a href="https://x.com/gkronan" target="_blank" rel="noopener noreferrer" className="text-stone-300 hover:text-[#c5a059] text-[0.75rem] uppercase tracking-widest transition-colors" aria-label="Follow us on X">X</a>
+              <a href="https://www.linkedin.com/in/garrettronan/" target="_blank" rel="noopener noreferrer" className="text-stone-300 hover:text-[#d4b06b] text-[0.75rem] uppercase tracking-widest transition-colors" aria-label="Visit our LinkedIn profile">LinkedIn</a>
+              <a href="https://x.com/gkronan" target="_blank" rel="noopener noreferrer" className="text-stone-300 hover:text-[#d4b06b] text-[0.75rem] uppercase tracking-widest transition-colors" aria-label="Follow us on X">X</a>
             </div>
           </div>
         </div>

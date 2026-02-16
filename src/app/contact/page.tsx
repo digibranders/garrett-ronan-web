@@ -122,7 +122,7 @@ export default function Contact() {
               transition={{ duration: 1 }}
               className="text-center mb-16"
             >
-              <span className="text-[#8a6d3b] text-[12px] font-bold tracking-[0.4em] uppercase block mb-6">Start a Conversation</span>
+              <span className="text-[#8a6d3b] text-[0.875rem] font-bold tracking-[0.4em] uppercase block mb-6">Start a Conversation</span>
               <h1 className="text-4xl md:text-7xl font-serif font-light text-white leading-tight tracking-tight mb-6">
                 Let's Talk
               </h1>
@@ -138,10 +138,10 @@ export default function Contact() {
               transition={{ duration: 1, delay: 0.1 }}
               className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4 md:gap-0 px-4"
             >
-              <a href="mailto:Connect@GKRHospitality.com" className="text-[#8a6d3b] text-[15px]  tracking-[0.2em] hover:text-white transition-colors font-bold">
+              <a href="mailto:Connect@GKRHospitality.com" className="text-[#d4b06b] text-[0.875rem]  tracking-[0.2em] hover:text-white transition-colors font-bold">
                 connect@GKRHospitality.com
               </a>
-              <a href="tel:+19174605793" className="text-[#8a6d3b] text-[15px] uppercase tracking-[0.2em] hover:text-white transition-colors font-bold">
+              <a href="tel:+19174605793" className="text-[#d4b06b] text-[0.875rem] uppercase tracking-[0.2em] hover:text-white transition-colors font-bold">
                 +1-917-460-5793
               </a>
             </motion.div>
@@ -157,7 +157,7 @@ export default function Contact() {
               <div className="space-y-6">
                 {/* Name */}
                 <div>
-                  <label htmlFor="name" className="block text-stone-500 text-xs uppercase tracking-wider mb-3">
+                  <label htmlFor="name" className="block text-stone-700 text-xs uppercase tracking-wider mb-3">
                     Name <span className="text-[#C62828]">*</span>
                   </label>
                   <input
@@ -180,7 +180,7 @@ export default function Contact() {
 
                 {/* Email */}
                 <div>
-                  <label htmlFor="email" className="block text-stone-600 text-xs uppercase tracking-wider mb-3">
+                  <label htmlFor="email" className="block text-stone-700 text-xs uppercase tracking-wider mb-3">
                     Email <span className="text-[#C62828]">*</span>
                   </label>
                   <input
@@ -203,7 +203,7 @@ export default function Contact() {
 
                 {/* Phone */}
                 <div>
-                  <label htmlFor="phone" className="block text-stone-600 text-xs uppercase tracking-wider mb-3">
+                  <label htmlFor="phone" className="block text-stone-700 text-xs uppercase tracking-wider mb-3">
                     Phone Number
                   </label>
                   <input
@@ -219,7 +219,7 @@ export default function Contact() {
 
                 {/* Company */}
                 <div>
-                  <label htmlFor="company" className="block text-stone-600 text-xs uppercase tracking-wider mb-3">
+                  <label htmlFor="company" className="block text-stone-700 text-xs uppercase tracking-wider mb-3">
                     Company / Property
                   </label>
                   <input
@@ -235,7 +235,7 @@ export default function Contact() {
 
                 {/* Role */}
                 <div>
-                  <label htmlFor="role" className="block text-stone-600 text-xs uppercase tracking-wider mb-3">
+                  <label htmlFor="role" className="block text-stone-700 text-xs uppercase tracking-wider mb-3">
                     Are you a <span className="text-[#C62828]">*</span>
                   </label>
                   <div className="relative">
@@ -271,7 +271,7 @@ export default function Contact() {
                     animate={{ opacity: 1, height: 'auto' }}
                     className="overflow-hidden"
                   >
-                    <label htmlFor="roleDescription" className="block text-stone-600 text-xs uppercase tracking-wider mb-3">
+                    <label htmlFor="roleDescription" className="block text-stone-700 text-xs uppercase tracking-wider mb-3">
                       Please describe <span className="text-[#C62828]">*</span>
                     </label>
                     <input
@@ -295,7 +295,7 @@ export default function Contact() {
 
                 {/* Project Type */}
                 <div>
-                  <label htmlFor="projectType" className="block text-stone-600 text-xs uppercase tracking-wider mb-3">
+                  <label htmlFor="projectType" className="block text-stone-700 text-xs uppercase tracking-wider mb-3">
                     Project / Business Type <span className="text-[#C62828]">*</span>
                   </label>
                   <div className="relative">
@@ -328,7 +328,7 @@ export default function Contact() {
 
                 {/* Message */}
                 <div>
-                  <label htmlFor="message" className="block text-stone-600 text-xs uppercase tracking-wider mb-3">
+                  <label htmlFor="message" className="block text-stone-700 text-xs uppercase tracking-wider mb-3">
                     Tell us about your situation <span className="text-[#C62828]">*</span>
                   </label>
                   <textarea
@@ -372,7 +372,7 @@ export default function Contact() {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <span className="text-[#8a6d3b] text-[12px] font-bold tracking-[0.4em] uppercase block mb-6">FAQ</span>
+            <span className="text-[#8a6d3b] text-[0.875rem] font-bold tracking-[0.4em] uppercase block mb-6">FAQ</span>
             <h2 className="text-5xl md:text-7xl font-serif text-[#181818] leading-tight">
               Frequently Asked<br />
               <span className="italic text-[#8a6d3b]">Questions</span>

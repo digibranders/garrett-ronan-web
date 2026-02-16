@@ -27,7 +27,7 @@ export default function ProcessSection({ steps }: ProcessSectionProps) {
           viewport={{ once: true }}
           className="mb-20"
         >
-          <span className="block text-[#c5a059] text-[12px] tracking-[0.4em] uppercase mb-6 font-bold">How We Work</span>
+          <span className="block text-[#c5a059] text-[0.875rem] tracking-[0.4em] uppercase mb-6 font-bold">How We Work</span>
           <h2 className="text-5xl md:text-7xl font-serif leading-tight text-white max-w-4xl">
             A Clear, Proven <span className="italic text-[#c5a059]">Process</span>
           </h2>
@@ -92,7 +92,7 @@ export default function ProcessSection({ steps }: ProcessSectionProps) {
                   transition={{ duration: 0.6 }}
                   className="absolute inset-0"
                 >
-                  <Image src={step.image} alt={step.title} className="w-full h-full object-cover" />
+                  <Image src={step.image} alt="" className="w-full h-full object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#181818] via-transparent to-transparent opacity-60"></div>
                 </motion.div>
               ))}
