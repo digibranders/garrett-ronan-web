@@ -38,7 +38,7 @@ export default function HeroSection({ images, scale }: HeroSectionProps) {
             >
               <Image
                 src={image}
-                alt={`Hero ${index + 1}`}
+                alt={index === 0 ? "Luxury hotel lobby interior with elegant lighting" : index === 1 ? "Fine dining restaurant table setting" : "Hospitality property exterior view"}
                 fill
                 className="object-cover"
                 priority={index === 0}

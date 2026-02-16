@@ -18,13 +18,13 @@ export default function Footer() {
           {/* Office */}
           <div className="md:col-span-3 md:col-start-7">
             <h4 className="text-white font-serif text-xl mb-6">Office</h4>
-            <address className="text-stone-500 text-[0.75rem] leading-relaxed not-italic">
+            <address className="text-stone-300 text-[0.75rem] leading-relaxed not-italic">
               42 Brighton View Rd.<br />
               Fairfield, CT, 06824<br />
               USA
             </address>
             <div className="mt-8">
-              <a href="mailto:Connect@GKRHospitality.com" className="text-stone-500 hover:text-[#c5a059] text-[0.75rem] transition-colors">
+              <a href="mailto:Connect@GKRHospitality.com" className="text-stone-300 hover:text-[#c5a059] text-[0.75rem] transition-colors">
                 connect@GKRHospitality.com
               </a>
             </div>
@@ -34,8 +34,8 @@ export default function Footer() {
           <div className="md:col-span-3">
             <h4 className="text-white font-serif text-xl mb-6">Connect</h4>
             <div className="flex flex-col gap-4">
-              <a href="https://www.linkedin.com/in/garrettronan/" target="_blank" rel="noopener noreferrer" className="text-stone-500 hover:text-[#c5a059] text-[0.75rem] uppercase tracking-widest transition-colors" aria-label="Visit our LinkedIn profile">LinkedIn</a>
-              <a href="https://x.com/gkronan" target="_blank" rel="noopener noreferrer" className="text-stone-500 hover:text-[#c5a059] text-[0.75rem] uppercase tracking-widest transition-colors" aria-label="Follow us on X">X</a>
+              <a href="https://www.linkedin.com/in/garrettronan/" target="_blank" rel="noopener noreferrer" className="text-stone-300 hover:text-[#c5a059] text-[0.75rem] uppercase tracking-widest transition-colors" aria-label="Visit our LinkedIn profile">LinkedIn</a>
+              <a href="https://x.com/gkronan" target="_blank" rel="noopener noreferrer" className="text-stone-300 hover:text-[#c5a059] text-[0.75rem] uppercase tracking-widest transition-colors" aria-label="Follow us on X">X</a>
             </div>
           </div>
         </div>
@@ -43,9 +43,9 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row justify-between items-center md:items-end pt-8 border-t border-white/5">
           <div className="flex items-center gap-4 mb-6 md:mb-0">
-            <img src={logoImage.src} alt="GKR" className="h-8 brightness-0 invert opacity-30" />
+            <img src={logoImage.src} alt="GKR" className="h-8 brightness-0 invert" />
           </div>
-          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 text-[0.75rem] uppercase tracking-[0.2em] text-stone-600 font-bold text-center md:text-right">
+          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 text-[0.75rem] uppercase tracking-[0.2em] text-stone-400 font-bold text-center md:text-right">
             <Link href="/accessibility" className="hover:text-white transition-colors">Accessibility</Link>
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
             <span>© 2025 GKR Consulting</span>

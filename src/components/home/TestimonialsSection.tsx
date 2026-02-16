@@ -123,7 +123,7 @@ export default function TestimonialsSection({ testimonials }: TestimonialsSectio
           viewport={{ once: true }}
           className="mb-20 text-center"
         >
-          <span className="block text-[#c5a059] text-[10px] tracking-[0.4em] uppercase mb-6 font-bold">What Our Clients Say</span>
+          <span className="block text-[#c5a059] text-[12px] tracking-[0.4em] uppercase mb-6 font-bold">What Our Clients Say</span>
           <h2 className="text-5xl md:text-7xl font-serif leading-tight text-white mb-2">
             Real Results,<br />
             <span className="italic text-[#c5a059]">Real Impact</span>
@@ -189,19 +189,19 @@ export default function TestimonialsSection({ testimonials }: TestimonialsSectio
                     <div className="mb-6 md:mb-10 relative h-12 md:h-20 w-32 md:w-56 mx-auto">
                       <Image
                         src={testimonial.logo}
-                        alt="Company Logo"
+                        alt={`${testimonial.name} logo`}
                         fill
                         className={`object-contain ${testimonial.invertLogo ? 'brightness-0 invert' : ''}`}
                       />
                     </div>
 
-                    <p className="text-xs md:text-lg lg:text-xl text-white font-serif font-light leading-relaxed mb-4 md:mb-10 max-w-3xl mx-auto">
+                    <p className="text-xl md:text-2xl lg:text-3xl text-white font-serif font-light leading-relaxed mb-4 md:mb-10 max-w-3xl mx-auto" style={{ fontSize: 'var(--text-base-fluid)' }}>
                       {renderQuote(testimonial.quote, testimonial.highlight)}
                     </p>
 
                     <div className="flex flex-col items-center mt-auto">
                       <h3 className="text-[#c5a059] font-serif text-lg md:text-2xl mb-1 md:mb-2">{testimonial.name}</h3>
-                      <h4 className="text-white/60 font-light text-[10px] md:text-sm tracking-[0.2em] uppercase">{testimonial.author}</h4>
+                      <h4 className="text-white/60 font-light text-[12px] md:text-sm tracking-[0.2em] uppercase">{testimonial.author}</h4>
                     </div>
                   </div>
                 </motion.div>

@@ -27,7 +27,7 @@ export default function ProcessSection({ steps }: ProcessSectionProps) {
           viewport={{ once: true }}
           className="mb-20"
         >
-          <span className="block text-[#c5a059] text-[10px] tracking-[0.4em] uppercase mb-6 font-bold">How We Work</span>
+          <span className="block text-[#c5a059] text-[12px] tracking-[0.4em] uppercase mb-6 font-bold">How We Work</span>
           <h2 className="text-5xl md:text-7xl font-serif leading-tight text-white max-w-4xl">
             A Clear, Proven <span className="italic text-[#c5a059]">Process</span>
           </h2>
@@ -42,12 +42,21 @@ export default function ProcessSection({ steps }: ProcessSectionProps) {
             {steps.map((step, index) => (
               <motion.div
                 key={index}
+                role="button"
+                tabIndex={0}
+                aria-current={currentWorkStep === index ? 'step' : undefined}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 onMouseEnter={() => setCurrentWorkStep(index)}
-                className={`border-b border-white/10 last:border-0 py-8 cursor-pointer group transition-all duration-300 ${currentWorkStep === index ? 'bg-white/5' : ''
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    setCurrentWorkStep(index);
+                  }
+                }}
+                className={`border-b border-white/10 last:border-0 py-8 cursor-pointer group transition-all duration-300 focus:outline-none focus:bg-white/5 ${currentWorkStep === index ? 'bg-white/5' : ''
                   }`}
               >
                 <div className="flex gap-6 items-start px-6">

@@ -122,7 +122,7 @@ export default function Contact() {
               transition={{ duration: 1 }}
               className="text-center mb-16"
             >
-              <span className="text-[#8a6d3b] text-[10px] font-bold tracking-[0.4em] uppercase block mb-6">Start a Conversation</span>
+              <span className="text-[#8a6d3b] text-[12px] font-bold tracking-[0.4em] uppercase block mb-6">Start a Conversation</span>
               <h1 className="text-4xl md:text-7xl font-serif font-light text-white leading-tight tracking-tight mb-6">
                 Let's Talk
               </h1>
@@ -157,7 +157,7 @@ export default function Contact() {
               <div className="space-y-6">
                 {/* Name */}
                 <div>
-                  <label htmlFor="name" className="block text-stone-600 text-xs uppercase tracking-wider mb-3">
+                  <label htmlFor="name" className="block text-stone-500 text-xs uppercase tracking-wider mb-3">
                     Name <span className="text-[#C62828]">*</span>
                   </label>
                   <input
@@ -168,7 +168,7 @@ export default function Contact() {
                     onChange={handleChange}
                     aria-invalid={!!errors.name}
                     aria-describedby={errors.name ? 'name-error' : undefined}
-                    className={`w-full bg-transparent border-b ${errors.name ? 'border-[#C62828]' : 'border-[#181818]/20'} focus:border-[#c5a059] text-[#181818] py-3 transition-colors outline-none placeholder:text-stone-400`}
+                    className={`w-full bg-transparent border-b ${errors.name ? 'border-[#C62828]' : 'border-[#181818]/20'} focus:border-[#c5a059] text-[#181818] py-4 transition-colors outline-none placeholder:text-stone-400`}
                     placeholder="Your full name"
                   />
                   {errors.name && (
@@ -191,7 +191,7 @@ export default function Contact() {
                     onChange={handleChange}
                     aria-invalid={!!errors.email}
                     aria-describedby={errors.email ? 'email-error' : undefined}
-                    className={`w-full bg-transparent border-b ${errors.email ? 'border-[#C62828]' : 'border-[#181818]/20'} focus:border-[#c5a059] text-[#181818] py-3 transition-colors outline-none placeholder:text-stone-400`}
+                    className={`w-full bg-transparent border-b ${errors.email ? 'border-[#C62828]' : 'border-[#181818]/20'} focus:border-[#c5a059] text-[#181818] py-4 transition-colors outline-none placeholder:text-stone-400`}
                     placeholder="your@email.com"
                   />
                   {errors.email && (
@@ -212,7 +212,7 @@ export default function Contact() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full bg-transparent border-b border-[#181818]/20 focus:border-[#c5a059] text-[#181818] py-3 transition-colors outline-none placeholder:text-stone-400"
+                    className="w-full bg-transparent border-b border-[#181818]/20 focus:border-[#c5a059] text-[#181818] py-4 transition-colors outline-none placeholder:text-stone-400"
                     placeholder="+1 (555) 000-0000"
                   />
                 </div>
@@ -228,7 +228,7 @@ export default function Contact() {
                     name="company"
                     value={formData.company}
                     onChange={handleChange}
-                    className="w-full bg-transparent border-b border-[#181818]/20 focus:border-[#c5a059] text-[#181818] py-3 transition-colors outline-none placeholder:text-stone-400"
+                    className="w-full bg-transparent border-b border-[#181818]/20 focus:border-[#c5a059] text-[#181818] py-4 transition-colors outline-none placeholder:text-stone-400"
                     placeholder="Your organization"
                   />
                 </div>
@@ -246,7 +246,7 @@ export default function Contact() {
                       onChange={handleChange}
                       aria-invalid={!!errors.role}
                       aria-describedby={errors.role ? 'role-error' : undefined}
-                      className={`w-full bg-transparent border-b ${errors.role ? 'border-[#C62828]' : 'border-[#181818]/20'} focus:border-[#c5a059] text-[#181818] py-3 appearance-none outline-none cursor-pointer`}
+                      className={`w-full bg-transparent border-b ${errors.role ? 'border-[#C62828]' : 'border-[#181818]/20'} focus:border-[#c5a059] text-[#181818] py-4 appearance-none outline-none cursor-pointer`}
                     >
                       <option value="" disabled>Select Role</option>
                       <option value="Developer">Developer</option>
@@ -282,7 +282,7 @@ export default function Contact() {
                       onChange={handleChange}
                       aria-invalid={!!errors.roleDescription}
                       aria-describedby={errors.roleDescription ? 'roleDescription-error' : undefined}
-                      className={`w-full bg-transparent border-b ${errors.roleDescription ? 'border-[#C62828]' : 'border-[#181818]/20'} focus:border-[#c5a059] text-[#181818] py-3 transition-colors outline-none placeholder:text-stone-400`}
+                      className={`w-full bg-transparent border-b ${errors.roleDescription ? 'border-[#C62828]' : 'border-[#181818]/20'} focus:border-[#c5a059] text-[#181818] py-4 transition-colors outline-none placeholder:text-stone-400`}
                       placeholder="Tell us about your role"
                     />
                     {errors.roleDescription && (
@@ -306,7 +306,7 @@ export default function Contact() {
                       onChange={handleChange}
                       aria-invalid={!!errors.projectType}
                       aria-describedby={errors.projectType ? 'projectType-error' : undefined}
-                      className={`w-full bg-transparent border-b ${errors.projectType ? 'border-[#C62828]' : 'border-[#181818]/20'} focus:border-[#c5a059] text-[#181818] py-3 appearance-none outline-none cursor-pointer`}
+                      className={`w-full bg-transparent border-b ${errors.projectType ? 'border-[#C62828]' : 'border-[#181818]/20'} focus:border-[#c5a059] text-[#181818] py-4 appearance-none outline-none cursor-pointer`}
                     >
                       <option value="" disabled>Select Type</option>
                       <option value="Hotel / Resort">Hotel / Resort</option>
@@ -339,7 +339,7 @@ export default function Contact() {
                     aria-invalid={!!errors.message}
                     aria-describedby={errors.message ? 'message-error' : undefined}
                     rows={4}
-                    className={`w-full bg-transparent border-b ${errors.message ? 'border-[#C62828]' : 'border-[#181818]/20'} focus:border-[#c5a059] text-[#181818] py-3 transition-colors outline-none resize-none placeholder:text-stone-400`}
+                    className={`w-full bg-transparent border-b ${errors.message ? 'border-[#C62828]' : 'border-[#181818]/20'} focus:border-[#c5a059] text-[#181818] py-4 transition-colors outline-none resize-none placeholder:text-stone-400`}
                     placeholder="What challenges are you facing? What stage is your project at?"
                   />
                   {errors.message && (
@@ -372,7 +372,7 @@ export default function Contact() {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <span className="text-[#8a6d3b] text-[10px] font-bold tracking-[0.4em] uppercase block mb-6">FAQ</span>
+            <span className="text-[#8a6d3b] text-[12px] font-bold tracking-[0.4em] uppercase block mb-6">FAQ</span>
             <h2 className="text-5xl md:text-7xl font-serif text-[#181818] leading-tight">
               Frequently Asked<br />
               <span className="italic text-[#8a6d3b]">Questions</span>
