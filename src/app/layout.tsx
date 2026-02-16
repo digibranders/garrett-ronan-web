@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     siteName: 'GKR Hospitality',
     images: [
       {
-        url: '/og-image.png',
+        url: '/GKR_Thumbnail.jpg',
         width: 1200,
         height: 630,
         alt: 'GKR Hospitality Logo',
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'GKR Hospitality',
     description: 'Simply Practical Yet Creative Solutions for Hospitality',
-    images: ['/og-image.png'],
+    images: ['/GKR_Thumbnail.jpg'],
   },
   icons: {
     icon: [
@@ -61,13 +61,13 @@ export default function RootLayout({
     <html lang="en">
       <body className="antialiased bg-[#141414] text-white selection:bg-[#c5a059] selection:text-white overflow-x-hidden w-full" suppressHydrationWarning>
         <ScrollToTop />
-        <a 
-          href="#main-content" 
+        <a
+          href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 bg-[#c5a059] text-[#181818] px-6 py-3 font-bold rounded-sm shadow-lg border-2 border-white/20 outline-none"
         >
           Skip to Content
         </a>
-        
+
         {/* <MovingRibbon /> */}
         <Navbar />
         <main id="main-content" className="flex-grow">

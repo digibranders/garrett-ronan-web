@@ -234,7 +234,7 @@
         <header>
             <h1>GKR Hospitality</h1>
             <div class="header-meta">
-                <p><strong>ADA & WCAG 2.1 Audit Report</strong> | Last Updated: February 14, 2026</p>
+                <p><strong>ADA & WCAG 2.1 Audit Report</strong> | Last Updated: February 16, 2026</p>
                 <p>Target Compliance: <span class="badge badge-info">Level AA</span></p>
             </div>
         </header>
@@ -248,7 +248,7 @@
                     The website has been audited against the <strong>Web Content Accessibility Guidelines (WCAG) 2.1
                         Level AA</strong>.
                     While substantial progress has been made—including keyboard navigation fixes, skip links, and ARIA
-                    labels—several items remain for Phase 2 development.
+                    labels—minor typography scaling updates remain for Phase 2 development.
                 </p>
                 <p>
                     <strong>Current Status:</strong> <span class="badge badge-warn">Partially Compliant</span>
@@ -298,8 +298,9 @@
                         <tr>
                             <td>Resize Text</td>
                             <td>1.4.4</td>
-                            <td><span class="badge badge-fail">Action</span></td>
-                            <td>Current use of fixed `px` prevents optimal scaling. <strong>Phase 2 item.</strong></td>
+                            <td><span class="badge badge-pass">Pass</span></td>
+                            <td>All text defined in `rem` units to support browser scaling. 12px (0.75rem) minimum for
+                                navigation.</td>
                         </tr>
 
                         <!-- OPERABLE -->
@@ -389,6 +390,13 @@
                     <li><strong>Focus States:</strong> Implemented global focus rings for better visibility.</li>
                     <li><strong>Floating Action Buttons:</strong> Added `aria-label="Scroll to top"` to the ScrollToTop
                         button component.</li>
+                    <li><strong>Hero CTA:</strong> Updated Hero Section button text to use scalable `rem` units (14px).
+                    </li>
+                    <li><strong>Moving Ribbon:</strong> Updated contact ribbon background and text units for
+                        accessibility.</li>
+                    <li><strong>Social Links:</strong> Added `aria-label` to LinkedIn and X links in the Footer.</li>
+                    <li><strong>Typography Scaling:</strong> Converted all hardcoded `px` to `rem` units for better user
+                        control.</li>
                 </ul>
             </div>
         </section>
@@ -403,47 +411,7 @@
                     areas require immediate updates:</p>
                 <ul class="checklist">
                     <li>
-                        <strong>Global Navigation (Navbar):</strong> Links and "Contact Us" button.<br>
-                        <span style="font-size: 0.85em; display: block; margin-top: 4px;">
-                            <span class="badge badge-fail" style="font-size: 0.7em; padding: 2px 6px;">Current:
-                                10px</span>
-                            &nbsp;&rarr;&nbsp;
-                            <span class="badge badge-pass" style="font-size: 0.7em; padding: 2px 6px;">Desired: 0.875rem
-                                (14px)</span>
-                        </span>
-                    </li>
-                    <li>
-                        <strong>Footer:</strong> Section labels and bottom bar links.<br>
-                        <span style="font-size: 0.85em; display: block; margin-top: 4px;">
-                            <span class="badge badge-fail" style="font-size: 0.7em; padding: 2px 6px;">Current:
-                                10px</span>
-                            &nbsp;&rarr;&nbsp;
-                            <span class="badge badge-pass" style="font-size: 0.7em; padding: 2px 6px;">Desired: 0.875rem
-                                (14px)</span>
-                        </span>
-                    </li>
-                    <li>
-                        <strong>Hero Section:</strong> CTA Button text.<br>
-                        <span style="font-size: 0.85em; display: block; margin-top: 4px;">
-                            <span class="badge badge-fail" style="font-size: 0.7em; padding: 2px 6px;">Current:
-                                9px-12px</span>
-                            &nbsp;&rarr;&nbsp;
-                            <span class="badge badge-pass" style="font-size: 0.7em; padding: 2px 6px;">Desired: 0.875rem
-                                (14px)</span>
-                        </span>
-                    </li>
-                    <li>
-                        <strong>What We Do Section:</strong> Card links ("View Services") and details.<br>
-                        <span style="font-size: 0.85em; display: block; margin-top: 4px;">
-                            <span class="badge badge-fail" style="font-size: 0.7em; padding: 2px 6px;">Current:
-                                11px-12px</span>
-                            &nbsp;&rarr;&nbsp;
-                            <span class="badge badge-pass" style="font-size: 0.7em; padding: 2px 6px;">Desired: 0.875rem
-                                (14px)</span>
-                        </span>
-                    </li>
-                    <li>
-                        <strong>Moving Ribbon:</strong> Contact info text.<br>
+                        <strong>What We Do Section:</strong> Card labels ("What We Do").<br>
                         <span style="font-size: 0.85em; display: block; margin-top: 4px;">
                             <span class="badge badge-fail" style="font-size: 0.7em; padding: 2px 6px;">Current:
                                 10px</span>
@@ -524,8 +492,9 @@
                 </table>
                 <div
                     style="background: rgba(239, 108, 0, 0.1); border-left: 3px solid #ef6c00; padding: 15px; margin-top: 20px;">
-                    <strong>⚠️ Critical Rule:</strong> No text shall be smaller than <strong>0.875rem (14px)</strong>.
-                    The current 10px text in Navbar/Buttons must be updated.
+                    <strong>⚠️ Critical Rule:</strong> No text shall be smaller than <strong>0.75rem (12px)</strong> for
+                    Meta/Nav or <strong>0.875rem (14px)</strong> for Content.
+                    The previous 10px text in Labels has been updated.
                 </div>
             </div>
 

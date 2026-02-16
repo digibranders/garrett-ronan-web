@@ -32,3 +32,6 @@ next-env.d.ts
 
 refactor_report.md.env
 .env
+
+
+.DS_Store

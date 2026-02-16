@@ -74,7 +74,7 @@ export default function Navbar() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="text-[10px] uppercase tracking-[0.3em] font-medium text-stone-300 hover:text-[#c5a059] transition-colors relative block py-4 group"
+                  className="text-[0.75rem] uppercase tracking-[0.2em] font-medium text-stone-300 hover:text-[#c5a059] transition-colors relative block py-4 group"
                   onClick={(e) => handleNavClick(e, item.href)}
                 >
                   <span className="text-[#c5a059] mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute -left-6">0{i + 1}</span>
@@ -85,7 +85,7 @@ export default function Navbar() {
 
             <Link href="/contact">
               <Button
-                className="bg-transparent border border-[#c5a059] text-[#c5a059] hover:bg-[#c5a059] hover:text-[#181818] rounded-full px-8 py-6 tracking-[0.2em] text-[10px] font-bold transition-all duration-500"
+                className="bg-transparent border border-[#c5a059] text-[#c5a059] hover:bg-[#c5a059] hover:text-[#181818] rounded-full px-8 py-6 tracking-[0.15em] text-[0.75rem] font-bold transition-all duration-500"
               >
                 CONTACT US
               </Button>
