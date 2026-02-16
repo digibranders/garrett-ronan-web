@@ -26,7 +26,7 @@ export default function WhatWeDoSection({ services }: WhatWeDoSectionProps) {
                     viewport={{ once: true }}
                     className="mb-20 text-center"
                 >
-                    <span className="block text-[#8a6d3b] text-[0.875rem] tracking-[0.4em] uppercase mb-6 font-bold">What We Do</span>
+                    <span className="block text-[#70562d] text-[0.875rem] tracking-[0.4em] uppercase mb-6 font-bold">What We Do</span>
                     <h2 className="text-5xl md:text-7xl font-serif leading-tight text-[#181818] mb-8">
                         Comprehensive <br />
                         <span className="italic text-[#8a6d3b]">Hospitality Solutions</span>
@@ -51,20 +51,30 @@ function ServiceCard({ service, index, total }: { service: Service; index: numbe
 
     return (
         <div
-            className={`relative w-full h-[500px] overflow-hidden group shadow-xl ${index === total - 1 ? 'lg:col-start-2' : ''}`}
+            role="button"
+            tabIndex={0}
+            aria-expanded={isActive}
+            aria-label={`View services for ${service.title}`}
+            className={`relative w-full h-[500px] overflow-hidden group shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-[#c5a059] focus-visible:ring-offset-2 focus-visible:ring-offset-white ${index === total - 1 ? 'lg:col-start-2' : ''}`}
             onClick={() => setIsActive(!isActive)}
+            onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    setIsActive(!isActive);
+                }
+            }}
             onMouseLeave={() => setIsActive(false)}
         >
             {/* Image Background */}
             <div className="absolute inset-0 w-full h-full">
                 <Image
                     src={service.bgImage}
-                    alt={service.title}
+                    alt="" /* Decorative background */
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
-                <div className={`absolute inset-0 bg-gradient-to-t from-[#181818] via-[#181818]/40 to-transparent opacity-80 transition-opacity duration-300 ${isActive ? 'opacity-0' : 'group-hover:opacity-0'}`}></div>
+                <div className={`absolute inset-0 bg-gradient-to-t from-[#181818] via-[#181818]/60 to-transparent opacity-90 transition-opacity duration-300 ${isActive ? 'opacity-0' : 'group-hover:opacity-0'}`}></div>
             </div>
 
             {/* Initial Content (Title) */}
@@ -72,7 +82,7 @@ function ServiceCard({ service, index, total }: { service: Service; index: numbe
                 <h3 className="text-3xl font-serif text-white mb-2">
                     {service.title}
                 </h3>
-                <span className="text-[#c5a059] text-[0.875rem] uppercase tracking-widest font-bold inline-flex items-center gap-2">
+                <span className="text-[#d4b06b] text-[0.875rem] uppercase tracking-widest font-bold inline-flex items-center gap-2">
                     View Services <span className="text-lg">&uarr;</span>
                 </span>
             </div>

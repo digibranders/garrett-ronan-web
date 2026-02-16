@@ -63,7 +63,7 @@ export default function About() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
           >
-            <span className="text-[#c5a059] text-[10px] font-bold tracking-[0.4em] uppercase block mb-6">About Us</span>
+            <span className="text-[#c5a059] text-[12px] font-bold tracking-[0.4em] uppercase block mb-6">About Us</span>
             <h1 className="text-6xl md:text-8xl font-serif font-light text-white leading-[1.1] mb-12 max-w-6xl">
               Real Operators,<br />
               <span className="italic text-[#c5a059]">GKR Hospitality</span>
@@ -141,7 +141,7 @@ export default function About() {
       <section className="py-24 md:py-32 bg-[#080a0f]">
         <div className="container mx-auto px-6 md:px-12">
           <div className="mb-16">
-            <span className="text-[#c5a059] text-[10px] tracking-[0.4em] uppercase font-bold block mb-4">30+ Years</span>
+            <span className="text-[#c5a059] text-[12px] tracking-[0.4em] uppercase font-bold block mb-4">30+ Years</span>
             <h2 className="text-4xl md:text-6xl font-serif text-white mb-6">The Experience That<br />Built This Firm</h2>
           </div>
 
@@ -207,7 +207,7 @@ export default function About() {
       <section className="py-24 md:py-32 bg-[#FFF7F2]">
         <div className="container mx-auto px-6 md:px-12">
           <div className="mb-20">
-            <span className="text-[#8a6d3b] text-[10px] tracking-[0.4em] uppercase font-bold block mb-4">Our Approach</span>
+            <span className="text-[#8a6d3b] text-[12px] tracking-[0.4em] uppercase font-bold block mb-4">Our Approach</span>
             <h2 className="text-4xl md:text-6xl font-serif text-[#181818]">What Makes Us Different</h2>
           </div>
 
@@ -323,7 +323,7 @@ export default function About() {
               transition={{ duration: 0.8 }}
             >
               <div className="aspect-[3/4] overflow-hidden rounded-sm">
-                <Image src={ctaImage} alt="Ready to Build" className="w-full h-full object-cover" />
+                <Image src={ctaImage} alt="" className="w-full h-full object-cover" />
               </div>
             </motion.div>
 

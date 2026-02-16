@@ -67,7 +67,7 @@ export default function GalleryPage() {
           transition={{ duration: 1 }}
           className="text-left mb-16"
         >
-          <span className="text-[#c5a059] text-[10px] font-bold tracking-[0.4em] uppercase block mb-6">Portfolio</span>
+          <span className="text-[#c5a059] text-[12px] font-bold tracking-[0.4em] uppercase block mb-6">Portfolio</span>
           <h1 className="text-6xl md:text-8xl font-serif font-light text-white leading-[0.9] tracking-tight mb-8">
             Selected<br />
             <span className="italic text-[#c5a059]">Works</span>
@@ -95,7 +95,7 @@ export default function GalleryPage() {
                 >
                   <img
                     src={item.images[0]} // Display first image as cover
-                    alt=""
+                    alt={item.title}
                     className="w-full h-full object-cover transition-all duration-700 ease-in-out transform group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">

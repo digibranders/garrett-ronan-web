@@ -129,7 +129,7 @@ export default function LogosSection() {
           viewport={{ once: true }}
           className="text-center mb-16 md:mb-20"
         >
-          <span className="block text-[#8a6d3b] text-[10px] tracking-[0.4em] uppercase mb-6 md:mb-8 font-bold">Trusted By Industry Leaders</span>
+          <span className="block text-[#8a6d3b] text-[0.875rem] tracking-[0.4em] uppercase mb-6 md:mb-8 font-bold">Trusted By Industry Leaders</span>
           <h2 className="text-4xl md:text-6xl lg:text-8xl font-serif text-[#181818] mb-8 leading-tight">
             Brands We've<br />
             <span className="italic text-[#8a6d3b]">Supported</span>

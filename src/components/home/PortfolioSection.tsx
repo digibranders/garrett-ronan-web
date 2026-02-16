@@ -23,7 +23,7 @@ export default function PortfolioSection({ projects }: PortfolioSectionProps) {
           viewport={{ once: true }}
           className="mb-20"
         >
-          <span className="block text-[#c5a059] text-[10px] tracking-[0.4em] uppercase mb-6 font-bold">Our Work</span>
+          <span className="block text-[#c5a059] text-[0.875rem] tracking-[0.4em] uppercase mb-6 font-bold">Our Work</span>
           <h2 className="text-5xl md:text-7xl font-serif leading-tight text-white">
             Proven Excellence<br />
             <span className="italic text-[#c5a059]">Across All Hospitality Ventures</span>
@@ -45,7 +45,7 @@ export default function PortfolioSection({ projects }: PortfolioSectionProps) {
             >
               <Image
                 src={project.image}
-                alt={project.title}
+                alt=""
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-110"

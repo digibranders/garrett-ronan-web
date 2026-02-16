@@ -2,6 +2,14 @@
   --font-sans: "Montserrat", sans-serif;
   --font-serif: "Cormorant Garamond", serif;
   --color-gold-deep: #8a6d3b;
+
+  /* ADA Typography Tokens (16px base) */
+  --text-floor: 0.75rem;
+  /* 12px Absolute Floor */
+  --text-base-fluid: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  /* 16px - 18px Body */
+  --text-label-fluid: clamp(0.75rem, 0.72rem + 0.15vw, 0.875rem);
+  /* 12px - 14px Labels */
 }
 
 @layer base {
