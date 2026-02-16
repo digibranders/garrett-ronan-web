@@ -4,6 +4,7 @@ import Navbar from '@/components/common/Navbar';
 import ScrollToTop from '@/components/common/ScrollToTop';
 
 import Footer from '@/components/common/Footer';
+import { Toaster } from 'sonner';
 
 export const metadata: Metadata = {
   title: "GKR Hospitality",
@@ -60,6 +61,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased bg-[#141414] text-white selection:bg-[#c5a059] selection:text-white overflow-x-hidden w-full" suppressHydrationWarning>
+        <Toaster position="top-right" richColors />
         <ScrollToTop />
         <a
           href="#main-content"
