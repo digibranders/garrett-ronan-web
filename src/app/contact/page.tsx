@@ -2,13 +2,16 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Mail, MapPin, Phone, ChevronDown } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
-import logoImage from '@/assets/gkr-logo.png';
+import { Mail, MapPin, Phone, ChevronDown, AlertCircle } from 'lucide-react';
 
-const FAQ_DATA = [
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+const FAQ_DATA: FAQItem[] = [
   {
     question: "How quickly can you start?",
     answer: "For operational consulting and revenue work, typically 2-4 weeks. For concept-to-opening projects, the earlier you involve us, the better—ideally 12+ months before opening."
@@ -48,23 +51,66 @@ export default function Contact() {
     message: ''
   });
 
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const validateForm = () => {
+    const newErrors: Record<string, string> = {};
+    if (!formData.name.trim()) newErrors.name = 'Name is required';
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required';
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = 'Please enter a valid email address';
+    }
+    if (!formData.role) newErrors.role = 'Please select your role';
+    if (!formData.projectType) newErrors.projectType = 'Please select a project type';
+    if (!formData.message.trim()) newErrors.message = 'Please tell us about your situation';
+
+    if (formData.role === 'Other' && !formData.roleDescription.trim()) {
+      newErrors.roleDescription = 'Please describe your role';
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
+    if (validateForm()) {
+      setIsSubmitting(true);
+      // Simulate submission
+      console.log('Form submitted:', formData);
+      setTimeout(() => {
+        setIsSubmitting(false);
+        alert('Thank you for reaching out! We will get back to you soon.');
+      }, 1000);
+    } else {
+      // Focus the first error
+      const firstErrorKey = Object.keys(errors)[0];
+      const firstErrorElement = document.getElementById(firstErrorKey);
+      if (firstErrorElement) {
+        firstErrorElement.focus();
+      }
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [name]: value
     });
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors({
+        ...errors,
+        [name]: ''
+      });
+    }
   };
 
   return (
     <div className="bg-[#181818] text-[#FFF7F2] font-sans selection:bg-[#c5a059] selection:text-white overflow-x-hidden">
-
-
 
       {/* Hero Section with Minimal Contact Form */}
       <section className="relative pt-32 md:pt-48 pb-32 md:pb-48 bg-[#181818]">
@@ -76,7 +122,7 @@ export default function Contact() {
               transition={{ duration: 1 }}
               className="text-center mb-16"
             >
-              <span className="text-[#c5a059] text-[10px] font-bold tracking-[0.4em] uppercase block mb-6">Start a Conversation</span>
+              <span className="text-[#8a6d3b] text-[10px] font-bold tracking-[0.4em] uppercase block mb-6">Start a Conversation</span>
               <h1 className="text-4xl md:text-7xl font-serif font-light text-white leading-tight tracking-tight mb-6">
                 Let's Talk
               </h1>
@@ -92,11 +138,10 @@ export default function Contact() {
               transition={{ duration: 1, delay: 0.1 }}
               className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4 md:gap-0 px-4"
             >
-              <a href="mailto:Connect@GKRHospitality.com" className="text-[#c5a059] text-[15px]  tracking-[0.2em] hover:text-white transition-colors font-bold">
+              <a href="mailto:Connect@GKRHospitality.com" className="text-[#8a6d3b] text-[15px]  tracking-[0.2em] hover:text-white transition-colors font-bold">
                 connect@GKRHospitality.com
               </a>
-              {/* <span className="hidden md:block w-1.5 h-1.5 bg-[#c5a059] rounded-full"></span> */}
-              <a href="tel:+19174605793" className="text-[#c5a059] text-[15px] uppercase tracking-[0.2em] hover:text-white transition-colors font-bold">
+              <a href="tel:+19174605793" className="text-[#8a6d3b] text-[15px] uppercase tracking-[0.2em] hover:text-white transition-colors font-bold">
                 +1-917-460-5793
               </a>
             </motion.div>
@@ -106,15 +151,14 @@ export default function Contact() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.2 }}
               onSubmit={handleSubmit}
+              noValidate
               className="bg-[#FFF7F2] border border-[#c5a059]/20 rounded-sm p-8 md:p-12 shadow-xl"
             >
-
-
               <div className="space-y-6">
                 {/* Name */}
                 <div>
                   <label htmlFor="name" className="block text-stone-600 text-xs uppercase tracking-wider mb-3">
-                    Name
+                    Name <span className="text-[#C62828]">*</span>
                   </label>
                   <input
                     type="text"
@@ -122,16 +166,22 @@ export default function Contact() {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    required
-                    className="w-full bg-transparent border-b border-[#181818]/20 focus:border-[#c5a059] text-[#181818] py-3 transition-colors outline-none placeholder:text-stone-400"
+                    aria-invalid={!!errors.name}
+                    aria-describedby={errors.name ? 'name-error' : undefined}
+                    className={`w-full bg-transparent border-b ${errors.name ? 'border-[#C62828]' : 'border-[#181818]/20'} focus:border-[#c5a059] text-[#181818] py-3 transition-colors outline-none placeholder:text-stone-400`}
                     placeholder="Your full name"
                   />
+                  {errors.name && (
+                    <p id="name-error" className="text-[#C62828] text-xs mt-2 flex items-center gap-1">
+                      <AlertCircle className="w-3 h-3" /> {errors.name}
+                    </p>
+                  )}
                 </div>
 
                 {/* Email */}
                 <div>
                   <label htmlFor="email" className="block text-stone-600 text-xs uppercase tracking-wider mb-3">
-                    Email
+                    Email <span className="text-[#C62828]">*</span>
                   </label>
                   <input
                     type="email"
@@ -139,10 +189,16 @@ export default function Contact() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    required
-                    className="w-full bg-transparent border-b border-[#181818]/20 focus:border-[#c5a059] text-[#181818] py-3 transition-colors outline-none placeholder:text-stone-400"
+                    aria-invalid={!!errors.email}
+                    aria-describedby={errors.email ? 'email-error' : undefined}
+                    className={`w-full bg-transparent border-b ${errors.email ? 'border-[#C62828]' : 'border-[#181818]/20'} focus:border-[#c5a059] text-[#181818] py-3 transition-colors outline-none placeholder:text-stone-400`}
                     placeholder="your@email.com"
                   />
+                  {errors.email && (
+                    <p id="email-error" className="text-[#C62828] text-xs mt-2 flex items-center gap-1">
+                      <AlertCircle className="w-3 h-3" /> {errors.email}
+                    </p>
+                  )}
                 </div>
 
                 {/* Phone */}
@@ -180,7 +236,7 @@ export default function Contact() {
                 {/* Role */}
                 <div>
                   <label htmlFor="role" className="block text-stone-600 text-xs uppercase tracking-wider mb-3">
-                    Are you a
+                    Are you a <span className="text-[#C62828]">*</span>
                   </label>
                   <div className="relative">
                     <select
@@ -188,8 +244,9 @@ export default function Contact() {
                       name="role"
                       value={formData.role}
                       onChange={handleChange}
-                      required
-                      className="w-full bg-transparent border-b border-[#181818]/20 focus:border-[#c5a059] text-[#181818] py-3 appearance-none outline-none cursor-pointer"
+                      aria-invalid={!!errors.role}
+                      aria-describedby={errors.role ? 'role-error' : undefined}
+                      className={`w-full bg-transparent border-b ${errors.role ? 'border-[#C62828]' : 'border-[#181818]/20'} focus:border-[#c5a059] text-[#181818] py-3 appearance-none outline-none cursor-pointer`}
                     >
                       <option value="" disabled>Select Role</option>
                       <option value="Developer">Developer</option>
@@ -200,6 +257,11 @@ export default function Contact() {
                     </select>
                     <ChevronDown className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400 pointer-events-none" />
                   </div>
+                  {errors.role && (
+                    <p id="role-error" className="text-[#C62828] text-xs mt-2 flex items-center gap-1">
+                      <AlertCircle className="w-3 h-3" /> {errors.role}
+                    </p>
+                  )}
                 </div>
 
                 {/* Other Description - Conditional */}
@@ -210,7 +272,7 @@ export default function Contact() {
                     className="overflow-hidden"
                   >
                     <label htmlFor="roleDescription" className="block text-stone-600 text-xs uppercase tracking-wider mb-3">
-                      Please describe
+                      Please describe <span className="text-[#C62828]">*</span>
                     </label>
                     <input
                       type="text"
@@ -218,17 +280,23 @@ export default function Contact() {
                       name="roleDescription"
                       value={formData.roleDescription}
                       onChange={handleChange}
-                      required
-                      className="w-full bg-transparent border-b border-[#181818]/20 focus:border-[#c5a059] text-[#181818] py-3 transition-colors outline-none placeholder:text-stone-400"
+                      aria-invalid={!!errors.roleDescription}
+                      aria-describedby={errors.roleDescription ? 'roleDescription-error' : undefined}
+                      className={`w-full bg-transparent border-b ${errors.roleDescription ? 'border-[#C62828]' : 'border-[#181818]/20'} focus:border-[#c5a059] text-[#181818] py-3 transition-colors outline-none placeholder:text-stone-400`}
                       placeholder="Tell us about your role"
                     />
+                    {errors.roleDescription && (
+                      <p id="roleDescription-error" className="text-[#C62828] text-xs mt-2 flex items-center gap-1">
+                        <AlertCircle className="w-3 h-3" /> {errors.roleDescription}
+                      </p>
+                    )}
                   </motion.div>
                 )}
 
                 {/* Project Type */}
                 <div>
                   <label htmlFor="projectType" className="block text-stone-600 text-xs uppercase tracking-wider mb-3">
-                    Project / Business Type
+                    Project / Business Type <span className="text-[#C62828]">*</span>
                   </label>
                   <div className="relative">
                     <select
@@ -236,8 +304,9 @@ export default function Contact() {
                       name="projectType"
                       value={formData.projectType}
                       onChange={handleChange}
-                      required
-                      className="w-full bg-transparent border-b border-[#181818]/20 focus:border-[#c5a059] text-[#181818] py-3 appearance-none outline-none cursor-pointer"
+                      aria-invalid={!!errors.projectType}
+                      aria-describedby={errors.projectType ? 'projectType-error' : undefined}
+                      className={`w-full bg-transparent border-b ${errors.projectType ? 'border-[#C62828]' : 'border-[#181818]/20'} focus:border-[#c5a059] text-[#181818] py-3 appearance-none outline-none cursor-pointer`}
                     >
                       <option value="" disabled>Select Type</option>
                       <option value="Hotel / Resort">Hotel / Resort</option>
@@ -250,31 +319,43 @@ export default function Contact() {
                     </select>
                     <ChevronDown className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400 pointer-events-none" />
                   </div>
+                  {errors.projectType && (
+                    <p id="projectType-error" className="text-[#C62828] text-xs mt-2 flex items-center gap-1">
+                      <AlertCircle className="w-3 h-3" /> {errors.projectType}
+                    </p>
+                  )}
                 </div>
 
                 {/* Message */}
                 <div>
                   <label htmlFor="message" className="block text-stone-600 text-xs uppercase tracking-wider mb-3">
-                    Tell us about your situation
+                    Tell us about your situation <span className="text-[#C62828]">*</span>
                   </label>
                   <textarea
                     id="message"
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    required
+                    aria-invalid={!!errors.message}
+                    aria-describedby={errors.message ? 'message-error' : undefined}
                     rows={4}
-                    className="w-full bg-transparent border-b border-[#181818]/20 focus:border-[#c5a059] text-[#181818] py-3 transition-colors outline-none resize-none placeholder:text-stone-400"
+                    className={`w-full bg-transparent border-b ${errors.message ? 'border-[#C62828]' : 'border-[#181818]/20'} focus:border-[#c5a059] text-[#181818] py-3 transition-colors outline-none resize-none placeholder:text-stone-400`}
                     placeholder="What challenges are you facing? What stage is your project at?"
                   />
+                  {errors.message && (
+                    <p id="message-error" className="text-[#C62828] text-xs mt-2 flex items-center gap-1">
+                      <AlertCircle className="w-3 h-3" /> {errors.message}
+                    </p>
+                  )}
                 </div>
 
                 {/* Submit */}
                 <button
                   type="submit"
-                  className="cursor-pointer w-full bg-[#c5a059] text-[#181818] hover:bg-[#181818] hover:text-white py-6 text-xs uppercase tracking-[0.3em] font-bold transition-all duration-500 rounded-full"
+                  disabled={isSubmitting}
+                  className={`cursor-pointer w-full bg-[#8a6d3b] text-[#181818] hover:bg-[#181818] hover:text-white py-6 text-xs uppercase tracking-[0.3em] font-bold transition-all duration-500 rounded-full ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
                 >
-                  Send Message
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
               </div>
             </motion.form>
@@ -291,15 +372,15 @@ export default function Contact() {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <span className="text-[#c5a059] text-[10px] font-bold tracking-[0.4em] uppercase block mb-6">FAQ</span>
+            <span className="text-[#8a6d3b] text-[10px] font-bold tracking-[0.4em] uppercase block mb-6">FAQ</span>
             <h2 className="text-5xl md:text-7xl font-serif text-[#181818] leading-tight">
               Frequently Asked<br />
-              <span className="italic text-[#c5a059]">Questions</span>
+              <span className="italic text-[#8a6d3b]">Questions</span>
             </h2>
           </motion.div>
 
           <div className="max-w-4xl">
-            {FAQ_DATA.map((faq, index) => (
+            {FAQ_DATA.map((faq: FAQItem, index: number) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
@@ -315,13 +396,13 @@ export default function Contact() {
                   aria-controls={`faq-answer-${index}`}
                 >
                   <div className="flex items-start gap-6 flex-1">
-                    <span className="text-[#c5a059] text-sm font-serif mt-1 flex-shrink-0">0{index + 1}</span>
-                    <h3 className="text-[#181818] text-xl md:text-2xl font-serif group-hover:text-[#c5a059] transition-colors">
+                    <span className="text-[#8a6d3b] text-sm font-serif mt-1 flex-shrink-0">0{index + 1}</span>
+                    <h3 className="text-[#181818] text-xl md:text-2xl font-serif group-hover:text-[#8a6d3b] transition-colors">
                       {faq.question}
                     </h3>
                   </div>
                   <ChevronDown
-                    className={`w-5 h-5 text-[#c5a059] flex-shrink-0 mt-2 transition-transform duration-300 ${openFAQ === index ? 'rotate-180' : ''}`}
+                    className={`w-5 h-5 text-[#8a6d3b] flex-shrink-0 mt-2 transition-transform duration-300 ${openFAQ === index ? 'rotate-180' : ''}`}
                   />
                 </button>
 

@@ -207,7 +207,7 @@ export default function About() {
       <section className="py-24 md:py-32 bg-[#FFF7F2]">
         <div className="container mx-auto px-6 md:px-12">
           <div className="mb-20">
-            <span className="text-[#c5a059] text-[10px] tracking-[0.4em] uppercase font-bold block mb-4">Our Approach</span>
+            <span className="text-[#8a6d3b] text-[10px] tracking-[0.4em] uppercase font-bold block mb-4">Our Approach</span>
             <h2 className="text-4xl md:text-6xl font-serif text-[#181818]">What Makes Us Different</h2>
           </div>
 
@@ -221,8 +221,8 @@ export default function About() {
               className="border border-[#181818]/10 p-8 hover:border-[#c5a059] hover:bg-white transition-all duration-500"
             >
               <div className="mb-6">
-                <div className="w-12 h-12 rounded-full border-2 border-[#c5a059] flex items-center justify-center mb-4">
-                  <span className="text-[#c5a059] text-xl font-serif">01</span>
+                <div className="w-12 h-12 rounded-full border-2 border-[#8a6d3b] flex items-center justify-center mb-4">
+                  <span className="text-[#8a6d3b] text-xl font-serif">01</span>
                 </div>
                 <h3 className="text-2xl font-serif text-[#181818] mb-4">Full Life-Cycle Support</h3>
               </div>
@@ -240,8 +240,8 @@ export default function About() {
               className="border border-[#181818]/10 p-8 hover:border-[#c5a059] hover:bg-white transition-all duration-500"
             >
               <div className="mb-6">
-                <div className="w-12 h-12 rounded-full border-2 border-[#c5a059] flex items-center justify-center mb-4">
-                  <span className="text-[#c5a059] text-xl font-serif">02</span>
+                <div className="w-12 h-12 rounded-full border-2 border-[#8a6d3b] flex items-center justify-center mb-4">
+                  <span className="text-[#8a6d3b] text-xl font-serif">02</span>
                 </div>
                 <h3 className="text-2xl font-serif text-[#181818] mb-4">Cross-Functional Expertise in One Place</h3>
               </div>
@@ -251,7 +251,7 @@ export default function About() {
               <div className="space-y-2">
                 {SERVICES_LIST.slice(0, 6).map((service, index) => (
                   <div key={index} className="flex items-start gap-2">
-                    <Check className="w-4 h-4 text-[#c5a059] flex-shrink-0 mt-0.5" />
+                    <Check className="w-4 h-4 text-[#8a6d3b] flex-shrink-0 mt-0.5" />
                     <span className="text-stone-600 text-sm">{service}</span>
                   </div>
                 ))}
@@ -267,8 +267,8 @@ export default function About() {
               className="border border-[#181818]/10 p-8 hover:border-[#c5a059] hover:bg-white transition-all duration-500"
             >
               <div className="mb-6">
-                <div className="w-12 h-12 rounded-full border-2 border-[#c5a059] flex items-center justify-center mb-4">
-                  <span className="text-[#c5a059] text-xl font-serif">03</span>
+                <div className="w-12 h-12 rounded-full border-2 border-[#8a6d3b] flex items-center justify-center mb-4">
+                  <span className="text-[#8a6d3b] text-xl font-serif">03</span>
                 </div>
                 <h3 className="text-2xl font-serif text-[#181818] mb-4">Flexible Engagement Model</h3>
               </div>
@@ -285,15 +285,15 @@ export default function About() {
               className="border border-[#181818]/10 p-8 hover:border-[#c5a059] hover:bg-white transition-all duration-500"
             >
               <div className="mb-6">
-                <div className="w-12 h-12 rounded-full border-2 border-[#c5a059] flex items-center justify-center mb-4">
-                  <span className="text-[#c5a059] text-xl font-serif">04</span>
+                <div className="w-12 h-12 rounded-full border-2 border-[#8a6d3b] flex items-center justify-center mb-4">
+                  <span className="text-[#8a6d3b] text-xl font-serif">04</span>
                 </div>
                 <h3 className="text-2xl font-serif text-[#181818] mb-4">Complete Service Capabilities</h3>
               </div>
               <div className="space-y-2 mb-6">
                 {SERVICES_LIST.slice(6).map((service, index) => (
                   <div key={index} className="flex items-start gap-2">
-                    <Check className="w-4 h-4 text-[#c5a059] flex-shrink-0 mt-0.5" />
+                    <Check className="w-4 h-4 text-[#8a6d3b] flex-shrink-0 mt-0.5" />
                     <span className="text-stone-600 text-sm">{service}</span>
                   </div>
                 ))}

@@ -129,10 +129,10 @@ export default function LogosSection() {
           viewport={{ once: true }}
           className="text-center mb-16 md:mb-20"
         >
-          <span className="block text-[#c5a059] text-[10px] tracking-[0.4em] uppercase mb-6 md:mb-8 font-bold">Trusted By Industry Leaders</span>
+          <span className="block text-[#8a6d3b] text-[10px] tracking-[0.4em] uppercase mb-6 md:mb-8 font-bold">Trusted By Industry Leaders</span>
           <h2 className="text-4xl md:text-6xl lg:text-8xl font-serif text-[#181818] mb-8 leading-tight">
             Brands We've<br />
-            <span className="italic text-[#c5a059]">Supported</span>
+            <span className="italic text-[#8a6d3b]">Supported</span>
           </h2>
         </motion.div>
 
@@ -145,7 +145,7 @@ export default function LogosSection() {
         >
           <div className="text-center mb-6">
             <h3 className="text-xl md:text-2xl font-serif text-[#181818] mb-2">Employed By</h3>
-            <div className="w-16 h-px bg-[#c5a059] mx-auto"></div>
+            <div className="w-16 h-px bg-[#8a6d3b] mx-auto"></div>
           </div>
 
           <div className="relative overflow-hidden w-full mt-2">
@@ -207,7 +207,7 @@ export default function LogosSection() {
         >
           <div className="text-center mb-6">
             <h3 className="text-xl md:text-2xl font-serif text-[#181818] mb-2">Consulted With</h3>
-            <div className="w-16 h-px bg-[#c5a059] mx-auto"></div>
+            <div className="w-16 h-px bg-[#8a6d3b] mx-auto"></div>
           </div>
 
           <div className="relative overflow-hidden w-full mt-2">
