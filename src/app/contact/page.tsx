@@ -1,10 +1,12 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { motion } from 'motion/react';
+import { motion, AnimatePresence } from 'motion/react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Mail, MapPin, Phone, ChevronDown, AlertCircle } from 'lucide-react';
+import { Mail, MapPin, Phone, ChevronDown, AlertCircle, Check } from 'lucide-react';
+import { sendContactEmail } from '@/app/actions/send-email';
+import { toast } from 'sonner';
 
 interface FAQItem {
   question: string;
@@ -53,6 +55,7 @@ export default function Contact() {
 
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
 
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
@@ -74,16 +77,36 @@ export default function Contact() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (validateForm()) {
       setIsSubmitting(true);
-      // Simulate submission
-      console.log('Form submitted:', formData);
-      setTimeout(() => {
+      try {
+        const result = await sendContactEmail(formData);
+        if (result.success) {
+          setIsSuccess(true);
+          toast.success('Thank you for reaching out! We will get back to you soon.');
+          setFormData({
+            name: '',
+            email: '',
+            phone: '',
+            company: '',
+            projectType: '',
+            role: '',
+            roleDescription: '',
+            message: ''
+          });
+          // Reset success state after 3 seconds
+          setTimeout(() => setIsSuccess(false), 2500);
+        } else {
+          toast.error(result.error || 'Something went wrong. Please try again.');
+        }
+      } catch (error) {
+        toast.error('An unexpected error occurred. Please try again.');
+        console.error('Submission error:', error);
+      } finally {
         setIsSubmitting(false);
-        alert('Thank you for reaching out! We will get back to you soon.');
-      }, 1000);
+      }
     } else {
       // Focus the first error
       const firstErrorKey = Object.keys(errors)[0];
@@ -352,10 +375,37 @@ export default function Contact() {
                 {/* Submit */}
                 <button
                   type="submit"
-                  disabled={isSubmitting}
-                  className={`cursor-pointer w-full bg-[#8a6d3b] text-[#181818] hover:bg-[#181818] hover:text-white py-6 text-xs uppercase tracking-[0.3em] font-bold transition-all duration-500 rounded-full ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
+                  disabled={isSubmitting || isSuccess}
+                  className={`cursor-pointer w-full flex items-center justify-center gap-3 py-6 text-xs uppercase tracking-[0.3em] font-bold transition-all duration-500 rounded-full ${isSuccess
+                    ? 'bg-green-600 text-white'
+                    : isSubmitting
+                      ? 'bg-[#8a6d3b] opacity-50 cursor-not-allowed text-[#181818]'
+                      : 'bg-[#8a6d3b] text-[#181818] hover:bg-[#181818] hover:text-white'
+                    }`}
                 >
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                  <AnimatePresence mode="wait">
+                    {isSuccess ? (
+                      <motion.div
+                        key="success"
+                        initial={{ opacity: 0, scale: 0.5 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.5 }}
+                        className="flex items-center gap-2"
+                      >
+                        <Check className="w-5 h-5" />
+                        <span>Message Sent</span>
+                      </motion.div>
+                    ) : (
+                      <motion.span
+                        key="normal"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                      >
+                        {isSubmitting ? 'Sending...' : 'Send Message'}
+                      </motion.span>
+                    )}
+                  </AnimatePresence>
                 </button>
               </div>
             </motion.form>
