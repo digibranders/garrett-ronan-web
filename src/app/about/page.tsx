@@ -343,7 +343,7 @@ export default function About() {
                   Let's discuss how we can support your hospitality vision
                 </p>
                 <Link href="/contact" className="inline-block">
-                  <Button className="bg-[#181818] text-white hover:bg-white hover:text-[#181818] px-6 py-4 md:px-12 md:py-7 text-[10px] md:text-sm uppercase tracking-[0.15em] md:tracking-[0.3em] font-bold transition-all duration-500 rounded-full h-auto whitespace-normal md:whitespace-nowrap leading-relaxed w-auto max-w-none">
+                  <Button className="bg-[#181818] text-white hover:bg-white hover:text-[#181818] px-4 py-3 md:px-12 md:py-7 text-[0.75rem] md:text-sm uppercase tracking-[0.15em] md:tracking-[0.3em] font-bold transition-all duration-500 rounded-full h-auto whitespace-normal md:whitespace-nowrap leading-relaxed w-auto max-w-none">
                     Schedule Your Complimentary Discovery Call
                   </Button>
                 </Link>
