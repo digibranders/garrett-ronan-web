@@ -51,8 +51,8 @@ export default function Navbar() {
   const NAV_ITEMS = [
     { label: 'About Us', href: '/about' },
     { label: 'Our Work', href: '/work' },
-    { label: 'How We Work', href: '/how-we-work' },
     { label: 'What our Clients Say', href: '/reviews' },
+    { label: 'How We Work', href: '/how-we-work' },
     { label: 'What we do', href: '/what-we-do' },
     { label: 'Gallery', href: '/gallery' }
   ];
