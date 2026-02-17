@@ -53,7 +53,7 @@ export default function CTASection() {
             className="flex justify-center lg:justify-end"
           >
             <Link href="/contact">
-              <Button className="bg-[#181818] text-white hover:bg-white hover:text-[#181818] px-4 py-4 md:px-8 md:py-6 text-[0.875rem] md:text-sm uppercase tracking-[0.15em] md:tracking-[0.3em] font-bold transition-all duration-500 rounded-full whitespace-nowrap h-auto text-center leading-normal w-auto max-w-none">
+              <Button className="bg-[#181818] text-white hover:bg-white hover:text-[#181818] px-4 py-3 md:px-8 md:py-6 text-[0.75rem] md:text-sm uppercase tracking-[0.15em] md:tracking-[0.3em] font-bold transition-all duration-500 rounded-full h-auto whitespace-normal md:whitespace-nowrap text-center leading-normal w-auto max-w-none">
                 Schedule Your Complimentary Discovery Call
               </Button>
             </Link>
