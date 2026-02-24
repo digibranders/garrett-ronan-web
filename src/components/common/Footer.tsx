@@ -19,8 +19,8 @@ export default function Footer() {
           <div className="md:col-span-3 md:col-start-7">
             <h4 className="text-white font-serif text-xl mb-6">Office</h4>
             <address className="text-stone-300 text-[0.75rem] leading-relaxed not-italic">
-              42 Brighton View Rd.<br />
-              Fairfield, CT, 06824<br />
+              450 Park Avenue South, (Floor 1)<br />
+              New York, NY 10016<br />
               USA
             </address>
             <div className="mt-8">

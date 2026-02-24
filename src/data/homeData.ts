@@ -37,6 +37,7 @@ import residentImg from '@/assets/images/our_work/resident_1.png';
 import etcVenuesLogo from '@/assets/images/logos/etc-venues.png';
 import azumiLogo from '@/assets/images/logos/azumi.png';
 import paperchaseLogo from '@/assets/images/testimonials/paperchaseaccountancy_logo.jpg';
+import beverlyHiltonLogo from '@/assets/images/logos/beverly-hilton.png';
 
 // Hero Slideshow Images - NYC, LA, Caribbean
 export const HERO_IMAGES = [
@@ -239,5 +240,12 @@ export const TESTIMONIALS = [
     name: "Nish Patel",
     author: "Group CEO",
     logo: paperchaseLogo
+  },
+  {
+    quote: "Garrett is one of the most intuitive, loyal, and dynamic hospitality leaders I have had the pleasure to work with. As Director of F&B at The Beverly Hilton, he played a pivotal role in transforming our food, beverage, and banquet operations during a landmark multi-million-dollar refurbishment and rebranding. He successfully reimagined every outlet while elevating service standards across a 570-room property and 55,000 square feet of conference and banquet space, including events on the scale of the Golden Globe Awards. Garrett inspired and led a team of over 700 colleagues through meaningful cultural change, combining operational rigor with financial discipline and genuine care for people. His experience, collaborative leadership style, and unwavering commitment to excellence make him an exceptional asset to any hospitality organization.",
+    highlight: "transforming our food, beverage, and banquet operations",
+    name: "Denny Fitzpatrick",
+    author: "Former General Manager",
+    logo: beverlyHiltonLogo
   }
 ];
