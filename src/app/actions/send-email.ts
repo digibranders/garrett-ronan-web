@@ -5,10 +5,15 @@ import * as Brevo from '@getbrevo/brevo';
 const apiInstance = new Brevo.TransactionalEmailsApi();
 const apiKey = process.env.BREVO_API_KEY;
 const templateId = process.env.BREVO_TEMPLATE_ID ? parseInt(process.env.BREVO_TEMPLATE_ID) : null;
+const thankYouTemplateId = process.env.BREVO_THANK_YOU_TEMPLATE_ID ? parseInt(process.env.BREVO_THANK_YOU_TEMPLATE_ID) : null;
+const senderName = process.env.BREVO_SENDER_NAME ?? 'GKR Hospitality';
+const senderEmail = process.env.BREVO_SENDER_EMAIL ?? 'connect@GKRHospitality.com';
+const adminEmail = process.env.BREVO_ADMIN_EMAIL ?? senderEmail;
 
 if (apiKey) {
   apiInstance.setApiKey(Brevo.TransactionalEmailsApiApiKeys.apiKey, apiKey);
 }
+
 
 export async function sendContactEmail(formData: {
   name: string;
@@ -25,14 +30,17 @@ export async function sendContactEmail(formData: {
     return { success: false, error: 'Email service configuration error.' };
   }
 
-  const sendSmtpEmail = new Brevo.SendSmtpEmail();
+  // 1. Send Admin Notification Email
+  const sendAdminEmail = new Brevo.SendSmtpEmail();
+  sendAdminEmail.templateId = templateId;
+  sendAdminEmail.sender = { name: senderName, email: senderEmail };
+  sendAdminEmail.to = [{ email: adminEmail, name: senderName }];
 
-  sendSmtpEmail.templateId = templateId;
-  sendSmtpEmail.sender = { name: "GKR Hospitality", email: "connect@GKRHospitality.com" };
-  sendSmtpEmail.to = [{ email: "connect@GKRHospitality.com", name: "GKR Hospitality Support" }];
+  // Set replyTo so replying from admin goes to the user who filled the form
+  sendAdminEmail.replyTo = { email: formData.email, name: formData.name };
 
   // Map form data to Brevo template parameters
-  sendSmtpEmail.params = {
+  sendAdminEmail.params = {
     name: formData.name,
     email: formData.email,
     phone: formData.phone || 'N/A',
@@ -43,11 +51,31 @@ export async function sendContactEmail(formData: {
   };
 
   try {
-    const data = await apiInstance.sendTransacEmail(sendSmtpEmail);
-    console.log('Brevo template email sent successfully:', JSON.stringify(data));
+    const adminData = await apiInstance.sendTransacEmail(sendAdminEmail);
+    console.log('Brevo admin template email sent successfully:', JSON.stringify(adminData));
+
+    // 2. Send Thank You Email to User (only when template is configured in Brevo)
+    if (thankYouTemplateId) {
+      try {
+        const sendUserEmail = new Brevo.SendSmtpEmail();
+        sendUserEmail.to = [{ email: formData.email, name: formData.name }];
+        // Sender & subject are configured in the Brevo dashboard template
+        sendUserEmail.templateId = thankYouTemplateId;
+        sendUserEmail.params = { name: formData.name };
+
+        const userData = await apiInstance.sendTransacEmail(sendUserEmail);
+        console.log('Brevo thank you email sent successfully:', JSON.stringify(userData));
+      } catch (userEmailError) {
+        // We don't want to fail the whole submission if the thank you email fails
+        console.error('Error sending Thank You email to user:', userEmailError);
+      }
+    } else {
+      console.warn('BREVO_THANK_YOU_TEMPLATE_ID is not set — skipping Thank You email.');
+    }
+
     return { success: true };
   } catch (error) {
-    console.error('Error calling Brevo API:', error);
+    console.error('Error calling Brevo API for admin email:', error);
     return { success: false, error: 'Failed to send email. Please check your configuration.' };
   }
 }

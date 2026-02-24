@@ -106,7 +106,7 @@ export default function About() {
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
                 <p className="text-2xl md:text-3xl font-serif text-stone-300 leading-relaxed mb-8">
-                  GKR Hospitality Consulting was founded by Garrett Ronan based on 30+ years of concepting, designing, building and operating hotels, resorts, restaurants, bars and hospitality venues—often in situations where failure is not an option.
+                  GKR Hospitality Consulting was founded by Garrett Ronan based on 30+ years of concepting, designing, building and operating hotels, resorts, restaurants, bars and hospitality venues in situations where failure is not an option.
                 </p>
 
                 <div className="space-y-6 text-stone-400 leading-relaxed ">
