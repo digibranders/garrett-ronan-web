@@ -52,7 +52,7 @@ export async function sendContactEmail(formData: {
 
   try {
     const adminData = await apiInstance.sendTransacEmail(sendAdminEmail);
-    console.log('Brevo admin template email sent successfully:', JSON.stringify(adminData));
+    console.log('Brevo admin template email sent successfully:', (adminData as any)?.messageId || 'sent');
 
     // 2. Send Thank You Email to User (only when template is configured in Brevo)
     if (thankYouTemplateId) {
@@ -64,18 +64,24 @@ export async function sendContactEmail(formData: {
         sendUserEmail.params = { name: formData.name };
 
         const userData = await apiInstance.sendTransacEmail(sendUserEmail);
-        console.log('Brevo thank you email sent successfully:', JSON.stringify(userData));
-      } catch (userEmailError) {
+        console.log('Brevo thank you email sent successfully:', (userData as any)?.messageId || 'sent');
+      } catch (userEmailError: any) {
         // We don't want to fail the whole submission if the thank you email fails
-        console.error('Error sending Thank You email to user:', userEmailError);
+        console.error('Error sending Thank You email to user:', {
+          message: userEmailError?.message,
+          status: userEmailError?.status || userEmailError?.response?.status,
+        });
       }
     } else {
       console.warn('BREVO_THANK_YOU_TEMPLATE_ID is not set — skipping Thank You email.');
     }
 
     return { success: true };
-  } catch (error) {
-    console.error('Error calling Brevo API for admin email:', error);
+  } catch (error: any) {
+    console.error('Error calling Brevo API for admin email:', {
+      message: error?.message,
+      status: error?.status || error?.response?.status,
+    });
     return { success: false, error: 'Failed to send email. Please check your configuration.' };
   }
 }

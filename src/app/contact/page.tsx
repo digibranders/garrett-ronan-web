@@ -101,9 +101,9 @@ export default function Contact() {
         } else {
           toast.error(result.error || 'Something went wrong. Please try again.');
         }
-      } catch (error) {
+      } catch (error: any) {
         toast.error('An unexpected error occurred. Please try again.');
-        console.error('Submission error:', error);
+        console.error('Submission error:', error?.message || error);
       } finally {
         setIsSubmitting(false);
       }
