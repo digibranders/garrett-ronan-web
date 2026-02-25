@@ -5,7 +5,7 @@ import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { X, ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 import { GALLERY_ITEMS } from '@/data/galleryData';
 
 

@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 
 const CONTACT_INFO = [
     "garrett@GKRHospitality.com",
@@ -34,20 +34,21 @@ export default function MovingRibbon() {
                     {[...Array(10)].map((_, i) => (
                         <React.Fragment key={i}>
                             {items.map((item, idx) => (
-                                <span key={idx} className="flex items-center">
+                                <span key={idx} className="flex items-center" aria-hidden={i > 0 ? "true" : undefined}>
                                     <a
                                         href={item.href}
                                         className="px-12 hover:opacity-70 transition-opacity cursor-pointer whitespace-nowrap"
+                                        tabIndex={i > 0 ? -1 : 0}
                                     >
                                         {item.label}
                                     </a>
-                                    <span className="opacity-50 text-lg">•</span>
+                                    <span className="opacity-50 text-lg" aria-hidden="true">•</span>
                                 </span>
                             ))}
                         </React.Fragment>
                     ))}
                 </div>
-                <div className="flex items-center">
+                <div className="flex items-center" aria-hidden="true">
                     {[...Array(10)].map((_, i) => (
                         <React.Fragment key={i}>
                             {items.map((item, idx) => (
@@ -55,10 +56,11 @@ export default function MovingRibbon() {
                                     <a
                                         href={item.href}
                                         className="px-12 hover:opacity-70 transition-opacity cursor-pointer whitespace-nowrap"
+                                        tabIndex={-1}
                                     >
                                         {item.label}
                                     </a>
-                                    <span className="opacity-50 text-lg">•</span>
+                                    <span className="opacity-50 text-lg" aria-hidden="true">•</span>
                                 </span>
                             ))}
                         </React.Fragment>

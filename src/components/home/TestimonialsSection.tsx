@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useCallback } from 'react';
-import { motion, AnimatePresence, Variants } from 'framer-motion';
+import { motion, AnimatePresence, Variants } from 'motion/react';
 import Image, { StaticImageData } from 'next/image';
 import { Quote, ChevronLeft, ChevronRight } from 'lucide-react';
 
