@@ -226,5 +226,16 @@ export const GALLERY_ITEMS: GalleryItem[] = [
       "/images/gallery/Meet Resident Private & Members Only/Resident 2.png",
       "/images/gallery/Meet Resident Private & Members Only/Resident 3.png"
     ]
+  },
+  {
+    "id": 21,
+    "title": "Caribbean- St Vincent and the Grenadines",
+    "description": "Gallery for Caribbean- St Vincent and the Grenadines",
+    "link": "#",
+    "images": [
+      "/images/gallery/Caribbean St Vincent and the Grenadines/Caribbean_1.png",
+      "/images/gallery/Caribbean St Vincent and the Grenadines/Caribbean_2.png",
+      "/images/gallery/Caribbean St Vincent and the Grenadines/Caribbean_3.png"
+    ]
   }
 ];
