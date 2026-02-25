@@ -130,7 +130,7 @@ export default function TestimonialsSection({ testimonials }: TestimonialsSectio
           </h2>
         </motion.div>
 
-        <div className="max-w-7xl mx-auto relative h-[800px] flex items-center justify-center">
+        <div className="max-w-7xl mx-auto relative min-h-[700px] sm:min-h-[750px] md:min-h-[800px] flex items-center justify-center">
 
           {/* Circular Navigation Buttons - Aligned with Card */}
           <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 z-[60] pointer-events-none hidden md:flex items-center justify-between px-2 md:-px-12 w-full">
@@ -177,7 +177,7 @@ export default function TestimonialsSection({ testimonials }: TestimonialsSectio
                     textRendering: 'geometricPrecision',
                     backfaceVisibility: 'visible',
                   }}
-                  className="absolute inset-0 m-auto w-[85%] md:w-[850px] h-[650px] md:h-[600px] lg:h-[700px] bg-[#111111] border border-white/5 rounded-sm p-6 md:p-14 lg:p-20 shadow-2xl flex flex-col items-center justify-center cursor-grab active:cursor-grabbing"
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[85%] md:w-[850px] min-h-[620px] sm:min-h-[600px] md:min-h-[580px] lg:min-h-[650px] bg-[#111111] border border-white/5 rounded-sm p-6 md:p-14 lg:p-20 shadow-2xl flex flex-col items-center justify-center cursor-grab active:cursor-grabbing"
                 >
                   {/* Large Background Quote Icon */}
                   <div className="absolute top-6 left-6 md:top-10 md:left-10 text-white/[0.02] pointer-events-none">
@@ -195,7 +195,7 @@ export default function TestimonialsSection({ testimonials }: TestimonialsSectio
                       />
                     </div>
 
-                    <p className="text-xl md:text-2xl lg:text-3xl text-white font-serif font-light leading-relaxed mb-4 md:mb-10 max-w-3xl mx-auto" style={{ fontSize: 'var(--text-base-fluid)' }}>
+                    <p className="text-xl md:text-2xl lg:text-3xl text-white font-serif font-light leading-relaxed mb-4 md:mb-10 max-w-3xl mx-auto" style={{ fontSize: 'clamp(0.875rem, 0.8rem + 0.4vw, 1.125rem)' }}>
                       {renderQuote(testimonial.quote, testimonial.highlight)}
                     </p>
 
