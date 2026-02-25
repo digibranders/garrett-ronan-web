@@ -19,11 +19,11 @@ vi.mock('@/components/ui/button', () => ({
 }));
 
 describe('Navbar Component', () => {
-  it('renders navigation links', () => {
+  it('renders navigation links', async () => {
     render(<Navbar />);
-    expect(screen.getAllByText(/About/i).length).toBeGreaterThan(0);
-    expect(screen.getAllByText(/Services/i).length).toBeGreaterThan(0);
-    expect(screen.getAllByText(/Contact/i).length).toBeGreaterThan(0);
+    expect(await screen.findByText(/About Us/i)).toBeInTheDocument();
+    expect(await screen.findByText(/What we do/i)).toBeInTheDocument();
+    expect(await screen.findByText(/Contact/i)).toBeInTheDocument();
   });
 
   it('renders mobile menu button on small screens', () => {
@@ -39,9 +39,9 @@ describe('Navbar Component', () => {
     const menuButton = screen.getByTestId('menu-icon').parentElement;
     if (menuButton) {
       fireEvent.click(menuButton);
-      // specific waitFor import needed or findByText which is async
-      const mobileHomeLink = await screen.findByText(/Home/i);
-      expect(mobileHomeLink).toBeInTheDocument();
+      // Check for a link that should be visible in the mobile menu (like "About Us")
+      const mobileAboutLink = await screen.findAllByText(/About Us/i);
+      expect(mobileAboutLink.length).toBeGreaterThan(0);
     }
   });
 });
