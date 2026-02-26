@@ -130,7 +130,7 @@ export default function TestimonialsSection({ testimonials }: TestimonialsSectio
           </h2>
         </motion.div>
 
-        <div className="max-w-7xl mx-auto relative min-h-[700px] sm:min-h-[750px] md:min-h-[800px] flex items-center justify-center">
+        <div className="max-w-7xl mx-auto relative min-h-[700px] sm:min-h-[750px] md:min-h-[800px] flex flex-col md:flex-row items-start md:items-center justify-center pt-8 md:pt-0">
 
           {/* Circular Navigation Buttons - Aligned with Card */}
           <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 z-[60] pointer-events-none hidden md:flex items-center justify-between px-2 md:-px-12 w-full">
