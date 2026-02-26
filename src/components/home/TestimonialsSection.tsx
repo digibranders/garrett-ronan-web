@@ -115,13 +115,13 @@ export default function TestimonialsSection({ testimonials }: TestimonialsSectio
   };
 
   return (
-    <section className="py-32 md:py-48 bg-[#080a0f] overflow-hidden relative">
+    <section className="py-16 md:py-48 bg-[#080a0f] overflow-hidden relative">
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-20 text-center"
+          className="mb-10 md:mb-20 text-center"
         >
           <span className="block text-[#c5a059] text-[0.875rem] tracking-[0.4em] uppercase mb-6 font-bold">What Our Clients Say</span>
           <h2 className="text-5xl md:text-7xl font-serif leading-tight text-white mb-2">
