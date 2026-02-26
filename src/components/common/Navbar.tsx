@@ -63,7 +63,12 @@ export default function Navbar() {
         <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
           <div className="flex items-center gap-4">
             <Link href="/" onClick={(e) => handleNavClick(e, '/')}>
-              <img src={logoImage.src} alt="GKR" className={`object-contain transition-all duration-500 ${scrolled ? 'h-10' : 'h-14'} brightness-0 invert cursor-pointer`} />
+              <Image
+                src={logoImage}
+                alt="GKR"
+                className={`object-contain transition-all duration-500 ${scrolled ? 'h-10' : 'h-14'} w-auto brightness-0 invert cursor-pointer`}
+                priority
+              />
             </Link>
 
           </div>
@@ -128,7 +133,11 @@ export default function Navbar() {
                 handleNavClick(e, '/');
                 setMobileMenuOpen(false);
               }}>
-                <img src={logoImage.src} alt="GKR" className="h-12 object-contain brightness-0 invert opacity-80 cursor-pointer" />
+                <Image
+                  src={logoImage}
+                  alt="GKR"
+                  className="h-12 w-auto object-contain brightness-0 invert opacity-80 cursor-pointer"
+                />
               </Link>
             </div>
 
