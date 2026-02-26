@@ -63,15 +63,21 @@ export async function sendContactEmail(formData: {
         sendUserEmail.params = { name: formData.name };
 
         await apiInstance.sendTransacEmail(sendUserEmail);
-      } catch (userEmailError) {
+      } catch (userEmailError: any) {
         // We don't want to fail the whole submission if the thank you email fails
-        console.error('Error sending Thank You email to user:', userEmailError);
+        console.error('Error sending Thank You email to user:', {
+          message: userEmailError?.message,
+          status: userEmailError?.status || userEmailError?.response?.status,
+        });
       }
     }
 
     return { success: true };
-  } catch (error) {
-    console.error('Error calling Brevo API for admin email:', error);
+  } catch (error: any) {
+    console.error('Error calling Brevo API for admin email:', {
+      message: error?.message,
+      status: error?.status || error?.response?.status,
+    });
     return { success: false, error: 'Failed to send email. Please check your configuration.' };
   }
 }
