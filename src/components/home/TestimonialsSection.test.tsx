@@ -1,0 +1,47 @@
+import { render, screen } from '@testing-library/react';
+import { describe, it, expect, vi } from 'vitest';
+import TestimonialsSection from './TestimonialsSection';
+import { StaticImageData } from 'next/image';
+
+// Mock the image import
+const mockImage: StaticImageData = {
+  src: '/mock-image.jpg',
+  height: 100,
+  width: 100,
+  blurDataURL: 'data:image/jpeg;base64,',
+  blurWidth: 0,
+  blurHeight: 0,
+};
+
+const mockTestimonials = [
+  {
+    quote: "Test Quote 1",
+    name: "Test Name 1",
+    author: "Test Author 1",
+    logo: mockImage,
+  },
+  {
+    quote: "Test Quote 2",
+    name: "Test Name 2",
+    author: "Test Author 2",
+    logo: mockImage,
+  },
+];
+
+describe('TestimonialsSection', () => {
+  it('renders correctly', () => {
+    render(<TestimonialsSection testimonials={mockTestimonials} />);
+    expect(screen.getByText('Real Results,')).toBeDefined();
+    // The component adds quotes around the text
+    expect(screen.getByText('"Test Quote 1"')).toBeDefined();
+  });
+
+  it('uses grid layout for cards', () => {
+    const { container } = render(<TestimonialsSection testimonials={mockTestimonials} />);
+    // Check if the grid class is present on the container
+    // We look for the div that contains the cards.
+    // The structure is: section > div > div > div.grid
+    const gridContainer = container.querySelector('.grid.grid-cols-1.place-items-center');
+    expect(gridContainer).not.toBeNull();
+  });
+});
