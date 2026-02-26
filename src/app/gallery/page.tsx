@@ -112,8 +112,8 @@ export default function GalleryPage() {
 
         <DialogPrimitive.Root open={selectedItemIndex !== null} onOpenChange={(open) => !open && setSelectedItemIndex(null)}>
           <DialogPrimitive.Portal>
-            <DialogPrimitive.Overlay className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0" />
-            <DialogPrimitive.Content className="fixed inset-0 z-50 w-screen h-screen bg-[#181818] p-0 shadow-none duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 overflow-y-auto md:overflow-hidden md:grid md:grid-cols-2 gap-0">
+            <DialogPrimitive.Overlay className="fixed inset-0 z-[150] bg-black/80 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0" />
+            <DialogPrimitive.Content className="fixed inset-0 z-[150] w-screen h-screen bg-[#181818] p-0 shadow-none duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 overflow-y-auto md:overflow-hidden md:grid md:grid-cols-2 gap-0">
               <DialogPrimitive.Title className="sr-only">
                 {selectedItem?.title}
               </DialogPrimitive.Title>
