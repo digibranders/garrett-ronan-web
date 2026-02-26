@@ -25,8 +25,8 @@ describe('About Page', () => {
 
   it('renders experience timeline', () => {
     render(<About />);
-    expect(screen.getByText(/Experience/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/Experience/i).length).toBeGreaterThan(0);
     // One of the companies from the timeline
-    expect(screen.getByText(/BLACE/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/BLACE/i).length).toBeGreaterThan(0);
   });
 });

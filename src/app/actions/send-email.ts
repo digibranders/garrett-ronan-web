@@ -51,8 +51,7 @@ export async function sendContactEmail(formData: {
   };
 
   try {
-    const adminData = await apiInstance.sendTransacEmail(sendAdminEmail);
-    console.log('Brevo admin template email sent successfully:', (adminData as any)?.messageId || 'sent');
+    await apiInstance.sendTransacEmail(sendAdminEmail);
 
     // 2. Send Thank You Email to User (only when template is configured in Brevo)
     if (thankYouTemplateId) {
@@ -63,8 +62,7 @@ export async function sendContactEmail(formData: {
         sendUserEmail.templateId = thankYouTemplateId;
         sendUserEmail.params = { name: formData.name };
 
-        const userData = await apiInstance.sendTransacEmail(sendUserEmail);
-        console.log('Brevo thank you email sent successfully:', (userData as any)?.messageId || 'sent');
+        await apiInstance.sendTransacEmail(sendUserEmail);
       } catch (userEmailError: any) {
         // We don't want to fail the whole submission if the thank you email fails
         console.error('Error sending Thank You email to user:', {
@@ -72,8 +70,6 @@ export async function sendContactEmail(formData: {
           status: userEmailError?.status || userEmailError?.response?.status,
         });
       }
-    } else {
-      console.warn('BREVO_THANK_YOU_TEMPLATE_ID is not set — skipping Thank You email.');
     }
 
     return { success: true };

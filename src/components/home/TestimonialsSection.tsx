@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useCallback } from 'react';
-import { motion, AnimatePresence, Variants } from 'framer-motion';
+import { motion, AnimatePresence, Variants } from 'motion/react';
 import Image, { StaticImageData } from 'next/image';
 import { Quote, ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -81,7 +81,7 @@ export default function TestimonialsSection({ testimonials }: TestimonialsSectio
       opacity: 1,
       zIndex: 30,
       filter: 'none',
-      display: 'flex',
+      pointerEvents: 'auto',
       transition: { duration: 0.6, ease: [0.32, 0.72, 0, 1] as const }
     },
     left: {
@@ -91,7 +91,7 @@ export default function TestimonialsSection({ testimonials }: TestimonialsSectio
       opacity: isMobile ? 0.7 : 0.2,
       zIndex: 20,
       filter: isMobile ? 'blur(3px)' : 'blur(12px)',
-      display: 'flex',
+      pointerEvents: 'none',
       transition: { duration: 0.6, ease: [0.32, 0.72, 0, 1] as const }
     },
     right: {
@@ -101,7 +101,7 @@ export default function TestimonialsSection({ testimonials }: TestimonialsSectio
       opacity: isMobile ? 0.7 : 0.2,
       zIndex: 20,
       filter: isMobile ? 'blur(3px)' : 'blur(12px)',
-      display: 'flex',
+      pointerEvents: 'none',
       transition: { duration: 0.6, ease: [0.32, 0.72, 0, 1] as const }
     },
     hidden: {
@@ -109,7 +109,7 @@ export default function TestimonialsSection({ testimonials }: TestimonialsSectio
       opacity: 0,
       zIndex: 0,
       filter: 'blur(20px)',
-      display: 'none',
+      pointerEvents: 'none',
       transition: { duration: 0.5 }
     }
   };
@@ -130,7 +130,7 @@ export default function TestimonialsSection({ testimonials }: TestimonialsSectio
           </h2>
         </motion.div>
 
-        <div className="max-w-7xl mx-auto relative min-h-[700px] sm:min-h-[750px] md:min-h-[800px] flex items-center justify-center">
+        <div className="max-w-7xl mx-auto relative min-h-[700px] sm:min-h-[750px] md:min-h-[800px] flex flex-col md:flex-row items-start md:items-center justify-center pt-8 md:pt-0">
 
           {/* Circular Navigation Buttons - Aligned with Card */}
           <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 z-[60] pointer-events-none hidden md:flex items-center justify-between px-2 md:-px-12 w-full">
@@ -150,7 +150,7 @@ export default function TestimonialsSection({ testimonials }: TestimonialsSectio
             </button>
           </div>
 
-          <div className="relative w-full h-full flex items-center justify-center">
+          <div className="grid grid-cols-1 place-items-center w-full relative">
             {testimonials.map((testimonial, index) => {
               let position = "hidden";
               if (index === activeIndex) position = "active";
@@ -177,7 +177,7 @@ export default function TestimonialsSection({ testimonials }: TestimonialsSectio
                     textRendering: 'geometricPrecision',
                     backfaceVisibility: 'visible',
                   }}
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[85%] md:w-[850px] min-h-[620px] sm:min-h-[600px] md:min-h-[580px] lg:min-h-[650px] bg-[#111111] border border-white/5 rounded-sm p-6 md:p-14 lg:p-20 shadow-2xl flex flex-col items-center justify-center cursor-grab active:cursor-grabbing"
+                  className="col-start-1 row-start-1 w-[85%] md:w-[850px] min-h-[620px] sm:min-h-[600px] md:min-h-[580px] lg:min-h-[650px] bg-[#111111] border border-white/5 rounded-sm p-6 md:p-14 lg:p-20 shadow-2xl flex flex-col items-center justify-center cursor-grab active:cursor-grabbing"
                 >
                   {/* Large Background Quote Icon */}
                   <div className="absolute top-6 left-6 md:top-10 md:left-10 text-white/[0.02] pointer-events-none">

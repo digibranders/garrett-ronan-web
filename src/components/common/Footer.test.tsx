@@ -12,20 +12,20 @@ vi.mock('next/image', () => ({
 }));
 
 describe('Footer Component', () => {
-  it('renders company links', () => {
+  it('renders footer sections', () => {
     render(<Footer />);
-    // "About Us" link
-    expect(screen.getAllByText('About Us').length).toBeGreaterThan(0);
-    expect(screen.getAllByText('Our Services').length).toBeGreaterThan(0);
+    expect(screen.getByText('Inquiries')).toBeInTheDocument();
+    expect(screen.getByText('Office')).toBeInTheDocument();
+    expect(screen.getByText('Connect')).toBeInTheDocument();
   });
 
   it('renders contact information', () => {
     render(<Footer />);
-    expect(screen.getByText(/info@gkrhospitality.com/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/connect@GKRHospitality.com/i).length).toBeGreaterThan(0);
   });
 
   it('renders copyright notice', () => {
     render(<Footer />);
-    expect(screen.getByText(/© 2024 GKR Hospitality/i)).toBeInTheDocument();
+    expect(screen.getByText(/© 2025 GKR Consulting/i)).toBeInTheDocument();
   });
 });

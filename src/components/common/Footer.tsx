@@ -43,7 +43,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row justify-between items-center md:items-end pt-8 border-t border-white/5">
           <div className="flex items-center gap-4 mb-6 md:mb-0">
-            <img src={logoImage.src} alt="GKR" className="h-8 brightness-0 invert" />
+            <Image src={logoImage} alt="GKR" className="h-8 w-auto brightness-0 invert" />
           </div>
           <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 text-[0.75rem] uppercase tracking-[0.2em] text-stone-400 font-bold text-center md:text-right">
             <Link href="/accessibility" className="hover:text-white transition-colors">Accessibility</Link>
