@@ -45,16 +45,20 @@ export async function sendContactEmail(formData: {
     const verifyResponse = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
+        'Content-Type': 'application/json',
       },
-      body: `secret=${turnstileSecretKey}&response=${formData.turnstileToken}`,
+      body: JSON.stringify({
+        secret: turnstileSecretKey,
+        response: formData.turnstileToken
+      }),
     });
 
     const verifyData = await verifyResponse.json();
 
     if (!verifyData.success) {
       console.error('Turnstile verification failed:', verifyData);
-      return { success: false, error: 'Failed to verify that you are not a robot.' };
+      const errors = verifyData['error-codes']?.join(', ') || 'unknown-error';
+      return { success: false, error: `Robot verification failed (${errors}). Please try again.` };
     }
   } catch (error) {
     console.error('Error verifying Turnstile token:', error);
