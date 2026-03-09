@@ -24,10 +24,41 @@ export async function sendContactEmail(formData: {
   role: string;
   roleDescription?: string;
   message: string;
+  turnstileToken: string;
 }) {
   if (!apiKey || !templateId) {
     console.error('Brevo API key or Template ID is missing');
     return { success: false, error: 'Email service configuration error.' };
+  }
+
+  if (!formData.turnstileToken) {
+    return { success: false, error: 'Please verify that you are not a robot.' };
+  }
+
+  try {
+    const turnstileSecretKey = process.env.TURNSTILE_SECRET_KEY;
+    if (!turnstileSecretKey) {
+      console.error('Turnstile secret key is missing');
+      return { success: false, error: 'Security configuration error.' };
+    }
+
+    const verifyResponse = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: `secret=${turnstileSecretKey}&response=${formData.turnstileToken}`,
+    });
+
+    const verifyData = await verifyResponse.json();
+
+    if (!verifyData.success) {
+      console.error('Turnstile verification failed:', verifyData);
+      return { success: false, error: 'Failed to verify that you are not a robot.' };
+    }
+  } catch (error) {
+    console.error('Error verifying Turnstile token:', error);
+    return { success: false, error: 'Failed to verify security token.' };
   }
 
   // 1. Send Admin Notification Email
