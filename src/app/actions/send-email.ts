@@ -2,18 +2,12 @@
 
 import * as Brevo from '@getbrevo/brevo';
 
-const apiInstance = new Brevo.TransactionalEmailsApi();
 const apiKey = process.env.BREVO_API_KEY;
 const templateId = process.env.BREVO_TEMPLATE_ID ? parseInt(process.env.BREVO_TEMPLATE_ID) : null;
 const thankYouTemplateId = process.env.BREVO_THANK_YOU_TEMPLATE_ID ? parseInt(process.env.BREVO_THANK_YOU_TEMPLATE_ID) : null;
 const senderName = process.env.BREVO_SENDER_NAME ?? 'GKR Hospitality';
 const senderEmail = process.env.BREVO_SENDER_EMAIL ?? 'connect@GKRHospitality.com';
 const adminEmail = process.env.BREVO_ADMIN_EMAIL ?? senderEmail;
-
-if (apiKey) {
-  apiInstance.setApiKey(Brevo.TransactionalEmailsApiApiKeys.apiKey, apiKey);
-}
-
 
 export async function sendContactEmail(formData: {
   name: string;
@@ -67,6 +61,9 @@ export async function sendContactEmail(formData: {
     return { success: false, error: 'Failed to verify security token.' };
   }
 
+  const apiInstance = new Brevo.TransactionalEmailsApi();
+  apiInstance.setApiKey(Brevo.TransactionalEmailsApiApiKeys.apiKey, apiKey);
+
   // 1. Send Admin Notification Email
   const sendAdminEmail = new Brevo.SendSmtpEmail();
   sendAdminEmail.templateId = templateId;
@@ -104,7 +101,7 @@ export async function sendContactEmail(formData: {
         // We don't want to fail the whole submission if the thank you email fails
         console.error('Error sending Thank You email to user:', {
           message: userEmailError?.message,
-          status: userEmailError?.status || userEmailError?.response?.status,
+          response: userEmailError?.response?.body,
         });
       }
     }
@@ -113,7 +110,7 @@ export async function sendContactEmail(formData: {
   } catch (error: any) {
     console.error('Error calling Brevo API for admin email:', {
       message: error?.message,
-      status: error?.status || error?.response?.status,
+      response: error?.response?.body,
     });
     return { success: false, error: 'Failed to send email. Please check your configuration.' };
   }
