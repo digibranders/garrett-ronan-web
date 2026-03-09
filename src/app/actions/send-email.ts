@@ -36,21 +36,23 @@ export async function sendContactEmail(formData: {
   }
 
   try {
-    const turnstileSecretKey = process.env.TURNSTILE_SECRET_KEY;
+    const turnstileSecretKey = process.env.TURNSTILE_SECRET_KEY?.trim();
     if (!turnstileSecretKey) {
       console.error('Turnstile secret key is missing');
       return { success: false, error: 'Security configuration error.' };
     }
 
+    const formDataBody = new URLSearchParams();
+    formDataBody.append('secret', turnstileSecretKey);
+    formDataBody.append('response', formData.turnstileToken);
+
     const verifyResponse = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/x-www-form-urlencoded',
       },
-      body: JSON.stringify({
-        secret: turnstileSecretKey,
-        response: formData.turnstileToken
-      }),
+      body: formDataBody.toString(),
+      cache: 'no-store',
     });
 
     const verifyData = await verifyResponse.json();
