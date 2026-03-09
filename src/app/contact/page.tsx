@@ -7,6 +7,8 @@ import Image from 'next/image';
 import { Mail, MapPin, Phone, ChevronDown, AlertCircle, Check } from 'lucide-react';
 import { sendContactEmail } from '@/app/actions/send-email';
 import { toast } from 'sonner';
+import { Turnstile } from '@marsidev/react-turnstile';
+import { useRef } from 'react';
 
 interface FAQItem {
   question: string;
@@ -56,6 +58,8 @@ export default function Contact() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [turnstileToken, setTurnstileToken] = useState<string>('');
+  const turnstileRef = useRef<any>(null);
 
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
@@ -73,6 +77,10 @@ export default function Contact() {
       newErrors.roleDescription = 'Please describe your role';
     }
 
+    if (!turnstileToken) {
+      newErrors.turnstileToken = 'Please verify that you are not a robot';
+    }
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -82,7 +90,7 @@ export default function Contact() {
     if (validateForm()) {
       setIsSubmitting(true);
       try {
-        const result = await sendContactEmail(formData);
+        const result = await sendContactEmail({ ...formData, turnstileToken });
         if (result.success) {
           setIsSuccess(true);
           toast.success('Thank you for reaching out! We will get back to you soon.');
@@ -96,6 +104,8 @@ export default function Contact() {
             roleDescription: '',
             message: ''
           });
+          setTurnstileToken('');
+          if (turnstileRef.current) turnstileRef.current.reset();
           // Reset success state after 3 seconds
           setTimeout(() => setIsSuccess(false), 2500);
         } else {
@@ -368,6 +378,23 @@ export default function Contact() {
                   {errors.message && (
                     <p id="message-error" className="text-[#C62828] text-xs mt-2 flex items-center gap-1">
                       <AlertCircle className="w-3 h-3" /> {errors.message}
+                    </p>
+                  )}
+                </div>
+
+                {/* Turnstile */}
+                <div>
+                  <Turnstile
+                    ref={turnstileRef}
+                    siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+                    onSuccess={(token) => setTurnstileToken(token)}
+                    options={{
+                      theme: 'light',
+                    }}
+                  />
+                  {errors.turnstileToken && (
+                    <p className="text-[#C62828] text-xs mt-2 flex items-center gap-1">
+                      <AlertCircle className="w-3 h-3" /> {errors.turnstileToken}
                     </p>
                   )}
                 </div>
