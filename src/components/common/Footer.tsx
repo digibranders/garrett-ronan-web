@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { ArrowUpRight } from 'lucide-react';
 import logoImage from '@/assets/images/logos/gkr-logo.png';
 
 export default function Footer() {
@@ -10,9 +11,18 @@ export default function Footer() {
           {/* Inquiries */}
           <div className="md:col-span-5">
             <span className="text-[#d4b06b] text-[0.75rem] tracking-[0.4em] uppercase font-bold block mb-8">Inquiries</span>
-            <a href="mailto:garrett@GKRHospitality.com" className="text-4xl md:text-6xl font-serif text-white hover:text-[#d4b06b] transition-colors leading-none block mb-2">
+            <h2 className="text-4xl md:text-6xl font-serif text-white leading-none mb-10">
               Start a<br />Conversation
-            </a>
+            </h2>
+            <Link
+              href="/contact"
+              className="group inline-flex items-center gap-3 rounded-full bg-[#d4b06b] text-[#181818] pl-7 pr-6 py-4 text-[0.75rem] uppercase tracking-[0.2em] font-bold transition-all duration-300 hover:bg-white"
+            >
+              Contact Us
+              <span className="flex items-center justify-center w-6 h-6 rounded-full bg-[#181818] text-[#d4b06b] transition-transform duration-300 group-hover:rotate-45">
+                <ArrowUpRight className="w-3.5 h-3.5" />
+              </span>
+            </Link>
           </div>
 
           {/* Office */}
