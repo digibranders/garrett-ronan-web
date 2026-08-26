@@ -1,14 +1,12 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { motion } from 'motion/react';
 import { Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
 
-// Logo Import
-import logoImage from '@/assets/images/logos/gkr-logo.png';
 // Garrett Ronan image
 // import garrettImage from '@/assets/images/about/garrett-ronan.png';
 import garrettImage from '@/assets/images/about/GKR_About_3.jpg';
@@ -16,16 +14,7 @@ import garrettImage from '@/assets/images/about/GKR_About_3.jpg';
 import signatureImage from '@/assets/images/about/signature.png';
 
 // About Images
-import aboutFounder from '@/assets/images/about/about-founder.jpg';
-import aboutHotel from '@/assets/images/about/about-hotel.jpg';
-import aboutRestaurant from '@/assets/images/about/about-restaurant.jpg';
 import ctaImage from '@/assets/images/about/GKR_About_4.jpg';
-
-const ABOUT_IMAGES = {
-  founder: aboutFounder,
-  hotel: aboutHotel,
-  restaurant: aboutRestaurant
-};
 
 const EXPERIENCE_TIMELINE = [
   { role: "COO", company: "BLACE", description: "Tech-enabled meeting, event, venue marketplace, NYC & LA" },
@@ -120,7 +109,7 @@ export default function About() {
                     The COO who launched etc.venues in the US, opening their first 3 NYC venues, going on to transition the company through a successful M&A with Convene.
                   </p>
                   <p>
-                    The leader who made sure the first ever Equinox Hotel’s F&B operation matched the brand's premium positioning from day one.
+                    The leader who made sure the first ever Equinox Hotel&rsquo;s F&B operation matched the brand&apos;s premium positioning from day one.
                   </p>
 
                   <p className="text-white text-lg font-serif italic border-l-2 border-[#c5a059] pl-6 py-2">
@@ -128,7 +117,7 @@ export default function About() {
                   </p>
 
                   <p>
-                    Hospitality doesn't need more theory. It needs operators who've done the work—who know what it feels like when your opening is 90 days away and you must be ready, when your team must execute better, when you're busy but need to be more profitable.
+                    Hospitality doesn&apos;t need more theory. It needs operators who&apos;ve done the work—who know what it feels like when your opening is 90 days away and you must be ready, when your team must execute better, when you&apos;re busy but need to be more profitable.
                   </p>
                 </div>
               </motion.div>
@@ -340,7 +329,7 @@ export default function About() {
                   <span className="italic text-white">Exceptional?</span>
                 </h2>
                 <p className="text-[#181818] text-lg mb-12 max-w-2xl mx-auto lg:mx-0">
-                  Let's discuss how we can support your hospitality vision
+                  Let&apos;s discuss how we can support your hospitality vision
                 </p>
                 <Link href="/contact" className="inline-block">
                   <Button className="bg-[#181818] text-white hover:bg-white hover:text-[#181818] px-4 py-3 md:px-12 md:py-7 text-[0.75rem] md:text-sm uppercase tracking-[0.15em] md:tracking-[0.3em] font-bold transition-all duration-500 rounded-full h-auto whitespace-normal md:whitespace-nowrap leading-relaxed w-auto max-w-none">

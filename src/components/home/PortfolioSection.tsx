@@ -29,7 +29,7 @@ export default function PortfolioSection({ projects }: PortfolioSectionProps) {
             <span className="italic text-[#c5a059]">Across All Hospitality Ventures</span>
           </h2>
           <p className="text-stone-400 text-base md:text-lg mt-6">
-            <span className="font-serif italic">"Experience is simply the name we give our mistakes"</span> ~ Let us help correct your experience
+            <span className="font-serif italic">&quot;Experience is simply the name we give our mistakes&quot;</span> ~ Let us help correct your experience
           </p>
         </motion.div>
 

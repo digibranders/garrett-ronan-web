@@ -9,6 +9,19 @@ const senderName = process.env.BREVO_SENDER_NAME ?? 'GKR Hospitality';
 const senderEmail = process.env.BREVO_SENDER_EMAIL ?? 'connect@GKRHospitality.com';
 const adminEmail = process.env.BREVO_ADMIN_EMAIL ?? senderEmail;
 
+interface BrevoApiError {
+  message?: string;
+  response?: { body?: unknown };
+}
+
+function getBrevoErrorInfo(error: unknown): { message?: string; body?: unknown } {
+  if (typeof error === 'object' && error !== null) {
+    const brevoError = error as BrevoApiError;
+    return { message: brevoError.message, body: brevoError.response?.body };
+  }
+  return { message: error instanceof Error ? error.message : String(error) };
+}
+
 export async function sendContactEmail(formData: {
   name: string;
   email: string;
@@ -97,20 +110,22 @@ export async function sendContactEmail(formData: {
         sendUserEmail.params = { name: formData.name };
 
         await apiInstance.sendTransacEmail(sendUserEmail);
-      } catch (userEmailError: any) {
+      } catch (userEmailError: unknown) {
         // We don't want to fail the whole submission if the thank you email fails
+        const { message, body } = getBrevoErrorInfo(userEmailError);
         console.error('Error sending Thank You email to user:', {
-          message: userEmailError?.message,
-          response: userEmailError?.response?.body,
+          message,
+          response: body,
         });
       }
     }
 
     return { success: true };
-  } catch (error: any) {
+  } catch (error: unknown) {
+    const { message, body } = getBrevoErrorInfo(error);
     console.error('Error calling Brevo API for admin email:', {
-      message: error?.message,
-      response: error?.response?.body,
+      message,
+      response: body,
     });
     return { success: false, error: 'Failed to send email. Please check your configuration.' };
   }

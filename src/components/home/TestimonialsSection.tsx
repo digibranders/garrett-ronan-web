@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useCallback } from 'react';
-import { motion, AnimatePresence, Variants } from 'motion/react';
+import { motion, Variants } from 'motion/react';
 import Image, { StaticImageData } from 'next/image';
 import { Quote, ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -20,15 +20,12 @@ interface TestimonialsSectionProps {
 
 export default function TestimonialsSection({ testimonials }: TestimonialsSectionProps) {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [direction, setDirection] = useState(0); // -1 for left, 1 for right
 
   const nextTestimonial = useCallback(() => {
-    setDirection(1);
     setActiveIndex((prev) => (prev + 1) % testimonials.length);
   }, [testimonials.length]);
 
   const prevTestimonial = useCallback(() => {
-    setDirection(-1);
     setActiveIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   }, [testimonials.length]);
 
@@ -48,7 +45,7 @@ export default function TestimonialsSection({ testimonials }: TestimonialsSectio
     const parts = quote.split(new RegExp(`(${highlight})`, 'gi'));
     return (
       <>
-        "
+        &quot;
         {parts.map((part, i) =>
           part.toLowerCase() === highlight.toLowerCase() ? (
             <span key={i} className="text-[#c5a059] font-medium">{part}</span>
@@ -56,7 +53,7 @@ export default function TestimonialsSection({ testimonials }: TestimonialsSectio
             part
           )
         )}
-        "
+        &quot;
       </>
     );
   };

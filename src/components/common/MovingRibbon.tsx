@@ -3,13 +3,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
 
-const CONTACT_INFO = [
-    "garrett@GKRHospitality.com",
-    "+1-917-460-5793"
-
-
-];
-
 export default function MovingRibbon() {
     const items = [
         { label: "Garrett@GKRHospitality.com", href: "mailto:Garrett@GKRHospitality.com" },

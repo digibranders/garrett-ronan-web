@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import Contact from './page';
 import { describe, it, expect, vi } from 'vitest';
+import type { ImgHTMLAttributes, ComponentPropsWithoutRef } from 'react';
 
 vi.mock('lucide-react', () => ({
   Mail: () => <div data-testid="mail-icon" />,
@@ -14,10 +15,10 @@ vi.mock('next/link', () => ({
   ),
 }));
 vi.mock('next/image', () => ({
-  default: (props: any) => <img {...props} alt={props.alt} />,
+  default: (props: ImgHTMLAttributes<HTMLImageElement>) => <img {...props} alt={props.alt} />,
 }));
 vi.mock('@/components/ui/button', () => ({
-  Button: ({ children, ...props }: any) => <button {...props}>{children}</button>,
+  Button: ({ children, ...props }: ComponentPropsWithoutRef<'button'>) => <button {...props}>{children}</button>,
 }));
 
 describe('Contact Page', () => {

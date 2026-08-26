@@ -1,5 +1,5 @@
 import React from 'react';
-import { expect, afterEach, vi } from 'vitest';
+import { afterEach, vi } from 'vitest';
 import { cleanup } from '@testing-library/react';
 import '@testing-library/jest-dom/vitest';
 
@@ -9,18 +9,19 @@ afterEach(() => {
 });
 
 // Mock IntersectionObserver
-class IntersectionObserverMock {
-  constructor(callback: any, options: any) {}
+class IntersectionObserverMock implements IntersectionObserver {
+  readonly root: Element | Document | null = null;
+  readonly rootMargin: string = '';
+  readonly thresholds: ReadonlyArray<number> = [];
   disconnect = vi.fn();
   observe = vi.fn();
-  takeRecords = vi.fn();
+  takeRecords = vi.fn((): IntersectionObserverEntry[] => []);
   unobserve = vi.fn();
 }
 vi.stubGlobal('IntersectionObserver', IntersectionObserverMock);
 
 // Mock ResizeObserver
-class ResizeObserverMock {
-  constructor(callback: any) {}
+class ResizeObserverMock implements ResizeObserver {
   observe = vi.fn();
   unobserve = vi.fn();
   disconnect = vi.fn();
@@ -36,17 +37,17 @@ vi.mock('motion/react', async () => {
   return {
     ...actual,
     motion: {
-      div: ({ children, ...props }: any) => <div {...props}>{children}</div>,
-      span: ({ children, ...props }: any) => <span {...props}>{children}</span>,
-      button: ({ children, ...props }: any) => <button {...props}>{children}</button>,
-      nav: ({ children, ...props }: any) => <nav {...props}>{children}</nav>,
-      img: ({ children, ...props }: any) => <img {...props} />,
-      form: ({ children, ...props }: any) => <form {...props}>{children}</form>,
-      a: ({ children, ...props }: any) => <a {...props}>{children}</a>,
-      ul: ({ children, ...props }: any) => <ul {...props}>{children}</ul>,
-      li: ({ children, ...props }: any) => <li {...props}>{children}</li>,
+      div: ({ children, ...props }: React.ComponentPropsWithoutRef<'div'>) => <div {...props}>{children}</div>,
+      span: ({ children, ...props }: React.ComponentPropsWithoutRef<'span'>) => <span {...props}>{children}</span>,
+      button: ({ children, ...props }: React.ComponentPropsWithoutRef<'button'>) => <button {...props}>{children}</button>,
+      nav: ({ children, ...props }: React.ComponentPropsWithoutRef<'nav'>) => <nav {...props}>{children}</nav>,
+      img: (props: React.ComponentPropsWithoutRef<'img'>) => <img {...props} alt={props.alt ?? ''} />,
+      form: ({ children, ...props }: React.ComponentPropsWithoutRef<'form'>) => <form {...props}>{children}</form>,
+      a: ({ children, ...props }: React.ComponentPropsWithoutRef<'a'>) => <a {...props}>{children}</a>,
+      ul: ({ children, ...props }: React.ComponentPropsWithoutRef<'ul'>) => <ul {...props}>{children}</ul>,
+      li: ({ children, ...props }: React.ComponentPropsWithoutRef<'li'>) => <li {...props}>{children}</li>,
     },
-    AnimatePresence: ({ children }: any) => <>{children}</>,
+    AnimatePresence: ({ children }: { children: React.ReactNode }) => <>{children}</>,
     useScroll: () => ({ scrollYProgress: { get: () => 0 } }),
     useTransform: () => 0,
     useInView: () => true,

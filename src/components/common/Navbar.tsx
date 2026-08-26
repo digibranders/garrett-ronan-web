@@ -8,13 +8,13 @@ import { Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion, AnimatePresence } from 'motion/react';
 import logoImage from '@/assets/images/logos/gkr-logo.png';
+import { useHasMounted } from '@/hooks/useHasMounted';
 
 export default function Navbar() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
+  const mounted = useHasMounted();
 
   const handleNavClick = (e: React.MouseEvent, href: string) => {
     // Check if it's a hash link pointing to the current page
@@ -39,7 +39,6 @@ export default function Navbar() {
   };
 
   useEffect(() => {
-    setMounted(true);
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };

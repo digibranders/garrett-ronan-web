@@ -28,7 +28,7 @@ export default function PhilosophySection({ services }: PhilosophySectionProps) 
         >
           <span className="block text-[#70562d] text-[0.875rem] tracking-[0.4em] uppercase mb-6 font-bold">What We Do</span>
           <h2 className="text-5xl md:text-7xl font-serif leading-tight text-[#181818] mb-8 max-w-4xl">
-            We take a creative, yet practical, consultative approach to ensure your properties and projects don't just run, they <span className="italic text-[#70562d]">thrive</span>.
+            We take a creative, yet practical, consultative approach to ensure your properties and projects don&apos;t just run, they <span className="italic text-[#70562d]">thrive</span>.
           </h2>
           <p className="text-[#181818] text-lg leading-relaxed mb-8">
             We will support you at every stage of your project and the life cycle of your asset, including but not limited to….

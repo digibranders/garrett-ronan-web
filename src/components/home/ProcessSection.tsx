@@ -32,7 +32,7 @@ export default function ProcessSection({ steps }: ProcessSectionProps) {
             A Clear, Proven <span className="italic text-[#c5a059]">Process</span>
           </h2>
           <p className="text-stone-400 text-base md:text-lg mt-6">
-            <span className="font-serif italic">"We do the difficult immediately. The impossible may take us a few moments longer."</span> ~ Waldorf Astoria
+            <span className="font-serif italic">&quot;We do the difficult immediately. The impossible may take us a few moments longer.&quot;</span> ~ Waldorf Astoria
           </p>
         </motion.div>
 

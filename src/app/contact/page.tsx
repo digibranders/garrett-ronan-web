@@ -1,14 +1,11 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { Mail, MapPin, Phone, ChevronDown, AlertCircle, Check } from 'lucide-react';
+import { ChevronDown, AlertCircle, Check } from 'lucide-react';
 import { sendContactEmail } from '@/app/actions/send-email';
 import { toast } from 'sonner';
-import { Turnstile } from '@marsidev/react-turnstile';
-import { useRef } from 'react';
+import { Turnstile, type TurnstileInstance } from '@marsidev/react-turnstile';
 
 interface FAQItem {
   question: string;
@@ -59,7 +56,7 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [turnstileToken, setTurnstileToken] = useState<string>('');
-  const turnstileRef = useRef<any>(null);
+  const turnstileRef = useRef<TurnstileInstance>(null);
 
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
@@ -111,9 +108,9 @@ export default function Contact() {
         } else {
           toast.error(result.error || 'Something went wrong. Please try again.');
         }
-      } catch (error: any) {
+      } catch (error: unknown) {
         toast.error('An unexpected error occurred. Please try again.');
-        console.error('Submission error:', error?.message || error);
+        console.error('Submission error:', error instanceof Error ? error.message : error);
       } finally {
         setIsSubmitting(false);
       }
@@ -157,7 +154,7 @@ export default function Contact() {
             >
               <span className="text-[#8a6d3b] text-[0.875rem] font-bold tracking-[0.4em] uppercase block mb-6">Start a Conversation</span>
               <h1 className="text-4xl md:text-7xl font-serif font-light text-white leading-tight tracking-tight mb-6">
-                Let's Talk
+                Let&apos;s Talk
               </h1>
               <p className="text-stone-400 text-sm max-w-md mx-auto">
                 No pressure. No sales pitch. Just clarity.

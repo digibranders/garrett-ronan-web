@@ -7,26 +7,23 @@ import { X, ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion, AnimatePresence } from 'motion/react';
 import { GALLERY_ITEMS } from '@/data/galleryData';
-
-
+import { useHasMounted } from '@/hooks/useHasMounted';
 
 export default function GalleryPage() {
   const [selectedItemIndex, setSelectedItemIndex] = useState<number | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const mounted = useHasMounted();
 
   const selectedItem = selectedItemIndex !== null ? GALLERY_ITEMS[selectedItemIndex] : null;
 
-  // Reset image index when a new item is selected
-  useEffect(() => {
-    if (selectedItemIndex !== null) {
-      setCurrentImageIndex(0);
-    }
-  }, [selectedItemIndex]);
+  // Reset the image index whenever a different item is selected. This adjusts
+  // state during render (guarded by comparing against the previous selection)
+  // instead of in a useEffect, per https://react.dev/learn/you-might-not-need-an-effect
+  const [prevSelectedItemIndex, setPrevSelectedItemIndex] = useState<number | null>(null);
+  if (selectedItemIndex !== prevSelectedItemIndex) {
+    setPrevSelectedItemIndex(selectedItemIndex);
+    setCurrentImageIndex(0);
+  }
 
   const handleNextImage = useCallback(() => {
     if (!selectedItem) return;

@@ -8,7 +8,6 @@ import Image, { StaticImageData } from 'next/image';
 import beverlyHiltonLogo from '@/assets/images/logos/beverly-hilton.png';
 import starrRestaurantsLogo from '@/assets/images/logos/starr-restaurants.png';
 import equinoxHotelsLogo from '@/assets/images/logos/equinox-hotels.png';
-import rokaLogo from '@/assets/images/logos/roka.png';
 import azumiLogo from '@/assets/images/logos/azumi.png';
 import etaruLogo from '@/assets/images/logos/etaru.png';
 import inkoNitoLogo from '@/assets/images/logos/inko-nito.png';
@@ -17,7 +16,6 @@ import movenpickLogo from '@/assets/images/logos/movenpick.png';
 import adareManorLogo from '@/assets/images/logos/adare-manor.png';
 import swallowHotelsLogo from '@/assets/images/logos/swallow-hotels.png';
 import principalHotelsLogo from '@/assets/images/logos/principal-hotels.png';
-import waldorfAstoriaLogo from '@/assets/images/logos/waldorf-astoria.png';
 import bostonHarborHotelLogo from '@/assets/images/logos/boston-harbor-hotel.png';
 import etcVenuesLogo from '@/assets/images/logos/etc-venues.png';
 import conveneLogo from '@/assets/images/logos/convene-etcvenues.png';
@@ -40,7 +38,6 @@ import montaukLogo from '@/assets/images/logos/montauk.png';
 // New Logos
 import hiltonHotelsLogo from '@/assets/images/logos/hilton_hotels.png';
 import rLogo from '@/assets/images/logos/r.png';
-import rTransparentLogo from '@/assets/images/logos/r-transperent.png';
 import waldorfLogo from '@/assets/images/logos/waldorf.png';
 import nycHospitalityLogo from '@/assets/images/logos/nyc_hospitality.png';
 
@@ -131,7 +128,7 @@ export default function LogosSection() {
         >
           <span className="block text-[#8a6d3b] text-[0.875rem] tracking-[0.4em] uppercase mb-6 md:mb-8 font-bold">Trusted By Industry Leaders</span>
           <h2 className="text-4xl md:text-6xl lg:text-8xl font-serif text-[#181818] mb-8 leading-tight">
-            Brands We've<br />
+            Brands We&apos;ve<br />
             <span className="italic text-[#8a6d3b]">Supported</span>
           </h2>
         </motion.div>

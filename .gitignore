@@ -10,6 +10,7 @@
 /.next/
 /out/
 /build
+/dist
 
 # misc
 .DS_Store
@@ -35,3 +36,4 @@ refactor_report.md.env
 
 
 .DS_Store
+.env*

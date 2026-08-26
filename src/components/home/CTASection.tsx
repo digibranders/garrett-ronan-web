@@ -17,7 +17,7 @@ export default function CTASection() {
             viewport={{ once: true }}
           >
             <h2 className="text-5xl md:text-7xl font-serif text-[#181818] mb-8 leading-tight">
-              Let's Talk About<br />
+              Let&apos;s Talk About<br />
               <span className="italic text-white">Your Situation</span>
             </h2>
             <p className="text-[#181818] text-lg leading-relaxed mb-8">
@@ -41,7 +41,7 @@ export default function CTASection() {
               No pressure. No sales pitch. Just clarity.
             </p>
             <p className="text-[#181818]/80 text-sm">
-              If we're not the right fit, we'll tell you honestly and point you in the right direction.
+              If we&apos;re not the right fit, we&apos;ll tell you honestly and point you in the right direction.
             </p>
           </motion.div>
 

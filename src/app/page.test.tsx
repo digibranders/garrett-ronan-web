@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import Home from './page';
 import { describe, it, expect, vi } from 'vitest';
+import type { ImgHTMLAttributes } from 'react';
 
 // Mock Lucide icons
 vi.mock('lucide-react', () => ({
@@ -13,7 +14,7 @@ vi.mock('lucide-react', () => ({
 
 // Mock Next.js Image
 vi.mock('next/image', () => ({
-  default: (props: any) => <img {...props} alt={props.alt} />,
+  default: (props: ImgHTMLAttributes<HTMLImageElement>) => <img {...props} alt={props.alt} />,
 }));
 
 // Mock Next.js Link

@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react';
 import GalleryPage from './page';
 import { describe, it, expect, vi } from 'vitest';
 import React from 'react';
+import type { ComponentPropsWithoutRef, ImgHTMLAttributes } from 'react';
 
 // Mock dependencies
 vi.mock('lucide-react', () => ({
@@ -30,15 +31,15 @@ vi.mock('@radix-ui/react-dialog', () => ({
 
 vi.mock('framer-motion', () => ({
   motion: {
-    div: ({ children, ...props }: any) => <div {...props}>{children}</div>,
-    button: ({ children, ...props }: any) => <button {...props}>{children}</button>,
-    img: ({ src, alt, ...props }: any) => <img src={src} alt={alt} {...props} />,
+    div: ({ children, ...props }: ComponentPropsWithoutRef<'div'>) => <div {...props}>{children}</div>,
+    button: ({ children, ...props }: ComponentPropsWithoutRef<'button'>) => <button {...props}>{children}</button>,
+    img: ({ src, alt, ...props }: ImgHTMLAttributes<HTMLImageElement>) => <img src={src} alt={alt} {...props} />,
   },
   AnimatePresence: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
 }));
 
 vi.mock('@/components/ui/button', () => ({
-  Button: ({ children, ...props }: any) => <button {...props}>{children}</button>,
+  Button: ({ children, ...props }: ComponentPropsWithoutRef<'button'>) => <button {...props}>{children}</button>,
 }));
 
 describe('Gallery Page', () => {

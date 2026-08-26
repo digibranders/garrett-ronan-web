@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import Footer from './Footer';
 import { describe, it, expect, vi } from 'vitest';
+import type { ImgHTMLAttributes } from 'react';
 
 vi.mock('next/link', () => ({
   default: ({ children, href }: { children: React.ReactNode; href: string }) => (
@@ -8,7 +9,7 @@ vi.mock('next/link', () => ({
   ),
 }));
 vi.mock('next/image', () => ({
-  default: (props: any) => <img {...props} alt={props.alt} />,
+  default: (props: ImgHTMLAttributes<HTMLImageElement>) => <img {...props} alt={props.alt} />,
 }));
 
 describe('Footer Component', () => {
