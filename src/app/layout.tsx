@@ -4,6 +4,10 @@ import Navbar from '@/components/common/Navbar';
 import ScrollToTop from '@/components/common/ScrollToTop';
 
 import Footer from '@/components/common/Footer';
+import {
+  GoogleTagManagerNoScript,
+  GoogleTagManagerScript,
+} from '@/components/common/GoogleTagManager';
 import { Toaster } from 'sonner';
 
 export const metadata: Metadata = {
@@ -61,6 +65,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased bg-[#141414] text-white selection:bg-[#c5a059] selection:text-white overflow-x-hidden w-full" suppressHydrationWarning>
+        <GoogleTagManagerNoScript />
+        <GoogleTagManagerScript />
         <Toaster position="top-right" richColors />
         <ScrollToTop />
         <a
