@@ -51,6 +51,20 @@ Run tests:
 npm test
 ```
 
+## 📊 Analytics
+
+Google Tag Manager is loaded site-wide from the root layout via
+`src/components/common/GoogleTagManager.tsx` (container **GTM-TG8GB3PP**),
+including the `<noscript>` fallback for clients without JavaScript.
+
+To point a build at a different container — or to disable GTM locally — set the
+environment variable before building:
+
+```bash
+# .env.local
+NEXT_PUBLIC_GTM_ID=GTM-XXXXXXX   # empty value disables GTM entirely
+```
+
 ## 📦 Building for Production
 
 To create an optimized production build:
