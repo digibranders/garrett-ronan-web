@@ -1,42 +1,22 @@
-'use client';
+import type { Metadata } from 'next';
+import HomeContent from '@/components/home/HomeContent';
+import JsonLd from '@/components/seo/JsonLd';
+import { serviceCatalogSchema } from '@/lib/schema';
+import { pageMetadata, SITE_DESCRIPTION } from '@/lib/seo';
+import { SERVICES_DATA } from '@/data/homeData';
 
-import React from 'react';
-import { useScroll, useTransform } from 'motion/react';
-
-// Sections
-import HeroSection from '@/components/home/HeroSection';
-import PhilosophySection from '@/components/home/PhilosophySection';
-import StatsSection from '@/components/home/StatsSection';
-import CTASection from '@/components/home/CTASection';
-
-// Data
-import {
-  HERO_IMAGES,
-  SERVICES_DATA,
-} from '@/data/homeData';
-
-// Images
-import testimonialLobby from '@/assets/images/testimonials/testimonial-lobby.jpg';
+export const metadata: Metadata = pageMetadata({
+  title: 'Hospitality Consulting in New York',
+  description: SITE_DESCRIPTION,
+  path: '/',
+  ogTitle: 'Hospitality Consulting in New York | GKR Hospitality',
+});
 
 export default function Home() {
-  const { scrollYProgress } = useScroll();
-  const scale = useTransform(scrollYProgress, [0, 0.2], [1, 1.1]);
-
   return (
-    <div className="bg-[#181818] text-[#FFF7F2] font-sans selection:bg-[#c5a059] selection:text-white overflow-x-hidden">
-
-      {/* Hero Section */}
-      <HeroSection images={HERO_IMAGES} scale={scale} />
-
-      {/* Philosophy Section */}
-      <PhilosophySection services={SERVICES_DATA} />
-
-      {/* Animated Stats Section */}
-      <StatsSection backgroundImage={testimonialLobby} />
-
-      {/* CTA Section */}
-      <CTASection />
-
-    </div>
+    <>
+      <JsonLd data={serviceCatalogSchema(SERVICES_DATA)} />
+      <HomeContent />
+    </>
   );
 }

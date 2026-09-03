@@ -4,6 +4,9 @@ export interface GalleryItem {
   description: string;
   link: string;
   images: string[];
+  /** Intrinsic size of images[0]. Lets next/image reserve space and avoid layout shift. */
+  coverWidth: number;
+  coverHeight: number;
 }
 
 export const GALLERY_ITEMS: GalleryItem[] = [
@@ -16,7 +19,9 @@ export const GALLERY_ITEMS: GalleryItem[] = [
       "/images/gallery/BLACE Entertainment/Blace 1.png",
       "/images/gallery/BLACE Entertainment/Blace 2.jpg",
       "/images/gallery/BLACE Entertainment/Blace 3.jpg"
-    ]
+    ],
+    "coverWidth": 2160,
+    "coverHeight": 1440
   },
   {
     "id": 2,
@@ -27,7 +32,9 @@ export const GALLERY_ITEMS: GalleryItem[] = [
       "/images/gallery/BXP Residential & CRE Amenities/BXP 1.jpg",
       "/images/gallery/BXP Residential & CRE Amenities/BXP 2.png",
       "/images/gallery/BXP Residential & CRE Amenities/BXP_3.png"
-    ]
+    ],
+    "coverWidth": 2064,
+    "coverHeight": 1728
   },
   {
     "id": 3,
@@ -38,7 +45,9 @@ export const GALLERY_ITEMS: GalleryItem[] = [
       "/images/gallery/Beverly Hilton/Beverly_1.png",
       "/images/gallery/Beverly Hilton/Beverly_2.png",
       "/images/gallery/Beverly Hilton/The Beverly Hilton.png"
-    ]
+    ],
+    "coverWidth": 1920,
+    "coverHeight": 1281
   },
   {
     "id": 4,
@@ -49,7 +58,9 @@ export const GALLERY_ITEMS: GalleryItem[] = [
       "/images/gallery/Zuma New York Restaurants/zuma_1.png",
       "/images/gallery/Zuma New York Restaurants/zuma_2.png",
       "/images/gallery/Zuma New York Restaurants/zuma_3.png"
-    ]
+    ],
+    "coverWidth": 2400,
+    "coverHeight": 1645
   },
   {
     "id": 5,
@@ -60,7 +71,9 @@ export const GALLERY_ITEMS: GalleryItem[] = [
       "/images/gallery/EQUINOX HOTELS/EQUINOX HOTELS 2.png",
       "/images/gallery/EQUINOX HOTELS/Equionix_2.png",
       "/images/gallery/EQUINOX HOTELS/Equinox_3.png"
-    ]
+    ],
+    "coverWidth": 1536,
+    "coverHeight": 1920
   },
   {
     "id": 6,
@@ -71,7 +84,9 @@ export const GALLERY_ITEMS: GalleryItem[] = [
       "/images/gallery/adare-hotels/adare_1.png",
       "/images/gallery/adare-hotels/adare_2.png",
       "/images/gallery/adare-hotels/Adare_3new.png"
-    ]
+    ],
+    "coverWidth": 1072,
+    "coverHeight": 1072
   },
   // {
   //   "id": 7,
@@ -93,7 +108,9 @@ export const GALLERY_ITEMS: GalleryItem[] = [
       "/images/gallery/etc.venues meetings and events/etc_1.png",
       "/images/gallery/etc.venues meetings and events/etc_2.png",
       "/images/gallery/etc.venues meetings and events/etc_3.png"
-    ]
+    ],
+    "coverWidth": 1600,
+    "coverHeight": 1000
   },
   {
     "id": 9,
@@ -104,7 +121,9 @@ export const GALLERY_ITEMS: GalleryItem[] = [
       "/images/gallery/Montauk Distilling Co Restaurants & Bar/Montauk Distilling Co. 1.png",
       "/images/gallery/Montauk Distilling Co Restaurants & Bar/Montauk Distilling Co. 2.png",
       "/images/gallery/Montauk Distilling Co Restaurants & Bar/Montauk-Distilling-3.png"
-    ]
+    ],
+    "coverWidth": 1200,
+    "coverHeight": 900
   },
   {
     "id": 10,
@@ -115,7 +134,9 @@ export const GALLERY_ITEMS: GalleryItem[] = [
       "/images/gallery/Principal Hotels/Principal Hotels_2.png",
       "/images/gallery/Principal Hotels/Prinicipal_2.png",
       "/images/gallery/Principal Hotels/Prinicipal_3.png"
-    ]
+    ],
+    "coverWidth": 500,
+    "coverHeight": 350
   },
   {
     "id": 11,
@@ -126,7 +147,9 @@ export const GALLERY_ITEMS: GalleryItem[] = [
       "/images/gallery/Rudin Group Residential & CRE Amenities/Rudin_2.png",
       "/images/gallery/Rudin Group Residential & CRE Amenities/Rudin 1.png",
       "/images/gallery/Rudin Group Residential & CRE Amenities/Rudin_3.png"
-    ]
+    ],
+    "coverWidth": 1920,
+    "coverHeight": 1267
   },
   {
     "id": 12,
@@ -137,7 +160,9 @@ export const GALLERY_ITEMS: GalleryItem[] = [
       "/images/gallery/STARR Restaurants/Starr_1.jpg",
       "/images/gallery/STARR Restaurants/Starr_2.jpg",
       "/images/gallery/STARR Restaurants/Starr_3.png"
-    ]
+    ],
+    "coverWidth": 1080,
+    "coverHeight": 810
   },
   {
     "id": 13,
@@ -148,7 +173,9 @@ export const GALLERY_ITEMS: GalleryItem[] = [
       "/images/gallery/Sage Hospitality Residential & CRE Amenities/sage_1.png",
       "/images/gallery/Sage Hospitality Residential & CRE Amenities/sage_2.png",
       "/images/gallery/Sage Hospitality Residential & CRE Amenities/sage_3.png"
-    ]
+    ],
+    "coverWidth": 763,
+    "coverHeight": 489
   },
   {
     "id": 14,
@@ -159,7 +186,9 @@ export const GALLERY_ITEMS: GalleryItem[] = [
       "/images/gallery/Waldorf Astoria New York Hotels/Waldorf Astoria New York 2.png",
       "/images/gallery/Waldorf Astoria New York Hotels/waldrof_2.png",
       "/images/gallery/Waldorf Astoria New York Hotels/waldrof_3.jpg"
-    ]
+    ],
+    "coverWidth": 1000,
+    "coverHeight": 600
   },
   {
     "id": 15,
@@ -170,7 +199,9 @@ export const GALLERY_ITEMS: GalleryItem[] = [
       "/images/gallery/Boston Harbor Hotel/Boston Harbor 2.png",
       "/images/gallery/Boston Harbor Hotel/Boston Harbor 3.png",
       "/images/gallery/Boston Harbor Hotel/Boston Harbor.png"
-    ]
+    ],
+    "coverWidth": 500,
+    "coverHeight": 500
   },
   {
     "id": 16,
@@ -181,7 +212,9 @@ export const GALLERY_ITEMS: GalleryItem[] = [
       "/images/gallery/FBC Private & Member-only/SaveClip.App_455806974_737759325100612_7556852630658393511_n.jpg",
       "/images/gallery/FBC Private & Member-only/SaveClip.App_455877427_1155219119098693_8402729839714548611_n.jpg",
       "/images/gallery/FBC Private & Member-only/SaveClip.App_456197073_994329485776863_3726931994884086630_n.jpg"
-    ]
+    ],
+    "coverWidth": 1080,
+    "coverHeight": 1080
   },
   // {
   //   "id": 17,
@@ -203,7 +236,9 @@ export const GALLERY_ITEMS: GalleryItem[] = [
       "/images/gallery/bakan-restaurant/BAKAN 1.webp",
       "/images/gallery/bakan-restaurant/BAKAN 2.webp",
       "/images/gallery/bakan-restaurant/BAKAN 3.webp"
-    ]
+    ],
+    "coverWidth": 1100,
+    "coverHeight": 732
   },
   // {
   //   "id": 19,
@@ -225,7 +260,9 @@ export const GALLERY_ITEMS: GalleryItem[] = [
       "/images/gallery/Meet Resident Private & Members Only/Resident .png",
       "/images/gallery/Meet Resident Private & Members Only/Resident 2.png",
       "/images/gallery/Meet Resident Private & Members Only/Resident 3.png"
-    ]
+    ],
+    "coverWidth": 2500,
+    "coverHeight": 2000
   },
   {
     "id": 21,
@@ -236,6 +273,8 @@ export const GALLERY_ITEMS: GalleryItem[] = [
       "/images/gallery/Caribbean St Vincent and the Grenadines/Caribbean_1.png",
       "/images/gallery/Caribbean St Vincent and the Grenadines/Caribbean_2.png",
       "/images/gallery/Caribbean St Vincent and the Grenadines/Caribbean_3.png"
-    ]
+    ],
+    "coverWidth": 2048,
+    "coverHeight": 1073
   }
 ];

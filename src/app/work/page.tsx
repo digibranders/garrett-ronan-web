@@ -14,6 +14,7 @@ import {
 export default function WorkPage() {
     return (
         <main className="bg-[#181818] pt-32 pb-20">
+            <h1 className="sr-only">Our Work</h1>
             {/* Portfolio Section - "Our Work" */}
             <div id="our-work">
                 <PortfolioSection projects={PORTFOLIO_PROJECTS} />
