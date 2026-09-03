@@ -1,10 +1,13 @@
 import React from 'react';
 import { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'Accessibility Statement | GKR Hospitality',
-  description: 'GKR Hospitality is committed to ensuring digital accessibility for people with disabilities.',
-};
+export const metadata: Metadata = pageMetadata({
+  title: 'Accessibility Statement',
+  description:
+    'GKR Hospitality is committed to ensuring digital accessibility for people with disabilities. Our conformance status against WCAG 2.1 level AA and how to report a barrier.',
+  path: '/accessibility',
+});
 
 export default function AccessibilityPage() {
   return (

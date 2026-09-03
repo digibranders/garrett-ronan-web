@@ -8,37 +8,60 @@ import {
   GoogleTagManagerNoScript,
   GoogleTagManagerScript,
 } from '@/components/common/GoogleTagManager';
+import JsonLd from '@/components/seo/JsonLd';
+import { organizationSchema, webSiteSchema } from '@/lib/schema';
+import { OG_IMAGE, SITE_DESCRIPTION, SITE_NAME, SITE_URL } from '@/lib/seo';
 import { Toaster } from 'sonner';
 
 export const metadata: Metadata = {
-  title: "GKR Hospitality",
-  description: "Simply Practical Yet Creative Solutions for Hospitality",
-  metadataBase: new URL('https://gkrhospitality.com'),
-  alternates: {
-    canonical: '/',
+  // Note: no `alternates.canonical` here. Metadata is inherited by every route,
+  // so a canonical set at this level would point every page at the homepage.
+  // Each page declares its own canonical.
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: 'Hospitality Consulting in New York | GKR Hospitality',
+    template: `%s | ${SITE_NAME}`,
+  },
+  description: SITE_DESCRIPTION,
+  applicationName: SITE_NAME,
+  authors: [{ name: SITE_NAME, url: SITE_URL }],
+  creator: SITE_NAME,
+  publisher: SITE_NAME,
+  formatDetection: { telephone: true, address: true, email: true },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
   },
   openGraph: {
-    title: 'GKR Hospitality',
-    description: 'Simply Practical Yet Creative Solutions for Hospitality',
-    url: 'https://gkrhospitality.com',
-    siteName: 'GKR Hospitality',
+    // `url` is intentionally omitted so each page supplies its own.
+    title: 'Hospitality Consulting in New York | GKR Hospitality',
+    description: SITE_DESCRIPTION,
+    siteName: SITE_NAME,
     images: [
       {
-        url: '/GKR_Thumbnail.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'GKR Hospitality Logo',
+        url: OG_IMAGE.url,
+        width: OG_IMAGE.width,
+        height: OG_IMAGE.height,
+        alt: OG_IMAGE.alt,
       },
     ],
     locale: 'en_US',
     type: 'website',
-    // type: 'website', // Removed duplicate key
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'GKR Hospitality',
-    description: 'Simply Practical Yet Creative Solutions for Hospitality',
-    images: ['/GKR_Thumbnail.jpg'],
+    site: '@gkronan',
+    creator: '@gkronan',
+    title: 'Hospitality Consulting in New York | GKR Hospitality',
+    description: SITE_DESCRIPTION,
+    images: [OG_IMAGE.url],
   },
   icons: {
     icon: [
@@ -65,6 +88,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased bg-[#141414] text-white selection:bg-[#c5a059] selection:text-white overflow-x-hidden w-full" suppressHydrationWarning>
+        <JsonLd data={organizationSchema()} />
+        <JsonLd data={webSiteSchema()} />
         <GoogleTagManagerNoScript />
         <GoogleTagManagerScript />
         <Toaster position="top-right" richColors />

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useCallback, useEffect } from 'react';
+import Image from 'next/image';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { X, ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
@@ -90,10 +91,13 @@ export default function GalleryPage() {
                   onClick={() => setSelectedItemIndex(index)}
                   aria-label={`View project: ${item.title}`}
                 >
-                  <img
+                  <Image
                     src={item.images[0]} // Display first image as cover
-                    alt={item.title}
-                    className="w-full h-full object-cover transition-all duration-700 ease-in-out transform group-hover:scale-105"
+                    alt={`${item.title} project`}
+                    width={item.coverWidth}
+                    height={item.coverHeight}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                    className="w-full h-auto object-cover transition-all duration-700 ease-in-out transform group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <span className="text-white tracking-[0.2em] text-sm border border-white/30 px-6 py-3 backdrop-blur-sm">{item.title}</span>
