@@ -37,3 +37,6 @@ refactor_report.md.env
 
 .DS_Store
 .env*
+.gstack/
+
+.DS_Store
