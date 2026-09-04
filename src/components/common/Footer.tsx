@@ -58,7 +58,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 text-[0.75rem] uppercase tracking-[0.2em] text-stone-400 font-bold text-center md:text-right">
             <Link href="/accessibility" className="hover:text-white transition-colors">Accessibility</Link>
             <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <span>© 2025 GKR Consulting</span>
+            <span>© 2026 GKR Consulting</span>
           </div>
         </div>
       </div>

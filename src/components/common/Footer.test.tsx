@@ -27,6 +27,6 @@ describe('Footer Component', () => {
 
   it('renders copyright notice', () => {
     render(<Footer />);
-    expect(screen.getByText(/© 2025 GKR Consulting/i)).toBeInTheDocument();
+    expect(screen.getByText(/© 2026 GKR Consulting/i)).toBeInTheDocument();
   });
 });
